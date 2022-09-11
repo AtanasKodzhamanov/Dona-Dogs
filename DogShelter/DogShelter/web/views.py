@@ -10,8 +10,8 @@ def show_about (request):
 def show_adoptions (request):
     return render(request, "adoptions.html")
 
-def show_donations (request, pk):
+def show_donations (request):
     return render(request, "donations.html")
 
-def show_giftAdoption (request, pk):
+def show_giftAdoption (request):    
     return render(request, "giftadoption.html")
