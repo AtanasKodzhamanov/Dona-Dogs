@@ -1,0 +1,17 @@
+from django.shortcuts import render
+
+# Create your views here.
+def show_home(request): #dashboard
+    return render(request, "dashboard.html")
+
+def show_about (request):
+    return render(request, "about.html")
+
+def show_adoptions (request):
+    return render(request, "adoptions.html")
+
+def show_donations (request, pk):
+    return render(request, "donations.html")
+
+def show_giftAdoption (request, pk):
+    return render(request, "giftadoption.html")
