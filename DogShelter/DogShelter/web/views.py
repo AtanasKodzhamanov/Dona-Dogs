@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def show_home(request): #dashboard
-    return render(request, "dashboard.html")
+    return render(request, "index.html")
 
 def show_about (request):
     return render(request, "about.html")
