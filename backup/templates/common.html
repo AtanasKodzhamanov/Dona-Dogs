@@ -1,0 +1,58 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DonaDogs</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="https://helloartsy.com/wp-content/uploads/kids/dogs/how_to_draw_a_dog_face/how-to-draw-a-dog-face_step-6.jpg">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+
+<!-- Navigation Bar -->
+<img src="{% static "\images\Navbar-image.jpg"%}" style="width: 100%"/>
+
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'home' %}">Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+     
+
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
+        <a class="nav-item nav-link" href="{% url 'adoptions' %}">Adoptions</a>
+        <a class="nav-item nav-link" href="{% url 'donations' %}">Donations</a>
+        <a class="nav-item nav-link" href="{% url 'giftadoption' %}">Virtual Adoption</a>
+      </div>
+    </div>
+</nav>
+</body>
+
+
+<div id="sidebar"></div>
+<div id="content"></div>
+
+
+{% block page_content %}
+{% endblock %}
+
+<div id="footer">
+  <span >Click to subscribe to our newsletter! </span >
+</div>
+
+<!-- Useful resources -->
+{% comment %} 
+
+https://gridbyexample.com/video/series-auto-fill-auto-fit/
+
+{% endcomment %}
