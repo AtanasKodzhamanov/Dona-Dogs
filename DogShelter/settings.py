@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'dogsdatabase',
         'USER': 'postgres',
         'PASSWORD': '123qwe',
-        'HOST': '127.0.0.1',
+        'HOST': '0.0.0.0',
         'PORT': '5432',
     }
 }
