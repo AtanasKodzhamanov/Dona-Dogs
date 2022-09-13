@@ -1,2 +1,2 @@
-web: gunicorn --pythonpath DogShelter.wsgi
+web: gunicorn DogShelter.wsgi
 
