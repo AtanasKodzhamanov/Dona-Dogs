@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'DogShelter.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dogsdatabase',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': '123qwe',
-        'HOST': '0.0.0.0',
-        'PORT': '5432',
+        'PASSWORD': 'gpsaxpX6aX5uJTBpipGa',
+        'HOST': 'containers-us-west-35.railway.app',
+        'PORT': '6141',
     }
 }
 
