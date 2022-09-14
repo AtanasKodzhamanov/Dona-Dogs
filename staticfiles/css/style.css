@@ -41,7 +41,7 @@ body {
 .wrapper {
   display: grid;
   margin: 0 10;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-auto-rows: minmax(600px, auto);
 }
 
@@ -91,28 +91,3 @@ body {
     }
 
 /* Expand on hover END */
-
-/* The sidebar menu */
-.sidebar {
-    float:left;
-    height: 1400%;
-    width: 150px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    padding-top: 40px;
-    background-color: lightblue;
-    }
-
-    body{
-        padding-left:200px;
-        margin:0;
-    }
-    div#sidebar{
-       position:fixed;
-       height:100%;
-       width:200px; 
-       top:0;
-       left:0;
-       background:grey; 
-    }
