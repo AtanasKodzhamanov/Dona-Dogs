@@ -10,7 +10,8 @@ class Dog(models.Model):
 
     # Fields(Columns)
     nameENG = models.CharField(
-        max_length=NAME_MAX_LENGTH
+        max_length=NAME_MAX_LENGTH,
+        null=True
     )
     nameBG = models.CharField(
         max_length=NAME_MAX_LENGTH
@@ -29,22 +30,23 @@ class Dog(models.Model):
     )
 
     profile_pic = models.URLField(
+        null=True,
         max_length = 300
     )
 
     virtual_adopter= models.CharField(
-        max_length=NAME_MAX_LENGTH,
+        max_length=NAME_MAX_LENGTH
     )
 
     arrival_date = models.DateTimeField(
     )
 
     story_ENG = models.TextField(
-        null=True,
         blank=True,
+        default=""
     )
     story_BG = models.TextField(
-        null=True,
         blank=True,
+        default=""
     )
 
