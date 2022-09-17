@@ -40,7 +40,7 @@ body {
 .wrapper {
   /*rmax-width: 2500px;
   max-height: 1000px; */
-  margin: 0 20px;
+  margin: 0 10px;
   display: grid;
   grid-gap: 15px;
 
