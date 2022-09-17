@@ -42,7 +42,8 @@ class Dog(models.Model):
 
     virtual_adopter= models.CharField(
         max_length=NAME_MAX_LENGTH,
-        default=""
+        default="",
+        blank=True
     )
 
     story_ENG = models.TextField(
