@@ -14,19 +14,22 @@ class Dog(models.Model):
         null=True
     )
     nameBG = models.CharField(
-        max_length=NAME_MAX_LENGTH
+        max_length=NAME_MAX_LENGTH,
+        default=""
     )
 
     monthly_upkeep = models.IntegerField()
 
     diseases= models.CharField(
         max_length=7,
-        choices=Options
+        choices=Options,
+        default=""
     )
 
     gender= models.CharField(
         max_length=7,
-        choices=Options
+        choices=Options,
+        default=""
     )
 
     profile_pic = models.URLField(
@@ -35,10 +38,12 @@ class Dog(models.Model):
     )
 
     virtual_adopter= models.CharField(
-        max_length=NAME_MAX_LENGTH
+        max_length=NAME_MAX_LENGTH,
+        default=""
     )
 
     arrival_date = models.DateTimeField(
+        default=""
     )
 
     story_ENG = models.TextField(
