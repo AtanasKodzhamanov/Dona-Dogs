@@ -81,27 +81,17 @@ WSGI_APPLICATION = 'DogShelter.wsgi.application'
 
 
 # Railway.app setting
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'railway',
-#         'USER': 'postgres',
-#         'PASSWORD': 'gpsaxpX6aX5uJTBpipGa',
-#         'HOST': 'containers-us-west-35.railway.app',
-#         'PORT': '6141',
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
+        'NAME': 'railway',
         'USER': 'postgres',
         'PASSWORD': 'gpsaxpX6aX5uJTBpipGa',
-        'HOST': 'db.vspmtgtdonizwhgrvlqx.supabase.co',
-        'PORT': '5432',
+        'HOST': 'containers-us-west-35.railway.app',
+        'PORT': '6141',
     }
 }
+
 
 
 # Password validation
