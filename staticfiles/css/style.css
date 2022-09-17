@@ -1,3 +1,12 @@
+
+/* NavBar Start */
+
+
+
+/* NavBar END */
+
+
+
 /* Footer */
 
 #footer {
@@ -18,32 +27,37 @@
   box-sizing: border-box;
 }
 
+/*responsible for the entire body of the wrapper */
 body {
   margin: 0;
   font-family: 'Open Sans', 'sans-serif';
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(235, 231, 231, 0.726);
   color: rgb(217, 216, 216);
 }
 
+/*responsible for the size of the entire wrapper*/
+/* controls margins between boxes*/
 .wrapper {
-  max-width: 2000px;
-  max-height: 1000px;
+  /*rmax-width: 2500px;
+  max-height: 1000px; */
   margin: 0 20px;
   display: grid;
-  grid-gap: 30px;
-  box-shadow: 5px 10px #888888
+  grid-gap: 15px;
+
 }
-/* no grid support? */
+/* no grid support? */ 
 .wrapper {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; 
+   
 }
 
+/* margins of the entire wrapper */ 
 .wrapper {
   display: grid;
-  margin: 0 10;
+  margin: 20 40;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-auto-rows: minmax(400px, auto);
+  grid-auto-rows: minmax(auto, auto);
 }
 
 .panel {
@@ -54,12 +68,12 @@ body {
 }
 
 .wrapper > * {
-  background-color: rgb(232, 224, 224);
-  color: rgb(8, 7, 7);
-  border-radius: 20px;
-  padding: 20px;
+  background-color: rgb(201, 201, 201);
+  color: rgb(0, 0, 0);
+  border-radius: 15px;
+  padding: 15px;
   font-size: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 10px;box-shadow: 4px 4px #888888
 }
 
 /* We need to set the margin used on flex items to 0 as we have gaps in grid.  */
