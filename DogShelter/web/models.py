@@ -112,11 +112,15 @@ class NoticeBoard(models.Model):
     )
 
     notice_pic1 = models.URLField(
-        max_length=300
+        max_length=300,
+        blank=True,
+        default=""
     )
 
     notice_pic2 = models.URLField(
-        max_length=300
+        max_length=300,
+        blank=True,
+        default=""
     )
 
 
@@ -135,18 +139,25 @@ class Adoptions(models.Model):
     )
 
     adoption_pic_before = models.URLField(
-        null=True,
-        max_length=300
+        max_length=300,
+        blank=True,
+        default=""
     )
 
     adoption_pic_after1 = models.URLField(
-        max_length=300
+        max_length=300,
+        blank=True,
+        default=""
     )
 
     adoption_pic_after2 = models.URLField(
-        max_length=300
+        max_length=300,
+        blank=True,
+        default=""
     )
 
     adoption_video = models.URLField(
-        max_length=300
+        max_length=300,
+        blank=True,
+        default=""
     )

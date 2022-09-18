@@ -1,14 +1,15 @@
 from django.core import serializers
 from django.shortcuts import render
 
-from DogShelter.web.models import Dog
+from DogShelter.web.models import Dog, NoticeBoard
 
 # Create your views here.
 
 
 def show_home(request):  # dashboard
     dataDogs = serializers.serialize('python', Dog.objects.all())
-    return render(request, "index.html", {"dataDogs": dataDogs})
+    dataNoticeBoard = serializers.serialize('python', NoticeBoard.objects.all())
+    return render(request, "index.html", {"dataDogs": dataDogs, "dataNoticeBoard": dataNoticeBoard})
 
 
 def show_about(request):
@@ -27,8 +28,9 @@ def show_giftAdoption(request):
     return render(request, "giftadoption.html")
 
 
-dataDogs = serializers.serialize('python', Dog.objects.all())
-print(dataDogs)
+#dataDogs = serializers.serialize('python', Dog.objects.all())
+#dataNoticeBoard = serializers.serialize('python', NoticeBoard.objects.all())
+#print(dataDogs)
 
 # for instance in dataDogs:
 #    print("INSTANCE")
