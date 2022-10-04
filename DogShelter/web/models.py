@@ -10,6 +10,9 @@ class Dog(models.Model):
     Options = [(x, x) for x in ("Y", "N", "Unknown")]
     GENDER = [(x, x) for x in ("F", "M")]
 
+    def __str__(self):
+        return self.nameENG
+
     # Fields(Columns)
     nameENG = models.CharField(
         max_length=NAME_MAX_LENGTH,
