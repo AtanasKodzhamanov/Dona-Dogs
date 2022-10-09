@@ -24,7 +24,7 @@
  
 {% for instance in dataDogs %} 
     <div class="panel, thumbnail"><b>{{instance.fields.nameENG}}</b>
-      <img src="{{instance.fields.profile_pic}}" style="width: 100%"/>
+      <img loading="lazy" src="{{instance.fields.profile_pic}}" style="width: 100%"/>
     </div>
 {% endfor %}
   
