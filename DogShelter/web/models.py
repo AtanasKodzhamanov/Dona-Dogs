@@ -61,6 +61,10 @@ class Dog(models.Model):
 
 
 class Donations(models.Model):
+
+    class Meta: 
+        verbose_name_plural = "Donations"
+
     NAME_MAX_LENGTH = 60
     CURRENCY_MAX_LENGTH = 3
 
@@ -104,6 +108,9 @@ class Donations(models.Model):
 
 class NoticeBoard(models.Model):
 
+    class Meta: 
+        verbose_name_plural = "Posts"
+
     noticeENG = models.TextField(
         blank=True,
         default=""
@@ -128,6 +135,9 @@ class NoticeBoard(models.Model):
 
 
 class Adoptions(models.Model):
+
+    class Meta: 
+        verbose_name_plural = "Adoptions"
 
     NAME_MAX_LENGTH = 60
 
