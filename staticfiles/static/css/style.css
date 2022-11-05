@@ -109,8 +109,8 @@ margin-bottom: 10px;box-shadow: 4px 4px 4px #888888;
 
 .virtual-adopter-block{
   position: relative;
-  bottom: 40px;
-  text-align:center;
+  bottom: 42px;
+  text-align:left;
   background-color: rgba(1, 85, 32, 0.438);
   color: rgb(255, 255, 255);
   width: auto;
