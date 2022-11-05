@@ -172,6 +172,25 @@ class Adoptions(models.Model):
 
     NAME_MAX_LENGTH = 60
 
+    DogNameENG = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        null=True
+    )
+    DogNameBG = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        default=""
+    )
+    
+    AdoptionCountryENG = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        default=""
+    )
+    
+    AdoptionCountryBGN = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        default=""
+    )
+
     adoption_descriptionENG = models.TextField(
         blank=True,
         default=""
