@@ -8,7 +8,7 @@ from DogShelter.web.models import Dog, NoticeBoard
 
 def show_home(request):  # dashboard
     dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
-    dataNoticeBoard = serializers.serialize('python', NoticeBoard.objects.all())
+    dataNoticeBoard = serializers.serialize('python', NoticeBoard.objects.all().order_by("Order"))
     return render(request, "index.html", {"dataDogs": dataDogs, "dataNoticeBoard": dataNoticeBoard})
 
 

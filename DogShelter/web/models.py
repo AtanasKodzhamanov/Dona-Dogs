@@ -134,7 +134,10 @@ class NoticeBoard(models.Model):
 
     class Meta: 
         verbose_name_plural = "Posts"
-
+        
+    def __str__(self):
+        return self.noticeENG
+   
     noticeENG = models.TextField(
         blank=True,
         default=""
@@ -155,6 +158,10 @@ class NoticeBoard(models.Model):
         max_length=300,
         blank=True,
         default=""
+    )
+    
+    order = models.IntegerField(
+        default=99
     )
 
 
