@@ -45,22 +45,22 @@ class Dog(models.Model):
     )
 
     pic2 = models.URLField(
-        null=True,
+        blank=True,
         max_length=300
     )
 
     pic3 = models.URLField(
-        null=True,
+        blank=True,
         max_length=300
     )
 
     pic4 = models.URLField(
-        null=True,
+        blank=True,
         max_length=300
     )
 
     pic5 = models.URLField(
-        null=True,
+        blank=True,
         max_length=300
     )
 
