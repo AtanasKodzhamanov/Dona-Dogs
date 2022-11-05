@@ -46,22 +46,26 @@ class Dog(models.Model):
 
     pic2 = models.URLField(
         blank=True,
-        max_length=300
+        max_length=300,
+        default=""
     )
 
     pic3 = models.URLField(
         blank=True,
-        max_length=300
+        max_length=300,
+        default=""
     )
 
     pic4 = models.URLField(
         blank=True,
-        max_length=300
+        max_length=300,
+        default=""
     )
 
     pic5 = models.URLField(
         blank=True,
-        max_length=300
+        max_length=300,
+        default=""
     )
 
     virtual_adopter = models.CharField(

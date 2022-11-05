@@ -23,8 +23,13 @@
 <div class="wrapper">
  
 {% for instance in dataDogs %} 
-    <div class="panel, thumbnail"><b>{{instance.fields.nameENG}}</b>
-      <img loading="lazy" src="{{instance.fields.profile_pic}}" style="width: 100%"/>
+    <div class="panel, thumbnail"><h5>{{instance.fields.nameENG}}</h5>
+      <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.profile_pic}}" style="width: 100%"/>
+      {% if instance.fields.virtual_adopter %}
+      <div class="virtual-adopter-block">
+        Virtual adopter: {{instance.fields.virtual_adopter}}
+      </div>
+      {% endif%}
     </div>
 {% endfor %}
   
