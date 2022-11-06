@@ -45,15 +45,15 @@ def show_giftAdoption(request):
 #   print(instance)
 #  print(instance["fields"]["nameENG"])
 
-dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
-dataPeople = serializers.serialize('python', People.objects.all().order_by("?"))
+#dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
+#dataPeople = serializers.serialize('python', People.objects.all().order_by("?"))
 
 
 
-for instance in dataDogs:
-    print(instance)
-    print(instance["fields"]["person"])
-    id=instance["fields"]["person"]
+#for instance in dataDogs:
+    #print(instance)
+    #print(instance["fields"]["person"])
+    #id=instance["fields"]["person"]
     #print(dataPeople["id"==id]["fields"]["person_name_eng"])
-    print(dataPeople)
+    #print(dataPeople)
  
