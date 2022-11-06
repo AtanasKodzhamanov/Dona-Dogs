@@ -17,6 +17,7 @@ class Dog(models.Model):
     # Fields(Columns)
     nameENG = models.CharField(
         max_length=NAME_MAX_LENGTH,
+        unique=True,
         null=True
     )
     nameBG = models.CharField(
@@ -77,6 +78,7 @@ class Dog(models.Model):
     
     active = models.CharField(
         max_length=3,
+        blank=True,
         choices=Binary,
         default="Yes"
     )
@@ -89,8 +91,15 @@ class Dog(models.Model):
         blank=True,
         default=""
     )
-
-
+    
+    arrival_year=models.IntegerField(
+        blank=True,
+        default=0
+    )
+    
+    class Meta:
+        ordering = ('pk',)
+    
 class Donations(models.Model):
 
     class Meta: 
@@ -181,6 +190,7 @@ class Adoptions(models.Model):
 
     DogNameENG = models.CharField(
         max_length=NAME_MAX_LENGTH,
+        unique=True,
         null=True
     )
     DogNameBG = models.CharField(
@@ -229,5 +239,23 @@ class Adoptions(models.Model):
     adoption_video = models.URLField(
         max_length=300,
         blank=True,
+        default=""
+    )
+
+
+class People(models.Model):
+
+    NAME_MAX_LENGTH = 60
+    
+    class Meta: 
+        verbose_name_plural = "People"
+
+    person_name_eng = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        unique=True,
+        null=True
+    )
+    person_name_bg = models.CharField(
+        max_length=NAME_MAX_LENGTH,
         default=""
     )
