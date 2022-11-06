@@ -1,7 +1,24 @@
 {% extends 'common.html' %}
 {% block page_content %}
-  <!-- Edit Expense Form -->
+
+  <h1>Adoptions</h1>
+  <hr>
   <div>
-    <h1>Adoptions</h1>
+    {% for adoption in dataAdoptions %} 
+      <article>
+      <h2>{{adoption.fields.DogNameENG}}</h2>
+        <div class="wrapper">
+          <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_before}}" style="width: 100%"/>
+        </div>
+      </article>
+      <hr>
+    {% endfor %}
+
   </div>
 {% endblock %}
+
+
+
+
+
+

@@ -9,6 +9,7 @@ class Dog(models.Model):
 
     Options = [(x, x) for x in ("Y", "N", "Unknown")]
     GENDER = [(x, x) for x in ("F", "M")]
+    Binary = [(x, x) for x in ("Yes", "No")]
 
     def __str__(self):
         return self.nameENG
@@ -72,6 +73,12 @@ class Dog(models.Model):
         max_length=NAME_MAX_LENGTH,
         default="",
         blank=True
+    )
+    
+    active = models.CharField(
+        max_length=3,
+        choices=Binary,
+        default="Yes"
     )
 
     story_ENG = models.TextField(
