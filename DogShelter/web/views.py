@@ -8,7 +8,13 @@ from DogShelter.web.models import Dog, NoticeBoard, Adoptions, People, Donations
 def show_home(request):  # dashboard
     dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
     dataNoticeBoard = serializers.serialize('python', NoticeBoard.objects.all().order_by("order"))
-    return render(request, "index.html", {"dataDogs": dataDogs, "dataNoticeBoard": dataNoticeBoard})
+    
+    context={
+        "dataDogs": dataDogs,
+        "dataNoticeBoard": dataNoticeBoard
+    }
+    
+    return render(request, "index.html", context)
 
 
 def show_about(request):

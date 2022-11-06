@@ -131,19 +131,6 @@ class Donations(models.Model):
 
     person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default=1)
     
-    @property
-    def person_name(self):
-        return self.person.person_name_eng
-    
-    full_name_eng = models.CharField(
-        max_length=NAME_MAX_LENGTH,
-        null=True
-    )
-    full_name_bg = models.CharField(
-        max_length=NAME_MAX_LENGTH,
-        default=""
-    )
-
     donation_pic = models.URLField(
         null=True,
         max_length=300
