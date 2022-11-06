@@ -10,19 +10,19 @@ class PetInlineAdmin(admin.StackedInline):
 
 @admin.register(Dog)
 class Dog(admin.ModelAdmin):
-    pass
+    readonly_fields = ('id',)
 
 @admin.register(Adoptions)
 class Adoptions(admin.ModelAdmin):
-    pass
+    readonly_fields = ('id',)
 
 @admin.register(NoticeBoard)
 class NoticeBoard(admin.ModelAdmin):
-    pass
+    readonly_fields = ('id',)
 
 @admin.register(Donations)
 class Donations(admin.ModelAdmin):
-    pass
+    readonly_fields = ('id',)
 
 @admin.register(People)
 class People(admin.ModelAdmin):
