@@ -12,17 +12,17 @@ class Dog(models.Model):
     Binary = [(x, x) for x in ("Yes", "No")]
 
     def __str__(self):
-        return self.nameENG
+        return self.name_eng
 
     
     # Fields(Columns)
 
-    nameENG = models.CharField(
+    name_eng = models.CharField(
         max_length=NAME_MAX_LENGTH,
         unique=True,
         null=True
     )
-    nameBG = models.CharField(
+    name_bg = models.CharField(
         max_length=NAME_MAX_LENGTH,
         default=""
     )
@@ -48,25 +48,25 @@ class Dog(models.Model):
         max_length=300
     )
 
-    pic2 = models.URLField(
+    pic_2 = models.URLField(
         blank=True,
         max_length=300,
         default=""
     )
 
-    pic3 = models.URLField(
+    pic_3 = models.URLField(
         blank=True,
         max_length=300,
         default=""
     )
 
-    pic4 = models.URLField(
+    pic_4 = models.URLField(
         blank=True,
         max_length=300,
         default=""
     )
 
-    pic5 = models.URLField(
+    pic_5 = models.URLField(
         blank=True,
         max_length=300,
         default=""
@@ -85,11 +85,11 @@ class Dog(models.Model):
         default="Yes"
     )
 
-    story_ENG = models.TextField(
+    story_eng = models.TextField(
         blank=True,
         default=""
     )
-    story_BG = models.TextField(
+    story_bg = models.TextField(
         blank=True,
         default=""
     )
@@ -111,11 +111,11 @@ class Donations(models.Model):
     CURRENCY_MAX_LENGTH = 3
 
     
-    fullNameENG = models.CharField(
+    full_name_eng = models.CharField(
         max_length=NAME_MAX_LENGTH,
         null=True
     )
-    fullNameBG = models.CharField(
+    full_name_bg = models.CharField(
         max_length=NAME_MAX_LENGTH,
         default=""
     )
@@ -134,12 +134,12 @@ class Donations(models.Model):
         default=""
     )
 
-    donation_descriptionENG = models.TextField(
+    donation_description_eng = models.TextField(
         blank=True,
         default=""
     )
 
-    donation_descriptionBG = models.TextField(
+    donation_description_bg = models.TextField(
         blank=True,
         default=""
     )
@@ -147,33 +147,32 @@ class Donations(models.Model):
     donation_date = models.DateField(
         
     )
-
-
+    
 class NoticeBoard(models.Model):
 
     class Meta: 
         verbose_name_plural = "Posts"
         
     def __str__(self):
-        return self.noticeENG
+        return self.note_eng
    
-    noticeENG = models.TextField(
+    note_eng = models.TextField(
         blank=True,
         default=""
     )
 
-    noticeBG = models.TextField(
+    note_bg = models.TextField(
         blank=True,
         default=""
     )
 
-    notice_pic1 = models.URLField(
+    note_pic_1 = models.URLField(
         max_length=300,
         blank=True,
         default=""
     )
 
-    notice_pic2 = models.URLField(
+    note_pic_2 = models.URLField(
         max_length=300,
         blank=True,
         default=""
@@ -218,34 +217,34 @@ class Adoptions(models.Model):
     person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default=1)
     
     def __str__(self):
-        return self.DogNameENG
+        return self.dog_name_eng
     
-    DogNameENG = models.CharField(
+    dog_name_eng = models.CharField(
         max_length=NAME_MAX_LENGTH,
         unique=True,    
         null=True
     )
-    DogNameBG = models.CharField(
+    dog_name_bg = models.CharField(
         max_length=NAME_MAX_LENGTH,
         default=""
     )
     
-    AdoptionCountryENG = models.CharField(
+    adoption_country_eng = models.CharField(
         max_length=NAME_MAX_LENGTH,
         default=""
     )
     
-    AdoptionCountryBGN = models.CharField(
+    adoption_country_bg = models.CharField(
         max_length=NAME_MAX_LENGTH,
         default=""
     )
 
-    adoption_descriptionENG = models.TextField(
+    adoption_description_eng = models.TextField(
         blank=True,
         default=""
     )
 
-    adoption_descriptionBG = models.TextField(
+    adoption_description_bg = models.TextField(
         blank=True,
         default=""
     )
@@ -256,13 +255,13 @@ class Adoptions(models.Model):
         default=""
     )
 
-    adoption_pic_after1 = models.URLField(
+    adoption_pic_after_1 = models.URLField(
         max_length=300,
         blank=True,
         default=""
     )
 
-    adoption_pic_after2 = models.URLField(
+    adoption_pic_after_2 = models.URLField(
         max_length=300,
         blank=True,
         default=""
