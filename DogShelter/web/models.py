@@ -27,6 +27,7 @@ class People(models.Model):
         default=""
     )
     
+    
 class Dog(models.Model):
 
     NAME_MAX_LENGTH = 60
@@ -129,6 +130,10 @@ class Donations(models.Model):
     CURRENCY_MAX_LENGTH = 3
 
     person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default=1)
+    
+    @property
+    def person_name(self):
+        return self.person.person_name_eng
     
     full_name_eng = models.CharField(
         max_length=NAME_MAX_LENGTH,
