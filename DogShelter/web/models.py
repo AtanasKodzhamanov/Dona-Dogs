@@ -34,7 +34,7 @@ class Dog(models.Model):
 
     Options = [(x, x) for x in ("Y", "N", "Unknown")]
     GENDER = [(x, x) for x in ("F", "M")]
-    Binary = [(x, x) for x in ("Yes", "No")]
+    STATUS = [(x, x) for x in ("Active", "Dead","Adopted")]
 
     def __str__(self):
         return self.name_eng
@@ -98,10 +98,10 @@ class Dog(models.Model):
     )
     
     active = models.CharField(
-        max_length=3,
+        max_length=10,
         blank=True,
-        choices=Binary,
-        default="Yes"
+        choices=STATUS,
+        default="Active"
     )
 
     story_eng = models.TextField(
