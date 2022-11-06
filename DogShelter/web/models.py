@@ -2,7 +2,31 @@ from django.db import models
 from django.utils.timezone import now
 # Create your models here.
 
+class People(models.Model):
 
+    NAME_MAX_LENGTH = 60
+    
+    class Meta: 
+        verbose_name_plural = "People"
+
+    def __str__(self):
+        return self.person_name_eng
+
+    person_name_eng = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        unique=True,
+        null=True
+    )
+    person_name_bg = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        default=""
+    )
+    
+    email_address=models.EmailField(
+        blank=True,
+        default=""
+    )
+    
 class Dog(models.Model):
 
     NAME_MAX_LENGTH = 60
@@ -110,6 +134,7 @@ class Donations(models.Model):
     NAME_MAX_LENGTH = 60
     CURRENCY_MAX_LENGTH = 3
 
+    person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default=1)
     
     full_name_eng = models.CharField(
         max_length=NAME_MAX_LENGTH,
@@ -125,7 +150,7 @@ class Donations(models.Model):
         max_length=300
     )
 
-    donation_amount = models.IntegerField(
+    donation_amount = models.FloatField(
         default=0
     )
 
@@ -155,7 +180,7 @@ class NoticeBoard(models.Model):
         
     def __str__(self):
         return self.note_eng
-   
+      
     note_eng = models.TextField(
         blank=True,
         default=""
@@ -180,31 +205,6 @@ class NoticeBoard(models.Model):
     
     order = models.IntegerField(
         default=99
-    )
-
-class People(models.Model):
-
-    NAME_MAX_LENGTH = 60
-    
-    class Meta: 
-        verbose_name_plural = "People"
-
-    def __str__(self):
-        return self.person_name_eng
-
-    person_name_eng = models.CharField(
-        max_length=NAME_MAX_LENGTH,
-        unique=True,
-        null=True
-    )
-    person_name_bg = models.CharField(
-        max_length=NAME_MAX_LENGTH,
-        default=""
-    )
-    
-    email_address=models.EmailField(
-        blank=True,
-        default=""
     )
 
 class Adoptions(models.Model):
