@@ -23,9 +23,17 @@
 {% for instance in dataDogs %} 
     <div class="panel, thumbnail"><h5>{{instance.fields.name_eng}}</h5>
       <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.profile_pic}}" style="width: 100%"/>
-      <div class="virtual-adopter-block">
-        &nbsp Virtual adoption: {{instance.fields.name_eng}} 
-      </div>
+      
+      {% for i in dataPeople %}
+        {% if instance.fields.person == i.pk %} 
+          {% if i.pk > 1 %}
+        <div class="virtual-adopter-block">
+            &nbsp Virtual adoption: {{i.fields.person_name_eng}} 
+          </div>
+          {% endif%}
+        {% endif%}
+      {% endfor %}
+    
     </div>
 {% endfor %}
   
