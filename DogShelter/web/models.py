@@ -211,7 +211,7 @@ class Adoptions(models.Model):
 
     NAME_MAX_LENGTH = 60
     
-    #person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default="Unknown")
+    person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default=1)
     
     DogNameENG = models.CharField(
         max_length=NAME_MAX_LENGTH,

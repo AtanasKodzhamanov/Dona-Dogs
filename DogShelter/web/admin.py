@@ -8,7 +8,6 @@ from DogShelter.web.models import Adoptions, Dog, NoticeBoard, Donations, People
 class PetInlineAdmin(admin.StackedInline):
     model = Dog
 
-
 @admin.register(Dog)
 class Dog(admin.ModelAdmin):
     pass
