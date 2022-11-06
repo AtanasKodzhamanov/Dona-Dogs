@@ -27,4 +27,6 @@ class Donations(admin.ModelAdmin):
 
 @admin.register(People)
 class People(admin.ModelAdmin):
-    pass
+    readonly_fields = ('id',)
+
+
