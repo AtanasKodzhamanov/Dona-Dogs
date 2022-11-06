@@ -38,7 +38,7 @@ class Dog(models.Model):
     def __str__(self):
         return self.name_eng
 
-    
+    person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default=1)
     # Fields(Columns)
 
     name_eng = models.CharField(
@@ -94,12 +94,6 @@ class Dog(models.Model):
         blank=True,
         max_length=300,
         default=""
-    )
-
-    virtual_adopter = models.CharField(
-        max_length=NAME_MAX_LENGTH,
-        default="",
-        blank=True
     )
     
     active = models.CharField(

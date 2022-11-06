@@ -25,9 +25,9 @@
 {% for instance in dataDogs %} 
     <div class="panel, thumbnail"><h5>{{instance.fields.nameENG}}</h5>
       <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.profile_pic}}" style="width: 100%"/>
-      {% if instance.fields.virtual_adopter %}
+      {% if instance.fields.person.person_name_eng %}
       <div class="virtual-adopter-block">
-        &nbsp Virtual adoption: {{instance.fields.virtual_adopter}}
+        &nbsp Virtual adoption: {{instance.fields.person.person_name_eng}}
       </div>
       {% endif%}
     </div>
