@@ -14,7 +14,9 @@ class Dog(models.Model):
     def __str__(self):
         return self.nameENG
 
+    
     # Fields(Columns)
+
     nameENG = models.CharField(
         max_length=NAME_MAX_LENGTH,
         unique=True,
@@ -107,7 +109,8 @@ class Donations(models.Model):
 
     NAME_MAX_LENGTH = 60
     CURRENCY_MAX_LENGTH = 3
-
+    
+    
     fullNameENG = models.CharField(
         max_length=NAME_MAX_LENGTH,
         null=True
@@ -180,6 +183,27 @@ class NoticeBoard(models.Model):
         default=99
     )
 
+class People(models.Model):
+
+    NAME_MAX_LENGTH = 60
+    
+    class Meta: 
+        verbose_name_plural = "People"
+
+    person_name_eng = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        unique=True,
+        null=True
+    )
+    person_name_bg = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        default=""
+    )
+    
+    email_address=models.EmailField(
+        blank=True,
+        default=""
+    )
 
 class Adoptions(models.Model):
 
@@ -187,10 +211,10 @@ class Adoptions(models.Model):
         verbose_name_plural = "Adoptions"
 
     NAME_MAX_LENGTH = 60
-
+    
     DogNameENG = models.CharField(
         max_length=NAME_MAX_LENGTH,
-        unique=True,
+        unique=True,    
         null=True
     )
     DogNameBG = models.CharField(
@@ -239,23 +263,5 @@ class Adoptions(models.Model):
     adoption_video = models.URLField(
         max_length=300,
         blank=True,
-        default=""
-    )
-
-
-class People(models.Model):
-
-    NAME_MAX_LENGTH = 60
-    
-    class Meta: 
-        verbose_name_plural = "People"
-
-    person_name_eng = models.CharField(
-        max_length=NAME_MAX_LENGTH,
-        unique=True,
-        null=True
-    )
-    person_name_bg = models.CharField(
-        max_length=NAME_MAX_LENGTH,
         default=""
     )

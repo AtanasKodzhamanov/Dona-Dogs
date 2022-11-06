@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 
-from DogShelter.web.models import Adoptions, Dog, NoticeBoard, Donations
+from DogShelter.web.models import Adoptions, Dog, NoticeBoard, Donations, People
 # Register your models here.
 
 
@@ -23,4 +23,8 @@ class NoticeBoard(admin.ModelAdmin):
 
 @admin.register(Donations)
 class Donations(admin.ModelAdmin):
+    pass
+
+@admin.register(People)
+class People(admin.ModelAdmin):
     pass
