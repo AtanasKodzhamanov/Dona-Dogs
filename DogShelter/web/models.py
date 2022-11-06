@@ -39,7 +39,7 @@ class Dog(models.Model):
     def __str__(self):
         return self.name_eng
 
-    person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default=1)
+    person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default=1, verbose_name='Virtual Adopter')
     # Fields(Columns)
 
     name_eng = models.CharField(
@@ -117,7 +117,7 @@ class Dog(models.Model):
         blank=True,
         default=0
     )
-    
+        
     class Meta:
         ordering = ('pk',)
     

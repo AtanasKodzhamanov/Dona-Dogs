@@ -12,6 +12,7 @@ class PetInlineAdmin(admin.StackedInline):
 class Dog(admin.ModelAdmin):
     readonly_fields = ('id',)
     list_display = ["id","name_eng","person"]
+    list_filter = ["person","active"]
 
 @admin.register(Adoptions)
 class Adoptions(admin.ModelAdmin):
