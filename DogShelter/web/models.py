@@ -109,6 +109,7 @@ class Donations(models.Model):
 
     NAME_MAX_LENGTH = 60
     CURRENCY_MAX_LENGTH = 3
+
     
     fullNameENG = models.CharField(
         max_length=NAME_MAX_LENGTH,
@@ -189,6 +190,9 @@ class People(models.Model):
     class Meta: 
         verbose_name_plural = "People"
 
+    def __str__(self):
+        return self.person_name_eng
+
     person_name_eng = models.CharField(
         max_length=NAME_MAX_LENGTH,
         unique=True,
@@ -212,6 +216,9 @@ class Adoptions(models.Model):
     NAME_MAX_LENGTH = 60
     
     person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default=1)
+    
+    def __str__(self):
+        return self.DogNameENG
     
     DogNameENG = models.CharField(
         max_length=NAME_MAX_LENGTH,
