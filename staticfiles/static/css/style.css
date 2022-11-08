@@ -149,14 +149,21 @@ margin-bottom: 10px;box-shadow: 4px 4px 4px #888888;
 
 
 .parent {
-  border: 1px solid black;
-  margin: 1rem;
-  padding: 2rem 2rem;
+  background-color: #c5c2c288;
+  border: 3px solid rgba(0, 0, 0, 0.671);
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem 1rem;
   text-align: center;
+  border-radius: 10px;
 }
 .child {
   display: inline-block;
-  border: 1px solid red;
-  padding: 1rem 1rem;
+  background-color:#47474788;
+  border: 2px  solid rgba(0, 0, 0, 0.527);
+  border-radius: 15px;
+  padding: 10px 10px;
   vertical-align: middle;
 }

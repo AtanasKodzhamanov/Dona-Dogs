@@ -260,3 +260,8 @@ class Adoptions(models.Model):
         blank=True,
         default=""
     )
+    
+    adoption_year=models.IntegerField(
+        blank=True,
+        default=0
+    )
