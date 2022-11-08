@@ -1,15 +1,22 @@
 from django.core import serializers
 from django.shortcuts import render
 
-from DogShelter.web.models import Dog, NoticeBoard
+from DogShelter.web.models import Dog, NoticeBoard, Adoptions, People, Donations
 
 # Create your views here.
 
-
 def show_home(request):  # dashboard
     dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
-    dataNoticeBoard = serializers.serialize('python', NoticeBoard.objects.all())
-    return render(request, "index.html", {"dataDogs": dataDogs, "dataNoticeBoard": dataNoticeBoard})
+    dataNoticeBoard = serializers.serialize('python', NoticeBoard.objects.all().order_by("order"))
+    dataPeople = serializers.serialize('python', People.objects.all())
+    
+    context={
+        "dataPeople": dataPeople,
+        "dataDogs": dataDogs,
+        "dataNoticeBoard": dataNoticeBoard
+    }
+    
+    return render(request, "index.html", context)
 
 
 def show_about(request):
@@ -17,7 +24,8 @@ def show_about(request):
 
 
 def show_adoptions(request):
-    return render(request, "adoptions.html")
+    dataAdoptions = serializers.serialize('python', Adoptions.objects.all().order_by("?"))
+    return render(request, "adoptions.html", {"dataAdoptions": dataAdoptions})
 
 
 def show_donations(request):
@@ -36,3 +44,16 @@ def show_giftAdoption(request):
 #    print("INSTANCE")
 #   print(instance)
 #  print(instance["fields"]["nameENG"])
+
+#dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
+#dataPeople = serializers.serialize('python', People.objects.all().order_by("?"))
+
+
+
+#for instance in dataDogs:
+    #print(instance)
+    #print(instance["fields"]["person"])
+    #id=instance["fields"]["person"]
+    #print(dataPeople["id"==id]["fields"]["person_name_eng"])
+    #print(dataPeople)
+ 

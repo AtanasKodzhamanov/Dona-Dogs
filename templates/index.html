@@ -11,20 +11,29 @@
 {% comment %}  
 <img id="imgFloat" src="https://scontent.fsof5-1.fna.fbcdn.net/v/t39.30808-6/307326092_5912842055400679_990004745438944462_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a83260&_nc_ohc=fDgjqZZoz9UAX_vHh3U&tn=7R860yZcCtaacBd8&_nc_ht=scontent.fsof5-1.fna&oh=00_AT_jCguCchtM59m2aU7lHLR6HGkBE_X2yryRCh92RKmUxA&oe=632B0D8D" style="width:170px;height:170px;margin-right:15px; margin-left:30px; margin-bottom:10px;"/>
 {% endcomment %}
-{{notice.fields.noticeENG}}
+{{notice.fields.note_eng}}
 
   </div></p>
 </article>
 <hr>
 {% endfor %}
 
-
-
 <div class="wrapper">
  
 {% for instance in dataDogs %} 
-    <div class="panel, thumbnail"><b>{{instance.fields.nameENG}}</b>
-      <img loading="lazy" src="{{instance.fields.profile_pic}}" style="width: 100%"/>
+    <div class="panel, thumbnail"><h5>{{instance.fields.name_eng}}</h5>
+      <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.profile_pic}}" style="width: 100%"/>
+      
+      {% for i in dataPeople %}
+        {% if instance.fields.person == i.pk %} 
+          {% if i.pk > 1 %}
+        <div class="virtual-adopter-block">
+            &nbsp Virtual adoption: {{i.fields.person_name_eng}} 
+          </div>
+          {% endif%}
+        {% endif%}
+      {% endfor %}
+    
     </div>
 {% endfor %}
   

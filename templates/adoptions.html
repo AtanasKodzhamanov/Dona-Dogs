@@ -1,7 +1,36 @@
 {% extends 'common.html' %}
 {% block page_content %}
-  <!-- Edit Expense Form -->
-  <div>
-    <h1>Adoptions</h1>
-  </div>
+{% load static%}
+
+  <h1 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">Adoptions</h1>
+  <hr>
+  
+    {% for adoption in dataAdoptions %} 
+      
+      <div class="parent">
+        <h2 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{adoption.fields.dog_name_eng}}</h2>
+        <h3 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">Found its home in {{adoption.fields.adoption_country_eng}}</h3>
+        <h4 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{adoption.fields.adoption_year}}</h4>
+
+        <div class="child">
+          <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_before}}" style="width:400px;height:400px;"/>
+        </div>
+        <div class="child">
+          <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_after_1}}" style="width:400px;height:400px;"/>
+        </div>
+        <div class="child">
+          <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_after_2}}" style="width:400px;height:400px;"/>
+        </div>
+        <br>
+        <br>
+        <div>
+          <p style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{adoption.fields.adoption_description_eng}}</p>
+        </div>
+      </div>
+      <hr>
+    {% endfor %}
+
+   
 {% endblock %}
+
+

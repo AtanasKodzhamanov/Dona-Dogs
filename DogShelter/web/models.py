@@ -3,22 +3,53 @@ from django.utils.timezone import now
 # Create your models here.
 
 
+# [off] Искам да имам 2 езика на страницата. В момента във всеки модел имам по два fielda например name_bg, name_eng. И идеята ми беше да слагам и двете в темплате и да сменям с if then когато usera смени езика. Ама тва ми изглежда доста леймърско. Идеи?
+class People(models.Model):
+
+    NAME_MAX_LENGTH = 60
+    
+    class Meta: 
+        verbose_name_plural = "People"
+
+    def __str__(self):
+        return self.person_name_eng
+
+    person_name_eng = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        unique=True,
+        null=True
+    )
+    person_name_bg = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        default=""
+    )
+    
+    email_address=models.EmailField(
+        blank=True,
+        default=""
+    )
+    
+    
 class Dog(models.Model):
 
     NAME_MAX_LENGTH = 60
 
     Options = [(x, x) for x in ("Y", "N", "Unknown")]
     GENDER = [(x, x) for x in ("F", "M")]
+    STATUS = [(x, x) for x in ("Active", "Dead","Adopted")]
 
     def __str__(self):
-        return self.nameENG
+        return self.name_eng
 
+    person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default=1, verbose_name='Virtual Adopter')
     # Fields(Columns)
-    nameENG = models.CharField(
+
+    name_eng = models.CharField(
         max_length=NAME_MAX_LENGTH,
+        unique=True,
         null=True
     )
-    nameBG = models.CharField(
+    name_bg = models.CharField(
         max_length=NAME_MAX_LENGTH,
         default=""
     )
@@ -44,42 +75,54 @@ class Dog(models.Model):
         max_length=300
     )
 
-    pic2 = models.URLField(
-        null=True,
-        max_length=300
-    )
-
-    pic3 = models.URLField(
-        null=True,
-        max_length=300
-    )
-
-    pic4 = models.URLField(
-        null=True,
-        max_length=300
-    )
-
-    pic5 = models.URLField(
-        null=True,
-        max_length=300
-    )
-
-    virtual_adopter = models.CharField(
-        max_length=NAME_MAX_LENGTH,
-        default="",
-        blank=True
-    )
-
-    story_ENG = models.TextField(
+    pic_2 = models.URLField(
         blank=True,
-        default=""
-    )
-    story_BG = models.TextField(
-        blank=True,
+        max_length=300,
         default=""
     )
 
+    pic_3 = models.URLField(
+        blank=True,
+        max_length=300,
+        default=""
+    )
 
+    pic_4 = models.URLField(
+        blank=True,
+        max_length=300,
+        default=""
+    )
+
+    pic_5 = models.URLField(
+        blank=True,
+        max_length=300,
+        default=""
+    )
+    
+    active = models.CharField(
+        max_length=10,
+        blank=True,
+        choices=STATUS,
+        default="Active"
+    )
+
+    story_eng = models.TextField(
+        blank=True,
+        default=""
+    )
+    story_bg = models.TextField(
+        blank=True,
+        default=""
+    )
+    
+    arrival_year=models.IntegerField(
+        blank=True,
+        default=0
+    )
+        
+    class Meta:
+        ordering = ('pk',)
+    
 class Donations(models.Model):
 
     class Meta: 
@@ -88,21 +131,14 @@ class Donations(models.Model):
     NAME_MAX_LENGTH = 60
     CURRENCY_MAX_LENGTH = 3
 
-    fullNameENG = models.CharField(
-        max_length=NAME_MAX_LENGTH,
-        null=True
-    )
-    fullNameBG = models.CharField(
-        max_length=NAME_MAX_LENGTH,
-        default=""
-    )
-
+    person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default=1)
+    
     donation_pic = models.URLField(
         null=True,
         max_length=300
     )
 
-    donation_amount = models.IntegerField(
+    donation_amount = models.FloatField(
         default=0
     )
 
@@ -111,48 +147,53 @@ class Donations(models.Model):
         default=""
     )
 
-    donation_descriptionENG = models.TextField(
+    donation_description_eng = models.TextField(
         blank=True,
         default=""
     )
 
-    donation_descriptionBG = models.TextField(
+    donation_description_bg = models.TextField(
         blank=True,
         default=""
     )
 
     donation_date = models.DateField(
-
+        
     )
-
-
+    
 class NoticeBoard(models.Model):
 
     class Meta: 
         verbose_name_plural = "Posts"
-
-    noticeENG = models.TextField(
+        
+    def __str__(self):
+        return self.note_eng
+      
+    note_eng = models.TextField(
         blank=True,
         default=""
     )
 
-    noticeBG = models.TextField(
+    note_bg = models.TextField(
         blank=True,
         default=""
     )
 
-    notice_pic1 = models.URLField(
+    note_pic_1 = models.URLField(
         max_length=300,
         blank=True,
         default=""
     )
 
-    notice_pic2 = models.URLField(
+    note_pic_2 = models.URLField(
         max_length=300,
         blank=True,
         default=""
     )
-
+    
+    order = models.IntegerField(
+        default=99
+    )
 
 class Adoptions(models.Model):
 
@@ -160,13 +201,38 @@ class Adoptions(models.Model):
         verbose_name_plural = "Adoptions"
 
     NAME_MAX_LENGTH = 60
+    
+    person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default=1)
+    
+    def __str__(self):
+        return self.dog_name_eng
+    
+    dog_name_eng = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        unique=True,    
+        null=True
+    )
+    dog_name_bg = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        default=""
+    )
+    
+    adoption_country_eng = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        default=""
+    )
+    
+    adoption_country_bg = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        default=""
+    )
 
-    adoption_descriptionENG = models.TextField(
+    adoption_description_eng = models.TextField(
         blank=True,
         default=""
     )
 
-    adoption_descriptionBG = models.TextField(
+    adoption_description_bg = models.TextField(
         blank=True,
         default=""
     )
@@ -177,13 +243,13 @@ class Adoptions(models.Model):
         default=""
     )
 
-    adoption_pic_after1 = models.URLField(
+    adoption_pic_after_1 = models.URLField(
         max_length=300,
         blank=True,
         default=""
     )
 
-    adoption_pic_after2 = models.URLField(
+    adoption_pic_after_2 = models.URLField(
         max_length=300,
         blank=True,
         default=""
@@ -193,4 +259,9 @@ class Adoptions(models.Model):
         max_length=300,
         blank=True,
         default=""
+    )
+    
+    adoption_year=models.IntegerField(
+        blank=True,
+        default=0
     )
