@@ -146,3 +146,17 @@ margin-bottom: 10px;box-shadow: 4px 4px 4px #888888;
   }
 
 /* Expand on hover END */
+
+
+.parent {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 2rem 2rem;
+  text-align: center;
+}
+.child {
+  display: inline-block;
+  border: 1px solid red;
+  padding: 1rem 1rem;
+  vertical-align: middle;
+}

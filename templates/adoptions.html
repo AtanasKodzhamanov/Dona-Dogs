@@ -1,24 +1,31 @@
 {% extends 'common.html' %}
 {% block page_content %}
+{% load static%}
 
-  <h1>Adoptions</h1>
+  <h1 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">Adoptions</h1>
   <hr>
-  <div>
+  
     {% for adoption in dataAdoptions %} 
-      <article>
-      <h2>{{adoption.fields.dog_name_eng}}</h2>
-        <div class="wrapper">
-          <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_before}}" style="width: 100%"/>
+      
+      <div class="parent">
+        <h2 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{adoption.fields.dog_name_eng}}</h2>
+        <div class="child">
+          <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_before}}" style="width:400px;height:400px;"/>
         </div>
-      </article>
+        <div class="child">
+          <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_after_1}}" style="width:400px;height:400px;"/>
+        </div>
+        <div class="child">
+          <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_after_2}}" style="width:400px;height:400px;"/>
+        </div>
+        <div>
+          <p style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{adoption.fields.adoption_description_eng}}</p>
+        </div>
+      </div>
       <hr>
     {% endfor %}
 
-  </div>
+   
 {% endblock %}
-
-
-
-
 
 
