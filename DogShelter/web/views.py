@@ -1,7 +1,7 @@
 from django.core import serializers
 from django.shortcuts import render
 
-from DogShelter.web.models import Dog, NoticeBoard, Adoptions, People, Donations
+from DogShelter.web.models import Dog, NoticeBoard, Adoptions, People, Donations, About
 
 # Create your views here.
 

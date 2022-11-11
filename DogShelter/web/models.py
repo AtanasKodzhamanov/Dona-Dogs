@@ -275,8 +275,6 @@ class Adoptions(models.Model):
         default=0
     )
 
-
-
 class About(models.Model):
 
     class Meta: 
