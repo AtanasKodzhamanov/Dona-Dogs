@@ -36,7 +36,7 @@ class Dog(models.Model):
 
     Options = [(x, x) for x in ("Y", "N", "Unknown")]
     GENDER = [(x, x) for x in ("F", "M")]
-    STATUS = [(x, x) for x in ("Active", "Dead","Adopted")]
+    STATUS = [(x, x) for x in ("Active", "Dead","Adopted", "Sick")]
 
     def __str__(self):
         return self.name_eng
@@ -169,6 +169,8 @@ class NoticeBoard(models.Model):
     def __str__(self):
         return self.note_eng
       
+    LOCATION = [(x, x) for x in ("Gallery", "About","Infirmery", "Adoptions","Virtual","Donations")]
+
     note_eng = models.TextField(
         blank=True,
         default=""
@@ -193,6 +195,13 @@ class NoticeBoard(models.Model):
     
     order = models.IntegerField(
         default=99
+    )
+
+    location=models.CharField(
+        max_length=25,
+        blank=True,
+        choices=LOCATION,
+        default="Gallery"
     )
 
 class Adoptions(models.Model):
@@ -264,4 +273,81 @@ class Adoptions(models.Model):
     adoption_year=models.IntegerField(
         blank=True,
         default=0
+    )
+
+
+
+class About(models.Model):
+
+    class Meta: 
+        verbose_name_plural = "About"
+
+    SUBLOCATION = [(x, x) for x in ("History", "Structure","People", "Donations","Doggos")]
+
+    note_eng = models.TextField(
+        blank=True,
+        default=""
+    )
+
+    note_bg = models.TextField(
+        blank=True,
+        default=""
+    )
+
+    note_pic_1 = models.URLField(
+        max_length=300,
+        blank=True,
+        default=""
+    )
+
+    note_pic_2 = models.URLField(
+        max_length=300,
+        blank=True,
+        default=""
+    )
+
+    note_pic_4 = models.URLField(
+        max_length=300,
+        blank=True,
+        default=""
+    )
+
+    note_pic_5 = models.URLField(
+        max_length=300,
+        blank=True,
+        default=""
+    )
+
+    note_pic_6 = models.URLField(
+        max_length=300,
+        blank=True,
+        default=""
+    )
+    
+    note_pic_7 = models.URLField(
+        max_length=300,
+        blank=True,
+        default=""
+    )
+
+    note_pic_8 = models.URLField(
+        max_length=300,
+        blank=True,
+        default=""
+    )
+
+    note_pic_9 = models.URLField(
+        max_length=300,
+        blank=True,
+        default=""
+    )
+    
+    note_pic_10 = models.URLField(
+        max_length=300,
+        blank=True,
+        default=""
+    )    
+
+    order = models.IntegerField(
+        default=99
     )
