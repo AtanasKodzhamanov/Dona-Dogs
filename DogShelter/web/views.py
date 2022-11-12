@@ -23,13 +23,9 @@ def show_about(request):
     dataNoticeBoard = serializers.serialize('python', NoticeBoard.objects.all().order_by("order"))
     dataAbout = serializers.serialize('python', About.objects.all().order_by("order"))
 
-    all_fields = [f.name for f in About._meta.get_fields()]
-    images=[k for k in all_fields if 'pic' in k]
-
     context={
         "dataAbout": dataAbout,
-        "dataNoticeBoard": dataNoticeBoard,
-        "images":images
+        "dataNoticeBoard": dataNoticeBoard
     }
     return render(request, "about.html",context)
 
