@@ -158,12 +158,26 @@ margin-bottom: 10px;box-shadow: 4px 4px 4px #888888;
   padding: 1rem 1rem;
   text-align: center;
   border-radius: 10px;
+
 }
 .child {
   display: inline-block;
   background-color:#47474788;
   border: 2px  solid rgba(0, 0, 0, 0.527);
   border-radius: 15px;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   padding: 10px 10px;
   vertical-align: middle;
+  -webkit-transition-property: all; 
+    -webkit-transition-duration: 0.2s; 
+    -webkit-transition-timing-function: ease; 
+
+}
+
+.child:hover { 
+  
+  transform: scale(1.25); 
 }
