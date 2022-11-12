@@ -20,7 +20,14 @@ def show_home(request):  # dashboard
 
 
 def show_about(request):
-    return render(request, "about.html")
+    dataNoticeBoard = serializers.serialize('python', NoticeBoard.objects.all().order_by("order"))
+    dataAbout = serializers.serialize('python', About.objects.all())
+
+    context={
+        "dataAbout": dataAbout,
+        "dataNoticeBoard": dataNoticeBoard
+    }
+    return render(request, "about.html",context)
 
 
 def show_adoptions(request):

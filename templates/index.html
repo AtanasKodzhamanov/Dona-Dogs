@@ -5,12 +5,14 @@
 
 
 {% for notice in dataNoticeBoard %} 
+  {% if notice.fields.location == "Gallery" %}
   <article>
     <div ><p style="text-align:center; color:black; margin-right:200px; margin-left:200px;">
   {{notice.fields.note_eng}}
     </div></p>
   </article>
   <hr>
+  {% endif %}
 {% endfor %}
 
 <div class="wrapper">

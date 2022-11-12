@@ -1,9 +1,6 @@
 from django.db import models
 from django.utils.timezone import now
-# Create your models here.
 
-
-# [off] Искам да имам 2 езика на страницата. В момента във всеки модел имам по два fielda например name_bg, name_eng. И идеята ми беше да слагам и двете в темплате и да сменям с if then когато usera смени езика. Ама тва ми изглежда доста леймърско. Идеи?
 class People(models.Model):
 
     NAME_MAX_LENGTH = 60
@@ -348,4 +345,10 @@ class About(models.Model):
 
     order = models.IntegerField(
         default=99
+    )
+
+    section_title_eng=models.TextField(
+        max_length=100,
+        blank=True,
+        default=""
     )

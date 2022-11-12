@@ -4,7 +4,7 @@
   <!-- -->
 
 {% for notice in dataNoticeBoard %} 
-  {% if dataNoticeBoard.fields.location=="About" %}
+  {% if notice.fields.location == "About" %}
   <article>
     <div ><p style="text-align:center; color:black; margin-right:200px; margin-left:200px;">
   {{notice.fields.note_eng}}
@@ -14,6 +14,29 @@
   {% endif %}
 {% endfor %}
 
+
+{% for about in dataAbout %} 
+      
+<div class="parent">
+  <h2 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{adoption.fields.dog_name_eng}}</h2>
+
+  <div class="child">
+    <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_before}}" style="width:400px;height:auto;"/>
+  </div>
+  <div class="child">
+    <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_after_1}}" style="width:400px;height:auto;"/>
+  </div>
+  <div class="child">
+    <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_after_2}}" style="width:400px;height:auto;"/>
+  </div>
+  <br>
+  <br>
+  <div>
+    <p style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{adoption.fields.adoption_description_eng}}</p>
+  </div>
+</div>
+<hr>
+{% endfor %}
 
 
   <!-- Edit Expense Form -->
