@@ -1,8 +1,25 @@
 {% extends 'common.html' %}
 {% block page_content %}
   <!-- Edit Expense Form -->
-  <div>
-    <h1>Donations</h1>
+    <div>
+      <h1 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">Donations</h1>
+    </div>
+    <hr>
+  
+    {% for notice in dataNoticeBoard %} 
+      {% if notice.fields.location == "Donations" %}
+        <article>
+          <div ><p style="text-align:center; color:black; margin-right:200px; margin-left:200px;">
+            {{notice.fields.note_eng}}
+          </div></p>
+        </article>
+        <hr>
+      {% endif %}
+    {% endfor %}
+
+    
+
+
     <form action="https://www.paypal.com/donate" method="post" target="_top">
       <input type="hidden" name="hosted_button_id" value="N73R5EQLVP6W4" />
       <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
