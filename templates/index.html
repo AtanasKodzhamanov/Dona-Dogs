@@ -18,7 +18,7 @@
 <div class="wrapper">
  
 {% for instance in dataDogs %} 
-    <div class="panel, thumbnail"><h5>{{instance.fields.name_eng}}</h5>
+    <div class="panel, thumbnail"><h3>{{instance.fields.name_eng}}</h4>
       <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.profile_pic}}" style="width: 100%"/>
       
       {% for i in dataPeople %}

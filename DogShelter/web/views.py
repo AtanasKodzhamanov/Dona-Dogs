@@ -31,7 +31,7 @@ def show_about(request):
 
 
 def show_adoptions(request):
-    dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
+    dataDogs = serializers.serialize('python', Dog.objects.all().order_by("-adoption_year"))
     dataNoticeBoard = serializers.serialize('python', NoticeBoard.objects.all().order_by("order"))
 
     context={

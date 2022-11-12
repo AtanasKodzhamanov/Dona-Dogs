@@ -19,33 +19,32 @@
     {% for adoption in dataAdoptions %} 
       {% if adoption.fields.status == "Adopted" %}
       <div class="parent">
-        <h2 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{adoption.fields.dog_name_eng}}</h2>
-        <h3 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">Found its home in {{adoption.fields.adoption_country_eng}}</h3>
-        <h4 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{adoption.fields.adoption_year}}</h4>
+        <h2 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{adoption.fields.name_eng}} found its home in {{adoption.fields.adoption_country_eng}}</h2>
+ 
 
         <div class="child">
-          <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.profile_pic}}" style="width:400px;height:auto;"/>
+          <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.profile_pic}}" style="width:350px;height:auto;"/>
         </div>
         
         {% if adoption.fields.adoption_pic_after_1 %}
         <div class="child">
-          <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_after_1}}" style="width:400px;height:auto;"/>
+          <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_after_1}}" style="width:350px;height:auto;"/>
         </div>
         {% endif %}
         {% if adoption.fields.adoption_pic_after_2 %}
         <div class="child">
-          <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_after_2}}" style="width:400px;height:auto;"/>
+          <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_after_2}}" style="width:350px;height:auto;"/>
         </div>
         {% endif %}
         {% if adoption.fields.adoption_pic_after_3 %}
         <div class="child">
-          <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_after_3}}" style="width:400px;height:auto;"/>
+          <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_after_3}}" style="width:350px;height:auto;"/>
         </div>
         {% endif %}
         <br>
         <br>
         <div>
-          <p style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{adoption.fields.adoption_description_eng}}</p>
+          <p style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{adoption.fields.story_eng}}</p>
         </div>
       </div>
       <hr>
