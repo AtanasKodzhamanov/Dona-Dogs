@@ -2,6 +2,20 @@
 {% block page_content %}
   <!-- Edit Expense Form -->
   <div>
-    <h1>Gift adoption</h1>
+    <h1>Virtual Adoption</h1>
   </div>
+
+  {% for notice in dataNoticeBoard %} 
+  {% if notice.fields.location == "Virtual" %}
+  <article>
+    <div ><p style="text-align:center; color:black; margin-right:200px; margin-left:200px;">
+  {{notice.fields.note_eng}}
+    </div></p>
+  </article>
+  <hr>
+  {% endif %}
+{% endfor %}
+
+
+
 {% endblock %}
