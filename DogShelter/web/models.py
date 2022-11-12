@@ -279,65 +279,71 @@ class About(models.Model):
 
     SUBLOCATION = [(x, x) for x in ("History", "Structure","People", "Donations","Doggos")]
 
-    note_eng = models.TextField(
+    section_desc_eng = models.TextField(
         blank=True,
         default=""
     )
 
-    note_bg = models.TextField(
+    section_desc_bg = models.TextField(
         blank=True,
         default=""
     )
 
-    note_pic_1 = models.URLField(
+    about_pic_1 = models.URLField(
         max_length=300,
         blank=True,
         default=""
     )
 
-    note_pic_2 = models.URLField(
+    about_pic_2 = models.URLField(
         max_length=300,
         blank=True,
         default=""
     )
 
-    note_pic_4 = models.URLField(
+    about_pic_3 = models.URLField(
         max_length=300,
         blank=True,
         default=""
     )
 
-    note_pic_5 = models.URLField(
+    about_pic_4 = models.URLField(
         max_length=300,
         blank=True,
         default=""
     )
 
-    note_pic_6 = models.URLField(
-        max_length=300,
-        blank=True,
-        default=""
-    )
-    
-    note_pic_7 = models.URLField(
-        max_length=300,
-        blank=True,
-        default=""
-    )
-
-    note_pic_8 = models.URLField(
-        max_length=300,
-        blank=True,
-        default=""
-    )
-
-    note_pic_9 = models.URLField(
+    about_pic_5 = models.URLField(
         max_length=300,
         blank=True,
         default=""
     )
     
-    note_pic_10 = models.URLField(
+    about_pic_6 = models.URLField(
+        max_length=300,
+        blank=True,
+        default=""
+    )
+
+    about_pic_7 = models.URLField(
+        max_length=300,
+        blank=True,
+        default=""
+    )
+
+    about_pic_8 = models.URLField(
+        max_length=300,
+        blank=True,
+        default=""
+    )
+    
+    about_pic_9 = models.URLField(
+        max_length=300,
+        blank=True,
+        default=""
+    )    
+    
+    about_pic_10 = models.URLField(
         max_length=300,
         blank=True,
         default=""

@@ -29,7 +29,7 @@ def show_about(request):
     context={
         "dataAbout": dataAbout,
         "dataNoticeBoard": dataNoticeBoard,
-        "pictures":images
+        "images":images
     }
     return render(request, "about.html",context)
 
