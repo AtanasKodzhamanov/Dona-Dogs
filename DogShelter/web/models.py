@@ -118,13 +118,13 @@ class Dog(models.Model):
 
     adoption_country_eng = models.CharField(
         max_length=NAME_MAX_LENGTH,
-        null=True,
+        blank=True,
         default=""
     )
     
     adoption_country_bg = models.CharField(
         max_length=NAME_MAX_LENGTH,
-        null=True,
+        blank=True,
         default=""
     )
 
