@@ -277,6 +277,9 @@ class About(models.Model):
     class Meta: 
         verbose_name_plural = "About"
 
+    def __str__(self):
+        return self.section_title_eng
+
     SUBLOCATION = [(x, x) for x in ("History", "Structure","People", "Donations","Doggos")]
 
     section_desc_eng = models.TextField(
