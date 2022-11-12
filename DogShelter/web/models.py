@@ -95,7 +95,7 @@ class Dog(models.Model):
         default=""
     )
     
-    active = models.CharField(
+    status = models.CharField(
         max_length=10,
         blank=True,
         choices=STATUS,
@@ -133,6 +133,23 @@ class Dog(models.Model):
         default=0
     )
 
+    adoption_pic_after_1 = models.URLField(
+        blank=True,
+        max_length=300,
+        default=""
+    )
+
+    adoption_pic_after_2 = models.URLField(
+        blank=True,
+        max_length=300,
+        default=""
+    )
+
+    adoption_pic_after_3 = models.URLField(
+        blank=True,
+        max_length=300,
+        default=""
+    )
         
     class Meta:
         ordering = ('pk',)
