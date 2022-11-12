@@ -32,7 +32,14 @@ def show_about(request):
 
 def show_adoptions(request):
     dataAdoptions = serializers.serialize('python', Adoptions.objects.all().order_by("?"))
-    return render(request, "adoptions.html", {"dataAdoptions": dataAdoptions})
+    dataNoticeBoard = serializers.serialize('python', NoticeBoard.objects.all().order_by("order"))
+
+    context={
+        "dataAdoptions": dataAdoptions,
+        "dataNoticeBoard": dataNoticeBoard
+    }
+
+    return render(request, "adoptions.html", context)
 
 
 def show_donations(request):
