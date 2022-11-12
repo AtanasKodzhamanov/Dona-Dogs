@@ -23,9 +23,13 @@ def show_about(request):
     dataNoticeBoard = serializers.serialize('python', NoticeBoard.objects.all().order_by("order"))
     dataAbout = serializers.serialize('python', About.objects.all())
 
+    all_fields = [f.name for f in About._meta.get_fields()]
+    images=[k for k in all_fields if 'pic' in k]
+
     context={
         "dataAbout": dataAbout,
-        "dataNoticeBoard": dataNoticeBoard
+        "dataNoticeBoard": dataNoticeBoard,
+        "pictures":images
     }
     return render(request, "about.html",context)
 
@@ -63,4 +67,3 @@ def show_giftAdoption(request):
     #id=instance["fields"]["person"]
     #print(dataPeople["id"==id]["fields"]["person_name_eng"])
     #print(dataPeople)
- 

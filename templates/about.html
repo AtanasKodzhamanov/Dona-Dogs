@@ -15,11 +15,24 @@
 {% endfor %}
 
 
-{% for about in dataAbout %} 
-      
-<div class="parent">
-  <h2 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{adoption.fields.dog_name_eng}}</h2>
 
+  {% for instance in dataAbout %} 
+        
+  <div class="parent">
+    <h2 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{instance.fields.section_title_eng}}</h2>
+
+    {{instance.fields}}
+    {% for var in instance.fields %}
+    test2
+      {{var}}
+      {%  if var in images %}
+      test
+      {% endif %}
+      {% endfor %}
+  {% endfor %}
+
+
+  {% for instance in dataAbout %} 
   <div class="child">
     <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_before}}" style="width:400px;height:auto;"/>
   </div>
