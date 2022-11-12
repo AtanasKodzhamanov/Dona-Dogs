@@ -1,7 +1,7 @@
 from django.core import serializers
 from django.shortcuts import render
 
-from DogShelter.web.models import Dog, NoticeBoard, Adoptions, People, Donations, About
+from DogShelter.web.models import Dog, NoticeBoard, People, Donations, About
 
 # Create your views here.
 
@@ -31,11 +31,11 @@ def show_about(request):
 
 
 def show_adoptions(request):
-    dataAdoptions = serializers.serialize('python', Adoptions.objects.all().order_by("?"))
+    dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
     dataNoticeBoard = serializers.serialize('python', NoticeBoard.objects.all().order_by("order"))
 
     context={
-        "dataAdoptions": dataAdoptions,
+        "dataAdoptions": dataDogs,
         "dataNoticeBoard": dataNoticeBoard
     }
 

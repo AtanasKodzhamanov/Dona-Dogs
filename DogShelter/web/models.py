@@ -26,7 +26,6 @@ class People(models.Model):
         default=""
     )
     
-    
 class Dog(models.Model):
 
     NAME_MAX_LENGTH = 60
@@ -116,6 +115,24 @@ class Dog(models.Model):
         blank=True,
         default=0
     )
+
+    adoption_country_eng = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        null=True,
+        default=""
+    )
+    
+    adoption_country_bg = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        null=True,
+        default=""
+    )
+
+    adoption_year=models.IntegerField(
+        blank=True,
+        default=0
+    )
+
         
     class Meta:
         ordering = ('pk',)
@@ -199,77 +216,6 @@ class NoticeBoard(models.Model):
         blank=True,
         choices=LOCATION,
         default="Gallery"
-    )
-
-class Adoptions(models.Model):
-
-    class Meta: 
-        verbose_name_plural = "Adoptions"
-
-    NAME_MAX_LENGTH = 60
-    
-    person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default=1)
-    
-    def __str__(self):
-        return self.dog_name_eng
-    
-    dog_name_eng = models.CharField(
-        max_length=NAME_MAX_LENGTH,
-        unique=True,    
-        null=True
-    )
-    dog_name_bg = models.CharField(
-        max_length=NAME_MAX_LENGTH,
-        default=""
-    )
-    
-    adoption_country_eng = models.CharField(
-        max_length=NAME_MAX_LENGTH,
-        default=""
-    )
-    
-    adoption_country_bg = models.CharField(
-        max_length=NAME_MAX_LENGTH,
-        default=""
-    )
-
-    adoption_description_eng = models.TextField(
-        blank=True,
-        default=""
-    )
-
-    adoption_description_bg = models.TextField(
-        blank=True,
-        default=""
-    )
-
-    adoption_pic_before = models.URLField(
-        max_length=300,
-        blank=True,
-        default=""
-    )
-
-    adoption_pic_after_1 = models.URLField(
-        max_length=300,
-        blank=True,
-        default=""
-    )
-
-    adoption_pic_after_2 = models.URLField(
-        max_length=300,
-        blank=True,
-        default=""
-    )
-
-    adoption_video = models.URLField(
-        max_length=300,
-        blank=True,
-        default=""
-    )
-    
-    adoption_year=models.IntegerField(
-        blank=True,
-        default=0
     )
 
 class About(models.Model):

@@ -2,22 +2,22 @@
 {% block page_content %}
 {% load static%}
 
-  <h1 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">Adoptions</h1>
-  <hr>
-  
-  {% for notice in dataNoticeBoard %} 
-  {% if notice.fields.location == "Adoptions" %}
-  <article>
-    <div ><p style="text-align:center; color:black; margin-right:200px; margin-left:200px;">
-  {{notice.fields.note_eng}}
-    </div></p>
-  </article>
-  <hr>
-  {% endif %}
-{% endfor %}
+      <h1 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">Adoptions</h1>
+      <hr>
+      
+      {% for notice in dataNoticeBoard %} 
+      {% if notice.fields.location == "Adoptions" %}
+      <article>
+        <div ><p style="text-align:center; color:black; margin-right:200px; margin-left:200px;">
+      {{notice.fields.note_eng}}
+        </div></p>
+      </article>
+      <hr>
+      {% endif %}
+    {% endfor %}
 
     {% for adoption in dataAdoptions %} 
-      
+      {% if adoption.fields.status == "Adopted" %}
       <div class="parent">
         <h2 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{adoption.fields.dog_name_eng}}</h2>
         <h3 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">Found its home in {{adoption.fields.adoption_country_eng}}</h3>
@@ -39,6 +39,7 @@
         </div>
       </div>
       <hr>
+      {% endif %}
     {% endfor %}
 
    
