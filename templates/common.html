@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 {% load static %}
 
 <html lang="en">
@@ -6,60 +7,40 @@
     <meta charset="UTF-8">
     <title>DonaDogs</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="icon" type="image/png" href="https://helloartsy.com/wp-content/uploads/kids/dogs/how_to_draw_a_dog_face/how-to-draw-a-dog-face_step-6.jpg">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dxwb5ejff/image/upload/v1668299954/Static/tiny_icon_emlpvk.webp"> 
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-
 </head>
 
 <body>
 
 
-<!-- Navigation Bar -->
-<img src="{% static "\images\Navbar-image.jpg" %}" style="width: 100%;"/>
+  <!-- Navigation Bar -->
+  <img src="{% static "\images\Navbar-image.jpg" %}" style="width: 100%;"/>
 
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{% url 'home' %}">Gallery</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-     
+  <nav>
+    <li><a href="{% url 'home' %}">Gallery</a></li>
+    <li><a  href="{% url 'adoptions' %}">Adoptions</a></li>
+    <li><a  href="{% url 'donations' %}">Donations</a></li>
+    <li><a  href="{% url 'giftadoption' %}">Virtual Adoption</a></li>
+    <li><a  href="{% url 'about' %}">About</a></li>
+  </nav>
 
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
-        <a class="nav-item nav-link" href="{% url 'adoptions' %}">Adoptions</a>
-        <a class="nav-item nav-link" href="{% url 'donations' %}">Donations</a>
-        <a class="nav-item nav-link" href="{% url 'giftadoption' %}">Virtual Adoption</a>
-      </div>
-    </div>
-</nav>
-</body>
+  <hr>
+  
+  {% block page_content %}
+  {% endblock %}
+  <hr>
+  <br>
+  <br>
+  <br>
 
-
-<hr>
-{% block page_content %}
-{% endblock %}
-<hr>
-<br>
-<br>
-<br>
-<div id="footer" >
- 
-  <form action="https://www.paypal.com/donate" method="post" target="_top" >
-    <input type="image" src="https://pics.paypal.com/00/s/ZmJmYzIxMjItNGVmYS00ODQxLTk5M2QtMTIwY2U3MWQ4ZmQw/file.PNG" border="0" name="submit" position="top" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" style="height: 100%"/>
-    <input type="hidden" name="hosted_button_id" value="CL7UWKW3PY6M4" />
-    <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
+  <div id="footer" >
+    <form action="https://www.paypal.com/donate" method="post" target="_top" >
+      <input type="image" src="https://pics.paypal.com/00/s/ZmJmYzIxMjItNGVmYS00ODQxLTk5M2QtMTIwY2U3MWQ4ZmQw/file.PNG" border="0" name="submit" position="top" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" style="width:150px; height: 100%"/>
+      <input type="hidden" name="hosted_button_id" value="CL7UWKW3PY6M4" />
     </form>
-  </form>
-
-  <p>"Test"</p>
-    
-</div>
-
+  </div>
+</body>
 <!-- Useful resources -->
 {% comment %} 
 
