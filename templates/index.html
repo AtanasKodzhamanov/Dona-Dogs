@@ -16,12 +16,19 @@
   {% endif %}
 {% endfor %}
 
+
+
+
+
 <div class="wrapper">
  
 {% for instance in dataDogs %} 
   {% if instance.fields.status == "Active" %}
-    <div class="panel, thumbnail"><h3>{{instance.fields.name_eng}}</h4>
-      <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.profile_pic}}" style="width: 100%"/>
+    <div class="panel, thumbnail, popup" onmouseover="myFunction1(this)" onmouseout="myFunction2(this)">
+      <h3>{{instance.fields.name_eng}}</h3>
+      <span class="popuptext" id="myPopup">{{instance.fields.story_eng}}</span>
+      <img  decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.profile_pic}}" style="width: 100%"/>
+      
       {% for i in dataPeople %}
         {% if instance.fields.person == i.pk %} 
           {% if i.pk > 1 %}
@@ -33,6 +40,8 @@
       {% endfor %}
     </div>
   {% endif %}
+   
+
 
 {% endfor %}
   
