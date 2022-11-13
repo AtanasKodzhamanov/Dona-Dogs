@@ -187,8 +187,8 @@ margin-bottom: 10px;box-shadow: 2px 3px 5px 2px #888888;
   
   /*change the number below to scale to the appropriate size*/ 
   .thumbnail:hover { 
-  transform: scale(1.05); 
-  background-color: #ddd;
+    transform: translate3D(0,-1px,0) scale(1.02);
+  background-color: rgb(200, 200, 200);
   }
 
 /* Expand on hover END */
@@ -242,3 +242,4 @@ margin-bottom: 10px;box-shadow: 2px 3px 5px 2px #888888;
   z-index: 999;
 }
 /* END */
+

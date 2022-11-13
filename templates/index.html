@@ -22,7 +22,6 @@
   {% if instance.fields.status == "Active" %}
     <div class="panel, thumbnail"><h3>{{instance.fields.name_eng}}</h4>
       <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.profile_pic}}" style="width: 100%"/>
-      
       {% for i in dataPeople %}
         {% if instance.fields.person == i.pk %} 
           {% if i.pk > 1 %}
@@ -30,11 +29,11 @@
             &nbsp Virtual adoption: {{i.fields.person_name_eng}} 
           </div>
           {% endif%}
-        {% endif%}
+        {% endif%}      
       {% endfor %}
-    
     </div>
   {% endif %}
+
 {% endfor %}
   
 </div>
