@@ -11,8 +11,8 @@ class PetInlineAdmin(admin.StackedInline):
 @admin.register(Dog)
 class Dog(admin.ModelAdmin):
     readonly_fields = ('id',)
-    list_display = ["id","name_eng","person","status"]
-    list_filter = ["person","status"]
+    list_display = ["id","name_eng","person","status","story_bg"]
+    list_filter = ["person","status", "story_eng","story_bg"]
 
 @admin.register(NoticeBoard)
 class NoticeBoard(admin.ModelAdmin):
