@@ -187,15 +187,14 @@ margin-bottom: 10px;box-shadow: 2px 3px 5px 2px #888888;
   
   /*change the number below to scale to the appropriate size*/ 
   .thumbnail:hover { 
-  transform: scale(1.05); 
-  background-color: #ddd;
+    background-color: rgb(200, 200, 200);
   }
 
 /* Expand on hover END */
 
 
 .parent {
-  background-color: #f1f1f1;
+  background-color: rgb(245, 245, 245);
   border: 2px solid rgba(0, 0, 0, 0.671);
   margin-left: 2rem;
   margin-right: 2rem;
@@ -242,3 +241,54 @@ margin-bottom: 10px;box-shadow: 2px 3px 5px 2px #888888;
   z-index: 999;
 }
 /* END */
+
+/* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* .popup .hover because popup overwrittes previous one */
+
+.popup:hover { 
+  transform: scale(1.01); 
+  background-color: rgb(200, 200, 200);
+}
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: auto;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 105%;
+  
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 0.1s;
+  animation: fadeIn 0.1s
+}
+
+
+.popup .hide {
+  visibility: hidden;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 0.8;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:0.6 ;}
+}
