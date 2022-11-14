@@ -5,6 +5,8 @@ class People(models.Model):
 
     NAME_MAX_LENGTH = 60
     
+    CHOICES = [(x, x) for x in ("Y", "N")]
+
     class Meta: 
         verbose_name_plural = "People"
 
@@ -24,6 +26,13 @@ class People(models.Model):
     email_address=models.EmailField(
         blank=True,
         default=""
+    )
+
+    virtual_adopter=models.CharField(
+        max_length=2,
+        default="No",
+        choices=CHOICES,
+        blank=True
     )
     
 class Dog(models.Model):
@@ -302,3 +311,30 @@ class About(models.Model):
     )
 
 
+class Donations(models.Model):
+    person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default=1, verbose_name='Virtual Adopter')
+
+    CURRENCY=[(x, x) for x in ("EUR","BGN","GBP", "USD")]
+
+    def __str__(self):
+        return self.person
+
+    amount = models.DecimalField(
+        decimal_places=2,
+        max_digits=7,
+        blank=True,
+        default=0.00
+    )
+
+    currency = models.CharField(
+        max_length=3,
+        blank=True,
+        choices=CURRENCY,
+        default="BGN"
+    )
+
+    year_month=models.DateField(
+        blank=True,
+        default=now
+
+    )
