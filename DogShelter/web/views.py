@@ -56,13 +56,13 @@ def show_donations(request):
 
 
 def show_giftAdoption(request):
-    dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
     dataNoticeBoard = serializers.serialize('python', NoticeBoard.objects.all().order_by("order"))
-    dataPeople = serializers.serialize('python', People.objects.all())
+    dataPeople = serializers.serialize('python', People.objects.all().order_by("?"))
     
     #return list of virtual adopters
 
     context={
+        "dataPeople": dataPeople,
         "dataNoticeBoard": dataNoticeBoard
     }
 

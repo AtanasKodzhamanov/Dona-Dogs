@@ -7,7 +7,7 @@
   </div>
   <hr>
 
-  
+
 
   {% for notice in dataNoticeBoard %} 
   {% if notice.fields.location == "Virtual" %}
@@ -20,6 +20,13 @@
   {% endif %}
 {% endfor %}
 
-
+  <div style="text-align:center; ">
+    <h2>Special thanks to our virtual adopters!</h2>
+  {% for instance in dataPeople %}
+    {% if instance.fields.virtual_adopter == "Y" %}
+    <p >{{instance.fields.person_name_eng}} &nbsp<p>
+      {% endif %}
+  {% endfor %}
+</div>
 
 {% endblock %}
