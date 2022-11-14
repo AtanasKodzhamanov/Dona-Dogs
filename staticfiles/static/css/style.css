@@ -275,7 +275,8 @@ margin-bottom: 10px;box-shadow: 2px 3px 5px 2px #888888;
 .popup .show {
   visibility: visible;
   -webkit-animation: fadeIn 0.1s;
-  animation: fadeIn 0.1s
+  animation: fadeIn 0.1s;
+  z-index: 1000;
 }
 
 
