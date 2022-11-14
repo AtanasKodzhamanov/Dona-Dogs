@@ -37,7 +37,7 @@
 
 
     {% for instance in dataAbout %} 
-    {% if instance.dataAbout.location == "Donations" %}
+    {% if instance.fields.location == "Donations" %}
   <div class="parent">
     <h2 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{instance.fields.section_title_eng}}</h2>
 
