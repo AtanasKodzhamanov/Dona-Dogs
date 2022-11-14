@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 
-from DogShelter.web.models import Dog, NoticeBoard, Donations, People, About
+from DogShelter.web.models import Dog, NoticeBoard, People, About
 # Register your models here.
 
 
@@ -18,9 +18,6 @@ class Dog(admin.ModelAdmin):
 class NoticeBoard(admin.ModelAdmin):
     readonly_fields = ('id',)
 
-@admin.register(Donations)
-class Donations(admin.ModelAdmin):
-    readonly_fields = ('id',)
 
 @admin.register(People)
 class People(admin.ModelAdmin):

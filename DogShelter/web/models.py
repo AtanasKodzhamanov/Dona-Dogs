@@ -154,71 +154,7 @@ class Dog(models.Model):
     class Meta:
         ordering = ('pk',)
     
-class Donations(models.Model):
 
-    class Meta: 
-        verbose_name_plural = "Donations"
-
-    NAME_MAX_LENGTH = 60
-    CURRENCY_MAX_LENGTH = 3
-    
-    person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default=1)
-    
-    donation_description_eng = models.TextField(
-        blank=True,
-        default=""
-    )
-
-    donation_description_bg = models.TextField(
-        blank=True,
-        default=""
-    )
-
-    donation_pic_1 = models.URLField(
-        null=True,
-        max_length=300
-    )
-
-    donation_pic_2 = models.URLField(
-        max_length=300,
-        blank=True,
-        default=""
-    )
-
-    donation_pic_3 = models.URLField(
-        max_length=300,
-        blank=True,
-        default=""
-    )
-
-    donation_pic_4 = models.URLField(
-        max_length=300,
-        blank=True,
-        default=""
-    )
-
-    donation_pic_5 = models.URLField(
-        max_length=300,
-        blank=True,
-        default=""
-    )
-
-    section_title_eng=models.TextField(
-        max_length=150,
-        blank=True,
-        default=""
-    )
-
-    section_title_bg=models.TextField(
-        max_length=150,
-        blank=True,
-        default=""
-    )
-
-    order = models.IntegerField(
-        default=99
-    )
-    
 class NoticeBoard(models.Model):
 
     class Meta: 
