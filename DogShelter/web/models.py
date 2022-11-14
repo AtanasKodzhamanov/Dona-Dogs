@@ -161,23 +161,7 @@ class Donations(models.Model):
 
     NAME_MAX_LENGTH = 60
     CURRENCY_MAX_LENGTH = 3
-
-    person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default=1)
     
-    donation_pic = models.URLField(
-        null=True,
-        max_length=300
-    )
-
-    donation_amount = models.FloatField(
-        default=0
-    )
-
-    donation_currency = models.CharField(
-        max_length=CURRENCY_MAX_LENGTH,
-        default=""
-    )
-
     donation_description_eng = models.TextField(
         blank=True,
         default=""
@@ -188,8 +172,49 @@ class Donations(models.Model):
         default=""
     )
 
-    donation_date = models.DateField(
-        
+    donation_pic_1 = models.URLField(
+        null=True,
+        max_length=300
+    )
+
+    donation_pic_2 = models.URLField(
+        max_length=300,
+        blank=True,
+        default=""
+    )
+
+    donation_pic_3 = models.URLField(
+        max_length=300,
+        blank=True,
+        default=""
+    )
+
+    donation_pic_4 = models.URLField(
+        max_length=300,
+        blank=True,
+        default=""
+    )
+
+    donation_pic_5 = models.URLField(
+        max_length=300,
+        blank=True,
+        default=""
+    )
+
+    section_title_eng=models.TextField(
+        max_length=150,
+        blank=True,
+        default=""
+    )
+
+    section_title_bg=models.TextField(
+        max_length=150,
+        blank=True,
+        default=""
+    )
+
+    order = models.IntegerField(
+        default=99
     )
     
 class NoticeBoard(models.Model):
@@ -243,7 +268,14 @@ class About(models.Model):
     def __str__(self):
         return self.section_title_eng
 
-    SUBLOCATION = [(x, x) for x in ("History", "Structure","People", "Donations","Doggos")]
+    LOCATION = [(x, x) for x in ("Gallery", "About","Infirmery", "Adoptions","Virtual","Donations")]
+
+    location=models.CharField(
+        max_length=25,
+        blank=True,
+        choices=LOCATION,
+        default="Donations"
+    )
 
     section_desc_eng = models.TextField(
         blank=True,
@@ -324,3 +356,11 @@ class About(models.Model):
         blank=True,
         default=""
     )
+
+    section_title_bg=models.TextField(
+        max_length=100,
+        blank=True,
+        default=""
+    )
+
+
