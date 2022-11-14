@@ -162,6 +162,8 @@ class Donations(models.Model):
     NAME_MAX_LENGTH = 60
     CURRENCY_MAX_LENGTH = 3
     
+    person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default=1)
+    
     donation_description_eng = models.TextField(
         blank=True,
         default=""
