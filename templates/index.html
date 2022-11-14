@@ -32,8 +32,8 @@
       {% for i in dataPeople %}
         {% if instance.fields.person == i.pk %} 
           {% if i.pk > 1 %}
-        <div class="virtual-adopter-block">
-            &nbsp Virtual adoption: {{i.fields.person_name_eng}} 
+        <div class="virtual-adopter-block" style="font-size:20px; text-align:center">
+            {{i.fields.person_name_eng}} 
           </div>
           {% endif%}
         {% endif%}      

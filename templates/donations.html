@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+
 {% extends 'common.html' %}
 {% block page_content %}
   <!-- Edit Expense Form -->
@@ -6,7 +8,22 @@
       <h1 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">Donations</h1>
     </div>
     <hr>
-  
+      <p align="center">We welcome donations using the following methods below or through direct food/shtelter deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40.</p>
+    <form action="https://www.paypal.com/donate" method="post" target="_top" align="center" >
+      <input type="image" src="https://pics.paypal.com/00/s/ZmJmYzIxMjItNGVmYS00ODQxLTk5M2QtMTIwY2U3MWQ4ZmQw/file.PNG" border="0" name="submit" position="top" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" style="width:200px; height: 100%"/>
+      <input type="hidden" name="hosted_button_id" value="CL7UWKW3PY6M4" />
+    </form>
+    <br>
+
+    <p align="center"> IBAN: BG69 IABG 7096 1002 6438 01 
+      <br> BIC: IABGBGSF
+      <br> International Asset Bank
+      <br> DONA DOGS
+    </p>
+    <br>
+    <p align="center">Revolut +359 884090009</p>
+
+    <hr>
     {% for notice in dataNoticeBoard %} 
       {% if notice.fields.location == "Donations" %}
         <article>
@@ -18,17 +35,6 @@
       {% endif %}
     {% endfor %}
 
-    
-
-
-    <form action="https://www.paypal.com/donate" method="post" target="_top">
-      <input type="hidden" name="hosted_button_id" value="N73R5EQLVP6W4" />
-      <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-      <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
-    </form>
-
-    <br />
-
-    <b>Sharable link: <u>https://paypal.me/DonaDogs</u></b>
+  
   </div>
 {% endblock %}
