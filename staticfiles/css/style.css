@@ -1,41 +1,51 @@
+/* common components: body, title, paras, etc */
 body {
   margin: 25px;
-  font-family: "Avenir Next W02";
+  font-family: 'Open Sans', sans-serif;
   background-color: #ffffff;
   border: 2px solid #888888;
 }
 
-.h3,
-h3 {
-  font-size: 1.75rem;
+@media only screen and (max-width: 600px) {
+  body {
+    margin: 3px;
+  }
 }
 
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
+
+/* titles and paras */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  line-height: 1.2;
-  font-size: 2rem;
+  margin: 5px;
+  text-align: center;
+}
+
+#dogname {
+  margin: 42px;
 }
 
 p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
+  margin: 15px;
+  font-size: 21px;
+  text-align: center;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
-/* Navbar */
+@media only screen and (max-width: 600px) {
+  p {
+    margin: 5px;
+    font-size: 4vw;
+  }
+}
+
+/* navbar */
 nav {
+  display: flex;
   font-size: 1.5rem;
   list-style-type: none;
   margin: 0;
@@ -50,28 +60,90 @@ nav {
   z-index: 1000;
 }
 
-li {
-  float: left;
+@media only screen and (max-width: 600px) {
+  nav {
+    display: flex;
+    font-size: 3.5vw;
+  }
 }
 
-li a {
+
+
+nav li {
+  width: 16.666%;
+
+}
+
+nav li a {
   display: block;
   color: #666;
   text-align: center;
-  padding: 14px 16px;
+  padding: 16px 16px;
+  margin: 2px;
   text-decoration: none;
 }
 
-li a:hover:not(.active) {
-  background-color: #ddd;
+@media only screen and (max-width: 600px) {
+  nav li a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 2px;
+  }
 }
 
-li a.active {
+nav li a:hover:not(.active) {
+  background-color: #ddd;
+  color: black;
+}
+
+nav li a.active {
   color: white;
   background-color: #9c9c9c;
 }
 
 /* Navbar End */
+
+
+/* image sizing */
+#sizingGallery {
+  max-width: 100%;
+  height: auto;
+}
+
+#sizingAdoptions {
+  width: 350px;
+  height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  #sizingAdoptions {
+    width: 100%;
+  }
+}
+
+#sizingDonations {
+  width: 400px;
+  height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  #sizingDonations {
+    width: 100%;
+  }
+}
+
+#sizingPayPal {
+  width: 250px;
+  height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  #sizingPayPal {
+    width: 80%;
+  }
+}
 
 /* Images within noticeboard */
 #imgFloat {
@@ -88,8 +160,8 @@ hr {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .75), rgba(0, 0, 0, 0));
   display: block;
   unicode-bidi: isolate;
-  margin-block-start: 1em;
-  margin-block-end: 0.5em;
+  margin-block-start: 20px;
+  margin-block-end: 20px;
   margin-inline-start: auto;
   margin-inline-end: auto;
   overflow: hidden;
@@ -97,10 +169,6 @@ hr {
 
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
 
 
 /* END */
@@ -177,7 +245,7 @@ max-height: 1000px; */
   background-color: rgba(1, 82, 29, 0.925);
   color: rgb(255, 255, 255);
   width: auto;
-
+  font-size: 20px;
 }
 
 /* We need to set the margin used on flex items to 0 as we have gaps in grid.  */
@@ -197,7 +265,6 @@ max-height: 1000px; */
   left: -35px;
   display: block;
   z-index: 999;
-  cursor: pointer;
   -webkit-transition-property: all;
   -webkit-transition-duration: 0.5s;
   -webkit-transition-timing-function: ease;
@@ -269,7 +336,6 @@ max-height: 1000px; */
 .popup {
   position: relative;
   display: inline-block;
-  cursor: pointer;
 }
 
 /* .popup .hover because popup overwrittes previous one */
@@ -326,4 +392,16 @@ max-height: 1000px; */
   to {
     opacity: 0.6;
   }
+}
+
+
+#hyperlink {
+  color: rgb(109, 109, 109);
+  text-decoration: none;
+  font-size: larger;
+}
+
+#hyperlink:hover {
+  color: rgb(77, 77, 77);
+  font-weight: bold;
 }

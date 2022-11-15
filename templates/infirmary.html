@@ -8,7 +8,7 @@
     {% if notice.fields.location == 'Infirmery' %}
       <article>
         <div>
-          <p style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{ notice.fields.note_eng }}</p>
+          <p >{{ notice.fields.note_eng }}</p>
         </div>
       </article>
       <hr />
@@ -18,27 +18,27 @@
   {% for instance in dataDogs %}
     {% if instance.fields.status == 'Sick' and instance.fields.story_eng %}
       <div class="parent">
-        <h2 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{ instance.fields.name_eng }}</h2>
+        <h2>{{ instance.fields.name_eng }}</h2>
 
         <div class="child">
-          <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{ instance.fields.profile_pic }}" style="width:350px;height:auto;" />
+          <img id="sizingAdoptions" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{ instance.fields.profile_pic }}"  />
         </div>
 
         {% if instance.fields.pic_2 %}
           <div class="child">
-            <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{ instance.fields.pic_2 }}" style="width:350px;height:auto;" />
+            <img id="sizingAdoptions" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{ instance.fields.pic_2 }}"  />
           </div>
         {% endif %}
         {% if instance.fields.pic_3 %}
           <div class="child">
-            <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{ instance.fields.pic_3 }}" style="width:350px;height:auto;" />
+            <img id="sizingAdoptions" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{ instance.fields.pic_3 }}"/>
           </div>
         {% endif %}
 
         <br />
         <br />
         <div>
-          <p style="font-size: 25px; text-align:center; color:black; margin-right:200px; margin-left:200px;">{{ instance.fields.story_eng }}</p>
+          <p>{{ instance.fields.story_eng }}</p>
         </div>
       </div>
       <hr />

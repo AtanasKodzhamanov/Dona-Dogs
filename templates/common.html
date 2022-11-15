@@ -2,6 +2,14 @@
 {% load static %}
 <html lang="en">
   <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-47BM43J4MJ"></script>
     <script>
@@ -25,32 +33,37 @@
          style="border: solid 1px black;
                 width: 100%"/>
     <!-- when you fix mobile style="margin:10px; margin-left:25px; margin-right:25px;"-->
-    <nav >
-      <li>
-        <a href="{% url 'home' %}">Gallery</a>
+    <nav>
+      <li class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
+        <a href="{% url 'home' %}">Our Dogs</a>
       </li>
-      <li>
-        <a href="{% url 'infirmary' %}">Infirmary (sensitive)</a>
-      </li>
-      <li>
+      <li class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
         <a href="{% url 'adoptions' %}">Adoptions</a>
       </li>
-      <li>
-        <a href="{% url 'donations' %}">Donations</a>
-      </li>
-      <li>
+      <li class="w3-bottombar w3-hover-border-black w3-bar-item w3-mobile">
         <a href="{% url 'giftadoption' %}">Virtual Adoption</a>
       </li>
-      <li>
-        <a href="{% url 'about' %}">About</a>
+      <li  class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
+        <a href="{% url 'donations' %}">Donations</a>
       </li>
+      <li  class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
+        <a href="{% url 'about' %}">Our Story</a>
+      </li>
+      <li class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
+        <a href="{% url 'infirmary' %}">Infirmary (sensitive)</a>
+      </li>
+
     </nav>
     <hr>
     {% block page_content %}{% endblock %}
     <hr>
-    <p style="text-align:center;">
-      <a href="https://www.facebook.com/groups/2508791972666990/">Follow us on Facebook</a> for up to date information!
-    </p>
+    
+    <div style="padding:5px; width:auto; height:auto;text-align:center;">
+      <p>
+        <a id="hyperlink" href="https://www.facebook.com/groups/2508791972666990/">Follow us on Facebook for up to date information!</a> 
+      </p>
+    </div>
+
     <hr>
     <br>
     <br>
@@ -70,6 +83,9 @@
       </form>
     </div>
   </body>
+
+
+
   <!-- Useful resources -->
   {% comment %}
 https://gridbyexample.com/video/series-auto-fill-auto-fit/

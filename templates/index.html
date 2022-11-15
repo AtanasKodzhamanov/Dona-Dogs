@@ -8,9 +8,9 @@
 {% for notice in dataNoticeBoard %} 
   {% if notice.fields.location == "Gallery" %}
   <article>
-    <div ><p style="text-align:center; color:black; margin-right:200px; margin-left:200px;">
+    <p>
   {{notice.fields.note_eng}}
-    </div></p>
+    </p>
   </article>
   <hr>
   {% endif %}
@@ -22,14 +22,14 @@
 {% for instance in dataDogs %} 
   {% if instance.fields.status == "Active" %}
     <div class="panel, thumbnail, popup" onmouseover="myFunction1(this)" onmouseout="myFunction2(this)">
-      <h3>{{instance.fields.name_eng}}</h3>
+      <h2>{{instance.fields.name_eng}}</h2>
       <span class="popuptext" id="myPopup">{{instance.fields.story_eng}}</span>
-      <img  decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.profile_pic}}" style="width: 100%"/>
+      <img id="sizingGallery" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.profile_pic}}" />
       
       {% for i in dataPeople %}
         {% if instance.fields.person == i.pk %} 
           {% if i.pk > 1 %}
-        <div class="virtual-adopter-block" style="font-size:20px; text-align:center">
+        <div class="virtual-adopter-block" >
             {{i.fields.person_name_eng}} 
           </div>
           {% endif%}
