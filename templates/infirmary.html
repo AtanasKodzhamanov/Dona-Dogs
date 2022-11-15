@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% extends "common.html" %}
+
+{% block page_content %}
+{% load static %}
+
+
+{% for notice in dataNoticeBoard %} 
+  {% if notice.fields.location == "Infirmary" %}
+  <article>
+    <div ><p style="text-align:center; color:black; margin-right:200px; margin-left:200px;">
+  {{notice.fields.note_eng}}
+    </div></p>
+  </article>
+  <hr>
+  {% endif %}
+{% endfor %}
+
+
+{% for instance in dataDogs %}   
+<div class="parent">
+    {% if instance.fields.status == "Sick" %}
+
+    <h2 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{instance.fields.name_eng}}</h2>
+
+    {% if instance.fields.profile_pic %}
+    <div class="child"> <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.profile_pic}}" style="width:350px;height:auto;"/> </div>
+    {% endif %}
+    {% if instance.fields.pic_2 %}
+    <div class="child"> <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.pic_2}}" style="width:350px;height:auto;"/> </div>
+    {% endif %}
+    {% if instance.fields.pic_3 %}
+    <div class="child"> <img decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.pic_3}}" style="width:350px;height:auto;"/> </div>
+    {% endif %}
+
+    <div>
+      <p style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{instance.fields.section_desc_eng}}</p>
+    </div>
+
+  
+    {% endif %}
+      </div>
+      <hr>
+  {% endfor %}
+ 
+
+{% endblock %}
