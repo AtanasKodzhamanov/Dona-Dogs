@@ -20,7 +20,7 @@
     {% for adoption in dataAdoptions %} 
       {% if adoption.fields.status == "Adopted" %}
       <div class="parent">
-        <h2 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{adoption.fields.name_eng}} found its home in {{adoption.fields.adoption_country_eng}}</h2>
+        <h2 style="text-align:center; color:black; margin-right:200px; margin-left:200px;">{{adoption.fields.name_eng}} found {% if adoption.fields.gender == "M" %} his {% endif %} {% if adoption.fields.gender == "F" %} her {% endif %} home in {{adoption.fields.adoption_country_eng}}</h2>
  
 
         <div class="child">
