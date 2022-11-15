@@ -59,10 +59,7 @@ class Dog(models.Model):
         default=""
     )
 
-    monthly_upkeep = models.IntegerField(
-        default=0
-    )
-
+    # Chronic
     diseases = models.CharField(
         max_length=7,
         choices=Options,
@@ -104,6 +101,7 @@ class Dog(models.Model):
         default=""
     )
     
+    # If alive, adopted or sick. If alive keep in the gallery, if adopted send put it inside the adoption page, if sick put at the top of the gallery.
     status = models.CharField(
         max_length=10,
         blank=True,

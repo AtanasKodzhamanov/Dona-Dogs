@@ -18,11 +18,21 @@ def show_home(request):  # dashboard
     
     return render(request, "index.html", context)
 
+def show_infirmary(request):  # dashboard
+    dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
+    dataNoticeBoard = serializers.serialize('python', NoticeBoard.objects.all().order_by("order"))
+    
+    context={
+        "dataDogs": dataDogs,
+        "dataNoticeBoard": dataNoticeBoard
+    }
+    
+    return render(request, "infirmary.html", context)
 
 def show_about(request):
     dataNoticeBoard = serializers.serialize('python', NoticeBoard.objects.all().order_by("order"))
     dataAbout = serializers.serialize('python', About.objects.all().order_by("order"))
-
+    
     context={
         "dataAbout": dataAbout,
         "dataNoticeBoard": dataNoticeBoard
