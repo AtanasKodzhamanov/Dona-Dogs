@@ -213,7 +213,7 @@ class About(models.Model):
     def __str__(self):
         return self.section_title_eng
 
-    LOCATION = [(x, x) for x in ("Gallery", "About","Infirmery", "Adoptions","Virtual","Donations")]
+    LOCATION = [(x, x) for x in ("Gallery", "About","Infirmary", "Adoptions","Virtual","Donations")]
 
     location=models.CharField(
         max_length=25,
