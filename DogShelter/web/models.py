@@ -1,13 +1,14 @@
 from django.db import models
 from django.utils.timezone import now
 
+
 class People(models.Model):
 
     NAME_MAX_LENGTH = 60
-    
+
     CHOICES = [(x, x) for x in ("Y", "N")]
 
-    class Meta: 
+    class Meta:
         verbose_name_plural = "People"
 
     def __str__(self):
@@ -22,31 +23,33 @@ class People(models.Model):
         max_length=NAME_MAX_LENGTH,
         default=""
     )
-    
-    email_address=models.EmailField(
+
+    email_address = models.EmailField(
         blank=True,
         default=""
     )
 
-    virtual_adopter=models.CharField(
+    virtual_adopter = models.CharField(
         max_length=2,
         default="No",
         choices=CHOICES,
         blank=True
     )
-    
+
+
 class Dog(models.Model):
 
     NAME_MAX_LENGTH = 60
 
     Options = [(x, x) for x in ("Y", "N", "Unknown")]
     GENDER = [(x, x) for x in ("F", "M")]
-    STATUS = [(x, x) for x in ("Active", "Dead","Adopted", "Sick")]
+    STATUS = [(x, x) for x in ("Active", "Dead", "Adopted", "Sick")]
 
     def __str__(self):
         return self.name_eng
 
-    person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default=1, verbose_name='Virtual Adopter')
+    person = models.ForeignKey(
+        People, on_delete=models.DO_NOTHING, default=1, verbose_name='Virtual Adopter')
     # Fields(Columns)
 
     name_eng = models.CharField(
@@ -100,7 +103,7 @@ class Dog(models.Model):
         max_length=300,
         default=""
     )
-    
+
     # If alive, adopted or sick. If alive keep in the gallery, if adopted send put it inside the adoption page, if sick put at the top of the gallery.
     status = models.CharField(
         max_length=10,
@@ -117,8 +120,8 @@ class Dog(models.Model):
         blank=True,
         default=""
     )
-    
-    arrival_year=models.IntegerField(
+
+    arrival_year = models.IntegerField(
         blank=True,
         default=0
     )
@@ -128,14 +131,14 @@ class Dog(models.Model):
         blank=True,
         default=""
     )
-    
+
     adoption_country_bg = models.CharField(
         max_length=NAME_MAX_LENGTH,
         blank=True,
         default=""
     )
 
-    adoption_year=models.IntegerField(
+    adoption_year = models.IntegerField(
         blank=True,
         default=0
     )
@@ -157,20 +160,21 @@ class Dog(models.Model):
         max_length=300,
         default=""
     )
-        
+
     class Meta:
         ordering = ('pk',)
-    
+
 
 class NoticeBoard(models.Model):
 
-    class Meta: 
+    class Meta:
         verbose_name_plural = "Posts"
-        
+
     def __str__(self):
         return self.note_eng
-      
-    LOCATION = [(x, x) for x in ("Gallery", "About","Infirmery", "Adoptions","Virtual","Donations")]
+
+    LOCATION = [(x, x) for x in ("Gallery", "About", "Infirmery",
+                                 "Adoptions", "Virtual", "Donations")]
 
     note_eng = models.TextField(
         blank=True,
@@ -193,29 +197,31 @@ class NoticeBoard(models.Model):
         blank=True,
         default=""
     )
-    
+
     order = models.IntegerField(
         default=99
     )
 
-    location=models.CharField(
+    location = models.CharField(
         max_length=25,
         blank=True,
         choices=LOCATION,
         default="Gallery"
     )
 
+
 class About(models.Model):
 
-    class Meta: 
+    class Meta:
         verbose_name_plural = "About"
 
     def __str__(self):
         return self.section_title_eng
 
-    LOCATION = [(x, x) for x in ("Gallery", "About","Infirmary", "Adoptions","Virtual","Donations")]
+    LOCATION = [(x, x) for x in ("Gallery", "About", "Infirmary",
+                                 "Adoptions", "Virtual", "Donations")]
 
-    location=models.CharField(
+    location = models.CharField(
         max_length=25,
         blank=True,
         choices=LOCATION,
@@ -261,7 +267,7 @@ class About(models.Model):
         blank=True,
         default=""
     )
-    
+
     about_pic_6 = models.URLField(
         max_length=300,
         blank=True,
@@ -279,30 +285,30 @@ class About(models.Model):
         blank=True,
         default=""
     )
-    
+
     about_pic_9 = models.URLField(
         max_length=300,
         blank=True,
         default=""
-    )    
-    
+    )
+
     about_pic_10 = models.URLField(
         max_length=300,
         blank=True,
         default=""
-    )    
+    )
 
     order = models.IntegerField(
         default=99
     )
 
-    section_title_eng=models.TextField(
+    section_title_eng = models.TextField(
         max_length=100,
         blank=True,
         default=""
     )
 
-    section_title_bg=models.TextField(
+    section_title_bg = models.TextField(
         max_length=100,
         blank=True,
         default=""
@@ -310,9 +316,10 @@ class About(models.Model):
 
 
 class Donations(models.Model):
-    person=models.ForeignKey(People, on_delete=models.DO_NOTHING,default=1, verbose_name='Virtual Adopter')
+    person = models.ForeignKey(
+        People, on_delete=models.DO_NOTHING, default=1, verbose_name='Virtual Adopter')
 
-    CURRENCY=[(x, x) for x in ("EUR","BGN","GBP", "USD")]
+    CURRENCY = [(x, x) for x in ("EUR", "BGN", "GBP", "USD")]
 
     def __str__(self):
         return self.person
@@ -331,7 +338,7 @@ class Donations(models.Model):
         default="BGN"
     )
 
-    year_month=models.DateField(
+    year_month = models.DateField(
         blank=True,
         default=now
 

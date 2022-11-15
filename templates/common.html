@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
-
 <html lang="en">
-
-<head>
+  <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-47BM43J4MJ"></script>
     <script>
@@ -13,54 +11,68 @@
 
       gtag('config', 'G-47BM43J4MJ');
     </script>
-
     <meta charset="UTF-8">
     <title>DonaDogs</title>
-
-    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dxwb5ejff/image/upload/v1668299954/Static/tiny_icon_emlpvk.webp"> 
+    <link rel="icon"
+          type="image/png"
+          href="https://res.cloudinary.com/dxwb5ejff/image/upload/v1668299954/Static/tiny_icon_emlpvk.webp">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/javascript.js' %}"></script>
-</head>
-
-<body>
-
-
-  <!-- Navigation Bar -->
-  <img src="{% static "\images\Navbar-image.jpg" %}" style="border: solid 1px black; width: 100%;"/>
-
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <img src="{% static "\images\Navbar-image.jpg" %}"
+         style="border: solid 1px black;
+                width: 100%"/>
     <!-- when you fix mobile style="margin:10px; margin-left:25px; margin-right:25px;"-->
-  <nav >
-    <li><a href="{% url 'home' %}">Gallery</a></li>
-    <li><a  href="{% url 'infirmary' %}">Infirmary (sensitive)</a></li>
-    <li><a  href="{% url 'adoptions' %}">Adoptions</a></li>
-    <li><a  href="{% url 'donations' %}">Donations</a></li>
-    <li><a  href="{% url 'giftadoption' %}">Virtual Adoption</a></li>
-    <li><a  href="{% url 'about' %}">About</a></li>
-  </nav>
-  <hr>
-
-
-  {% block page_content %}
-  {% endblock %}
- 
-  <hr>
-  <p style="text-align:center;"><a href="https://www.facebook.com/groups/2508791972666990/">Follow us on Facebook</a> for up to date information!</p>
-  <hr>
-
-  <br>
-  <br>
-  <br>
-  <div id="footer" >
-    <form action="https://www.paypal.com/donate" method="post" target="_top" >
-      <input type="image" src="https://pics.paypal.com/00/s/ZmJmYzIxMjItNGVmYS00ODQxLTk5M2QtMTIwY2U3MWQ4ZmQw/file.PNG" border="0" name="submit" position="top" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" style="width:150px; height: 100%"/>
-      <input type="hidden" name="hosted_button_id" value="CL7UWKW3PY6M4" />
-    </form>
-  </div>
-</body>
-<!-- Useful resources -->
-{% comment %} 
-
+    <nav >
+      <li>
+        <a href="{% url 'home' %}">Gallery</a>
+      </li>
+      <li>
+        <a href="{% url 'infirmary' %}">Infirmary (sensitive)</a>
+      </li>
+      <li>
+        <a href="{% url 'adoptions' %}">Adoptions</a>
+      </li>
+      <li>
+        <a href="{% url 'donations' %}">Donations</a>
+      </li>
+      <li>
+        <a href="{% url 'giftadoption' %}">Virtual Adoption</a>
+      </li>
+      <li>
+        <a href="{% url 'about' %}">About</a>
+      </li>
+    </nav>
+    <hr>
+    {% block page_content %}{% endblock %}
+    <hr>
+    <p style="text-align:center;">
+      <a href="https://www.facebook.com/groups/2508791972666990/">Follow us on Facebook</a> for up to date information!
+    </p>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <div id="footer">
+      <form action="https://www.paypal.com/donate" method="post" target="_top">
+        <input type="image"
+               src="https://pics.paypal.com/00/s/ZmJmYzIxMjItNGVmYS00ODQxLTk5M2QtMTIwY2U3MWQ4ZmQw/file.PNG"
+               border="0"
+               name="submit"
+               position="top"
+               title="PayPal - The safer, easier way to pay online!"
+               alt="Donate with PayPal button"
+               style="width:150px;
+                      height: 100%"/>
+        <input type="hidden" name="hosted_button_id" value="CL7UWKW3PY6M4" />
+      </form>
+    </div>
+  </body>
+  <!-- Useful resources -->
+  {% comment %}
 https://gridbyexample.com/video/series-auto-fill-auto-fit/
 
 <div gsgid="sidebar"></div>
-{% endcomment %}
+  {% endcomment %}
