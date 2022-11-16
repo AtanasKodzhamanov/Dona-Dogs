@@ -230,7 +230,7 @@ class About(models.Model):
 
     section_desc_eng = models.TextField(
         blank=True,
-        default=""
+        default="Info coming soon..."
     )
 
     section_desc_bg = models.TextField(
