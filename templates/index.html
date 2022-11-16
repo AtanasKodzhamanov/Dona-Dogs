@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 {% extends "common.html" %}
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block page_content %}
-{% load static %}
-
 
 {% for notice in dataNoticeBoard %} 
   {% if notice.fields.location == "Gallery" %}
@@ -44,7 +45,9 @@
   
 </div>
 
+
 {% endblock %}
+
 
 <!-- Useful resources -->
 {% comment %}  

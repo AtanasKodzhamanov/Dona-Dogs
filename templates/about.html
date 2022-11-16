@@ -2,6 +2,9 @@
 {% extends 'common.html' %}
 {% block page_content %}
 
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
   <!-- -->
 
 {% for notice in dataNoticeBoard %} 
@@ -70,5 +73,5 @@
   <div>
     <p>You can find more information about the organisation's legal status <a id="hyperlink" href="https://papagal.bg/eik/206978306/9119?fbclid=IwAR0X0vECe-n7D0hUxx1w3esVKcu1UObXU823xXP3taJqtr5qDMDjHsoSY6o">here</a>.</p>
   </div>
-
+  {{LANGUAGE_CODE}}
 {% endblock %}

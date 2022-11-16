@@ -1,9 +1,12 @@
 from django.core import serializers
 from django.shortcuts import render
-
+import django.utils.translation
 from DogShelter.web.models import Dog, NoticeBoard, People, About, Donations
 
 # Create your views here.
+
+lang = django.utils.translation.get_language()
+print(lang)
 
 
 def show_home(request):  # dashboard
