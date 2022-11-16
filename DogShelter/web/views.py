@@ -45,7 +45,8 @@ def show_about(request):
 
     context = {
         "dataAbout": dataAbout,
-        "dataNoticeBoard": dataNoticeBoard
+        "dataNoticeBoard": dataNoticeBoard,
+        "lang": lang
     }
     return render(request, "about.html", context)
 
