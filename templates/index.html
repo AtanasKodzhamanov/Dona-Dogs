@@ -23,8 +23,8 @@
   {% if instance.fields.status == "Active" %}
     <div class="panel, thumbnail, popup" onmouseover="myFunction1(this)" onmouseout="myFunction2(this)">
       <h2>{{instance.fields.name_eng}}</h2>
-      <span class="popuptext" id="myPopup">{{instance.fields.story_eng}}</span>
-      <img id="sizingGallery" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.profile_pic}}" />
+      <p class="popuptext" id="myPopup">{{instance.fields.story_eng}}</p>
+      <img  id="sizingGallery" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.profile_pic}}" />
       
       {% for i in dataPeople %}
         {% if instance.fields.person == i.pk %} 
