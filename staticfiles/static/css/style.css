@@ -12,6 +12,13 @@ body {
   }
 }
 
+
+@media only screen and (max-width: 600px) {
+  #banner {
+    display: none;
+  }
+}
+
 /* titles and paras */
 h1,
 h2,
@@ -219,9 +226,8 @@ max-height: 1000px; */
   flex: 1 1 200px;
 }
 
-/*controls the dog card*/
+/*controls the dog card. Add a dog outline as a background image to make loading look better and in case links are broken have a substitute in place as a check in the template.*/
 .wrapper>* {
-
   background-color: #f2f2f2;
   color: rgb(10, 10, 46);
   border-radius: 15px;
