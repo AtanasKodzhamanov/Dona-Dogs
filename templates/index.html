@@ -49,12 +49,13 @@
         {% if instance.fields.person == i.pk %} 
           {% if i.pk > 1 %}
         <div class="virtual-adopter-block" >
-             {% trans "Virtually Adopted By" %} <br>
+             {% trans "Virtually Adopted" %} <br> 
             {% if L == "bg" %}
-            {{i.fields.person_name_bg}} 
+             {{i.fields.person_name_bg}}  
             {% else %}
-            {{i.fields.person_name_eng}} 
+             {{i.fields.person_name_eng}} 
           {% endif %}
+              
           
           </div>
           {% endif%}
