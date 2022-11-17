@@ -2,13 +2,15 @@
 
 
 {% extends 'common.html' %}
+{% load i18n %}
+{% get_current_language as L %}
 {% block page_content %}
   <!-- Edit Expense Form -->
     <div>
-      <h1>Donations</h1>
+      <h1>{% trans "Donations" %}</h1>
     </div>
     <hr>
-      <p>We welcome donations using the following methods below or through direct food/shtelter deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40.</p>
+      <p>{% trans "We welcome donations using the following methods below or through direct food or shtelter deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40." %}</p>
     <div align="center" >
       <form action="https://www.paypal.com/donate" method="post" target="_top" align="center" >
       <input id="sizingPayPal" type="image" src="https://pics.paypal.com/00/s/ZmJmYzIxMjItNGVmYS00ODQxLTk5M2QtMTIwY2U3MWQ4ZmQw/file.PNG" border="0" name="submit" position="top" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button"/>
@@ -23,15 +25,19 @@
       <br> DONA DOGS
     </p>
     <br>
-    <p>Revolut +359 884090009</p>
+    <p>Revolut: +359 884090009</p>
 
     <hr>
     {% for notice in dataNoticeBoard %} 
       {% if notice.fields.location == "Donations" %}
         <article>
           <div ><p>
+            {% if L == "bg" %}
+            {{notice.fields.note_bg}}
+            {% else %}
             {{notice.fields.note_eng}}
-          </div></p>
+          {% endif %}</p>
+          </div>
         </article>
         <hr>
       {% endif %}
@@ -41,10 +47,19 @@
     {% for instance in dataAbout %} 
     {% if instance.fields.location == "Donations" %}
   <div class="parent">
+
+    {% if L == "bg" %}
+    <h2>{{instance.fields.section_title_bg}}</h2>
+    {% else %}
     <h2>{{instance.fields.section_title_eng}}</h2>
+  {% endif %}
 
     <div>
+      {% if L == "bg" %}
+      <p>{{instance.fields.section_desc_bg}}</p>
+      {% else %}
       <p>{{instance.fields.section_desc_eng}}</p>
+    {% endif %}
     </div>
 
     {% if instance.fields.about_pic_1 %}

@@ -20,7 +20,6 @@ def show_home(request):  # dashboard
         "dataDogs": dataDogs,
         "dataNoticeBoard": dataNoticeBoard
     }
-
     return render(request, "index.html", context)
 
 

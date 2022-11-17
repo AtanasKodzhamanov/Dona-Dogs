@@ -2,8 +2,10 @@
 {% extends 'common.html' %}
 {% block page_content %}
 {% load static%}
+{% load i18n %}
+{% get_current_language as L %}
 
-      <h1>Adoptions</h1>
+      <h1>{% trans "Adoptions" %}</h1>
       <hr>
 
     
@@ -13,8 +15,12 @@
       {% if notice.fields.location == "Adoptions" %}
       <article>
         <div ><p>
-      {{notice.fields.note_eng}}
-        </div></p>
+          {% if L == "bg" %}
+          {{notice.fields.note_bg}}
+          {% else %}
+          {{notice.fields.note_eng}}
+        {% endif %}</p>
+        </div>
       </article>
       <hr>
       {% endif %}
@@ -23,8 +29,18 @@
     {% for adoption in dataAdoptions %} 
       {% if adoption.fields.status == "Adopted" %}
       <div class="parent">
-        <h2>{{adoption.fields.name_eng}} found {% if adoption.fields.gender == "M" %} his {% endif %} {% if adoption.fields.gender == "F" %} her {% endif %} home in {{adoption.fields.adoption_country_eng}}</h2>
- 
+        {% if L == "bg" %}
+        <h2>{{adoption.fields.name_bg}}</h2>
+        {% else %}
+        <h2>{{adoption.fields.name_eng}}</h2>
+      {% endif %}
+
+      {% if L == "bg" %}
+      <h3>{{adoption.fields.adoption_country_bg}}</h3>
+      {% else %}
+      <h3>{{adoption.fields.adoption_country_eng}}</h3>
+    {% endif %}
+
 
         <div class="child">
           <img id="sizingAdoptions" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.profile_pic}}" />
@@ -48,7 +64,11 @@
         <br>
         <br>
         <div>
+          {% if L == "bg" %}
+          <p>{{adoption.fields.story_bg}}</p>
+          {% else %}
           <p>{{adoption.fields.story_eng}}</p>
+        {% endif %}
         </div>
       </div>
       <hr>

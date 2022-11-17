@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 {% load static %}
 {% load i18n %}
-{% get_current_language as LANGUAGE_CODE %}
+{% get_current_language as L %}
 
-<html lang="{{LANGUAGE_CODE}}">
+<html lang="{{L}}">
   <head>
 
     <!-- W3 navbar sizing -->
@@ -40,22 +40,22 @@
     <!-- when you fix mobile style="margin:10px; margin-left:25px; margin-right:25px;"-->
     <nav>
       <li class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
-        <a href="{% url 'home' %}">Our Dogs</a>
+        <a href="{% url 'home' %}">{% trans "Our Dogs" %}</a>
       </li>
       <li class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
-        <a href="{% url 'adoptions' %}">Adoptions</a>
+        <a href="{% url 'adoptions' %}">{% trans "Adoptions" %}</a>
       </li>
       <li class="w3-bottombar w3-hover-border-black w3-bar-item w3-mobile">
-        <a href="{% url 'giftadoption' %}">Virtual Adoption</a>
+        <a href="{% url 'giftadoption' %}">{% trans "Virtual Adoption" %}</a>
       </li>
       <li  class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
-        <a href="{% url 'donations' %}">Donations</a>
+        <a href="{% url 'donations' %}">{% trans "Donations" %}</a>
       </li>
       <li  class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
-        <a href="{% url 'about' %}">Our Story</a>
+        <a href="{% url 'about' %}">{% trans "Our Story" %}</a>
       </li>
       <li class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
-        <a href="{% url 'infirmary' %}">Infirmary (sensitive)</a>
+        <a href="{% url 'infirmary' %}">{% trans "Infirmary (sensitive)" %}</a>
       </li>
 
     </nav>
@@ -65,7 +65,7 @@
     
     <div style="padding:5px; width:auto; height:auto;text-align:center;">
       <p>
-        <a id="hyperlink" href="https://www.facebook.com/groups/2508791972666990/">Follow us on Facebook for up to date information!</a> 
+        <a id="hyperlink" href="https://www.facebook.com/groups/2508791972666990/">{% trans "Follow us on Facebook for up to date information!" %}</a> 
       </p>
     </div>
 

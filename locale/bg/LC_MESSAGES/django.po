@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-17 01:45+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/about.html:87
+msgid "You can find more information about the organisation's legal status"
+msgstr "Можете да видете повече информация за легалният статус на фондацията"
+
+#: templates/about.html:88
+msgid "here"
+msgstr "тук"
+
+#: templates/adoptions.html:8 templates/common.html:46
+msgid "Adoptions"
+msgstr "Успехи"
+
+#: templates/common.html:43
+msgid "Our Dogs"
+msgstr "Кучета"
+
+#: templates/common.html:49 templates/giftadoption.html:9
+msgid "Virtual Adoption"
+msgstr "Виртуално Oсиновяване"
+
+#: templates/common.html:52 templates/donations.html:10
+msgid "Donations"
+msgstr "Дарения"
+
+#: templates/common.html:55
+msgid "Our Story"
+msgstr "История"
+
+#: templates/common.html:58
+msgid "Infirmary (sensitive)"
+msgstr "Клиника"
+
+#: templates/common.html:68
+msgid "Follow us on Facebook for up to date information!"
+msgstr "Последваите ни на Facebook за повече снимки и най-новата информация!"
+
+#: templates/donations.html:13
+msgid ""
+"We welcome donations using the following methods below or through direct "
+"food or shtelter deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40."
+msgstr ""
+"Приветстваме дарения, като използваме следните методи по-долу или чрез "
+"директни доставки на храна или подслон за Стамболийски, 4210, Васил Левски "
+"40."
+
+#: templates/giftadoption.html:31
+msgid "Special thanks to our virtual adopters!"
+msgstr "Специални благодарности на нашите виртуални осиновители!"

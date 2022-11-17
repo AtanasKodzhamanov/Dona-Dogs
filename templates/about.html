@@ -3,7 +3,7 @@
 {% block page_content %}
 
 {% load i18n %}
-{% get_current_language as LANGUAGE_CODE %}
+{% get_current_language as L %}
 
   <!-- -->
 
@@ -11,8 +11,12 @@
   {% if notice.fields.location == "About" %}
   <article>
     <div ><p>
-  {{notice.fields.note_eng}}
-    </div></p>
+  {% if L == "bg" %}
+    {{notice.fields.note_bg}}
+    {% else %}
+    {{notice.fields.note_eng}}
+  {% endif %}</p>
+    </div>
   </article>
   <hr>
   {% endif %}
@@ -23,11 +27,22 @@
   {% for instance in dataAbout %} 
     {% if instance.fields.location == "About" %}
   <div class="parent">
-    <h1>{{instance.fields.section_title_eng}}</h1>
 
+    {% if L == "bg" %}
+    <h1>{{instance.fields.section_title_bg}}</h1>
+    {% else %}
+    <h1>{{instance.fields.section_title_eng}}</h1>
+    {% endif %}
+
+  {% if L == "bg" %}
+    <div>
+      <p>{{instance.fields.section_desc_bg}}</p>
+    </div>
+    {% else %}
     <div>
       <p>{{instance.fields.section_desc_eng}}</p>
-    </div>
+    </div>   
+  {% endif %}
 
     {% if instance.fields.about_pic_1 %}
     <div class="child"> <img id="sizingAdoptions" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.about_pic_1}}" /> </div>
@@ -60,8 +75,6 @@
     <div class="child"> <img id="sizingAdoptions" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.about_pic_10}}" /> </div>
     {% endif %}
 
-
-
     
   </div>
   <hr>
@@ -71,9 +84,10 @@
 
   <!-- Edit Expense Form -->
   <div>
-    <p>You can find more information about the organisation's legal status <a id="hyperlink" href="https://papagal.bg/eik/206978306/9119?fbclid=IwAR0X0vECe-n7D0hUxx1w3esVKcu1UObXU823xXP3taJqtr5qDMDjHsoSY6o">here</a>.</p>
+    <p>{% trans "You can find more information about the organisation's legal status" %}
+      <a id="hyperlink" href="https://papagal.bg/eik/206978306/9119?fbclid=IwAR0X0vECe-n7D0hUxx1w3esVKcu1UObXU823xXP3taJqtr5qDMDjHsoSY6o">{% trans "here" %}</a>.
+    </p>
   </div>
-  {{LANGUAGE_CODE}}
-  {{ lang }}
-  
+
+  Language test: {{LANGUAGE_CODE}} {{ lang }}
 {% endblock %}

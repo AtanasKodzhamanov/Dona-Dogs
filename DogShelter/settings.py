@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
 
-    # translation, putting here based on an online comment that it should be before common and after session, to check if true
+    # translation
     'django.middleware.locale.LocaleMiddleware',
 
     'django.middleware.common.CommonMiddleware',
@@ -121,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
@@ -129,6 +129,17 @@ USE_I18N = True
 
 USE_TZ = True
 
+LANGUAGES = [
+    ("en", "English"),
+    ("bg", "Bulgarian"),
+]
+
+
+# fix paths a bit
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
+print(LOCALE_PATHS)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/

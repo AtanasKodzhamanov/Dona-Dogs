@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 {% extends 'common.html' %}
+{% load i18n %}
+{% get_current_language as L %}
 
 {% block page_content %}
   {% load static %}
@@ -7,8 +9,12 @@
   {% for notice in dataNoticeBoard %}
     {% if notice.fields.location == 'Infirmery' %}
       <article>
-        <div>
-          <p >{{ notice.fields.note_eng }}</p>
+        <div><p>
+          {% if L == "bg" %}
+          {{notice.fields.note_bg}}
+          {% else %}
+          {{notice.fields.note_eng}}
+        {% endif %}</p>
         </div>
       </article>
       <hr />
@@ -18,8 +24,13 @@
   {% for instance in dataDogs %}
     {% if instance.fields.status == 'Sick' and instance.fields.story_eng %}
       <div class="parent">
-        <h2>{{ instance.fields.name_eng }}</h2>
-
+        <h2>
+        {% if L == "bg" %}
+        {{ instance.fields.name_bg }}
+        {% else %}
+        {{ instance.fields.name_eng }}
+      {% endif %}
+      </h2>
         <div class="child">
           <img id="sizingAdoptions" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{ instance.fields.profile_pic }}"  />
         </div>
@@ -38,7 +49,13 @@
         <br />
         <br />
         <div>
-          <p>{{ instance.fields.story_eng }}</p>
+          <p>
+            {% if L == "bg" %}
+            {{ instance.fields.story_bg }}
+            {% else %}
+            {{ instance.fields.story_eng }}
+          {% endif %}
+          </p>
         </div>
       </div>
       <hr />
