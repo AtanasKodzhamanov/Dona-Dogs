@@ -88,7 +88,11 @@ def show_giftAdoption(request):
 
     # return list of virtual adopters
 
+    ip = request.META.get('REMOTE_ADDR', None)
+
     context = {
+        "ip": ip,
+
         "dataPeople": dataPeople,
         "dataNoticeBoard": dataNoticeBoard
     }
@@ -115,3 +119,10 @@ def show_giftAdoption(request):
     # id=instance["fields"]["person"]
     # print(dataPeople["id"==id]["fields"]["person_name_eng"])
     # print(dataPeople)
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+
+    else:
+        ip = request.META.get('REMOTE_ADDR')
