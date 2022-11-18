@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-18 21:15+0000\n"
+"POT-Creation-Date: 2022-11-18 23:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,29 +26,39 @@ msgstr "Можете да видете повече информация за л
 msgid "here"
 msgstr "тук"
 
-#: templates/adoptions.html:8 templates/common.html:49
-msgid "ADOPT"
+#: templates/adoptions.html:8
+#, fuzzy
+#| msgid "ADOPT"
+msgid "ADOPTIONS"
 msgstr "ОСИНОВИ"
 
-#: templates/common.html:43
+#: templates/common.html:47
 msgid "DOGS"
 msgstr "КУЧЕТА"
 
-#: templates/common.html:46
+#: templates/common.html:50
 msgid "CLINIC"
 msgstr "КЛИНИКА"
 
-#: templates/common.html:56 templates/donations.html:10
+#: templates/common.html:53
+msgid "ADOPT"
+msgstr "ОСИНОВИ"
+
+#: templates/common.html:60
 msgid "DONATE"
 msgstr "ДАРИ"
 
-#: templates/common.html:59
+#: templates/common.html:63
 msgid "ABOUT"
 msgstr "ИСТОРИЯ"
 
-#: templates/common.html:70
+#: templates/common.html:74
 msgid "Follow us on Facebook for up to date information!"
 msgstr "Последваите ни на Facebook за повече снимки и най-новата информация!"
+
+#: templates/donations.html:10
+msgid "DONATIONS"
+msgstr "ДАРЕНИЯ"
 
 #: templates/donations.html:30
 msgid "DONATION METHODS"
@@ -73,10 +83,9 @@ msgid ""
 "to 20 EUR using PayPal or ideally Revolut due to the lack of transaction "
 "fees."
 msgstr ""
-"За да станете виртуален осиновител, можете да настроите периодично плащане"
-"на стойност 20 EUR чрез PayPal или в идеалния случай Revolut поради липсата на такси."
-
-
+"За да станете виртуален осиновител, можете да настроите периодично плащанена "
+"стойност 20 EUR чрез PayPal или в идеалния случай Revolut поради липсата на "
+"такси."
 
 #: templates/donations.html:71
 msgid "Make sure to specify the name of the dog you wish to virtually adopt!"
