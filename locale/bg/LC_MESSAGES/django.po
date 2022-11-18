@@ -27,24 +27,24 @@ msgid "here"
 msgstr "тук"
 
 #: templates/adoptions.html:8 templates/common.html:49
-msgid "ADOPTIONS"
-msgstr "ОСИНОВЯВАНЕ"
+msgid "ADOPT"
+msgstr "ОСИНОВИ"
 
 #: templates/common.html:43
 msgid "DOGS"
 msgstr "КУЧЕТА"
 
 #: templates/common.html:46
-msgid "INFIRMARY"
+msgid "CLINIC"
 msgstr "КЛИНИКА"
 
 #: templates/common.html:56 templates/donations.html:10
-msgid "DONATIONS"
-msgstr "ДАРЕНИЯ"
+msgid "DONATE"
+msgstr "ДАРИ"
 
 #: templates/common.html:59
 msgid "ABOUT"
-msgstr "ЗА НАС"
+msgstr "ИСТОРИЯ"
 
 #: templates/common.html:70
 msgid "Follow us on Facebook for up to date information!"
