@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-17 04:43+0000\n"
+"POT-Creation-Date: 2022-11-18 21:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr "Можете да видете повече информация за л
 msgid "here"
 msgstr "тук"
 
-#: templates/adoptions.html:8 templates/common.html:46
+#: templates/adoptions.html:8 templates/common.html:49
 msgid "Adoptions"
 msgstr "Осиновяване"
 
@@ -34,27 +34,27 @@ msgstr "Осиновяване"
 msgid "Our Dogs"
 msgstr "Кучета"
 
-#: templates/common.html:49 templates/giftadoption.html:9
-msgid "Virtual Adoption"
-msgstr "Виртуално Oсиновяване"
-
-#: templates/common.html:52 templates/donations.html:10
-msgid "Donations"
-msgstr "Дарения"
-
-#: templates/common.html:55
-msgid "Our Story"
-msgstr "История"
-
-#: templates/common.html:58
+#: templates/common.html:46
 msgid "Infirmary"
 msgstr "Клиника"
 
-#: templates/common.html:68
+#: templates/common.html:56 templates/donations.html:10
+msgid "Donations"
+msgstr "Дарения"
+
+#: templates/common.html:59
+msgid "Our Story"
+msgstr "История"
+
+#: templates/common.html:70
 msgid "Follow us on Facebook for up to date information!"
 msgstr "Последваите ни на Facebook за повече снимки и най-новата информация!"
 
-#: templates/donations.html:13
+#: templates/donations.html:30
+msgid "Donation Methods"
+msgstr "Методи за Дарание"
+
+#: templates/donations.html:31
 msgid ""
 "We welcome donations using the following methods below or through direct "
 "food or shelter deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40."
@@ -63,7 +63,26 @@ msgstr ""
 "директни доставки на храна или подслон за Стамболийски, 4210, Васил Левски "
 "40."
 
-#: templates/giftadoption.html:31
+#: templates/donations.html:51 templates/giftadoption.html:9
+msgid "Virtual Adoption"
+msgstr "Виртуално Oсиновяване"
+
+#: templates/donations.html:70
+msgid ""
+"To become a virtual adopter, you can set up a recurring payment equivalent "
+"to 20 EUR using PayPal or ideally Revolut due to the lack of transaction "
+"fees."
+msgstr ""
+"За да станете виртуален осиновител, можете да настроите периодично плащане"
+"на стойност 20 EUR чрез PayPal или в идеалния случай Revolut поради липсата на такси."
+
+
+
+#: templates/donations.html:71
+msgid "Make sure to specify the name of the dog you wish to virtually adopt!"
+msgstr "Не забравяйте да посочите името на кучето, което искате да осиновите!"
+
+#: templates/donations.html:75 templates/giftadoption.html:31
 msgid "Special thanks to our virtual adopters!"
 msgstr "Специални благодарности на нашите виртуални осиновители!"
 

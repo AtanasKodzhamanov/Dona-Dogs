@@ -149,7 +149,7 @@ nav li a.active {
 }
 
 #sizingDonations {
-  width: 400px;
+  width: 350px;
   height: auto;
 }
 
@@ -297,15 +297,14 @@ max-height: 1000px; */
 /* content containers in About, Donations, Adoptions */
 .parent {
   background-color: rgb(245, 245, 245);
-  border: 1px solid rgba(0, 0, 0, 0.671);
+
   margin-left: 160px;
   margin-right: 160px;
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem 1rem;
   text-align: center;
-  border-radius: 10px;
-  box-shadow: 2px 2px 3px 2px #888888;
+  border-radius: 3px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -316,7 +315,7 @@ max-height: 1000px; */
 }
 
 .parent:hover {
-  box-shadow: 2px 2px 5px 2px #888888;
+  box-shadow: 1px 1px 3px 1px #888888;
 }
 
 .child {
@@ -334,6 +333,27 @@ max-height: 1000px; */
   -webkit-transition-timing-function: ease;
 
 }
+
+.childnamebox {
+  display: inline-block;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 0%;
+  border: solid black 0.5px;
+
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease;
+
+}
+
+.childnamebox:hover {
+  box-shadow: 0px 0px 0px 0px #888888;
+  transform: scale(1.05);
+}
+
 
 .child:hover {
   box-shadow: 0px 0px 0px 0px #888888;
