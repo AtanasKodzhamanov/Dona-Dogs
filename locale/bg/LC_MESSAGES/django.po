@@ -28,7 +28,7 @@ msgstr "тук"
 
 #: templates/adoptions.html:8 templates/common.html:46
 msgid "Adoptions"
-msgstr "Успехи"
+msgstr "Осиновяване"
 
 #: templates/common.html:43
 msgid "Our Dogs"
