@@ -88,8 +88,15 @@ nav {
 
 nav li {
   width: 20%;
-  padding-top: 2.5vw;
-  padding-bottom: 2.5vw;
+  padding-top: 0vw;
+  padding-bottom: 0vw;
+}
+
+@media only screen and (max-width: 900px) {
+  nav li {
+    padding-top: 2.5vw;
+    padding-bottom: 2.5vw;
+  }
 }
 
 nav li a {
