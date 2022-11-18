@@ -27,32 +27,32 @@ msgid "here"
 msgstr "тук"
 
 #: templates/adoptions.html:8 templates/common.html:49
-msgid "Adoptions"
-msgstr "Осиновяване"
+msgid "ADOPTIONS"
+msgstr "ОСИНОВЯВАНЕ"
 
 #: templates/common.html:43
-msgid "Our Dogs"
-msgstr "Кучета"
+msgid "OUR DOGS"
+msgstr "КУЧЕТА"
 
 #: templates/common.html:46
-msgid "Infirmary"
-msgstr "Клиника"
+msgid "INFIRMARY"
+msgstr "КЛИНИКА"
 
 #: templates/common.html:56 templates/donations.html:10
-msgid "Donations"
-msgstr "Дарения"
+msgid "DONATIONS"
+msgstr "ДАРЕНИЯ"
 
 #: templates/common.html:59
-msgid "Our Story"
-msgstr "История"
+msgid "OUR STORY"
+msgstr "ЗА НАС"
 
 #: templates/common.html:70
 msgid "Follow us on Facebook for up to date information!"
 msgstr "Последваите ни на Facebook за повече снимки и най-новата информация!"
 
 #: templates/donations.html:30
-msgid "Donation Methods"
-msgstr "Методи за Дарание"
+msgid "DONATION METHODS"
+msgstr "МЕТОДИ ЗА ДАРЕНИЕ"
 
 #: templates/donations.html:31
 msgid ""
@@ -64,8 +64,8 @@ msgstr ""
 "40."
 
 #: templates/donations.html:51 templates/giftadoption.html:9
-msgid "Virtual Adoption"
-msgstr "Виртуално Oсиновяване"
+msgid "VIRTUAL ADOPTION"
+msgstr "ВИРТУАЛНО ОСИНОВЯВАНЕ"
 
 #: templates/donations.html:70
 msgid ""
@@ -83,8 +83,8 @@ msgid "Make sure to specify the name of the dog you wish to virtually adopt!"
 msgstr "Не забравяйте да посочите името на кучето, което искате да осиновите!"
 
 #: templates/donations.html:75 templates/giftadoption.html:31
-msgid "Special thanks to our virtual adopters!"
-msgstr "Специални благодарности на нашите виртуални осиновители!"
+msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!"
+msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
 
 #: templates/index.html:52
 msgid "Virtually Adopted"
