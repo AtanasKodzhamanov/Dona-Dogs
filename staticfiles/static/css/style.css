@@ -81,13 +81,15 @@ nav {
 @media only screen and (max-width: 900px) {
   nav {
     display: flex;
-    font-size: 2vw;
+    font-size: 3.5vw;
+
   }
 }
 
 nav li {
   width: 20%;
-
+  padding-top: 2.5vw;
+  padding-bottom: 2.5vw;
 }
 
 nav li a {

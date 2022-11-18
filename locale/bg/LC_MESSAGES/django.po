@@ -47,7 +47,7 @@ msgid "Our Story"
 msgstr "История"
 
 #: templates/common.html:58
-msgid "Infirmary (sensitive)"
+msgid "Infirmary"
 msgstr "Клиника"
 
 #: templates/common.html:68
