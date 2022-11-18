@@ -57,7 +57,7 @@ msgstr "Последваите ни на Facebook за повече снимки
 #: templates/donations.html:13
 msgid ""
 "We welcome donations using the following methods below or through direct "
-"food or shtelter deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40."
+"food or shelter deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40."
 msgstr ""
 "Приветстваме дарения, като използваме следните методи по-долу или чрез "
 "директни доставки на храна или подслон за Стамболийски, 4210, Васил Левски "

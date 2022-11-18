@@ -41,22 +41,23 @@
     <nav>
       <li class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
         <a href="{% url 'home' %}">{% trans "Our Dogs" %}</a>
+      </li>      
+      <li class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
+        <a href="{% url 'infirmary' %}">{% trans "Infirmary (sensitive)" %}</a>
       </li>
       <li class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
         <a href="{% url 'adoptions' %}">{% trans "Adoptions" %}</a>
       </li>
-      <li class="w3-bottombar w3-hover-border-black w3-bar-item w3-mobile">
+      {% comment %} <li class="w3-bottombar w3-hover-border-black w3-bar-item w3-mobile">
         <a href="{% url 'giftadoption' %}">{% trans "Virtual Adoption" %}</a>
-      </li>
+      </li> {% endcomment %}
       <li  class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
         <a href="{% url 'donations' %}">{% trans "Donations" %}</a>
       </li>
       <li  class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
         <a href="{% url 'about' %}">{% trans "Our Story" %}</a>
       </li>
-      <li class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
-        <a href="{% url 'infirmary' %}">{% trans "Infirmary (sensitive)" %}</a>
-      </li>
+
 
     </nav>
     <hr>

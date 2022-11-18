@@ -9,25 +9,7 @@
     <div>
       <h1>{% trans "Donations" %}</h1>
     </div>
-    <hr>
-      <p>{% trans "We welcome donations using the following methods below or through direct food or shtelter deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40." %}</p>
-    <div align="center" >
-      <form action="https://www.paypal.com/donate" method="post" target="_top" align="center" >
-      <input id="sizingPayPal" type="image" src="https://pics.paypal.com/00/s/ZmJmYzIxMjItNGVmYS00ODQxLTk5M2QtMTIwY2U3MWQ4ZmQw/file.PNG" border="0" name="submit" position="top" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button"/>
-      <input type="hidden" name="hosted_button_id" value="CL7UWKW3PY6M4" />
-    </form>
-    </div>
-    <br>
 
-    <p> IBAN: BG69 IABG 7096 1002 6438 01 
-      <br> BIC: IABGBGSF
-      <br> International Asset Bank
-      <br> DONA DOGS
-    </p>
-    <br>
-    <p>Revolut: +359 884090009</p>
-
-    <hr>
     {% for notice in dataNoticeBoard %} 
       {% if notice.fields.location == "Donations" %}
         <article>
@@ -43,17 +25,73 @@
       {% endif %}
     {% endfor %}
 
+      <p>{% trans "We welcome donations using the following methods below or through direct food or shelter deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40." %}</p>
+    
+    <div align="center" >
+      <form action="https://www.paypal.com/donate" method="post" target="_top" align="center" >
+      <input id="sizingPayPal" type="image" src="https://pics.paypal.com/00/s/ZmJmYzIxMjItNGVmYS00ODQxLTk5M2QtMTIwY2U3MWQ4ZmQw/file.PNG" border="0" name="submit" position="top" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button"/>
+      <input type="hidden" name="hosted_button_id" value="CL7UWKW3PY6M4" />
+    </form>
+    </div>
 
+    <p> IBAN: BG69 IABG 7096 1002 6438 01 
+      <br> BIC: IABGBGSF
+      <br> International Asset Bank
+      <br> DONA DOGS
+      <br>
+      <br> <b>Revolut: +359 88 4090009</b></p>
+    
+    <hr>
+
+
+    <div>
+      <h2>{% trans "Virtual Adoption" %}</h2>
+    </div>
+  
+    {% for notice in dataNoticeBoard %} 
+    {% if notice.fields.location == "Virtual" %}
+    <article>
+      <div ><p>
+        {% if L == "bg" %}
+        {{notice.fields.note_bg}}
+        {% else %}
+        {{notice.fields.note_eng}}
+      {% endif %}</p>
+      </div>
+    </article>
+    <hr>
+    {% endif %}
+  {% endfor %}
+  
+    <div class="parent">
+      <h2>{% trans "Special thanks to our virtual adopters!" %}</h2>
+      <br>
+      {% for instance in dataPeople %}
+      {% if instance.fields.virtual_adopter == "Y" %}
+      <div class="child" style="border: 0px">
+      {% if L == "bg" %}
+      <p style="margin: 10px 0px 10px 0px;">{{instance.fields.person_name_bg}} &nbsp<p>
+      {% else %}
+      <p style="margin: 10px;">{{instance.fields.person_name_eng}} &nbsp<p>
+    {% endif %}
+  </div>
+        {% endif %}
+    {% endfor %}
+      <br>
+      <br>
+  </div>
+
+  <hr>
     {% for instance in dataAbout %} 
     {% if instance.fields.location == "Donations" %}
   <div class="parent">
-
+    
     {% if L == "bg" %}
     <h2>{{instance.fields.section_title_bg}}</h2>
     {% else %}
     <h2>{{instance.fields.section_title_eng}}</h2>
   {% endif %}
-
+  <br>
     <div>
       {% if L == "bg" %}
       <p>{{instance.fields.section_desc_bg}}</p>

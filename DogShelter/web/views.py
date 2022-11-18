@@ -71,8 +71,11 @@ def show_donations(request):
         'python', About.objects.all().order_by("order"))
     dataDonations = serializers.serialize(
         'python', Donations.objects.all().order_by("amount"))
+    dataPeople = serializers.serialize(
+        'python', People.objects.all().order_by("?"))
 
     context = {
+        "dataPeople": dataPeople,
         "dataAbout": dataAbout,
         "dataDonations": dataDonations,
         "dataNoticeBoard": dataNoticeBoard
@@ -88,10 +91,10 @@ def show_giftAdoption(request):
 
     # return list of virtual adopters
 
-    ip = request.META.get('REMOTE_ADDR', None)
+    #ip = request.META.get('REMOTE_ADDR', None)
 
     context = {
-        "ip": ip,
+        # "ip": ip,
 
         "dataPeople": dataPeople,
         "dataNoticeBoard": dataNoticeBoard
