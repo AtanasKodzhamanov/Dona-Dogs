@@ -31,7 +31,7 @@ msgid "ADOPTIONS"
 msgstr "ОСИНОВЯВАНЕ"
 
 #: templates/common.html:43
-msgid "OUR DOGS"
+msgid "DOGS"
 msgstr "КУЧЕТА"
 
 #: templates/common.html:46
@@ -43,7 +43,7 @@ msgid "DONATIONS"
 msgstr "ДАРЕНИЯ"
 
 #: templates/common.html:59
-msgid "OUR STORY"
+msgid "ABOUT"
 msgstr "ЗА НАС"
 
 #: templates/common.html:70
