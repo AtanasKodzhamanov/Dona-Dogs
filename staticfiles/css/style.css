@@ -206,9 +206,10 @@ hr {
 .wrapper {
   /*rmax-width: 2500px;
 max-height: 1000px; */
-  margin: 0 20px;
+  padding: 25px;
+  margin-top: 50px;
   display: grid;
-  grid-gap: 25px;
+  grid-gap: 50px;
 
 }
 
@@ -239,14 +240,12 @@ max-height: 1000px; */
 .wrapper>* {
   background-color: #f2f2f2;
   color: rgb(10, 10, 46);
-  border-radius: 15px;
+  border-radius: 0px;
   padding-bottom: 30px;
   padding-left: 0px;
   padding-right: 0px;
   text-align: center;
-  font-family: Avenir Next W02;
   margin-bottom: 10px;
-  box-shadow: 2px 2px 5px 2px #888888;
 }
 
 /*Controls image corner rounding*/
@@ -395,13 +394,13 @@ max-height: 1000px; */
 .popup {
   position: relative;
   display: inline-block;
-  border: solid 0.5px black
+  /*border: solid 0.5px black*/
 }
 
 /* .popup .hover because popup overwrittes previous one */
 .popup:hover {
   background-color: rgb(200, 200, 200);
-  box-shadow: 4px 4px 7px 2px #888888;
+  box-shadow: 1px 1px 4px 0px #888888;
 }
 
 /* The actual popup (appears on top) */
