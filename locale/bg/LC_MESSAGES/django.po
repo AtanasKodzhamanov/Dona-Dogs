@@ -48,11 +48,11 @@ msgstr "ОСИНОВИ"
 
 #: templates/common.html:60
 msgid "HELP"
-msgstr "ПОМОГНИ"
+msgstr "ДАРИ"
 
 #: templates/common.html:63
 msgid "ABOUT"
-msgstr "ИСТОРИЯ"
+msgstr "ЗА НАС"
 
 #: templates/common.html:74 templates/index.html:17
 msgid "Follow us on Facebook for up to date information!"
