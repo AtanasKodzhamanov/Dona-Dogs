@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-19 02:25+0000\n"
+"POT-Creation-Date: 2022-11-19 04:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "ABOUT US"
 msgstr "ЗА НАС"
 
-#: templates/about.html:88
+#: templates/about.html:77
 msgid "You can find more information about the organisation's legal status"
 msgstr "Можете да видете повече информация за легалният статус на фондацията"
 
-#: templates/about.html:89
+#: templates/about.html:78
 msgid "here"
 msgstr "тук"
 
@@ -38,7 +38,7 @@ msgstr "ОСИНОВЕНИ КУЧЕТА"
 msgid "DOGS"
 msgstr "КУЧЕТА"
 
-#: templates/common.html:50
+#: templates/common.html:50 templates/index.html:64 templates/infirmary.html:9
 msgid "CLINIC"
 msgstr "КЛИНИКА"
 
@@ -58,19 +58,21 @@ msgstr "ИСТОРИЯ"
 msgid "Follow us on Facebook for up to date information!"
 msgstr "Последваите ни на Facebook за повече снимки и най-новата информация!"
 
-#: templates/donations.html:10
-msgid "HELP DONADOGS"
-msgstr "ПОМОГНЕТЕ НА ДОНАДОГС"
-
-#: templates/donations.html:29 templates/giftadoption.html:31
-msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!"
-msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
-
-#: templates/donations.html:49 templates/giftadoption.html:9
+#: templates/deprecated/giftadoption.html:9 templates/donations.html:37
+#: templates/subtemplates/subdonations.html:29
 msgid "VIRTUAL ADOPTION"
 msgstr "ВИРТУАЛНО ОСИНОВЯВАНЕ"
 
-#: templates/donations.html:70
+#: templates/deprecated/giftadoption.html:31 templates/donations.html:17
+#: templates/subtemplates/subdonations.html:9
+msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!"
+msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
+
+#: templates/donations.html:9 templates/index.html:68
+msgid "HELP DONADOGS"
+msgstr "ПОМОГНЕТЕ НА ДОНАДОГС"
+
+#: templates/donations.html:58 templates/subtemplates/subdonations.html:48
 msgid ""
 "To become a virtual adopter, you can set up a recurring payment equivalent "
 "to 20 EUR using PayPal or ideally Revolut due to the lack of transaction "
@@ -80,15 +82,15 @@ msgstr ""
 "на стойност 20 EUR чрез PayPal или в идеалния случай Revolut поради липсата "
 "на такси."
 
-#: templates/donations.html:71
+#: templates/donations.html:59 templates/subtemplates/subdonations.html:49
 msgid "Make sure to specify the name of the dog you wish to virtually adopt!"
 msgstr "Не забравяйте да посочите името на кучето, което искате да осиновите!"
 
-#: templates/donations.html:77
+#: templates/donations.html:65 templates/subtemplates/subdonations.html:54
 msgid "DONATION METHODS"
 msgstr "МЕТОДИ ЗА ДАРЕНИЕ"
 
-#: templates/donations.html:78
+#: templates/donations.html:66 templates/subtemplates/subdonations.html:55
 msgid ""
 "We welcome donations using the following methods below or through direct "
 "food or shelter deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40."
@@ -101,13 +103,12 @@ msgstr ""
 msgid "DONADOGS"
 msgstr "ДОНАДОГС"
 
-#: templates/index.html:53
+#: templates/index.html:43
 msgid "Virtually Adopted"
 msgstr "Виртуално Осиновен"
 
-#: templates/infirmary.html:9
-msgid "CLINIC  "
-msgstr "КЛИНИКА"
+#~ msgid "CLINIC  "
+#~ msgstr "КЛИНИКА"
 
 #~ msgid "DONATIONS"
 #~ msgstr "ДАРЕНИЯ"
