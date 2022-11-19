@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.timezone import now
 from django.template.defaultfilters import slugify
+import datetime
 
 
 class People(models.Model):
@@ -327,11 +328,20 @@ class About(models.Model):
     )
 
 
+today = datetime.date.today()
+first = today.replace(day=1)
+last_month = first - datetime.timedelta(days=1)
+
+
 class Donations(models.Model):
+
+    class Meta:
+        verbose_name_plural = "Donations"
+
     person = models.ForeignKey(
         People, on_delete=models.DO_NOTHING, default=1, verbose_name='Donator')
 
     year_month = models.DateField(
         blank=True,
-        default=now
+        default=last_month
     )
