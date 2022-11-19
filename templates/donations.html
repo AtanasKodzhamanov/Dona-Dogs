@@ -7,7 +7,7 @@
 {% block page_content %}
   <!-- Edit Expense Form -->
     <div>
-      <h1>{% trans "DONATIONS" %}</h1>
+      <h1>{% trans "HELP DONADOGS" %}</h1>
     </div>
 
     {% for notice in dataNoticeBoard %} 
@@ -25,31 +25,31 @@
       {% endif %}
     {% endfor %}
 
-    
     <div class="parent">
-      <h2>{% trans "DONATION METHODS" %}</h2>
-      <p>{% trans "We welcome donations using the following methods below or through direct food or shelter deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40." %}</p>
+      <h2>{% trans "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!" %}</h2>
 
-      <div align="center" >
-        <form action="https://www.paypal.com/donate" method="post" target="_top" align="center" >
-        <input id="sizingPayPal" type="image" src="https://pics.paypal.com/00/s/ZmJmYzIxMjItNGVmYS00ODQxLTk5M2QtMTIwY2U3MWQ4ZmQw/file.PNG" border="0" name="submit" position="top" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button"/>
-        <input type="hidden" name="hosted_button_id" value="CL7UWKW3PY6M4" />
-      </form>
-      </div>
-
-      <p> IBAN: BG69 IABG 7096 1002 6438 01 
-        <br> BIC: IABGBGSF
-        <br> International Asset Bank
-        <br> DONA DOGS
-        <br>
-        <br> <b>Revolut: +359 88 4090009</b></p>
+      {% for instance in dataPeople %}
+        {% if instance.fields.virtual_adopter == "Y" %}
+          <div style="display: inline-block">
+            <h6>
+              {% if L == "bg" %}
+                {{instance.fields.person_name_bg}} 
+              {% else %}
+                {{instance.fields.person_name_eng}} 
+              {% endif %} 
+            </h6>
+          </div>
+        {% endif %}
+    {% endfor %}
+      <br>
     </div>
-    <hr>
 
     <div class="parent">
       <div>
         <h2>{% trans "VIRTUAL ADOPTION" %}</h2>
       </div>
+
+      
 
       {% for notice in dataNoticeBoard %} 
         {% if notice.fields.location == "Virtual" %}
@@ -68,25 +68,28 @@
 
     <div class="parent">
       <p>{% trans "To become a virtual adopter, you can set up a recurring payment equivalent to 20 EUR using PayPal or ideally Revolut due to the lack of transaction fees."%}
-      <p>{% trans "Make sure to specify the name of the dog you wish to virtually adopt!"%}
+      {% trans "Make sure to specify the name of the dog you wish to virtually adopt!"%}
     </div>
 
-    <div class="parent">
-      <h2>{% trans "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!" %}</h2>
 
-      {% for instance in dataPeople %}
-      {% if instance.fields.virtual_adopter == "Y" %}
-      <div class="childnamebox">
-      {% if L == "bg" %}
-      <p style="margin: 10px 0px 10px 0px;">{{instance.fields.person_name_bg}} &nbsp<p>
-      {% else %}
-      <p style="margin: 10px;">{{instance.fields.person_name_eng}} &nbsp<p>
-    {% endif %}
-  </div>
-        {% endif %}
-    {% endfor %}
+<hr>
+  <div class="parent">
+    <h2>{% trans "DONATION METHODS" %}</h2>
+    <p>{% trans "We welcome donations using the following methods below or through direct food or shelter deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40." %}</p>
+
+    <div align="center" >
+      <form action="https://www.paypal.com/donate" method="post" target="_top" align="center" >
+      <input id="sizingPayPal" type="image" src="https://pics.paypal.com/00/s/ZmJmYzIxMjItNGVmYS00ODQxLTk5M2QtMTIwY2U3MWQ4ZmQw/file.PNG" border="0" name="submit" position="top" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button"/>
+      <input type="hidden" name="hosted_button_id" value="CL7UWKW3PY6M4" />
+    </form>
+    </div>
+
+    <p> IBAN: BG69 IABG 7096 1002 6438 01 
+      <br> BIC: IABGBGSF
+      <br> International Asset Bank
+      <br> DONA DOGS
       <br>
-      <br>
+      <br> <b>Revolut: +359 88 4090009</b></p>
   </div>
 
   <hr>

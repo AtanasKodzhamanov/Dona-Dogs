@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-19 00:59+0000\n"
+"POT-Creation-Date: 2022-11-19 02:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,23 +59,14 @@ msgid "Follow us on Facebook for up to date information!"
 msgstr "Последваите ни на Facebook за повече снимки и най-новата информация!"
 
 #: templates/donations.html:10
-msgid "DONATIONS"
-msgstr "ДАРЕНИЯ"
+msgid "HELP DONADOGS"
+msgstr "ПОМОГНЕТЕ НА ДОНАДОГС"
 
-#: templates/donations.html:30
-msgid "DONATION METHODS"
-msgstr "МЕТОДИ ЗА ДАРЕНИЕ"
+#: templates/donations.html:29 templates/giftadoption.html:31
+msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!"
+msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
 
-#: templates/donations.html:31
-msgid ""
-"We welcome donations using the following methods below or through direct "
-"food or shelter deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40."
-msgstr ""
-"Приветстваме дарения, като използваме следните методи по-долу или чрез "
-"директни доставки на храна или подслон за Стамболийски, 4210, Васил Левски "
-"40."
-
-#: templates/donations.html:51 templates/giftadoption.html:9
+#: templates/donations.html:49 templates/giftadoption.html:9
 msgid "VIRTUAL ADOPTION"
 msgstr "ВИРТУАЛНО ОСИНОВЯВАНЕ"
 
@@ -85,17 +76,26 @@ msgid ""
 "to 20 EUR using PayPal or ideally Revolut due to the lack of transaction "
 "fees."
 msgstr ""
-"За да станете виртуален осиновител, можете да настроите периодично плащанена "
-"стойност 20 EUR чрез PayPal или в идеалния случай Revolut поради липсата на "
-"такси."
+"За да станете виртуален осиновител, можете да настроите периодично плащане "
+"на стойност 20 EUR чрез PayPal или в идеалния случай Revolut поради липсата "
+"на такси."
 
 #: templates/donations.html:71
 msgid "Make sure to specify the name of the dog you wish to virtually adopt!"
 msgstr "Не забравяйте да посочите името на кучето, което искате да осиновите!"
 
-#: templates/donations.html:75 templates/giftadoption.html:31
-msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!"
-msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
+#: templates/donations.html:77
+msgid "DONATION METHODS"
+msgstr "МЕТОДИ ЗА ДАРЕНИЕ"
+
+#: templates/donations.html:78
+msgid ""
+"We welcome donations using the following methods below or through direct "
+"food or shelter deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40."
+msgstr ""
+"Приветстваме дарения, като използваме следните методи по-долу или чрез "
+"директни доставки на храна или подслон за Стамболийски, 4210, Васил Левски "
+"40."
 
 #: templates/index.html:8
 msgid "DONADOGS"
@@ -108,3 +108,6 @@ msgstr "Виртуално Осиновен"
 #: templates/infirmary.html:9
 msgid "CLINIC  "
 msgstr "КЛИНИКА"
+
+#~ msgid "DONATIONS"
+#~ msgstr "ДАРЕНИЯ"

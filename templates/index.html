@@ -28,7 +28,7 @@
 {% for instance in dataDogs %} 
   {% if instance.fields.status == "Active" %}
     <div class="panel, thumbnail, popup" onmouseover="myFunction1(this)" onmouseout="myFunction2(this)">
-
+  
       <h2>
         {% if L == "bg" %}
         {{instance.fields.name_bg}}
