@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-19 04:59+0000\n"
+"POT-Creation-Date: 2022-11-19 07:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,27 +34,31 @@ msgstr "тук"
 msgid "ADOPTIONS"
 msgstr "ОСИНОВЕНИ КУЧЕТА"
 
-#: templates/common.html:47
+#: templates/common.html:33
+msgid "description"
+msgstr ""
+
+#: templates/common.html:48
 msgid "DOGS"
 msgstr "КУЧЕТА"
 
-#: templates/common.html:50 templates/index.html:72 templates/infirmary.html:9
+#: templates/common.html:51 templates/index.html:72 templates/infirmary.html:9
 msgid "CLINIC"
 msgstr "КЛИНИКА"
 
-#: templates/common.html:53
-msgid "ADOPT"
-msgstr "ОСИНОВИ"
-
-#: templates/common.html:60
+#: templates/common.html:54
 msgid "HELP"
 msgstr "ДАРИ"
 
-#: templates/common.html:63
+#: templates/common.html:57
+msgid "ADOPT"
+msgstr "ОСИНОВИ"
+
+#: templates/common.html:65
 msgid "ABOUT"
 msgstr "ЗА НАС"
 
-#: templates/common.html:74 templates/index.html:17
+#: templates/common.html:76 templates/index.html:17
 msgid "Follow us on Facebook for up to date information!"
 msgstr "Последваите ни на Facebook за повече снимки и най-новата информация!"
 
