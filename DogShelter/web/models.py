@@ -329,29 +329,12 @@ class About(models.Model):
 
 class Donations(models.Model):
     person = models.ForeignKey(
-        People, on_delete=models.DO_NOTHING, default=1, verbose_name='Virtual Adopter')
-
-    CURRENCY = [(x, x) for x in ("EUR", "BGN", "GBP", "USD")]
+        People, on_delete=models.DO_NOTHING, default=1, verbose_name='Donator')
 
     def __str__(self):
         return self.person
 
-    amount = models.DecimalField(
-        decimal_places=2,
-        max_digits=7,
-        blank=True,
-        default=0.00
-    )
-
-    currency = models.CharField(
-        max_length=3,
-        blank=True,
-        choices=CURRENCY,
-        default="BGN"
-    )
-
     year_month = models.DateField(
         blank=True,
         default=now
-
     )
