@@ -339,7 +339,7 @@ class Donations(models.Model):
         verbose_name_plural = "Donations"
 
     def __str__(self):
-        return "--".format(self.person.person_name_eng, self.date)
+        return "--".format(self.person, self.date)
 
     person = models.ForeignKey(
         People, on_delete=models.DO_NOTHING, default=1, verbose_name='Donator')
