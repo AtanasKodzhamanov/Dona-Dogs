@@ -47,8 +47,8 @@ msgid "ADOPT"
 msgstr "ОСИНОВИ"
 
 #: templates/common.html:60
-msgid "DONATE"
-msgstr "ДАРИ"
+msgid "HELP"
+msgstr "ПОМОГНИ"
 
 #: templates/common.html:63
 msgid "ABOUT"
