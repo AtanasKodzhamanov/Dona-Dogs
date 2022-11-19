@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.timezone import now
+from django.template.defaultfilters import slugify
 
 
 class People(models.Model):
@@ -161,8 +162,19 @@ class Dog(models.Model):
         default=""
     )
 
+    # slug = models.SlugField(
+    #     null=False,
+    #     blank=True
+    # )
+
+    # def save(self, *args, **kwargs):
+    #     super().save(*args, **kwargs)
+    #     if not self.slug:
+    #         self.slug = slugify(f"{self.name_eng}--{self.pk}")
+    #     return super().save(*args, **kwargs)
+
     class Meta:
-        ordering = ('pk',)
+        ordering = ('-pk',)
 
 
 class NoticeBoard(models.Model):
