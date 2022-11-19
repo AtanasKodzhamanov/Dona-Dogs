@@ -48,7 +48,7 @@ msgstr "ОСИНОВИ"
 
 #: templates/common.html:60
 msgid "HELP"
-msgstr "ПОМОЩ"
+msgstr "ДАРИ"
 
 #: templates/common.html:63
 msgid "ABOUT"
