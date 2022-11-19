@@ -338,10 +338,13 @@ class Donations(models.Model):
     class Meta:
         verbose_name_plural = "Donations"
 
+    def __str__(self):
+        return "--".format(self.person.person_name_eng, self.date)
+
     person = models.ForeignKey(
         People, on_delete=models.DO_NOTHING, default=1, verbose_name='Donator')
 
-    year_month = models.DateField(
+    date = models.DateField(
         blank=True,
         default=last_month
     )

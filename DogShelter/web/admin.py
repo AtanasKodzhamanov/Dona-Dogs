@@ -35,3 +35,4 @@ class About(admin.ModelAdmin):
 @admin.register(Donations)
 class Donations(admin.ModelAdmin):
     readonly_fields = ('id',)
+    list_display = ["person", "date"]
