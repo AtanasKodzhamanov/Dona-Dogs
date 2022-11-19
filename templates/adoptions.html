@@ -8,23 +8,9 @@
       <h1>{% trans "ADOPTIONS" %}</h1>
       <hr>
 
-    
-
-      
-      {% for notice in dataNoticeBoard %} 
-      {% if notice.fields.location == "Adoptions" %}
-      <article>
-        <div ><p>
-          {% if L == "bg" %}
-          {{notice.fields.note_bg}}
-          {% else %}
-          {{notice.fields.note_eng}}
-        {% endif %}</p>
-        </div>
-      </article>
-      <hr>
-      {% endif %}
-    {% endfor %}
+      {% with location="Adoptions" %}   
+      {% include "subtemplates/noticeboard.html" %}     
+    {% endwith %}
 
     {% for adoption in dataAdoptions %} 
       {% if adoption.fields.status == "Adopted" %}

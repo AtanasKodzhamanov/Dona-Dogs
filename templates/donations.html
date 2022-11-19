@@ -6,24 +6,12 @@
 {% get_current_language as L %}
 {% block page_content %}
   <!-- Edit Expense Form -->
-    <div>
       <h1>{% trans "HELP DONADOGS" %}</h1>
-    </div>
+    <hr>
 
-    {% for notice in dataNoticeBoard %} 
-      {% if notice.fields.location == "Donations" %}
-        <article>
-          <div ><p>
-            {% if L == "bg" %}
-            {{notice.fields.note_bg}}
-            {% else %}
-            {{notice.fields.note_eng}}
-          {% endif %}</p>
-          </div>
-        </article>
-        <hr>
-      {% endif %}
-    {% endfor %}
+    {% with location="Donations" %}   
+    {% include "subtemplates/noticeboard.html" %}     
+  {% endwith %}
 
     <div class="parent">
       <h2>{% trans "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!" %}</h2>

@@ -8,21 +8,10 @@
   <!-- -->
   <h1>{% trans "ABOUT US" %}</h1>
   <hr>
-{% for notice in dataNoticeBoard %} 
-  {% if notice.fields.location == "About" %}
-  <article>
-    <div ><p>
-  {% if L == "bg" %}
-    {{notice.fields.note_bg}}
-    {% else %}
-    {{notice.fields.note_eng}}
-  {% endif %}</p>
-    </div>
-  </article>
-  <hr>
-  {% endif %}
-{% endfor %}
 
+  {% with location="About" %}   
+  {% include "subtemplates/noticeboard.html" %}     
+{% endwith %}
 
 
   {% for instance in dataAbout %} 

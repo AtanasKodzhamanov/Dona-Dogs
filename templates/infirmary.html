@@ -6,62 +6,13 @@
 {% block page_content %}
   {% load static %}
 
-  <h1>{% trans "CLINIC  " %}</h1>
+  <h1>{% trans "CLINIC" %}</h1>
   <hr>
 
-  {% for notice in dataNoticeBoard %}
-    {% if notice.fields.location == 'Infirmery' %}
-      <article>
-        <div><p>
-          {% if L == "bg" %}
-          {{notice.fields.note_bg}}
-          {% else %}
-          {{notice.fields.note_eng}}
-        {% endif %}</p>
-        </div>
-      </article>
-      <hr />
-    {% endif %}
-  {% endfor %}
+  {% with location="Infirmery" %}   
+    {% include "subtemplates/noticeboard.html" %}     
+  {% endwith %}
 
-  {% for instance in dataDogs %}
-    {% if instance.fields.status == 'Sick' and instance.fields.story_eng %}
-      <div class="parent">
-        <h2>
-        {% if L == "bg" %}
-        {{ instance.fields.name_bg }}
-        {% else %}
-        {{ instance.fields.name_eng }}
-      {% endif %}
-      </h2>
-        <div class="child">
-          <img id="sizingAdoptions" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{ instance.fields.profile_pic }}"  />
-        </div>
+  {% include "subtemplates/subinfirmary.html" %}     
 
-        {% if instance.fields.pic_2 %}
-          <div class="child">
-            <img id="sizingAdoptions" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{ instance.fields.pic_2 }}"  />
-          </div>
-        {% endif %}
-        {% if instance.fields.pic_3 %}
-          <div class="child">
-            <img id="sizingAdoptions" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{ instance.fields.pic_3 }}"/>
-          </div>
-        {% endif %}
-
-        <br />
-        <br />
-        <div>
-          <p>
-            {% if L == "bg" %}
-            {{ instance.fields.story_bg }}
-            {% else %}
-            {{ instance.fields.story_eng }}
-          {% endif %}
-          </p>
-        </div>
-      </div>
-      <hr />
-    {% endif %}
-  {% endfor %}
 {% endblock %}

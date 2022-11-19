@@ -7,20 +7,10 @@
 {% block page_content %}
 <h1>{% trans "DONADOGS" %}</h1>
 <hr>
-{% for notice in dataNoticeBoard %} 
-  {% if notice.fields.location == "Gallery" %}
-  <article>
-    <p>
-      {% if L == "bg" %}
-      {{notice.fields.note_bg}}
-      {% else %}
-      {{notice.fields.note_eng}}
-    {% endif %}
-    </p>
-  </article>
-  <hr>
-  {% endif %}
-{% endfor %}
+
+{% with location="Gallery" %}   
+  {% include "subtemplates/noticeboard.html" %}     
+{% endwith %}
 
 
 <div class="wrapper">
@@ -70,8 +60,13 @@
 {% endfor %}
   
 </div>
-
-
+<hr>
+<h1>{% trans "CLINIC" %}</h1>
+<hr>
+{% include "subtemplates/subinfirmary.html" %}
+<hr>
+<h1>{% trans "HELP DONADOGS" %}</h1>
+{% include "subtemplates/subdonations.html" %}
 {% endblock %}
 
 

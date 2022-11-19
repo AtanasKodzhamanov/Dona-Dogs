@@ -8,24 +8,28 @@ from DogShelter.web.models import Dog, NoticeBoard, People, About, Donations
 class PetInlineAdmin(admin.StackedInline):
     model = Dog
 
+
 @admin.register(Dog)
 class Dog(admin.ModelAdmin):
     readonly_fields = ('id',)
-    list_display = ["id","name_eng","person","status","story_bg"]
-    list_filter = ["person","status", "story_eng","story_bg"]
+    list_display = ["id", "name_eng", "person", "status", "story_bg"]
+    list_filter = ["person", "status", "story_eng", "story_bg"]
+
 
 @admin.register(NoticeBoard)
 class NoticeBoard(admin.ModelAdmin):
-    readonly_fields = ('id',)
+    readonly_fields = ('id', "location")
 
 
 @admin.register(People)
 class People(admin.ModelAdmin):
     readonly_fields = ('id',)
 
+
 @admin.register(About)
 class About(admin.ModelAdmin):
     readonly_fields = ('id',)
+
 
 @admin.register(Donations)
 class Donations(admin.ModelAdmin):
