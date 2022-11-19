@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-19 04:21+0000\n"
+"POT-Creation-Date: 2022-11-19 04:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgstr "ОСИНОВЕНИ КУЧЕТА"
 msgid "DOGS"
 msgstr "КУЧЕТА"
 
-#: templates/common.html:50 templates/index.html:64 templates/infirmary.html:9
+#: templates/common.html:50 templates/index.html:72 templates/infirmary.html:9
 msgid "CLINIC"
 msgstr "КЛИНИКА"
 
@@ -54,7 +54,7 @@ msgstr "ПОМОГНИ"
 msgid "ABOUT"
 msgstr "ИСТОРИЯ"
 
-#: templates/common.html:74
+#: templates/common.html:74 templates/index.html:17
 msgid "Follow us on Facebook for up to date information!"
 msgstr "Последваите ни на Facebook за повече снимки и най-новата информация!"
 
@@ -68,7 +68,7 @@ msgstr "ВИРТУАЛНО ОСИНОВЯВАНЕ"
 msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!"
 msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
 
-#: templates/donations.html:9 templates/index.html:68
+#: templates/donations.html:9 templates/index.html:76
 msgid "HELP DONADOGS"
 msgstr "ПОМОГНЕТЕ НА ДОНАДОГС"
 
@@ -103,7 +103,11 @@ msgstr ""
 msgid "DONADOGS"
 msgstr "ДОНАДОГС"
 
-#: templates/index.html:43
+#: templates/index.html:22
+msgid "OUR DOGS"
+msgstr "НАШИТЕ КУЧЕТА"
+
+#: templates/index.html:51
 msgid "Virtually Adopted"
 msgstr "Виртуално Осиновен"
 
