@@ -19,7 +19,7 @@ class Dog(admin.ModelAdmin):
 @admin.register(NoticeBoard)
 class NoticeBoard(admin.ModelAdmin):
     readonly_fields = ('id',)
-    list_display = ["location"]
+    list_display = ["location", "note_bg"]
 
 
 @admin.register(People)
