@@ -331,9 +331,6 @@ class Donations(models.Model):
     person = models.ForeignKey(
         People, on_delete=models.DO_NOTHING, default=1, verbose_name='Donator')
 
-    def __str__(self):
-        return self.person
-
     year_month = models.DateField(
         blank=True,
         default=now
