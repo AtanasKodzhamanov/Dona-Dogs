@@ -6,7 +6,8 @@
 {% get_current_language as L %}
 
   <!-- -->
-
+  <h1>{% trans "ABOUT US" %}</h1>
+  <hr>
 {% for notice in dataNoticeBoard %} 
   {% if notice.fields.location == "About" %}
   <article>

@@ -6,6 +6,9 @@
 {% block page_content %}
   {% load static %}
 
+  <h1>{% trans "CLINIC  " %}</h1>
+  <hr>
+
   {% for notice in dataNoticeBoard %}
     {% if notice.fields.location == 'Infirmery' %}
       <article>

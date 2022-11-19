@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-18 23:15+0000\n"
+"POT-Creation-Date: 2022-11-19 00:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,19 +18,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/about.html:87
+#: templates/about.html:9
+msgid "ABOUT US"
+msgstr "ЗА НАС"
+
+#: templates/about.html:88
 msgid "You can find more information about the organisation's legal status"
 msgstr "Можете да видете повече информация за легалният статус на фондацията"
 
-#: templates/about.html:88
+#: templates/about.html:89
 msgid "here"
 msgstr "тук"
 
 #: templates/adoptions.html:8
-#, fuzzy
-#| msgid "ADOPT"
 msgid "ADOPTIONS"
-msgstr "ОСИНОВИ"
+msgstr "ОСИНОВЕНИ КУЧЕТА"
 
 #: templates/common.html:47
 msgid "DOGS"
@@ -95,6 +97,14 @@ msgstr "Не забравяйте да посочите името на куче
 msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!"
 msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
 
-#: templates/index.html:52
+#: templates/index.html:8
+msgid "DONADOGS"
+msgstr "ДОНАДОГС"
+
+#: templates/index.html:53
 msgid "Virtually Adopted"
 msgstr "Виртуално Осиновен"
+
+#: templates/infirmary.html:9
+msgid "CLINIC  "
+msgstr "КЛИНИКА"
