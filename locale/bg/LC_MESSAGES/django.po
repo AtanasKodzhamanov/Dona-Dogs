@@ -60,7 +60,7 @@ msgstr "ЗА НАС"
 
 #: templates/common.html:76 templates/index.html:17
 msgid "Follow us on Facebook for up to date information!"
-msgstr "Последваите ни на Facebook за повече снимки и най-новата информация!"
+msgstr "Последвайте ни на Facebook за повече снимки и най-новата информация!"
 
 #: templates/deprecated/giftadoption.html:9 templates/donations.html:37
 #: templates/subtemplates/subdonations.html:29
