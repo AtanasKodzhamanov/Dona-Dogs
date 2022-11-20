@@ -2,7 +2,7 @@ import datetime
 from django.core import serializers
 from django.shortcuts import render
 import django.utils.translation
-from DogShelter.web.models import Dog, NoticeBoard, About
+from DogShelter.web.models import Dog, NoticeBoard, About, Donation
 from django.forms.models import model_to_dict
 
 # Create your views here.
@@ -78,17 +78,25 @@ def show_donations(request):
 
     dataPeople = set(Dog.objects.values_list(
         "va_name_bg", "va_name_eng").exclude(va_name_eng=""))
-    print(dataPeople)
 
     today = datetime.date.today()
     first = today.replace(day=1)
     last_month = first - datetime.timedelta(days=1)
+    #last_month_cl = last_month.strftime('%B')
+   # last_month_cl = "".format(last_month.strftime('%m'))
+    month = last_month.strftime('%m')
+    year = last_month.strftime('%Y')
+    last_month_cl = "("+month + " - " + year + ")"
+
+    dataDonations = set(Donation.objects.values_list(
+        "person_name_bg", "person_name_eng").filter(date=last_month).order_by("person_name_bg"))
 
     context = {
         "last_month": last_month,
         "dataPeople": dataPeople,
         "dataAbout": dataAbout,
-
+        "month": last_month_cl,
+        "dataDonations": dataDonations,
         "dataNoticeBoard": dataNoticeBoard
     }
     return render(request, "donations.html", context)
@@ -140,3 +148,9 @@ def show_giftAdoption(request):
 
     else:
         ip = request.META.get('REMOTE_ADDR')
+
+
+today = datetime.date.today()
+first = today.replace(day=1)
+last_month = first - datetime.timedelta(days=1)
+last_month_cl = last_month.strftime('%B')

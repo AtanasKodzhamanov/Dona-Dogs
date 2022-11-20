@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-19 07:42+0000\n"
+"POT-Creation-Date: 2022-11-20 03:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,49 +34,49 @@ msgstr "тук"
 msgid "ADOPTIONS"
 msgstr "ОСИНОВЕНИ КУЧЕТА"
 
-#: templates/common.html:33
-msgid "description"
-msgstr ""
-
-#: templates/common.html:48
+#: templates/common.html:52
 msgid "DOGS"
 msgstr "КУЧЕТА"
 
-#: templates/common.html:51 templates/index.html:72 templates/infirmary.html:9
+#: templates/common.html:55 templates/index.html:66 templates/index2.html:60
+#: templates/infirmary.html:9
 msgid "CLINIC"
 msgstr "КЛИНИКА"
 
-#: templates/common.html:54
+#: templates/common.html:58
 msgid "HELP"
 msgstr "ДАРИ"
 
-#: templates/common.html:57
+#: templates/common.html:61
 msgid "ADOPT"
 msgstr "ОСИНОВИ"
 
-#: templates/common.html:65
+#: templates/common.html:69
 msgid "ABOUT"
 msgstr "ЗА НАС"
 
-#: templates/common.html:76 templates/index.html:17
+#: templates/common.html:80 templates/index.html:17 templates/index2.html:20
 msgid "Follow us on Facebook for up to date information!"
 msgstr "Последвайте ни на Facebook за повече снимки и най-новата информация!"
 
-#: templates/deprecated/giftadoption.html:9 templates/donations.html:37
-#: templates/subtemplates/subdonations.html:29
+#: templates/deprecated/giftadoption.html:9 templates/donations.html:40
+#: templates/subtemplates/subdonations.html:11
 msgid "VIRTUAL ADOPTION"
 msgstr "ВИРТУАЛНО ОСИНОВЯВАНЕ"
 
-#: templates/deprecated/giftadoption.html:31 templates/donations.html:17
-#: templates/subtemplates/subdonations.html:9
+#: templates/deprecated/giftadoption.html:31
 msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!"
 msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
 
-#: templates/donations.html:9 templates/index.html:76
+#: templates/donations.html:9 templates/index.html:70 templates/index2.html:64
 msgid "HELP DONADOGS"
 msgstr "ПОМОГНЕТЕ НА ДОНАДОГС"
 
-#: templates/donations.html:58 templates/subtemplates/subdonations.html:48
+#: templates/donations.html:19
+msgid "WE THANK YOU ALL FOR SUPPORTING US"
+msgstr "БЛАГОДАРИМ ЗА ВАШАТА ПОДКРЕПА"
+
+#: templates/donations.html:61 templates/subtemplates/subdonations.html:30
 msgid ""
 "To become a virtual adopter, you can set up a recurring payment equivalent "
 "to 20 EUR using PayPal or ideally Revolut due to the lack of transaction "
@@ -86,15 +86,21 @@ msgstr ""
 "на стойност 20 EUR чрез PayPal или в идеалния случай Revolut поради липсата "
 "на такси."
 
-#: templates/donations.html:59 templates/subtemplates/subdonations.html:49
+#: templates/donations.html:62 templates/subtemplates/subdonations.html:31
 msgid "Make sure to specify the name of the dog you wish to virtually adopt!"
 msgstr "Не забравяйте да посочите името на кучето, което искате да осиновите!"
 
-#: templates/donations.html:65 templates/subtemplates/subdonations.html:54
+#: templates/donations.html:66
+#, fuzzy
+#| msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!"
+msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS"
+msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
+
+#: templates/donations.html:89 templates/subtemplates/subdonations.html:36
 msgid "DONATION METHODS"
 msgstr "МЕТОДИ ЗА ДАРЕНИЕ"
 
-#: templates/donations.html:66 templates/subtemplates/subdonations.html:55
+#: templates/donations.html:90 templates/subtemplates/subdonations.html:37
 msgid ""
 "We welcome donations using the following methods below or through direct "
 "food or shelter deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40."
@@ -103,15 +109,15 @@ msgstr ""
 "директни доставки на храна или подслон за Стамболийски, 4210, Васил Левски "
 "40."
 
-#: templates/index.html:8
+#: templates/index.html:8 templates/index2.html:8
 msgid "DONADOGS"
 msgstr "ДОНАДОГС"
 
-#: templates/index.html:22
+#: templates/index.html:22 templates/index2.html:25
 msgid "OUR DOGS"
 msgstr "НАШИТЕ КУЧЕТА"
 
-#: templates/index.html:51
+#: templates/index.html:49
 msgid "Virtually Adopted"
 msgstr "Виртуално Осиновен"
 

@@ -9,29 +9,17 @@
       <h1>{% trans "HELP DONADOGS" %}</h1>
     <hr>
 
-    {% for instance in dataDonations %}
-   
-      <div style="display: inline-block">
-        <h6>
-          {% if L == "bg" %}
-            {{instance.fields.date}} 
-          {% else %}
-            {{instance.fields.date}} 
-          {% endif %} 
-        </h6>
-      </div>
-   
-    {% endfor %}
+
 
     {% with location="Donations" %}   
     {% include "subtemplates/noticeboard.html" %}     
   {% endwith %}
 
     <div class="parent">
-      <h2>{% trans "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!" %}</h2>
+      <h2>{% trans "WE THANK YOU ALL FOR SUPPORTING US" %}</h2>
+      <h4>{{ month }}</h4>
 
-      {% for instance in dataPeople %}
-        {% if instance.0 %}
+      {% for instance in dataDonations %}
           <div style="display: inline-block">
             <h6>
               {% if L == "bg" %}
@@ -41,10 +29,11 @@
               {% endif %} 
             </h6>
           </div>
-        {% endif %}
       {% endfor %}
       <br>
     </div>
+
+   
 
     <div class="parent">
       <div>
@@ -68,10 +57,31 @@
     {% endfor %}
       </div>
 
-    <div class="parent">
-      <p>{% trans "To become a virtual adopter, you can set up a recurring payment equivalent to 20 EUR using PayPal or ideally Revolut due to the lack of transaction fees."%}
-      {% trans "Make sure to specify the name of the dog you wish to virtually adopt!"%}
-    </div>
+      <div class="parent">
+        <p>{% trans "To become a virtual adopter, you can set up a recurring payment equivalent to 20 EUR using PayPal or ideally Revolut due to the lack of transaction fees."%}
+        {% trans "Make sure to specify the name of the dog you wish to virtually adopt!"%}
+      </div>
+
+      <div class="parent">
+        <h2>{% trans "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS" %}</h2>
+  
+        {% for instance in dataPeople %}
+          {% if instance.0 %}
+            <div style="display: inline-block">
+              <h6>
+                {% if L == "bg" %}
+                  {{instance.0}} 
+                {% else %}
+                  {{instance.1}} 
+                {% endif %} 
+              </h6>
+            </div>
+          {% endif %}
+        {% endfor %}
+        <br>
+      </div>
+
+   
 
 
 <hr>
