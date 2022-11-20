@@ -29,11 +29,13 @@ class Dog(models.Model):
 
     va_name_eng = models.CharField(
         max_length=NAME_MAX_LENGTH,
-        default=""
+        default="",
+        blank=True
     )
     va_name_bg = models.CharField(
         max_length=NAME_MAX_LENGTH,
-        default=""
+        default="",
+        blank=True
     )
 
     # Chronic
