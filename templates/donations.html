@@ -9,6 +9,23 @@
       <h1>{% trans "HELP DONADOGS" %}</h1>
     <hr>
 
+
+
+    {% for instance in dataDonations %}
+   
+      <div style="display: inline-block">
+        <h6>
+          {% if L == "bg" %}
+            {{instance.fields.date}} 
+          {% else %}
+            {{instance.fields.date}} 
+          {% endif %} 
+        </h6>
+      </div>
+   
+    {% endfor %}
+
+
     {% with location="Donations" %}   
     {% include "subtemplates/noticeboard.html" %}     
   {% endwith %}
@@ -52,7 +69,7 @@
         </article>
         {% endif %}
     {% endfor %}
-  </div>
+      </div>
 
     <div class="parent">
       <p>{% trans "To become a virtual adopter, you can set up a recurring payment equivalent to 20 EUR using PayPal or ideally Revolut due to the lack of transaction fees."%}

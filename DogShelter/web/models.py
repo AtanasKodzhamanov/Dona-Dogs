@@ -4,41 +4,6 @@ from django.template.defaultfilters import slugify
 import datetime
 
 
-class People(models.Model):
-
-    NAME_MAX_LENGTH = 60
-
-    CHOICES = [(x, x) for x in ("Y", "N")]
-
-    class Meta:
-        verbose_name_plural = "People"
-
-    def __str__(self):
-        return self.person_name_eng
-
-    person_name_eng = models.CharField(
-        max_length=NAME_MAX_LENGTH,
-        unique=True,
-        null=True
-    )
-    person_name_bg = models.CharField(
-        max_length=NAME_MAX_LENGTH,
-        default=""
-    )
-
-    email_address = models.EmailField(
-        blank=True,
-        default=""
-    )
-
-    virtual_adopter = models.CharField(
-        max_length=2,
-        default="No",
-        choices=CHOICES,
-        blank=True
-    )
-
-
 class Dog(models.Model):
 
     NAME_MAX_LENGTH = 60
@@ -50,8 +15,6 @@ class Dog(models.Model):
     def __str__(self):
         return self.name_eng
 
-    person = models.ForeignKey(
-        People, on_delete=models.DO_NOTHING, default=1, verbose_name='Virtual Adopter')
     # Fields(Columns)
 
     name_eng = models.CharField(
@@ -60,6 +23,15 @@ class Dog(models.Model):
         null=True
     )
     name_bg = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        default=""
+    )
+
+    va_name_eng = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        default=""
+    )
+    va_name_bg = models.CharField(
         max_length=NAME_MAX_LENGTH,
         default=""
     )
@@ -333,18 +305,23 @@ first = today.replace(day=1)
 last_month = first - datetime.timedelta(days=1)
 
 
-class Donations(models.Model):
-
-    class Meta:
-        verbose_name_plural = "Donations"
+class Donation(models.Model):
 
     def __str__(self):
-        return "--".format(self.person, self.date)
+        return "--".format(self.person_name_eng, self.date)
 
-    person = models.ForeignKey(
-        People, on_delete=models.DO_NOTHING, default=1, verbose_name='Donator')
+    NAME_MAX_LENGTH = 60
 
     date = models.DateField(
         blank=True,
         default=last_month
+    )
+
+    person_name_eng = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        null=True
+    )
+    person_name_bg = models.CharField(
+        max_length=NAME_MAX_LENGTH,
+        null=True
     )

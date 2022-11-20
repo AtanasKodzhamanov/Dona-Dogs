@@ -1,7 +1,9 @@
+import datetime
 from django.core import serializers
 from django.shortcuts import render
 import django.utils.translation
-from DogShelter.web.models import Dog, NoticeBoard, People, About, Donations
+from DogShelter.web.models import Dog, NoticeBoard, About
+from django.forms.models import model_to_dict
 
 # Create your views here.
 
@@ -13,7 +15,10 @@ def show_home(request):  # dashboard
     dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
     dataNoticeBoard = serializers.serialize(
         'python', NoticeBoard.objects.all().order_by("order"))
-    dataPeople = serializers.serialize('python', People.objects.all())
+    dataPeople = serializers.serialize(
+        'python', Dog.objects.all().exclude(va_name_eng=""))
+
+    #dataDogs2 = Dog.objects.filter(status="Active")
 
     context = {
         "dataPeople": dataPeople,
@@ -66,18 +71,22 @@ def show_adoptions(request):
 
 def show_donations(request):
     dataNoticeBoard = serializers.serialize(
-        'python', NoticeBoard.objects.all().order_by("order"))
+        'python', NoticeBoard.objects.all().order_by("?"))
     dataAbout = serializers.serialize(
         'python', About.objects.all().order_by("order"))
-    dataDonations = serializers.serialize(
-        'python', Donations.objects.all().order_by("amount"))
+
     dataPeople = serializers.serialize(
-        'python', People.objects.all().order_by("?"))
+        'python', Dog.objects.all().exclude(va_name_eng=""))
+
+    today = datetime.date.today()
+    first = today.replace(day=1)
+    last_month = first - datetime.timedelta(days=1)
 
     context = {
+        "last_month": last_month,
         "dataPeople": dataPeople,
         "dataAbout": dataAbout,
-        "dataDonations": dataDonations,
+
         "dataNoticeBoard": dataNoticeBoard
     }
     return render(request, "donations.html", context)
@@ -87,7 +96,7 @@ def show_giftAdoption(request):
     dataNoticeBoard = serializers.serialize(
         'python', NoticeBoard.objects.all().order_by("order"))
     dataPeople = serializers.serialize(
-        'python', People.objects.all().order_by("?"))
+        'python', Dog.objects.all().exclude(va_name_eng=""))
 
     # return list of virtual adopters
 
