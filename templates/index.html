@@ -44,22 +44,16 @@
       </p>
       <img  id="sizingGallery" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.profile_pic}}" />
       
-      {% for i in dataPeople %}
-        {% if instance.fields.person == i.pk %} 
-          {% if i.pk > 1 %}
-        <div class="virtual-adopter-block" >
-             {% trans "Virtually Adopted" %} <br> 
-            {% if L == "bg" %}
-             {{i.fields.person_name_bg}}  
-            {% else %}
-             {{i.fields.person_name_eng}} 
-          {% endif %}
-              
-          
-          </div>
-          {% endif%}
+        {% if instance.fields.va_name_eng %} 
+          <div class="virtual-adopter-block" >
+              {% trans "Virtually Adopted" %} <br> 
+              {% if L == "bg" %}
+              {{instance.fields.va_name_bg}}  
+              {% else %}
+              {{instance.fields.va_name_eng}} 
+            {% endif %}
+            </div>
         {% endif%}      
-      {% endfor %}
     </div>
   {% endif %}
    
