@@ -15,8 +15,9 @@ def show_home(request):  # dashboard
     dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
     dataNoticeBoard = serializers.serialize(
         'python', NoticeBoard.objects.all().order_by("order"))
-    dataPeople = serializers.serialize(
-        'python', Dog.objects.all().exclude(va_name_eng=""))
+    dataPeople = set(Dog.objects.values_list(
+        "va_name_bg", "va_name_eng").exclude(va_name_eng=""))
+    print(dataPeople)
 
     #dataDogs2 = Dog.objects.filter(status="Active")
 
@@ -75,8 +76,9 @@ def show_donations(request):
     dataAbout = serializers.serialize(
         'python', About.objects.all().order_by("order"))
 
-    dataPeople = serializers.serialize(
-        'python', Dog.objects.all().exclude(va_name_eng=""))
+    dataPeople = set(Dog.objects.values_list(
+        "va_name_bg", "va_name_eng").exclude(va_name_eng=""))
+    print(dataPeople)
 
     today = datetime.date.today()
     first = today.replace(day=1)

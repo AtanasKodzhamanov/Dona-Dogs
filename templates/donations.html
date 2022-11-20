@@ -9,8 +9,6 @@
       <h1>{% trans "HELP DONADOGS" %}</h1>
     <hr>
 
-
-
     {% for instance in dataDonations %}
    
       <div style="display: inline-block">
@@ -25,7 +23,6 @@
    
     {% endfor %}
 
-
     {% with location="Donations" %}   
     {% include "subtemplates/noticeboard.html" %}     
   {% endwith %}
@@ -34,18 +31,18 @@
       <h2>{% trans "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!" %}</h2>
 
       {% for instance in dataPeople %}
-        {% if instance.fields.va_name_eng %}
+        {% if instance.0 %}
           <div style="display: inline-block">
             <h6>
               {% if L == "bg" %}
-                {{instance.fields.va_name_bg}} 
+                {{instance.0}} 
               {% else %}
-                {{instance.fields.va_name_eng}} 
+                {{instance.1}} 
               {% endif %} 
             </h6>
           </div>
         {% endif %}
-    {% endfor %}
+      {% endfor %}
       <br>
     </div>
 
