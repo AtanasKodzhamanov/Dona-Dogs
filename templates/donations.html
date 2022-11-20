@@ -11,38 +11,39 @@
 
 
 
-    {% with location="Donations" %}   
-    {% include "subtemplates/noticeboard.html" %}     
+    {% with location="Donations" %}
+    {% include "subtemplates/noticeboard.html" %}
   {% endwith %}
 
     <div class="parent">
       <h2>{% trans "WE THANK YOU ALL FOR SUPPORTING US" %}</h2>
-      <h4>{{ month }}</h4>
+      <h6> {% trans "LAST MONTH WE RECEIVED HELP FROM" %}</h6>
+  
 
       {% for instance in dataDonations %}
           <div style="display: inline-block">
             <h6>
               {% if L == "bg" %}
-                {{instance.0}} 
+                {{instance.0}}
               {% else %}
-                {{instance.1}} 
-              {% endif %} 
+                {{instance.1}}
+              {% endif %}
             </h6>
           </div>
       {% endfor %}
       <br>
     </div>
 
-   
+
 
     <div class="parent">
       <div>
         <h2>{% trans "VIRTUAL ADOPTION" %}</h2>
       </div>
 
-      
 
-      {% for notice in dataNoticeBoard %} 
+
+      {% for notice in dataNoticeBoard %}
         {% if notice.fields.location == "Virtual" %}
         <article>
           <div ><p>
@@ -64,16 +65,16 @@
 
       <div class="parent">
         <h2>{% trans "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS" %}</h2>
-  
+
         {% for instance in dataPeople %}
           {% if instance.0 %}
             <div style="display: inline-block">
               <h6>
                 {% if L == "bg" %}
-                  {{instance.0}} 
+                  {{instance.0}}
                 {% else %}
-                  {{instance.1}} 
-                {% endif %} 
+                  {{instance.1}}
+                {% endif %}
               </h6>
             </div>
           {% endif %}
@@ -81,7 +82,7 @@
         <br>
       </div>
 
-   
+
 
 
 <hr>
@@ -96,7 +97,7 @@
     </form>
     </div>
 
-    <p> IBAN: BG69 IABG 7096 1002 6438 01 
+    <p> IBAN: BG69 IABG 7096 1002 6438 01
       <br> BIC: IABGBGSF
       <br> International Asset Bank
       <br> DONA DOGS
@@ -105,10 +106,10 @@
   </div>
 
   <hr>
-    {% for instance in dataAbout %} 
+    {% for instance in dataAbout %}
     {% if instance.fields.location == "Donations" %}
   <div class="parent">
-    
+
     {% if L == "bg" %}
     <h2>{{instance.fields.section_title_bg}}</h2>
     {% else %}
@@ -159,6 +160,6 @@
   {% endfor %}
 
 
-  
+
   </div>
 {% endblock %}

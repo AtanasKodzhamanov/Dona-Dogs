@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-20 03:19+0000\n"
+"POT-Creation-Date: 2022-11-20 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,7 +59,7 @@ msgstr "ЗА НАС"
 msgid "Follow us on Facebook for up to date information!"
 msgstr "Последвайте ни на Facebook за повече снимки и най-новата информация!"
 
-#: templates/deprecated/giftadoption.html:9 templates/donations.html:40
+#: templates/deprecated/giftadoption.html:9 templates/donations.html:41
 #: templates/subtemplates/subdonations.html:11
 msgid "VIRTUAL ADOPTION"
 msgstr "ВИРТУАЛНО ОСИНОВЯВАНЕ"
@@ -76,7 +76,11 @@ msgstr "ПОМОГНЕТЕ НА ДОНАДОГС"
 msgid "WE THANK YOU ALL FOR SUPPORTING US"
 msgstr "БЛАГОДАРИМ ЗА ВАШАТА ПОДКРЕПА"
 
-#: templates/donations.html:61 templates/subtemplates/subdonations.html:30
+#: templates/donations.html:20
+msgid "LAST MONTH WE RECEIVED HELP FROM"
+msgstr "МИНАЛИЯ МЕСЕЦ ПОЛУЧИХМЕ ПОМОЩ ОТ"
+
+#: templates/donations.html:62 templates/subtemplates/subdonations.html:30
 msgid ""
 "To become a virtual adopter, you can set up a recurring payment equivalent "
 "to 20 EUR using PayPal or ideally Revolut due to the lack of transaction "
@@ -86,19 +90,19 @@ msgstr ""
 "на стойност 20 EUR чрез PayPal или в идеалния случай Revolut поради липсата "
 "на такси."
 
-#: templates/donations.html:62 templates/subtemplates/subdonations.html:31
+#: templates/donations.html:63 templates/subtemplates/subdonations.html:31
 msgid "Make sure to specify the name of the dog you wish to virtually adopt!"
 msgstr "Не забравяйте да посочите името на кучето, което искате да осиновите!"
 
-#: templates/donations.html:66
+#: templates/donations.html:67
 msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS"
 msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
 
-#: templates/donations.html:89 templates/subtemplates/subdonations.html:36
+#: templates/donations.html:90 templates/subtemplates/subdonations.html:36
 msgid "DONATION METHODS"
 msgstr "МЕТОДИ ЗА ДАРЕНИЕ"
 
-#: templates/donations.html:90 templates/subtemplates/subdonations.html:37
+#: templates/donations.html:91 templates/subtemplates/subdonations.html:37
 msgid ""
 "We welcome donations using the following methods below or through direct "
 "food or shelter deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40."
