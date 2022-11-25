@@ -8,7 +8,18 @@ body {
 
 @media only screen and (max-width: 1000px) {
   body {
-    margin: 3px;
+    margin: 0px;
+    border: none;
+  }
+}
+
+.innerbody {
+  padding: 50px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .innerbody {
+    padding: 0px;
   }
 }
 
@@ -45,6 +56,12 @@ max-height: 1000px; */
   margin-top: 20px;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   grid-auto-rows: minmax(auto, auto);
+}
+
+@media only screen and (max-width: 1000px) {
+  .wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
 }
 
 .panel {
@@ -127,6 +144,7 @@ max-height: 1000px; */
   .parent {
     margin-left: 10px;
     margin-right: 10px;
+    padding: 0.2rem;
   }
 }
 
