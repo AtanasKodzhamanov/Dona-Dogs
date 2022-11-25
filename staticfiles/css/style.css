@@ -14,9 +14,24 @@ body {
 
 @media only screen and (max-width: 1111px) {
   body {
-    margin: 0px;
     border: none;
-    width: 100%;
+    width: 80%;
+
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  body {
+    border: none;
+    width: 90%;
+
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    border: none;
+    width: 98%;
 
   }
 }

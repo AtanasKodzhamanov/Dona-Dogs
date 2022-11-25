@@ -19,13 +19,14 @@
 }
 
 #sizingAdoptions {
-    width: 400px;
+    max-width: 400px;
     height: auto;
+
 }
 
 @media only screen and (max-width: 1111px) {
     #sizingAdoptions {
-        width: 100%;
+        width: 90%;
     }
 }
 
