@@ -1,0 +1,75 @@
+/* navbar */
+nav {
+    display: flex;
+    font-size: 26px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f2f2f2;
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+@media only screen and (max-width: 1000px) {
+    nav {
+        display: flex;
+        font-size: 3.5vw;
+
+    }
+}
+
+nav li {
+    width: 20%;
+    padding-top: 0vw;
+    padding-bottom: 0vw;
+}
+
+@media only screen and (max-width: 1000px) {
+    nav li {
+        padding-top: 2.5vw;
+        padding-bottom: 2.5vw;
+    }
+}
+
+nav li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 5px 0px 0px 0px;
+    margin: 2px;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 1000px) {
+    nav li a {
+        padding-top: 5px;
+        padding-bottom: 0px;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 2px;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    nav li a h1 {
+        font-size: 3.7vw;
+    }
+}
+
+nav li a:hover:not(.active) {
+    background-color: #ddd;
+    color: black;
+}
+
+nav li a.active {
+    color: white;
+    background-color: #9c9c9c;
+}
+
+/* Navbar End */

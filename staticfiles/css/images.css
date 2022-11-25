@@ -1,0 +1,45 @@
+@media only screen and (max-width: 1000px) {
+    #banner {
+        display: none;
+    }
+}
+
+
+/* image resizing */
+#sizingGallery {
+    max-width: 100%;
+    height: auto;
+}
+
+#sizingAdoptions {
+    width: 400px;
+    height: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+    #sizingAdoptions {
+        width: 100%;
+    }
+}
+
+#sizingDonations {
+    width: 350px;
+    height: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+    #sizingDonations {
+        width: 100%;
+    }
+}
+
+#sizingPayPal {
+    width: 250px;
+    height: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+    #sizingPayPal {
+        width: 80%;
+    }
+}

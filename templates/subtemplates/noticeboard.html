@@ -5,13 +5,19 @@
 
     {% for notice in dataNoticeBoard %}
     {% if notice.fields.location == location %}
-    <article>
-        <div><p>
+    <article style="max-width: 1500px;  margin:auto;">
+        <div>
+            {% if notice.fields.note_pic_1 %}
+            <img style="float: left; width:auto;height:300px; margin:10px 30px;" id="sizingAdoptions" src={{ notice.fields.note_pic_1 }}>
+            {% endif %}
+        <p>
         {% if L == "bg" %}
-        {{notice.fields.note_bg}}
-        {% else %}
-        {{notice.fields.note_eng}}
-        {% endif %}</p>
+        {{notice.fields.note_bg|safe}}
+        {% else %}           
+        {{notice.fields.note_eng|safe }}
+        {% endif %}   
+      
+        </p>
         </div>
     </article>
     <hr />

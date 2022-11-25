@@ -26,11 +26,11 @@
 
   {% if L == "bg" %}
     <div>
-      <p>{{instance.fields.section_desc_bg}}</p>
+      <p>{{instance.fields.section_desc_bg|safe}}</p>
     </div>
     {% else %}
     <div>
-      <p>{{instance.fields.section_desc_eng}}</p>
+      <p>{{instance.fields.section_desc_eng|safe}}</p>
     </div>   
   {% endif %}
 

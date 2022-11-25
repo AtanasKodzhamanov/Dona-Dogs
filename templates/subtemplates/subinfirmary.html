@@ -10,13 +10,23 @@
   {% for instance in dataDogs %}
     {% if instance.fields.status == 'Sick' and instance.fields.story_eng %}
       <div class="parent">
+
         <h2>
         {% if L == "bg" %}
         {{ instance.fields.name_bg }}
         {% else %}
         {{ instance.fields.name_eng }}
       {% endif %}
-      </h2>
+      </h2> 
+
+              <p style="max-width:800px; height:auto; margin:auto; text-align:left; padding:15px;">
+          {% if L == "bg" %}
+          {{ instance.fields.story_bg }}
+          {% else %}
+          {{ instance.fields.story_eng }}
+        {% endif %}
+        </p>
+        <hr style="max-width:800px;">
         <div class="child">
           <img id="sizingAdoptions" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{ instance.fields.profile_pic }}"  />
         </div>
@@ -31,18 +41,7 @@
             <img id="sizingAdoptions" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{ instance.fields.pic_3 }}"/>
           </div>
         {% endif %}
-
-        <br />
-        <br />
-        <div>
-          <p>
-            {% if L == "bg" %}
-            {{ instance.fields.story_bg }}
-            {% else %}
-            {{ instance.fields.story_eng }}
-          {% endif %}
-          </p>
-        </div>
+          
       </div>
   
     {% endif %}

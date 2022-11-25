@@ -1,0 +1,46 @@
+/* titles and paras */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 5px;
+    text-align: center;
+    font-family: 'Yeseva One';
+    text-transform: uppercase;
+}
+
+#dogname {
+    margin: 42px;
+}
+
+p {
+    padding: 10px 30px;
+    line-height: 150%;
+    font-size: 19px;
+    text-align: center;
+    margin: auto;
+    max-width: 1500px;
+    text-align: left;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    p {
+        margin: 5px;
+        font-size: 18px;
+    }
+}
+
+/* hyperlinks */
+#hyperlink {
+    color: rgb(109, 109, 109);
+    text-decoration: none;
+    font-size: larger;
+}
+
+#hyperlink:hover {
+    color: rgb(77, 77, 77);
+    font-weight: bold;
+}
