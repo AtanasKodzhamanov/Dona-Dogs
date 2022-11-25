@@ -48,19 +48,14 @@
         <article>
           <div ><p>
             {% if L == "bg" %}
-              {{notice.fields.note_bg}}
+              {{notice.fields.note_bg|safe}}
             {% else %}
-              {{notice.fields.note_eng}}
+              {{notice.fields.note_eng|safe}}
           {% endif %}</p>
           </div>
         </article>
         {% endif %}
     {% endfor %}
-      </div>
-
-      <div class="parent">
-        <p>{% trans "To become a virtual adopter, you can set up a recurring payment equivalent to 20 EUR using PayPal or ideally Revolut due to the lack of transaction fees."%}
-        {% trans "Make sure to specify the name of the dog you wish to virtually adopt!"%}
       </div>
 
       <div class="parent">
