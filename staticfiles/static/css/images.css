@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 900px) {
     #banner {
         display: none;
     }
@@ -7,7 +7,7 @@
 
 /* image resizing */
 #sizingGallery {
-    max-width: 300px;
+    max-width: 100%;
     height: auto;
 }
 
@@ -23,7 +23,7 @@
     height: auto;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 900px) {
     #sizingAdoptions {
         width: 100%;
     }
@@ -34,7 +34,7 @@
     height: auto;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 900px) {
     #sizingDonations {
         width: 100%;
     }
@@ -45,7 +45,7 @@
     height: auto;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 900px) {
     #sizingPayPal {
         width: 80%;
     }
