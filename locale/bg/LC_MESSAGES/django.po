@@ -53,7 +53,7 @@ msgstr "ОСИНОВИ"
 
 #: templates/common.html:75
 msgid "ABOUT"
-msgstr "ЗА НАС"
+msgstr "НИЕ"
 
 #: templates/common.html:87 templates/index2.html:20
 msgid "Follow us on Facebook for up to date information!"
