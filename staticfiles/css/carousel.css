@@ -27,7 +27,7 @@ img {
     width: auto;
     color: black;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
     transition: 0.3s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
@@ -40,10 +40,7 @@ img {
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-    background-color: rgba(0, 0, 0, 0.6);
-}
+
 
 
 .carouselContainer {

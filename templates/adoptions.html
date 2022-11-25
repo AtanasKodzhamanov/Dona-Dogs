@@ -14,58 +14,8 @@
         {% include "subtemplates/noticeboard.html" %}     
       {% endwith %}
 
-
-
-
-<div class="parent carouselContainer" >
-<div class="slideshow-container" >
-       {% for adoption in dataAdoptions|shuffle %} 
-        {% if adoption.fields.status == "Adopted" %}
-
-  <div class="mySlides fade" >
-          {% if L == "bg" %}
-          <h2>{{adoption.fields.name_bg}}</h2>
-          {% else %}
-          <h2>{{adoption.fields.name_eng}}</h2>
-        {% endif %}
-      {% if L == "bg" %}
-        <h3>{{adoption.fields.adoption_country_bg}}</h3>
-        {% else %}
-        <h3>{{adoption.fields.adoption_country_eng}}</h3>
-      {% endif %}
-      <br>
-    <div style="display: inline-block;">
-    <img id="sizingAdoptions" style="padding:10px" src= {{ adoption.fields.profile_pic }}>
-    
-    <img id="sizingAdoptions" style="padding:10px" src= {{ adoption.fields.adoption_pic_after_1 }} >
-    </div>
-    <br>
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
-    <div>
-      <p style="max-width:800px; height:auto; margin:auto; text-align:left; padding:15px;">
-      {% if L == "bg" %}
-        {{adoption.fields.story_bg|safe}}
-      {% else %}
-        {{adoption.fields.story_eng|safe}}
-      {% endif %}
-      </p>
-    </div>
-  </div>
-    {% endif %}
-  {% endfor %}
- 
-  
-  </div>
-</div>
-  <br>
-
-
-    <hr>
     <h2>{% trans "This year's adoptions" %}</h2>
     <hr>
-
-
       {% for adoption in dataAdoptions %} 
         {% if adoption.fields.status == "Adopted" and adoption.fields.adoption_year == 2022 %}
         <div class="parent">
@@ -112,10 +62,59 @@
         <br>
 
       </div>
-      <hr>
+      
       {% endif %}
     {% endfor %} 
    
+    <hr>
+    <h2>{% trans "Past adoptions" %}</h2>
+    <hr>
+
+<div class="parent carouselContainer" >
+  <div class="slideshow-container" >
+         {% for adoption in dataAdoptions|shuffle %} 
+          {% if adoption.fields.status == "Adopted" %}
+  
+    <div class="mySlides fade" >
+            {% if L == "bg" %}
+            <h2>{{adoption.fields.name_bg}}</h2>
+            {% else %}
+            <h2>{{adoption.fields.name_eng}}</h2>
+          {% endif %}
+        {% if L == "bg" %}
+          <h3>{{adoption.fields.adoption_country_bg}}</h3>
+          {% else %}
+          <h3>{{adoption.fields.adoption_country_eng}}</h3>
+        {% endif %}
+        <br>
+      <div style="display: inline-block;">
+      <img id="sizingAdoptions" style="padding:10px" src= {{ adoption.fields.profile_pic }}>
+      
+      <img id="sizingAdoptions" style="padding:10px" src= {{ adoption.fields.adoption_pic_after_1 }} >
+      </div>
+      <br>
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+      <div>
+        <p style="max-width:800px; height:auto; margin:auto; text-align:left; padding:15px;">
+        {% if L == "bg" %}
+          {{adoption.fields.story_bg|safe}}
+        {% else %}
+          {{adoption.fields.story_eng|safe}}
+        {% endif %}
+        </p>
+      </div>
+    </div>
+      {% endif %}
+    {% endfor %}
+   
+    
+    </div>
+  </div>
+    <br>
+  
+
+
 {% endblock %}
 
 
