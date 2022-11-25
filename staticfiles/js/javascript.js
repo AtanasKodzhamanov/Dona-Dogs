@@ -9,3 +9,4 @@ function myFunction2(element) {
   popup.classList.toggle("show", false);
 
 }
+

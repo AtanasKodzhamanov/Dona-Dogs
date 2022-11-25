@@ -12,7 +12,7 @@ body {
 
 
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1111px) {
   body {
     margin: 0px;
     border: none;
@@ -25,7 +25,7 @@ body {
   padding: 50px;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1111px) {
   .innerbody {
     padding: 0px;
   }
@@ -144,7 +144,7 @@ max-height: 1000px; */
   max-width: 1500px;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1111px) {
   .parent {
     margin-left: 10px;
     margin-right: 10px;
@@ -204,7 +204,7 @@ max-height: 1000px; */
   transform: scale(1.15);
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1111px) {
   .child:hover {
     transform: scale(1.0);
     box-shadow: 2px 2px 5px 2px #888888;

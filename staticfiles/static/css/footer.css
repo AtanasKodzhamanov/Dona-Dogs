@@ -1,5 +1,6 @@
 /* Footer */
 #footer {
+    text-align: center;
     position: sticky;
     top: 100vh;
     left: 0;

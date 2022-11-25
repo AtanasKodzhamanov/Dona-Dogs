@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-iax8&wb&pl^j%u1$t58*#nsjn6_75th$s)5#fj#t^tg!@l1kp-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -74,7 +74,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-            ],
+
+            ], 'libraries':  {
+                'shuffle': 'DogShelter.web.templatestags.shuffle',
+            }
         },
     },
 ]
