@@ -16,9 +16,9 @@
         <article>
           <div ><p>
             {% if L == "bg" %}
-              {{notice.fields.note_bg}}
+              {{notice.fields.note_bg|safe}}
             {% else %}
-              {{notice.fields.note_eng}}
+              {{notice.fields.note_eng|safe}}
           {% endif %}</p>
           </div>
         </article>
