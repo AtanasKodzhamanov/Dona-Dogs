@@ -8,7 +8,6 @@ from django.forms.models import model_to_dict
 # Create your views here.
 
 lang = django.utils.translation.get_language()
-print(lang)
 
 
 def show_home(request):  # dashboard
@@ -17,7 +16,6 @@ def show_home(request):  # dashboard
         'python', NoticeBoard.objects.all().order_by("order"))
     dataPeople = set(Dog.objects.values_list(
         "va_name_bg", "va_name_eng").exclude(va_name_eng=""))
-    print(dataPeople)
 
     #dataDogs2 = Dog.objects.filter(status="Active")
 
