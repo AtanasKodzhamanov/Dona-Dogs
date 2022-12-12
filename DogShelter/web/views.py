@@ -26,6 +26,13 @@ def show_home(request):  # dashboard
     }
     return render(request, "index.html", context)
 
+# tdd = test driven dev
+# pytest
+# test_request = {...}
+# def test_show_home(test_request):
+#   ans = show_home(test_request)
+#   assert ans == {this is what expect}
+
 
 def show_infirmary(request):  # dashboard
     dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))

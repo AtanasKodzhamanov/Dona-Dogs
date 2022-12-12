@@ -90,16 +90,23 @@ WSGI_APPLICATION = 'DogShelter.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# export POSTGRES_USERNAME="postgres"
+# echo $POSTGRES_USERNAME
+
+# go to ~/.bashrc
+# append this command ---> export POSTGRES_USERNAME="postgres"
+POSTGRES_USERNAME = os.environ["POSTGRES_USERNAME"]
+POSTGRES_PASSWORD = os.environ["POSTGRES_PASSWORD"]
 
 # Railway.app setting
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'gpsaxpX6aX5uJTBpipGa',
-        'HOST': 'containers-us-west-35.railway.app',
-        'PORT': '6141',
+        'NAME': 'railway',  # change this
+        'USER': POSTGRES_USERNAME,
+        'PASSWORD': POSTGRES_PASSWORD,
+        'HOST': 'containers-us-west-35.railway.app',  # change this
+        'PORT': '6141',  # change Sthis
     }
 }
 
