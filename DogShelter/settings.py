@@ -23,8 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-iax8&wb&pl^j%u1$t58*#nsjn6_75th$s)5#fj#t^tg!@l1kp-'
 
+SECRET_KEY = os.environ["SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -90,24 +90,29 @@ WSGI_APPLICATION = 'DogShelter.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# export POSTGRES_USERNAME="postgres"
+# export POSTGRES_USERNAME="username"
 # echo $POSTGRES_USERNAME
 
 # go to ~/.bashrc
-# append this command ---> export POSTGRES_USERNAME="postgres"
+# append this command ---> export POSTGRES_USERNAME="username"
+# append this command ---> export POSTGRES_PASSWORD="password"
+
+POSTGRES_ENGINE = os.environ["POSTGRES_ENGINE"]
 POSTGRES_USERNAME = os.environ["POSTGRES_USERNAME"]
 POSTGRES_PASSWORD = os.environ["POSTGRES_PASSWORD"]
-print(POSTGRES_PASSWORD)
+POSTGRES_NAME = os.environ["POSTGRES_NAME"]
+POSTGRES_HOST = os.environ["POSTGRES_HOST"]
+POSTGRES_PORT = os.environ["POSTGRES_PORT"]
 
 # Railway.app setting
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',  # change this
+        'ENGINE': POSTGRES_ENGINE,
+        'NAME': POSTGRES_NAME,
         'USER': POSTGRES_USERNAME,
         'PASSWORD': POSTGRES_PASSWORD,
-        'HOST': 'containers-us-west-35.railway.app',  # change this
-        'PORT': '6141',  # change Sthis
+        'HOST': POSTGRES_HOST,
+        'PORT': POSTGRES_PORT,
     }
 }
 
