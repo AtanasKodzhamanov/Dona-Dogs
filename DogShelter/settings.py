@@ -97,6 +97,7 @@ WSGI_APPLICATION = 'DogShelter.wsgi.application'
 # append this command ---> export POSTGRES_USERNAME="postgres"
 POSTGRES_USERNAME = os.environ["POSTGRES_USERNAME"]
 POSTGRES_PASSWORD = os.environ["POSTGRES_PASSWORD"]
+print(POSTGRES_PASSWORD)
 
 # Railway.app setting
 DATABASES = {
