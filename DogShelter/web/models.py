@@ -4,7 +4,7 @@ from django.template.defaultfilters import slugify
 import datetime
 
 MAX_URL_LENGTH = 300
-NAME_MAX_LENGTH = 60
+NAME_MAX_LENGTH = 60    
 ORDER = 99
 
 # Help text is provided for the Bulgarian speaking admin staff. 
@@ -432,7 +432,7 @@ class DonationStory(models.Model):
     """
 
     class Meta:
-        verbose_name_plural = "About"
+        verbose_name_plural = "DonationStories"
 
     donation_text_eng = models.TextField(
         blank=True,

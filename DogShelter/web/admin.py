@@ -14,7 +14,6 @@ class Dog(admin.ModelAdmin):
     search_fields = ["name_eng", "name_bg", "va_name_eng", "va_name_bg"]
     list_editable = ["status"]
     readonly_fields = ["id"]
-    list_select_related = ["status"]
 
 @admin.register(NoticeBoard)
 class NoticeBoard(admin.ModelAdmin):
