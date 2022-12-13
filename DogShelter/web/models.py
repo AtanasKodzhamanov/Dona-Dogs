@@ -386,6 +386,14 @@ class About(models.Model):
         help_text="Заглавие на секцията на Български."
     )
 
+# The following is used to get the last day of the previous month for the "last_month" variable.
+# This is used to set the default value for the "date_of_donation" field in the donations models.
+# Donations are added to the database on the first day of the month, so the default value for the "date_of_donation" field is the last day of the previous month.
+
+today = datetime.date.today()
+first = today.replace(day=1)
+last_month = first - datetime.timedelta(days=1)
+
 class Donation(models.Model):
 
     """
@@ -397,14 +405,6 @@ class Donation(models.Model):
 
     def __str__(self):
         return "--".format(self.person_name_eng, self.date)
-
-    # The following is used to get the last day of the previous month for the "last_month" variable.
-    # This is used to set the default value for the "date_of_donation" field in the "Donation" model.
-    # Donations are added to the database on the first day of the month, so the default value for the "date_of_donation" field is the last day of the previous month.
-
-    today = datetime.date.today()
-    first = today.replace(day=1)
-    last_month = first - datetime.timedelta(days=1)
 
     date = models.DateField(
         blank=True,
@@ -422,3 +422,55 @@ class Donation(models.Model):
         default="",
         help_text="Име на дарителя на Български."
     )
+
+class DonationStory(models.Model):
+
+    """
+
+    This model will be used to create more notable donations that can be displayed on the home page. For example, if someone donates a large amount of food, or if someone donates equipment, or volunteers etc. There is a separate section for these donations. The donations will be refreshed every month and past donations will go to archive.
+
+    """
+
+    class Meta:
+        verbose_name_plural = "About"
+
+    donation_text_eng = models.TextField(
+        blank=True,
+        default="",
+        help_text="Текст на дарението на Английски (за секцията със снимки на дарания)."
+    )
+
+    donation_text_bg = models.TextField(
+        blank=True,
+        default="",
+        help_text="Текст на дарението на Български (за секцията със снимки на дарания)."
+    )
+
+    date = models.DateField(
+        blank=True,
+        default=last_month,
+        help_text="Дата на дарението. По подразбиране е последният ден на предходния месец. Например ако дарението е направено на 1.01.2020, то по подразбиране ще се показва на 31.12.2019. Това е за да се показват даренията в последния месец."
+    )
+
+    donation_pic_1 = models.URLField(
+        max_length=MAX_URL_LENGTH,
+        blank=True,
+        default="",
+        help_text="Снимка 1 в секцията."
+    )
+
+    donation_pic_2 = models.URLField(
+        max_length=MAX_URL_LENGTH,
+        blank=True,
+        default="",
+        help_text="Снимка 2 в секцията."
+    )
+
+    donation_pic_3 = models.URLField(
+        max_length=MAX_URL_LENGTH,
+        blank=True,
+        default="",
+        help_text="Снимка 3 в секцията."
+    )
+
+
