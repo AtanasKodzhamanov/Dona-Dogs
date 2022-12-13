@@ -14,6 +14,7 @@ class Dog(admin.ModelAdmin):
     search_fields = ["name_eng", "name_bg", "va_name_eng", "va_name_bg"]
     list_editable = ["status"]
     readonly_fields = ["id"]
+    list_per_page = 100
 
 @admin.register(NoticeBoard)
 class NoticeBoard(admin.ModelAdmin):
@@ -29,6 +30,7 @@ class About(admin.ModelAdmin):
 @admin.register(Donation)
 class Donation(admin.ModelAdmin):
     list_display = ["person_name_eng", "date"]
+    list_per_page = 100
 
 @admin.register(DonationStory)
 class DonationStory(admin.ModelAdmin):
