@@ -153,9 +153,3 @@ def show_giftAdoption(request):
 
     else:
         ip = request.META.get('REMOTE_ADDR')
-
-
-today = datetime.date.today()
-first = today.replace(day=1)
-last_month = first - datetime.timedelta(days=1)
-last_month_cl = last_month.strftime('%B')

@@ -1,7 +1,10 @@
 from django.db import models
 from django.utils.timezone import now
 from django.template.defaultfilters import slugify
+
 import datetime
+
+from DogShelter.web.validators import validate_bulgarian, validate_english, validate_url
 
 MAX_URL_LENGTH = 300
 NAME_MAX_LENGTH = 60    
@@ -38,25 +41,29 @@ class Dog(models.Model):
         max_length=NAME_MAX_LENGTH,
         unique=True,
         null=True,
-        help_text="Име на куче на Английски."
+        help_text="Име на куче на Английски.",
+        validators=[validate_english]
     )
     name_bg = models.CharField(
         max_length=NAME_MAX_LENGTH,
         default="",
-        help_text="Име на куче на Български."
+        help_text="Име на куче на Български.",
+        validators=[validate_bulgarian]
     )
 
     va_name_eng = models.CharField(
         max_length=NAME_MAX_LENGTH,
         default="",
         blank=True,
-        help_text="Име на виртуален осиновител на Английски."
+        help_text="Име на виртуален осиновител на Английски.",
+        validators=[validate_english]
     )
     va_name_bg = models.CharField(
         max_length=NAME_MAX_LENGTH,
         default="",
         blank=True,
-        help_text="Име на виртуален осиновител на Български."
+        help_text="Име на виртуален осиновител на Български.",
+        validators=[validate_bulgarian]
     )
 
     # Chronic
@@ -77,35 +84,40 @@ class Dog(models.Model):
     profile_pic = models.URLField(
         null=True,
         max_length=MAX_URL_LENGTH,
-        help_text="Профилна снимка."
+        help_text="Профилна снимка.",
+        validators=[validate_url]
     )
 
     pic_2 = models.URLField(
         blank=True,
         max_length=MAX_URL_LENGTH,
         default="",
-        help_text="Албумна снимка."
+        help_text="Албумна снимка.",
+        validators=[validate_url]
     )
 
     pic_3 = models.URLField(
         blank=True,
         max_length=MAX_URL_LENGTH,
         default="",
-        help_text="Албумна снимка."
+        help_text="Албумна снимка.",
+        validators=[validate_url]
     )
 
     pic_4 = models.URLField(
         blank=True,
         max_length=MAX_URL_LENGTH,
         default="",
-        help_text="Албумна снимка."
+        help_text="Албумна снимка.",
+        validators=[validate_url]
     )
 
     pic_5 = models.URLField(
         blank=True,
         max_length=MAX_URL_LENGTH,
         default="",
-        help_text="Албумна снимка."
+        help_text="Албумна снимка.",
+        validators=[validate_url]
     )
 
     # If alive, adopted or sick. If alive keep in the gallery, if adopted send put it inside the adoption page, if sick put at the top of the gallery.
@@ -120,12 +132,14 @@ class Dog(models.Model):
     story_eng = models.TextField(
         blank=True,
         default="",
-        help_text="История на кучето на Английски."
+        help_text="История на кучето на Английски.",
+        validators=[validate_english]
     )
     story_bg = models.TextField(
         blank=True,
         default="",
-        help_text="История на кучето на Български."
+        help_text="История на кучето на Български.",
+        validators=[validate_bulgarian]
     )
 
     arrival_year = models.IntegerField(
@@ -138,14 +152,16 @@ class Dog(models.Model):
         max_length=NAME_MAX_LENGTH,
         blank=True,
         default="",
-        help_text="Държава на осиновяване на Английски."
+        help_text="Държава на осиновяване на Английски.",
+        validators=[validate_english]
     )
 
     adoption_country_bg = models.CharField(
         max_length=NAME_MAX_LENGTH,
         blank=True,
         default="",
-        help_text="Държава на осиновяване на Български."
+        help_text="Държава на осиновяване на Български.",
+        validators=[validate_bulgarian]
     )
 
     adoption_year = models.IntegerField(
@@ -158,21 +174,24 @@ class Dog(models.Model):
         blank=True,
         max_length=MAX_URL_LENGTH,
         default="",
-        help_text="Снимка 1 на кучето след осиновяване."
+        help_text="Снимка 1 на кучето след осиновяване.",
+        validators=[validate_url]
     )
 
     adoption_pic_after_2 = models.URLField(
         blank=True,
         max_length=MAX_URL_LENGTH,
         default="",
-        help_text="Снимка 2 на кучето след осиновяване."
+        help_text="Снимка 2 на кучето след осиновяване.",
+        validators=[validate_url]
     )
 
     adoption_pic_after_3 = models.URLField(
         blank=True,
         max_length=MAX_URL_LENGTH,
         default="",
-        help_text="Снимка 3 на кучето след осиновяване."
+        help_text="Снимка 3 на кучето след осиновяване.",
+        validators=[validate_url]
     )
 
     # slug = models.SlugField(
@@ -218,27 +237,31 @@ class NoticeBoard(models.Model):
     note_eng = models.TextField(
         blank=True,
         default="",
-        help_text="Съобщение на Английски."
+        help_text="Съобщение на Английски.",
+        validators=[validate_english]
     )
 
     note_bg = models.TextField(
         blank=True,
         default="",
-        help_text="Съобщение на Български."
+        help_text="Съобщение на Български.",
+        validators=[validate_bulgarian]
     )
 
     note_pic_1 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
         default="",
-        help_text="Снимка 1 в съобщението (не задължителни)."
+        help_text="Снимка 1 в съобщението (не задължителни).",
+        validators=[validate_url]
     )
 
     note_pic_2 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
         default="",
-        help_text="Снимка 2 в съобщението (не задължителни)."
+        help_text="Снимка 2 в съобщението (не задължителни).",
+        validators=[validate_url]
     )
 
     order = models.IntegerField(
@@ -260,7 +283,10 @@ class AboutPhoto(models.Model):
     To store an unlimited amount of photos for each section in About model.
 
     """
-    url = models.URLField(max_length=MAX_URL_LENGTH)
+    url = models.URLField(
+        max_length=MAX_URL_LENGTH,
+        validators=[validate_url]
+        )
 
 class About(models.Model):
 
@@ -296,83 +322,95 @@ class About(models.Model):
     section_desc_eng = models.TextField(
         blank=True,
         default=DEFAULT_ENGLISH_DESC,
-        help_text="Описание на секцията на Английски."
+        help_text="Описание на секцията на Английски.",
+        validators=[validate_english]
     )
 
     section_desc_bg = models.TextField(
         blank=True,
         default="",
-        help_text="Описание на секцията на Български."
+        help_text="Описание на секцията на Български.",
+        validators=[validate_bulgarian]
     )
 
     about_pic_1 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
         default="",
-        help_text="Снимка 1 в секцията."
+        help_text="Снимка 1 в секцията.",
+        validators=[validate_url]
     )
 
     about_pic_2 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
         default="",
-        help_text="Снимка 2 в секцията."
+        help_text="Снимка 2 в секцията.",
+        validators=[validate_url]
     )
 
     about_pic_3 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
         default="",
-        help_text="Снимка 3 в секцията."
+        help_text="Снимка 3 в секцията.",
+        validators=[validate_url]
     )
 
     about_pic_4 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
         default="",
-        help_text="Снимка 4 в секцията."
+        help_text="Снимка 4 в секцията.",
+        validators=[validate_url]
     )
 
     about_pic_5 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
         default="",
-        help_text="Снимка 5 в секцията."
+        help_text="Снимка 5 в секцията.",
+        validators=[validate_url]
     )
 
     about_pic_6 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
         default="",
-        help_text="Снимка 6 в секцията."
+        help_text="Снимка 6 в секцията.",
+        validators=[validate_url]
     )
 
     about_pic_7 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
         default="",
-        help_text="Снимка 7 в секцията."
+        help_text="Снимка 7 в секцията.",
+        validators=[validate_url]
     )
 
     about_pic_8 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
         default="",
-        help_text="Снимка 8 в секцията."
+        help_text="Снимка 8 в секцията.",
+        validators=[validate_url]
     )
 
     about_pic_9 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
         default="",
-        help_text="Снимка 9 в секцията."
+        help_text="Снимка 9 в секцията.",
+        validators=[validate_url]
     )
 
     about_pic_10 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
         default="",
-        help_text="Снимка 10 в секцията."
+        help_text="Снимка 10 в секцията.",
+        validators=[validate_url]
     )
 
     order = models.IntegerField(
@@ -384,14 +422,16 @@ class About(models.Model):
         max_length=MAX_TITLE_LENGTH,
         blank=True,
         default="",
-        help_text="Заглавие на секцията на Английски."
+        help_text="Заглавие на секцията на Английски.",
+        validators=[validate_english]
     )
 
     section_title_bg = models.TextField(
         max_length=MAX_TITLE_LENGTH,
         blank=True,
         default="",
-        help_text="Заглавие на секцията на Български."
+        help_text="Заглавие на секцията на Български.",
+        validators=[validate_bulgarian]
     )
 
     photos = models.ManyToManyField(AboutPhoto)
@@ -425,12 +465,14 @@ class Donation(models.Model):
     person_name_eng = models.CharField(
         max_length=NAME_MAX_LENGTH,
         default="",
-        help_text="Име на дарителя на Английски."
+        help_text="Име на дарителя на Английски.",
+        validators=[validate_english]
     )
     person_name_bg = models.CharField(
         max_length=NAME_MAX_LENGTH,
         default="",
-        help_text="Име на дарителя на Български."
+        help_text="Име на дарителя на Български.",
+        validators=[validate_bulgarian]
     )
 
 class DonationStory(models.Model):
@@ -447,13 +489,15 @@ class DonationStory(models.Model):
     donation_text_eng = models.TextField(
         blank=True,
         default="",
-        help_text="Текст на дарението на Английски (за секцията със снимки на дарания)."
+        help_text="Текст на дарението на Английски (за секцията със снимки на дарания).",
+        validators=[validate_english]
     )
 
     donation_text_bg = models.TextField(
         blank=True,
         default="",
-        help_text="Текст на дарението на Български (за секцията със снимки на дарания)."
+        help_text="Текст на дарението на Български (за секцията със снимки на дарания).",
+        validators=[validate_bulgarian]
     )
 
     date = models.DateField(
@@ -466,21 +510,24 @@ class DonationStory(models.Model):
         max_length=MAX_URL_LENGTH,
         blank=True,
         default="",
-        help_text="Снимка 1 в секцията."
+        help_text="Снимка 1 в секцията.",
+        validators=[validate_url]
     )
 
     donation_pic_2 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
         default="",
-        help_text="Снимка 2 в секцията."
+        help_text="Снимка 2 в секцията.",
+        validators=[validate_url]
     )
 
     donation_pic_3 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
         default="",
-        help_text="Снимка 3 в секцията."
+        help_text="Снимка 3 в секцията.",
+        validators=[validate_url]
     )
 
 

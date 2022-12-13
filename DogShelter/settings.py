@@ -154,7 +154,6 @@ LANGUAGES = [
     ("bg", "Bulgarian"),
 ]
 
-
 # fix paths a bit
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),

@@ -1,11 +1,31 @@
 from django.core.exceptions import ValidationError
-
-# def always_valid(chars):
-#     def validator1123(value):
-#         pass
-#
-#     return validator1123
+from django.core.validators import URLValidator
 from django.utils.deconstruct import deconstructible
+
+
+
+from django.core.validators import RegexValidator
+
+def validate_english(value):
+    regex = r'^[A-Za-z]+$'
+    validator = RegexValidator(regex=regex, message='Field must contain only English characters')
+    validator(value)
+
+
+def validate_bulgarian(value):
+    regex = r'^[А-Яа-я]+$'
+    validator = RegexValidator(regex=regex, message='Field must contain only Bulgarian characters')
+    validator(value)
+
+# URL check
+def validate_url(value):
+    validator = URLValidator()
+    try:
+        validator(value)
+    except ValidationError:
+        raise ValidationError("This is not a valid URL.")
+
+
 
 
 def validate_only_letters(value):
@@ -47,3 +67,13 @@ class MaxDateValidator:
     def __call__(self, value):
         if self.max_date < value:
             raise ValidationError(f'Date must be earlier than {self.max_date}')
+
+
+
+#Add a Validator to ensure that the name_eng field is not empty.
+#Add a Validator to ensure that the profile_pic field is a valid URL.
+#Add a validator to check if field is in english for story and name
+#Add a validator to check if field is in bulgarian for story and name
+
+
+
