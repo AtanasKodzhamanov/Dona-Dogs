@@ -255,6 +255,11 @@ class NoticeBoard(models.Model):
     )
 
 class AboutPhoto(models.Model):
+    """
+
+    To store an unlimited amount of photos for each section in About model.
+
+    """
     url = models.URLField(max_length=MAX_URL_LENGTH)
 
 class About(models.Model):
@@ -390,8 +395,6 @@ class About(models.Model):
     )
 
     photos = models.ManyToManyField(AboutPhoto)
-
-
 
 # The following is used to get the last day of the previous month for the "last_month" variable.
 # This is used to set the default value for the "date_of_donation" field in the donations models.
