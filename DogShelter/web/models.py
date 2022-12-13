@@ -7,6 +7,8 @@ MAX_URL_LENGTH = 300
 NAME_MAX_LENGTH = 60
 ORDER = 99
 
+# Help text is provided for the Bulgarian speaking admin staff. 
+
 class Dog(models.Model):
 
     """
@@ -31,7 +33,6 @@ class Dog(models.Model):
     DEFAULT_STATUS = "Active"
 
     # Fields(Columns)
-    # Help text is provided for the bulgarian speaking users. 
 
     name_eng = models.CharField(
         max_length=NAME_MAX_LENGTH,
@@ -75,31 +76,36 @@ class Dog(models.Model):
 
     profile_pic = models.URLField(
         null=True,
-        max_length=MAX_URL_LENGTH
+        max_length=MAX_URL_LENGTH,
+        help_text="Профилна снимка."
     )
 
     pic_2 = models.URLField(
         blank=True,
         max_length=MAX_URL_LENGTH,
-        default=""
+        default="",
+        help_text="Албумна снимка."
     )
 
     pic_3 = models.URLField(
         blank=True,
         max_length=MAX_URL_LENGTH,
-        default=""
+        default="",
+        help_text="Албумна снимка."
     )
 
     pic_4 = models.URLField(
         blank=True,
         max_length=MAX_URL_LENGTH,
-        default=""
+        default="",
+        help_text="Албумна снимка."
     )
 
     pic_5 = models.URLField(
         blank=True,
         max_length=MAX_URL_LENGTH,
-        default=""
+        default="",
+        help_text="Албумна снимка."
     )
 
     # If alive, adopted or sick. If alive keep in the gallery, if adopted send put it inside the adoption page, if sick put at the top of the gallery.
@@ -107,56 +113,66 @@ class Dog(models.Model):
         max_length=DOG_STATUS_LENGTH,
         blank=True,
         choices=STATUS_CHOICES,
-        default=DEFAULT_STATUS
+        default=DEFAULT_STATUS,
+        help_text="Статус на кучето: Активно, Починало, Осиновено, Болно. Активните кучета ще се показват в началната стрица. Болните в страницата на клиниката. Осиновените в страницата за осиновяване. Починалите не се показват никъде."
     )
 
     story_eng = models.TextField(
         blank=True,
-        default=""
+        default="",
+        help_text="История на кучето на Английски."
     )
     story_bg = models.TextField(
         blank=True,
-        default=""
+        default="",
+        help_text="История на кучето на Български."
     )
 
     arrival_year = models.IntegerField(
         blank=True,
-        default=DEFAULT_UNKNOWN_YEAR
+        default=DEFAULT_UNKNOWN_YEAR,
+        help_text="Година на пристигане на кучето."
     )
 
     adoption_country_eng = models.CharField(
         max_length=NAME_MAX_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Държава на осиновяване на Английски."
     )
 
     adoption_country_bg = models.CharField(
         max_length=NAME_MAX_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Държава на осиновяване на Български."
     )
 
     adoption_year = models.IntegerField(
         blank=True,
-        default=DEFAULT_UNKNOWN_YEAR
+        default=DEFAULT_UNKNOWN_YEAR,
+        help_text="Година на осиновяване."
     )
 
     adoption_pic_after_1 = models.URLField(
         blank=True,
         max_length=MAX_URL_LENGTH,
-        default=""
+        default="",
+        help_text="Снимка на кучето след осиновяване."
     )
 
     adoption_pic_after_2 = models.URLField(
         blank=True,
         max_length=MAX_URL_LENGTH,
-        default=""
+        default="",
+        help_text="Снимка на кучето след осиновяване."
     )
 
     adoption_pic_after_3 = models.URLField(
         blank=True,
         max_length=MAX_URL_LENGTH,
-        default=""
+        default="",
+        help_text="Снимка на кучето след осиновяване."
     )
 
     # slug = models.SlugField(
@@ -201,35 +217,41 @@ class NoticeBoard(models.Model):
 
     note_eng = models.TextField(
         blank=True,
-        default=""
+        default="",
+        help_text="Съобщение на Английски."
     )
 
     note_bg = models.TextField(
         blank=True,
-        default=""
+        default="",
+        help_text="Съобщение на Български."
     )
 
     note_pic_1 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 1 в съобщението (не задължителни)."
     )
 
     note_pic_2 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 2 в съобщението (не задължителни)."
     )
 
     order = models.IntegerField(
-        default=ORDER
+        default=ORDER,
+        help_text="Подредба на съобщението. По подразбиране е 99. Стойност по-малка от 99 ще покаже съобщението по-нагоре."
     )
 
     location = models.CharField(
         max_length=LOCATION_LENGTH,
         blank=True,
         choices=LOCATION_CHOICES,
-        default=DEFAULT_LOCATION
+        default=DEFAULT_LOCATION,
+        help_text="Място на съобщението - всяка страница разполага със способност за съобщения."
     )
 
 class About(models.Model):
@@ -259,93 +281,109 @@ class About(models.Model):
         max_length=MAX_LOCATION_LENGTH,
         blank=True,
         choices=LOCATION,
-        default=DEFAULT_LOCATON
+        default=DEFAULT_LOCATON,
+        help_text="Място на секцията - всяка страница разполага със способност за секции."
     )
 
     section_desc_eng = models.TextField(
         blank=True,
-        default=DEFAULT_ENGLISH_DESC
+        default=DEFAULT_ENGLISH_DESC,
+        help_text="Описание на секцията на Английски."
     )
 
     section_desc_bg = models.TextField(
         blank=True,
-        default=""
+        default="",
+        help_text="Описание на секцията на Български."
     )
 
     about_pic_1 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 1 в секцията."
     )
 
     about_pic_2 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 2 в секцията."
     )
 
     about_pic_3 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 3 в секцията."
     )
 
     about_pic_4 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 4 в секцията."
     )
 
     about_pic_5 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 5 в секцията."
     )
 
     about_pic_6 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 6 в секцията."
     )
 
     about_pic_7 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 7 в секцията."
     )
 
     about_pic_8 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 8 в секцията."
     )
 
     about_pic_9 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 9 в секцията."
     )
 
     about_pic_10 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 10 в секцията."
     )
 
     order = models.IntegerField(
-        default=ORDER
+        default=ORDER,
+        help_text="Подредба на секцията в страницата. 1 е първата, 2 е втората и т.н"
     )
 
     section_title_eng = models.TextField(
         max_length=MAX_TITLE_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Заглавие на секцията на Английски."
     )
 
     section_title_bg = models.TextField(
         max_length=MAX_TITLE_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Заглавие на секцията на Български."
     )
 
 class Donation(models.Model):
@@ -370,14 +408,17 @@ class Donation(models.Model):
 
     date = models.DateField(
         blank=True,
-        default=last_month
+        default=last_month,
+        help_text="Дата на дарението. По подразбиране е последният ден на предходния месец. Например ако дарението е направено на 1.01.2020, то по подразбиране ще се показва на 31.12.2019. Това е за да се показват даренията в последния месец."
     )
 
     person_name_eng = models.CharField(
         max_length=NAME_MAX_LENGTH,
-        default=""
+        default="",
+        help_text="Име на дарителя на Английски."
     )
     person_name_bg = models.CharField(
         max_length=NAME_MAX_LENGTH,
-        default=""
+        default="",
+        help_text="Име на дарителя на Български."
     )
