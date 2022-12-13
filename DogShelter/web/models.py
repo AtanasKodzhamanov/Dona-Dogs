@@ -114,7 +114,7 @@ class Dog(models.Model):
         blank=True,
         choices=STATUS_CHOICES,
         default=DEFAULT_STATUS,
-        help_text="Статус на кучето: Активно, Починало, Осиновено, Болно. Активните кучета ще се показват в началната стрица. Болните в страницата на клиниката. Осиновените в страницата за осиновяване. Починалите не се показват никъде."
+        help_text="Статус на кучето: Активно, Починало, Осиновено, Болно. Активните кучета ще се показват в началната страница. Болните в страницата на клиниката. Осиновените в страницата за осиновяване. Починалите не се показват никъде. ДА СЕ ПОПЪЛВА НА ВРЕМЕ СЪГЛАСУВАНО СЪС СТАТУСА ВЪВ ФЕЙСБУК!"
     )
 
     story_eng = models.TextField(
@@ -151,28 +151,28 @@ class Dog(models.Model):
     adoption_year = models.IntegerField(
         blank=True,
         default=DEFAULT_UNKNOWN_YEAR,
-        help_text="Година на осиновяване."
+        help_text="Година на осиновяване (ако е осиновено)."
     )
 
     adoption_pic_after_1 = models.URLField(
         blank=True,
         max_length=MAX_URL_LENGTH,
         default="",
-        help_text="Снимка на кучето след осиновяване."
+        help_text="Снимка 1 на кучето след осиновяване."
     )
 
     adoption_pic_after_2 = models.URLField(
         blank=True,
         max_length=MAX_URL_LENGTH,
         default="",
-        help_text="Снимка на кучето след осиновяване."
+        help_text="Снимка 2 на кучето след осиновяване."
     )
 
     adoption_pic_after_3 = models.URLField(
         blank=True,
         max_length=MAX_URL_LENGTH,
         default="",
-        help_text="Снимка на кучето след осиновяване."
+        help_text="Снимка 3 на кучето след осиновяване."
     )
 
     # slug = models.SlugField(
