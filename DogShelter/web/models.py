@@ -254,6 +254,9 @@ class NoticeBoard(models.Model):
         help_text="Място на съобщението - всяка страница разполага със способност за съобщения."
     )
 
+class AboutPhoto(models.Model):
+    url = models.URLField(max_length=MAX_URL_LENGTH)
+
 class About(models.Model):
 
     """
@@ -385,6 +388,10 @@ class About(models.Model):
         default="",
         help_text="Заглавие на секцията на Български."
     )
+
+    photos = models.ManyToManyField(AboutPhoto)
+
+
 
 # The following is used to get the last day of the previous month for the "last_month" variable.
 # This is used to set the default value for the "date_of_donation" field in the donations models.
