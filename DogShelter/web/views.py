@@ -26,6 +26,34 @@ def show_home(request):  # dashboard
     }
     return render(request, "index.html", context)
 
+
+
+
+# from django.views import View
+# from django.core import serializers
+# from .models import Dog, NoticeBoard
+
+# class ShowHome(View):
+#     def dispatch(request, *args, **kwargs):
+#         dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
+#         dataNoticeBoard = serializers.serialize(
+#             'python', NoticeBoard.objects.all().order_by("order"))
+#         dataPeople = set(Dog.objects.values_list(
+#             "va_name_bg", "va_name_eng").exclude(va_name_eng=""))
+
+#         #dataDogs2 = Dog.objects.filter(status="Active")
+
+#         context = {
+#             "dataPeople": dataPeople,
+#             "dataDogs": dataDogs,
+#             "dataNoticeBoard": dataNoticeBoard
+#         }
+#         return self.render_to_response(context)
+
+# urlpatterns = [
+#     path('', ShowHome.as_view(), name='home'),
+# ]
+
 # tdd = test driven dev
 # pytest
 # test_request = {...}
@@ -115,47 +143,10 @@ def show_giftAdoption(request):
 
     # return list of virtual adopters
 
-    #ip = request.META.get('REMOTE_ADDR', None)
-
     context = {
-        # "ip": ip,
-
         "dataPeople": dataPeople,
         "dataNoticeBoard": dataNoticeBoard
     }
 
     return render(request, "giftadoption.html", context)
 
-
-#dataDogs = serializers.serialize('python', Dog.objects.all())
-#dataNoticeBoard = serializers.serialize('python', NoticeBoard.objects.all())
-# print(dataDogs)
-
-# for instance in dataDogs:
-#    print("INSTANCE")
-#   print(instance)
-#  print(instance["fields"]["nameENG"])
-
-#dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
-#dataPeople = serializers.serialize('python', People.objects.all().order_by("?"))
-
-
-# for instance in dataDogs:
-    # print(instance)
-    # print(instance["fields"]["person"])
-    # id=instance["fields"]["person"]
-    # print(dataPeople["id"==id]["fields"]["person_name_eng"])
-    # print(dataPeople)
-    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-
-    if x_forwarded_for:
-        ip = x_forwarded_for.split(',')[0]
-
-    else:
-        ip = request.META.get('REMOTE_ADDR')
-
-
-today = datetime.date.today()
-first = today.replace(day=1)
-last_month = first - datetime.timedelta(days=1)
-last_month_cl = last_month.strftime('%B')
