@@ -2,12 +2,32 @@ import datetime
 from django.core import serializers
 from django.shortcuts import render
 import django.utils.translation
+from DogShelter.web.forms import SubscribeForm, ContactForm, AdoptForm, DogFilterForm, vaStatusForm
 from DogShelter.web.models import Dog, NoticeBoard, About, Donation
-from .forms import DogFilterForm, vaStatusForm, SubscribeForm
 
 # Create your views here.
 
 lang = django.utils.translation.get_language()
+
+
+
+# def subscribe(request):
+#     form = SubscribeForm()
+#     if request.method == 'POST':
+#         form = SubscribeForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             # redirect to a success page
+#     return render(request, 'subscribe.html', {'subscribeForm': form})
+
+def subscribe(request):
+    if request.method == "get":
+        form = SubscribeForm()
+    else:
+        form = SubscribeForm(request.POST)
+        if form.is_valid():
+            form.save()
+    return render(request, 'subscribe.html', {'subscribeForm': form})
 
 def show_home(request):  # dashboard
     dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
@@ -18,11 +38,15 @@ def show_home(request):  # dashboard
 
     nameForm = DogFilterForm()
     vaForm = vaStatusForm()
-    subscribeForm = SubscribeForm()
+    #subscribeForm = SubscribeForm()
+    contactForm = ContactForm()
+    adoptForm = AdoptForm()
     #dataDogs2 = Dog.objects.filter(status="Active")
 
     context = {
-        'SubscribeForm': subscribeForm,
+        "adoptForm": adoptForm,
+        "contactForm": contactForm,
+        #'subscribeForm': subscribeForm,
         'nameFilterForm': nameForm,
         'vaStatusForm': vaForm,
         "dataPeople": dataPeople,

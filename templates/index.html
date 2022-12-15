@@ -25,7 +25,8 @@
 </form> {% endcomment %}
 
 <!-- dog_list.html -->
-<form action="javascript:void(0)" onsubmit="filterDogs(); return false;">
+<div display="inline-block">
+<form display="inline-block" action="javascript:void(0)" onsubmit="filterDogs(); return false;">
   {% csrf_token %}
   {{ nameFilterForm }}
   <button type="submit">Filter</button>
@@ -33,15 +34,30 @@
 </form>
 
 
-<form action="" method="post">
+<form display="inline-block" action="" method="post">
   {% csrf_token %}
-  {{ vaStatusForm }}
+  {{ vaStatusForm  }}
+</form>
+</div>
+
+
+<form action="javascript:void(0)" method="POST">
+  {% csrf_token %}
+  {{ subscribeForm }}
+  <input type="submit" value="Submit">
+</form>
+<br>
+<br>
+<form action="javascript:void(0)" method="POST">
+  {% csrf_token %}
+  {{ contactForm }}
+  <button type="submit">Send</button>
 </form>
 
 <form action="javascript:void(0)" method="POST">
   {% csrf_token %}
-  {{ SubscribeForm }}
-  <input type="submit" value="Submit">
+  {{ adoptForm }}
+  <button type="submit">Send</button>
 </form>
 
 

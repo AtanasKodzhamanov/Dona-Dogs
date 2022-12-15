@@ -332,3 +332,11 @@ class Donation(models.Model):
 class NewsletterSubscriber(models.Model):
     email = EmailField(required=True, label='Email')
     name = CharField(required=True, label='Name')
+
+class AdoptionForm(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20)
+    city = models.CharField(max_length=255)
+    country = models.CharField(max_length=255)
+    dog = models.CharField(max_length=255)
