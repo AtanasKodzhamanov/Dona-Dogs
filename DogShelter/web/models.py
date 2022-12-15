@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import CharField, EmailField
 from django.utils.timezone import now
 from django.template.defaultfilters import slugify
 import datetime
@@ -327,3 +328,7 @@ class Donation(models.Model):
         max_length=NAME_MAX_LENGTH,
         null=True
     )
+
+class NewsletterSubscriber(models.Model):
+    email = EmailField(required=True, label='Email')
+    name = CharField(required=True, label='Name')

@@ -3,12 +3,11 @@ from django.core import serializers
 from django.shortcuts import render
 import django.utils.translation
 from DogShelter.web.models import Dog, NoticeBoard, About, Donation
-from django.forms.models import model_to_dict
+from .forms import DogFilterForm, vaStatusForm, SubscribeForm
 
 # Create your views here.
 
 lang = django.utils.translation.get_language()
-
 
 def show_home(request):  # dashboard
     dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
@@ -17,9 +16,15 @@ def show_home(request):  # dashboard
     dataPeople = set(Dog.objects.values_list(
         "va_name_bg", "va_name_eng").exclude(va_name_eng=""))
 
+    nameForm = DogFilterForm()
+    vaForm = vaStatusForm()
+    subscribeForm = SubscribeForm()
     #dataDogs2 = Dog.objects.filter(status="Active")
 
     context = {
+        'SubscribeForm': subscribeForm,
+        'nameFilterForm': nameForm,
+        'vaStatusForm': vaForm,
         "dataPeople": dataPeople,
         "dataDogs": dataDogs,
         "dataNoticeBoard": dataNoticeBoard
