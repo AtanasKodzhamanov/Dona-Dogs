@@ -30,11 +30,15 @@ class AdoptForm(forms.Form):
 
 # Dog filter form
 class DogFilterForm(forms.Form):
-    dog_name = forms.CharField(required=False, initial='Input name', label="")
-    dog_name.widget.attrs.update({
+    dog_name = forms.CharField(
+        required=False,
+        label="",
+        widget=forms.TextInput(attrs={
             'name': 'dogName',
             'id': 'dogName',
-        })
+            'placeholder': 'Input name',
+        }),
+    )
 
 
 class vaStatusForm(forms.Form):

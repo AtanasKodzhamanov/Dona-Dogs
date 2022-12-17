@@ -10,6 +10,7 @@
 function findName() {
   // Get the submitted dog name from the form
   var dogName = document.getElementById('dogName').value;
+  dogName = dogName.toLowerCase();
   // var showAllButton = document.getElementById('showAllButton');
   // if (dogName != ""){
   //  showAllButton.style.display = '';}
@@ -19,7 +20,9 @@ function findName() {
   var dogs = document.querySelectorAll('#dogList #Dog h2');
   for (var i = 0; i < dogs.length; i++) {
     var dog = dogs[i];
-    if (dog.textContent.indexOf(dogName) === -1) {
+    // Convert the dog's name to lowercase
+    var dogNameLower = dog.textContent.toLowerCase();
+    if (dogNameLower.indexOf(dogName) === -1) {
       dog.parentElement.style.display = 'none';
     } else {
       dog.parentElement.style.display = '';
