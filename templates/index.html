@@ -33,11 +33,10 @@
 <div id="filtersContainer" class="display" >
   <div id="formsBar" >
     <div class="form-group">
-      <form  action="javascript:void(0)" onsubmit="findName(); return false;">
+      <form  action="javascript:void(0)">
         {% csrf_token %}
         {{ nameFilterForm }}
-        <button type="submit">Find</button>
-        <button id="showAllButton" type="button" style="display: none;" onclick="showAllDogs();">All</button>
+        {% comment %} <button id="showAllButton" type="button" style="display: none;" onclick="showAllDogs();">All</button> {% endcomment %}
       </form>
     </div>
 

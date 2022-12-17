@@ -10,10 +10,10 @@
 function findName() {
   // Get the submitted dog name from the form
   var dogName = document.getElementById('dogName').value;
-  var showAllButton = document.getElementById('showAllButton');
-  if (dogName != ""){
-    showAllButton.style.display = '';}
-  else{ showAllButton.style.display = 'None';}
+  // var showAllButton = document.getElementById('showAllButton');
+  // if (dogName != ""){
+  //  showAllButton.style.display = '';}
+  // else{ showAllButton.style.display = 'None';}
 
   // Loop through all the dog elements and hide the ones that don't match the submitted dog name
   var dogs = document.querySelectorAll('#dogList #Dog h2');
@@ -26,6 +26,8 @@ function findName() {
     }
   }
 }
+document.getElementById('dogName').addEventListener('input', findName);
+
 
 function showAllDogs() {
   // Reset the form by clearing the dog name input field
@@ -39,9 +41,10 @@ function showAllDogs() {
   }
 
   // Hide the "Show all" button since all dogs are now visible
-  var showAllButton = document.getElementById('showAllButton');
-  showAllButton.style.display = 'None';
+  // var showAllButton = document.getElementById('showAllButton');
+  // showAllButton.style.display = 'None';
 }
+
 // Get a reference to the select element and the dog list div
 var selectVa = document.querySelector("#adoptionStatus");
 var selectGender = document.querySelector("#genderFilter");
