@@ -1,41 +1,12 @@
-function myFunction1(element) {
-  var popup = element.querySelector('#myPopup');
-  popup.classList.toggle("show", true);
-
-}
-
-function myFunction2(element) {
-  var popup = element.querySelector('#myPopup');
-  popup.classList.toggle("show", false);
-
-}
-
-let slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) { slideIndex = 1 }
-  if (n < 1) { slideIndex = slides.length }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slides[slideIndex - 1].style.display = "block";
-}
 
 
 function filterDogs() {
   // Get the submitted dog name from the form
   var dogName = document.getElementById('dogName').value;
+  var showAllButton = document.getElementById('showAllButton');
+  if (dogName != ""){
+    showAllButton.style.display = '';}
+  else{ showAllButton.style.display = 'None';}
 
   // Loop through all the dog elements and hide the ones that don't match the submitted dog name
   var dogs = document.querySelectorAll('#dogList #Dog h2');
@@ -59,4 +30,46 @@ function showAllDogs() {
     var dog = dogs[i];
     dog.parentElement.style.display = '';
   }
+
+  // Hide the "Show all" button since all dogs are now visible
+  var showAllButton = document.getElementById('showAllButton');
+  showAllButton.style.display = 'None';
 }
+
+// Get a reference to the select element and the dog list div
+// Get a reference to the select element and the dog list div
+var select = document.querySelector("#adoptionStatus");
+console.log(select)
+var dogList = document.querySelector("#dogList");
+console.log(select)
+  // Add an event listener to the select element that listens for when the user changes the selected option
+  select.addEventListener("change", function() {
+  // Get the value of the selected option
+  var selectedOption = this.value;
+  // Loop through all of the dogs
+  for (var i = 0; i < dogList.children.length; i++) {
+    // Get the current dog
+    var dog = dogList.children[i];
+    //console.log(dog)
+    var vaName = dog.getAttribute("vaName");
+    if (!vaName){vaName="None"}
+
+    console.log(dog)
+    
+    // Check if the dog's adoption status matches the selected option
+    if (selectedOption == "all") {
+      // If the dog's adoption status matches the selected option, show the dog
+      dog.style.display = "";
+    } else if (selectedOption == "va" && vaName != "None") {
+      // If the selected option is "va" and the dog has a vaName value, show the dog
+      dog.style.display = "";
+    } else if (selectedOption == "no" && vaName == "None") {
+      // If the selected option is "no" and the dog does not have a vaName value, show the dog
+      dog.style.display = "";
+    } else {
+      // Otherwise, hide the dog
+      dog.style.display = "none";
+    }
+  }
+  });
+
