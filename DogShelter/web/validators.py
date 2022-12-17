@@ -7,15 +7,16 @@ from django.utils.deconstruct import deconstructible
 from django.core.validators import RegexValidator
 
 def validate_english(value):
-    regex = r'^[A-Za-z]+$'
-    validator = RegexValidator(regex=regex, message='Field must contain only English characters')
-    validator(value)
-
+    # regex = r'^[A-Za-z]+$'
+    # validator = RegexValidator(regex=regex, message='Field must contain only English characters')
+    # validator(value)
+    pass
 
 def validate_bulgarian(value):
-    regex = r'^[А-Яа-я]+$'
-    validator = RegexValidator(regex=regex, message='Field must contain only Bulgarian characters')
-    validator(value)
+    # regex = r'^[А-Яа-я]+$'
+    # validator = RegexValidator(regex=regex, message='Field must contain only Bulgarian characters')
+    # validator(value)
+    pass
 
 # URL check
 def validate_url(value):
