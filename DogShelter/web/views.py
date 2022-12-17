@@ -26,31 +26,6 @@ def show_home(request):  # dashboard
     }
     return render(request, "index.html", context)
 
-from django.views import View
-from django.core import serializers
-from .models import Dog, NoticeBoard
-
-class ShowHome(View):
-    def dispatch(request, *args, **kwargs):
-        dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
-        dataNoticeBoard = serializers.serialize(
-            'python', NoticeBoard.objects.all().order_by("order"))
-        dataPeople = set(Dog.objects.values_list(
-            "va_name_bg", "va_name_eng").exclude(va_name_eng=""))
-
-        #dataDogs2 = Dog.objects.filter(status="Active")
-
-        context = {
-            "dataPeople": dataPeople,
-            "dataDogs": dataDogs,
-            "dataNoticeBoard": dataNoticeBoard
-        }
-        return self.render_to_response(context)
-
-urlpatterns = [
-    path('', ShowHome.as_view(), name='home'),
-]
-
 # tdd = test driven dev
 # pytest
 # test_request = {...}
