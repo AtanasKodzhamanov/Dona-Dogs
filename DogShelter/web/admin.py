@@ -38,4 +38,4 @@ class DonationStory(admin.ModelAdmin):
 
 @admin.register(NewsletterSubscriber)
 class NewsletterSubscriber(admin.ModelAdmin):
-    list_display = ["name", "email", "phone", "date"]
+    list_display = ["email", "name"]
