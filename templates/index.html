@@ -25,7 +25,7 @@
 </form> {% endcomment %}
 
 <!-- dog_list.html -->
-<div display="inline-block">
+<div display="inline-block" id="formsBar">
 <form display="inline-block" action="javascript:void(0)" onsubmit="filterDogs(); return false;">
   {% csrf_token %}
   {{ nameFilterForm }}
@@ -40,7 +40,7 @@
 </form>
 </div>
 
-
+{% comment %}
 <form action="javascript:void(0)" method="POST">
   {% csrf_token %}
   {{ subscribeForm }}
@@ -59,7 +59,7 @@
   {{ adoptForm }}
   <button type="submit">Send</button>
 </form>
-
+{% endcomment %}
 
 {% comment %} <form>
   <label for="adoptionStatus">Adoption Status:</label>
