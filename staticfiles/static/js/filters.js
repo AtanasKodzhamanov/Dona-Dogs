@@ -73,3 +73,25 @@ console.log(select)
   }
   });
 
+
+  function filterGender() {
+    // Get the selected gender
+    var gender = document.getElementById("gender").value;
+  
+    // Get all the dog elements
+    var dogs = document.getElementsByClassName("thumbnail");
+  
+    // Loop through the dog elements
+    for (var i = 0; i < dogs.length; i++) {
+      // Get the gender of the current dog
+      var dogGender = dogs[i].getAttribute("gender");
+  
+      // If the gender of the current dog does not match the selected gender, hide the dog
+      if (gender !== "all" && gender !== dogGender) {
+        dogs[i].style.display = "none";
+      } else {
+        dogs[i].style.display = "";
+      }
+    }
+  }
+  

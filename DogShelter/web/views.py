@@ -2,7 +2,7 @@ import datetime
 from django.core import serializers
 from django.shortcuts import render
 import django.utils.translation
-from DogShelter.web.forms import SubscribeForm, ContactForm, AdoptForm, DogFilterForm, vaStatusForm
+from DogShelter.web.forms import SubscribeForm, ContactForm, AdoptForm, DogFilterForm, vaStatusForm, genderFilterForm
 from DogShelter.web.models import Dog, NoticeBoard, About, Donation
 
 # Create your views here.
@@ -34,7 +34,8 @@ def show_home(request):  # dashboard
         'python', NoticeBoard.objects.all().order_by("order"))
     dataPeople = set(Dog.objects.values_list(
         "va_name_bg", "va_name_eng").exclude(va_name_eng=""))
-
+    
+    genderForm = genderFilterForm()
     nameForm = DogFilterForm()
     vaForm = vaStatusForm()
     #subscribeForm = SubscribeForm()
@@ -43,6 +44,7 @@ def show_home(request):  # dashboard
     #dataDogs2 = Dog.objects.filter(status="Active")
 
     context = {
+        "genderFilterForm": genderForm,
         "adoptForm": adoptForm,
         "contactForm": contactForm,
         #'subscribeForm': subscribeForm,

@@ -26,18 +26,32 @@
 
 <!-- dog_list.html -->
 <div id="formsBar">
-<form  action="javascript:void(0)" onsubmit="filterDogs(); return false;">
-  {% csrf_token %}
-  {{ nameFilterForm }}
-  <button type="submit">Find</button>
-  <button id="showAllButton" type="button" style="display: none;" onclick="showAllDogs();">Show all</button>
-</form>
+  <div class="form-group">
+    <form  action="javascript:void(0)" onsubmit="filterDogs(); return false;">
+      {% csrf_token %}
+      {{ nameFilterForm }}
+      <button type="submit">Find</button>
+      <button id="showAllButton" type="button" style="display: none;" onclick="showAllDogs();">All</button>
+    </form>
+  </div>
 
-<form action="" method="post">
-  {% csrf_token %}
-  {{ vaStatusForm  }}
-</form>
+  <div class="form-group">
+    <form action="" method="post">
+      {% csrf_token %}
+      {{ vaStatusForm  }}
+    </form>
+  </div>
+
+  <div class="form-group">
+    <form action="" method="post">
+      {% csrf_token %}
+      {{ genderFilterForm  }}
+    </form>
+  </div>
+
 </div>
+
+
 
 {% comment %}
 <form action="javascript:void(0)" method="POST">
