@@ -1,4 +1,4 @@
-# 
+#
 # python3 manage.py makemessages -l bg
 # python3 manage.py compilemessages -l bg
 #  
@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-17 21:50+0000\n"
+"POT-Creation-Date: 2022-12-17 22:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,39 +21,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: DogShelter/web/forms.py:43
+#: DogShelter/web/forms.py:42
 msgid "Input name"
 msgstr "Въведете име"
 
-#: DogShelter/web/forms.py:50
-msgid "Virtual Adopter Status"
+#: DogShelter/web/forms.py:49
+msgid "Virtual Adoption Status"
 msgstr "Статус на виртуално осиновяване"
 
-#: DogShelter/web/forms.py:52
+#: DogShelter/web/forms.py:51
 msgid "All dogs"
 msgstr "Всички"
 
-#: DogShelter/web/forms.py:53 templates/index.html:126
+#: DogShelter/web/forms.py:52 templates/index.html:126
 msgid "Virtually Adopted"
 msgstr "Виртуално осиновени"
 
-#: DogShelter/web/forms.py:54
+#: DogShelter/web/forms.py:53
 msgid "No Adoptors"
 msgstr "Без осиновители"
 
-#: DogShelter/web/forms.py:64
-msgid "Filter Gender"
+#: DogShelter/web/forms.py:63
+msgid "Gender"
 msgstr "Пол"
 
-#: DogShelter/web/forms.py:66
+#: DogShelter/web/forms.py:65
 msgid "All genders"
 msgstr "Всички"
 
-#: DogShelter/web/forms.py:67
+#: DogShelter/web/forms.py:66
 msgid "M"
 msgstr "Мъжки"
 
-#: DogShelter/web/forms.py:68
+#: DogShelter/web/forms.py:67
 msgid "F"
 msgstr "Женски"
 
