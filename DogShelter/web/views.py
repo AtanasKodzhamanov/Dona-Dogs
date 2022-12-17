@@ -2,12 +2,31 @@ import datetime
 from django.core import serializers
 from django.shortcuts import render
 import django.utils.translation
+from DogShelter.web.forms import SubscribeForm, ContactForm, AdoptForm, DogFilterForm, vaStatusForm
 from DogShelter.web.models import Dog, NoticeBoard, About, Donation
-from django.forms.models import model_to_dict
 
 # Create your views here.
 
 lang = django.utils.translation.get_language()
+
+
+# def subscribe(request):
+#     form = SubscribeForm()
+#     if request.method == 'POST':
+#         form = SubscribeForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             # redirect to a success page
+#     return render(request, 'subscribe.html', {'subscribeForm': form})
+
+def subscribe(request):
+    if request.method == "get":
+        form = SubscribeForm()
+    else:
+        form = SubscribeForm(request.POST)
+        if form.is_valid():
+            form.save()
+    return render(request, 'subscribe.html', {'subscribeForm': form})
 
 def show_home(request):  # dashboard
     dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
@@ -16,14 +35,52 @@ def show_home(request):  # dashboard
     dataPeople = set(Dog.objects.values_list(
         "va_name_bg", "va_name_eng").exclude(va_name_eng=""))
 
+    nameForm = DogFilterForm()
+    vaForm = vaStatusForm()
+    #subscribeForm = SubscribeForm()
+    contactForm = ContactForm()
+    adoptForm = AdoptForm()
     #dataDogs2 = Dog.objects.filter(status="Active")
 
     context = {
+        "adoptForm": adoptForm,
+        "contactForm": contactForm,
+        #'subscribeForm': subscribeForm,
+        'nameFilterForm': nameForm,
+        'vaStatusForm': vaForm,
         "dataPeople": dataPeople,
         "dataDogs": dataDogs,
         "dataNoticeBoard": dataNoticeBoard
     }
     return render(request, "index.html", context)
+
+
+
+
+# from django.views import View
+# from django.core import serializers
+# from .models import Dog, NoticeBoard
+
+# class ShowHome(View):
+#     def dispatch(request, *args, **kwargs):
+#         dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
+#         dataNoticeBoard = serializers.serialize(
+#             'python', NoticeBoard.objects.all().order_by("order"))
+#         dataPeople = set(Dog.objects.values_list(
+#             "va_name_bg", "va_name_eng").exclude(va_name_eng=""))
+
+#         #dataDogs2 = Dog.objects.filter(status="Active")
+
+#         context = {
+#             "dataPeople": dataPeople,
+#             "dataDogs": dataDogs,
+#             "dataNoticeBoard": dataNoticeBoard
+#         }
+#         return self.render_to_response(context)
+
+# urlpatterns = [
+#     path('', ShowHome.as_view(), name='home'),
+# ]
 
 # tdd = test driven dev
 # pytest
@@ -111,6 +168,9 @@ def show_giftAdoption(request):
         'python', Dog.objects.all().exclude(va_name_eng=""))
 
     # return list of virtual adopters
+
+    #ip = request.META.get('REMOTE_ADDR', None)
+
     context = {
         "dataPeople": dataPeople,
         "dataNoticeBoard": dataNoticeBoard

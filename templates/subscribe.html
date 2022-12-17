@@ -1,0 +1,16 @@
+<form action="{% url 'subscribe' %}" method="post">
+    {% csrf_token %}
+    {{ subscribeForm.as_p  }}
+    <input type="submit" value="Subscribe">
+</form>
+
+<form action="{% url 'subscribe' %}" method="post">
+    {% csrf_token %}
+    {{ subscribeForm.as_p  }}
+    {% for field in subscribeForm %}
+        {% for error in field.errors %}
+            <p>{{ error }}</p>
+        {% endfor %}
+    {% endfor %}
+    <input type="submit" value="Subscribe">
+</form>

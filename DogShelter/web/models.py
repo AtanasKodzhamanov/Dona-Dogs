@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import CharField, EmailField
 from django.utils.timezone import now
 from django.template.defaultfilters import slugify
 
@@ -529,5 +530,3 @@ class DonationStory(models.Model):
         help_text="Снимка 3 в секцията.",
         validators=[validate_url]
     )
-
-
