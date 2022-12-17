@@ -330,8 +330,8 @@ class Donation(models.Model):
     )
 
 class NewsletterSubscriber(models.Model):
-    email = EmailField(required=True, label='Email')
-    name = CharField(required=True, label='Name')
+    email = EmailField(required=True)
+    name = CharField(required=True)
 
 class AdoptionForm(models.Model):
     name = models.CharField(max_length=255)
