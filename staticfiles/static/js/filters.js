@@ -35,14 +35,20 @@ function showAllDogs() {
   var showAllButton = document.getElementById('showAllButton');
   showAllButton.style.display = 'None';
 }
-
 // Get a reference to the select element and the dog list div
 var selectVa = document.querySelector("#adoptionStatus");
+var selectGender = document.querySelector("#genderFilter");
 var dogList = document.querySelector("#dogList");
-  // Add an event listener to the select element that listens for when the user changes the selected option
-  selectVa.addEventListener("change", function() {
-  // Get the value of the selected option
-  var selectedVa = this.value;
+
+// Add event listeners to both select elements that listen for when the user changes the selected option
+selectVa.addEventListener("change", filterDogs);
+selectGender.addEventListener("change", filterDogs);
+
+function filterDogs() {
+  // Get the values of both selected options
+  var selectedVa = selectVa.value;
+  var selectedGender = selectGender.value;
+
   // Loop through all of the dogs
   for (var i = 0; i < dogList.children.length; i++) {
     // Get the current dog
@@ -50,55 +56,16 @@ var dogList = document.querySelector("#dogList");
     //console.log(dog)
     var vaName = dog.getAttribute("vaName");
     if (!vaName){vaName="None"}
-
-    console.log(dog)
-    
-    // Check if the dog's adoption status matches the selected option
-    if (selectedVa == "all") {
-      // If the dog's adoption status matches the selected option, show the dog
-      dog.style.display = "";
-    } else if (selectedVa == "va" && vaName != "None") {
-      // If the selected option is "va" and the dog has a vaName value, show the dog
-      dog.style.display = "";
-    } else if (selectedVa == "no" && vaName == "None") {
-      // If the selected option is "no" and the dog does not have a vaName value, show the dog
-      dog.style.display = "";
-    } else {
-      // Otherwise, hide the dog
-      dog.style.display = "none";
-    }
-  }
-  });
-
-  // Get a reference to the select element and the dog list div
-  var selectGender = document.querySelector("#genderFilter");
-  var dogList = document.querySelector("#dogList");
-  // Add an event listener to the select element that listens for when the user changes the selected option
-  selectGender.addEventListener("change", function() {
-  // Get the value of the selected option
-  var selectedGender = this.value;
-  // Loop through all of the dogs
-  for (var i = 0; i < dogList.children.length; i++) {
-    // Get the current dog
-    var dog = dogList.children[i];
-    //console.log(dog)
     var gender = dog.getAttribute("gender");
 
-    console.log(dog)
-    
-    // Check if the dog's adoption status matches the selected option
-    if (selectedGender == "all") {
-      // If the dog's adoption status matches the selected option, show the dog
-      dog.style.display = "";
-    } else if (selectedGender == "male" && gender == "M") {
-      // If the selected option is "va" and the dog has a vaName value, show the dog
-      dog.style.display = "";
-    } else if (selectedGender == "female" && gender == "F") {
-      // If the selected option is "no" and the dog does not have a vaName value, show the dog
+    // Check if the dog matches both selected options
+    if ((selectedVa == "all" || (selectedVa == "va" && vaName != "None") || (selectedVa == "no" && vaName == "None")) &&
+        (selectedGender == "all" || (selectedGender == "male" && gender == "M") || (selectedGender == "female" && gender == "F"))) {
+      // If the dog matches both selected options, show the dog
       dog.style.display = "";
     } else {
       // Otherwise, hide the dog
       dog.style.display = "none";
     }
   }
-  });
+}
