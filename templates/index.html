@@ -25,16 +25,15 @@
 </form> {% endcomment %}
 
 <!-- dog_list.html -->
-<div display="inline-block" id="formsBar">
-<form display="inline-block" action="javascript:void(0)" onsubmit="filterDogs(); return false;">
+<div id="formsBar">
+<form  action="javascript:void(0)" onsubmit="filterDogs(); return false;">
   {% csrf_token %}
   {{ nameFilterForm }}
-  <button type="submit">Filter</button>
+  <button type="submit">Find</button>
   <button id="showAllButton" type="button" style="display: none;" onclick="showAllDogs();">Show all</button>
 </form>
 
-
-<form display="inline-block" action="" method="post">
+<form action="" method="post">
   {% csrf_token %}
   {{ vaStatusForm  }}
 </form>
