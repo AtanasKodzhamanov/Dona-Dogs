@@ -1,11 +1,35 @@
+/* #filtersContainer {
+  
+}
+
+#filtersButton{
+  margin-left: 25px;
+  margin-bottom: 10px;
+  padding:5px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: rgb(200, 200, 200);
+} */
+
 #formsBar {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin: 25px;
+  margin-left: 25px;
   padding: 5px;
   background-color: #f2f2f2;
   color: rgb(10, 10, 46);
   text-align: left;
+}
+
+.hidden {
+  display: none;
+}
+
+#formsBar {
+  transition: height 0.5s ease;
 }
 
 .form-group {

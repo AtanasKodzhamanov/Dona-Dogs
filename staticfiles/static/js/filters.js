@@ -1,6 +1,13 @@
+// function toggleFilters() {
+//   var filtersContainer = document.getElementById("filtersContainer");
+//   if (filtersContainer.classList.contains("hidden")) {
+//     filtersContainer.classList.remove("hidden");
+//   } else {
+//     filtersContainer.classList.add("hidden");
+//   }
+// }
 
-
-function filterDogs() {
+function findName() {
   // Get the submitted dog name from the form
   var dogName = document.getElementById('dogName').value;
   var showAllButton = document.getElementById('showAllButton');
@@ -44,6 +51,8 @@ var dogList = document.querySelector("#dogList");
 selectVa.addEventListener("change", filterDogs);
 selectGender.addEventListener("change", filterDogs);
 
+
+
 function filterDogs() {
   // Get the values of both selected options
   var selectedVa = selectVa.value;
@@ -69,3 +78,4 @@ function filterDogs() {
     }
   }
 }
+
