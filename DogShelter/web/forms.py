@@ -1,5 +1,7 @@
 from django import forms 
 from django.forms import CharField, Select
+from django.utils.translation import gettext_lazy as _
+
 
 from DogShelter.web.models import AdoptionForm, NewsletterSubscriber
 
@@ -29,6 +31,7 @@ class AdoptForm(forms.Form):
         model = AdoptionForm
 
 # Dog filter form
+
 class DogFilterForm(forms.Form):
     dog_name = forms.CharField(
         required=False,
@@ -36,19 +39,18 @@ class DogFilterForm(forms.Form):
         widget=forms.TextInput(attrs={
             'name': 'dogName',
             'id': 'dogName',
-            'placeholder': 'Input name',
+            'placeholder': _('Input name'),
         }),
     )
 
-
 class vaStatusForm(forms.Form):
     # Define the form fields
-    adoption_status = CharField(
-        label="Virtual Adopter Status",
+    adoption_status = forms.CharField(
+        label=_("Virtual Adopter Status"),
         widget=Select(choices=(
-            ("all", "All dogs"),
-            ("va", "Virtually Adopted"),
-            ("no", "No Adoptors"),
+            ("all", _("All dogs")),
+            ("va", _("Virtually Adopted")),
+            ("no", _("No Adoptors")),
         ))
     )
     adoption_status.widget.attrs.update({
@@ -58,11 +60,11 @@ class vaStatusForm(forms.Form):
 
 class genderFilterForm(forms.Form):
     gender = forms.CharField(
-        label="Filter Gender",
+        label=_("Filter Gender"),
         widget=Select(choices=(
-            ("all", "All genders"),
-            ("male", "M"),
-            ("female", "F"),
+            ("all", _("All genders")),
+            ("male", _("M")),
+            ("female", _("F")),
         ))
     )
     gender.widget.attrs.update({
