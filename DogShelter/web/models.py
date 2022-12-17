@@ -530,3 +530,15 @@ class DonationStory(models.Model):
         help_text="Снимка 3 в секцията.",
         validators=[validate_url]
     )
+
+class NewsletterSubscriber(models.Model):
+    email = EmailField(required=True)
+    name = CharField(required=True)
+
+class AdoptionForm(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20)
+    city = models.CharField(max_length=255)
+    country = models.CharField(max_length=255)
+    dog = models.CharField(max_length=255)

@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 
-from DogShelter.web.models import Dog, NoticeBoard, About, Donation
+from DogShelter.web.models import Dog, NoticeBoard, About, Donation, DonationStory
 # Register your models here.
 
 
