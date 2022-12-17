@@ -57,11 +57,11 @@ class genderFilterForm(forms.Form):
         label="Filter Gender",
         widget=Select(choices=(
             ("all", "All genders"),
-            ("male", "Male"),
-            ("female", "Female"),
+            ("male", "M"),
+            ("female", "F"),
         ))
     )
     gender.widget.attrs.update({
-        'name': 'gender',
-        'id': 'gender',
+        'name': 'genderFilter',
+        'id': 'genderFilter',
     })
