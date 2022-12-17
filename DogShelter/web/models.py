@@ -2,140 +2,197 @@ from django.db import models
 from django.forms import CharField, EmailField
 from django.utils.timezone import now
 from django.template.defaultfilters import slugify
+
 import datetime
 
+from DogShelter.web.validators import validate_bulgarian, validate_english, validate_url
+
+MAX_URL_LENGTH = 300
+NAME_MAX_LENGTH = 60    
+ORDER = 99
+
+# Help text is provided for the Bulgarian speaking admin staff. 
 
 class Dog(models.Model):
 
-    NAME_MAX_LENGTH = 60
+    """
 
-    Options = [(x, x) for x in ("Y", "N", "Unknown")]
-    GENDER = [(x, x) for x in ("F", "M")]
-    STATUS = [(x, x) for x in ("Active", "Dead", "Adopted", "Sick")]
+    This model represents a dog. 
+    It stores information about a dog, such as its name, gender, and status.
+    It is the core model of the application.
+
+    """
 
     def __str__(self):
         return self.name_eng
+
+    OPTIONS_CHOICES = [(x, x) for x in ("Y", "N", "Unknown")]
+    GENDER_CHOICES = [(x, x) for x in ("F", "M")]
+    STATUS_CHOICES = [(x, x) for x in ("Active", "Dead", "Adopted", "Sick")]
+
+    DEFAULT_UNKNOWN_YEAR = 0
+    DOG_STATUS_LENGTH = 10
+    GENDER_MAX_LENGTH = 7
+    DISEASES_MAX_LENGTH = 7
+    DEFAULT_STATUS = "Active"
 
     # Fields(Columns)
 
     name_eng = models.CharField(
         max_length=NAME_MAX_LENGTH,
         unique=True,
-        null=True
+        null=True,
+        help_text="Име на куче на Английски.",
+        validators=[validate_english]
     )
     name_bg = models.CharField(
         max_length=NAME_MAX_LENGTH,
-        default=""
+        default="",
+        help_text="Име на куче на Български.",
+        validators=[validate_bulgarian]
     )
 
     va_name_eng = models.CharField(
         max_length=NAME_MAX_LENGTH,
         default="",
-        blank=True
+        blank=True,
+        help_text="Име на виртуален осиновител на Английски.",
+        validators=[validate_english]
     )
     va_name_bg = models.CharField(
         max_length=NAME_MAX_LENGTH,
         default="",
-        blank=True
+        blank=True,
+        help_text="Име на виртуален осиновител на Български.",
+        validators=[validate_bulgarian]
     )
 
     # Chronic
     diseases = models.CharField(
-        max_length=7,
-        choices=Options,
-        default=""
+        max_length=DISEASES_MAX_LENGTH,
+        choices=OPTIONS_CHOICES,
+        default="",
+        help_text="Флаг за хронични болести, например сляпота, трудно-подвижност..."
     )
 
     gender = models.CharField(
-        max_length=7,
-        choices=GENDER,
-        default=""
+        max_length=GENDER_MAX_LENGTH,
+        choices=GENDER_CHOICES,
+        default="",
+        help_text="Пол на куче."
     )
 
     profile_pic = models.URLField(
         null=True,
-        max_length=300
+        max_length=MAX_URL_LENGTH,
+        help_text="Профилна снимка.",
+        validators=[validate_url]
     )
 
     pic_2 = models.URLField(
         blank=True,
-        max_length=300,
-        default=""
+        max_length=MAX_URL_LENGTH,
+        default="",
+        help_text="Албумна снимка.",
+        validators=[validate_url]
     )
 
     pic_3 = models.URLField(
         blank=True,
-        max_length=300,
-        default=""
+        max_length=MAX_URL_LENGTH,
+        default="",
+        help_text="Албумна снимка.",
+        validators=[validate_url]
     )
 
     pic_4 = models.URLField(
         blank=True,
-        max_length=300,
-        default=""
+        max_length=MAX_URL_LENGTH,
+        default="",
+        help_text="Албумна снимка.",
+        validators=[validate_url]
     )
 
     pic_5 = models.URLField(
         blank=True,
-        max_length=300,
-        default=""
+        max_length=MAX_URL_LENGTH,
+        default="",
+        help_text="Албумна снимка.",
+        validators=[validate_url]
     )
 
     # If alive, adopted or sick. If alive keep in the gallery, if adopted send put it inside the adoption page, if sick put at the top of the gallery.
     status = models.CharField(
-        max_length=10,
+        max_length=DOG_STATUS_LENGTH,
         blank=True,
-        choices=STATUS,
-        default="Active"
+        choices=STATUS_CHOICES,
+        default=DEFAULT_STATUS,
+        help_text="Статус на кучето: Активно, Починало, Осиновено, Болно. Активните кучета ще се показват в началната страница. Болните в страницата на клиниката. Осиновените в страницата за осиновяване. Починалите не се показват никъде. ДА СЕ ПОПЪЛВА НА ВРЕМЕ СЪГЛАСУВАНО СЪС СТАТУСА ВЪВ ФЕЙСБУК!"
     )
 
     story_eng = models.TextField(
         blank=True,
-        default=""
+        default="",
+        help_text="История на кучето на Английски.",
+        validators=[validate_english]
     )
     story_bg = models.TextField(
         blank=True,
-        default=""
+        default="",
+        help_text="История на кучето на Български.",
+        validators=[validate_bulgarian]
     )
 
     arrival_year = models.IntegerField(
         blank=True,
-        default=0
+        default=DEFAULT_UNKNOWN_YEAR,
+        help_text="Година на пристигане на кучето."
     )
 
     adoption_country_eng = models.CharField(
         max_length=NAME_MAX_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Държава на осиновяване на Английски.",
+        validators=[validate_english]
     )
 
     adoption_country_bg = models.CharField(
         max_length=NAME_MAX_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Държава на осиновяване на Български.",
+        validators=[validate_bulgarian]
     )
 
     adoption_year = models.IntegerField(
         blank=True,
-        default=0
+        default=DEFAULT_UNKNOWN_YEAR,
+        help_text="Година на осиновяване (ако е осиновено)."
     )
 
     adoption_pic_after_1 = models.URLField(
         blank=True,
-        max_length=300,
-        default=""
+        max_length=MAX_URL_LENGTH,
+        default="",
+        help_text="Снимка 1 на кучето след осиновяване.",
+        validators=[validate_url]
     )
 
     adoption_pic_after_2 = models.URLField(
         blank=True,
-        max_length=300,
-        default=""
+        max_length=MAX_URL_LENGTH,
+        default="",
+        help_text="Снимка 2 на кучето след осиновяване.",
+        validators=[validate_url]
     )
 
     adoption_pic_after_3 = models.URLField(
         blank=True,
-        max_length=300,
-        default=""
+        max_length=MAX_URL_LENGTH,
+        default="",
+        help_text="Снимка 3 на кучето след осиновяване.",
+        validators=[validate_url]
     )
 
     # slug = models.SlugField(
@@ -152,8 +209,19 @@ class Dog(models.Model):
     class Meta:
         ordering = ('-pk',)
 
-
 class NoticeBoard(models.Model):
+
+    """
+
+    This model represents a notice board. It allows the user to post a notice on the website.
+    The notice can be applied to any of the main pages in the website by specifying the location.
+    It can also support up to two pictures. The user can also choose to order the notice in relation to other notices.
+    The notice will be displayed in the order of the "order" field.
+
+    This model is essentially used to display short/quick messages on the website such as:
+    "Please visit us this Sunday", or "Check out our new dog, Bob".
+
+    """
 
     class Meta:
         verbose_name_plural = "Posts"
@@ -161,44 +229,74 @@ class NoticeBoard(models.Model):
     def __str__(self):
         return self.note_eng
 
-    LOCATION = [(x, x) for x in ("Gallery", "About", "Infirmery",
+    LOCATION_CHOICES = [(x, x) for x in ("Gallery", "About", "Infirmery",
                                  "Adoptions", "Virtual", "Donations")]
+
+    LOCATION_LENGTH = 25
+    DEFAULT_LOCATION = "Gallery"
 
     note_eng = models.TextField(
         blank=True,
-        default=""
+        default="",
+        help_text="Съобщение на Английски.",
+        validators=[validate_english]
     )
 
     note_bg = models.TextField(
         blank=True,
-        default=""
+        default="",
+        help_text="Съобщение на Български.",
+        validators=[validate_bulgarian]
     )
 
     note_pic_1 = models.URLField(
-        max_length=300,
+        max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 1 в съобщението (не задължителни).",
+        validators=[validate_url]
     )
 
     note_pic_2 = models.URLField(
-        max_length=300,
+        max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 2 в съобщението (не задължителни).",
+        validators=[validate_url]
     )
 
     order = models.IntegerField(
-        default=99
+        default=ORDER,
+        help_text="Подредба на съобщението. По подразбиране е 99. Стойност по-малка от 99 ще покаже съобщението по-нагоре."
     )
 
     location = models.CharField(
-        max_length=25,
+        max_length=LOCATION_LENGTH,
         blank=True,
-        choices=LOCATION,
-        default="Gallery"
+        choices=LOCATION_CHOICES,
+        default=DEFAULT_LOCATION,
+        help_text="Място на съобщението - всяка страница разполага със способност за съобщения."
     )
 
+class AboutPhoto(models.Model):
+    """
+
+    To store an unlimited amount of photos for each section in About model.
+
+    """
+    url = models.URLField(
+        max_length=MAX_URL_LENGTH,
+        validators=[validate_url]
+        )
 
 class About(models.Model):
+
+    """
+
+    This model is used to create larger sections with more content than a typical notice.
+    Similar to the notice board, the user can specify the location of the section.
+
+    """
 
     class Meta:
         verbose_name_plural = "About"
@@ -209,134 +307,226 @@ class About(models.Model):
     LOCATION = [(x, x) for x in ("Gallery", "About", "Infirmary",
                                  "Adoptions", "Virtual", "Donations")]
 
+    MAX_TITLE_LENGTH = 100
+    MAX_LOCATION_LENGTH = 25
+    DEFAULT_ENGLISH_DESC = "Info coming soon..."
+    DEFAULT_LOCATON = "Donations"
+
     location = models.CharField(
-        max_length=25,
+        max_length=MAX_LOCATION_LENGTH,
         blank=True,
         choices=LOCATION,
-        default="Donations"
+        default=DEFAULT_LOCATON,
+        help_text="Място на секцията - всяка страница разполага със способност за секции."
     )
 
     section_desc_eng = models.TextField(
         blank=True,
-        default="Info coming soon..."
+        default=DEFAULT_ENGLISH_DESC,
+        help_text="Описание на секцията на Английски.",
+        validators=[validate_english]
     )
 
     section_desc_bg = models.TextField(
         blank=True,
-        default=""
+        default="",
+        help_text="Описание на секцията на Български.",
+        validators=[validate_bulgarian]
     )
 
     about_pic_1 = models.URLField(
-        max_length=300,
+        max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 1 в секцията.",
+        validators=[validate_url]
     )
 
     about_pic_2 = models.URLField(
-        max_length=300,
+        max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 2 в секцията.",
+        validators=[validate_url]
     )
 
     about_pic_3 = models.URLField(
-        max_length=300,
+        max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 3 в секцията.",
+        validators=[validate_url]
     )
 
     about_pic_4 = models.URLField(
-        max_length=300,
+        max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 4 в секцията.",
+        validators=[validate_url]
     )
 
     about_pic_5 = models.URLField(
-        max_length=300,
+        max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 5 в секцията.",
+        validators=[validate_url]
     )
 
     about_pic_6 = models.URLField(
-        max_length=300,
+        max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 6 в секцията.",
+        validators=[validate_url]
     )
 
     about_pic_7 = models.URLField(
-        max_length=300,
+        max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 7 в секцията.",
+        validators=[validate_url]
     )
 
     about_pic_8 = models.URLField(
-        max_length=300,
+        max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 8 в секцията.",
+        validators=[validate_url]
     )
 
     about_pic_9 = models.URLField(
-        max_length=300,
+        max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 9 в секцията.",
+        validators=[validate_url]
     )
 
     about_pic_10 = models.URLField(
-        max_length=300,
+        max_length=MAX_URL_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Снимка 10 в секцията.",
+        validators=[validate_url]
     )
 
     order = models.IntegerField(
-        default=99
+        default=ORDER,
+        help_text="Подредба на секцията в страницата. 1 е първата, 2 е втората и т.н"
     )
 
     section_title_eng = models.TextField(
-        max_length=100,
+        max_length=MAX_TITLE_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Заглавие на секцията на Английски.",
+        validators=[validate_english]
     )
 
     section_title_bg = models.TextField(
-        max_length=100,
+        max_length=MAX_TITLE_LENGTH,
         blank=True,
-        default=""
+        default="",
+        help_text="Заглавие на секцията на Български.",
+        validators=[validate_bulgarian]
     )
 
+    photos = models.ManyToManyField(AboutPhoto)
+
+# The following is used to get the last day of the previous month for the "last_month" variable.
+# This is used to set the default value for the "date_of_donation" field in the donations models.
+# Donations are added to the database on the first day of the month, so the default value for the "date_of_donation" field is the last day of the previous month.
 
 today = datetime.date.today()
 first = today.replace(day=1)
 last_month = first - datetime.timedelta(days=1)
 
-
 class Donation(models.Model):
+
+    """
+
+    This model is used to keep track of donations made to the shelter.
+    The list of people is then published every month. 
+
+    """
 
     def __str__(self):
         return "--".format(self.person_name_eng, self.date)
 
-    NAME_MAX_LENGTH = 60
-
     date = models.DateField(
         blank=True,
-        default=last_month
+        default=last_month,
+        help_text="Дата на дарението. По подразбиране е последният ден на предходния месец. Например ако дарението е направено на 1.01.2020, то по подразбиране ще се показва на 31.12.2019. Това е за да се показват даренията в последния месец."
     )
 
     person_name_eng = models.CharField(
         max_length=NAME_MAX_LENGTH,
-        null=True
+        default="",
+        help_text="Име на дарителя на Английски.",
+        validators=[validate_english]
     )
     person_name_bg = models.CharField(
         max_length=NAME_MAX_LENGTH,
-        null=True
+        default="",
+        help_text="Име на дарителя на Български.",
+        validators=[validate_bulgarian]
     )
 
-class NewsletterSubscriber(models.Model):
-    email = EmailField(required=True)
-    name = CharField(required=True)
+class DonationStory(models.Model):
 
-class AdoptionForm(models.Model):
-    name = models.CharField(max_length=255)
-    email = models.EmailField()
-    phone = models.CharField(max_length=20)
-    city = models.CharField(max_length=255)
-    country = models.CharField(max_length=255)
-    dog = models.CharField(max_length=255)
+    """
+
+    This model will be used to create more notable donations that can be displayed on the home page. For example, if someone donates a large amount of food, or if someone donates equipment, or volunteers etc. There is a separate section for these donations. The donations will be refreshed every month and past donations will go to archive.
+
+    """
+
+    class Meta:
+        verbose_name_plural = "DonationStories"
+
+    donation_text_eng = models.TextField(
+        blank=True,
+        default="",
+        help_text="Текст на дарението на Английски (за секцията със снимки на дарания).",
+        validators=[validate_english]
+    )
+
+    donation_text_bg = models.TextField(
+        blank=True,
+        default="",
+        help_text="Текст на дарението на Български (за секцията със снимки на дарания).",
+        validators=[validate_bulgarian]
+    )
+
+    date = models.DateField(
+        blank=True,
+        default=last_month,
+        help_text="Дата на дарението. По подразбиране е последният ден на предходния месец. Например ако дарението е направено на 1.01.2020, то по подразбиране ще се показва на 31.12.2019. Това е за да се показват даренията в последния месец."
+    )
+
+    donation_pic_1 = models.URLField(
+        max_length=MAX_URL_LENGTH,
+        blank=True,
+        default="",
+        help_text="Снимка 1 в секцията.",
+        validators=[validate_url]
+    )
+
+    donation_pic_2 = models.URLField(
+        max_length=MAX_URL_LENGTH,
+        blank=True,
+        default="",
+        help_text="Снимка 2 в секцията.",
+        validators=[validate_url]
+    )
+
+    donation_pic_3 = models.URLField(
+        max_length=MAX_URL_LENGTH,
+        blank=True,
+        default="",
+        help_text="Снимка 3 в секцията.",
+        validators=[validate_url]
+    )

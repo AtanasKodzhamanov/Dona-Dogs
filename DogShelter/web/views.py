@@ -10,7 +10,6 @@ from DogShelter.web.models import Dog, NoticeBoard, About, Donation
 lang = django.utils.translation.get_language()
 
 
-
 # def subscribe(request):
 #     form = SubscribeForm()
 #     if request.method == 'POST':
@@ -144,8 +143,7 @@ def show_donations(request):
     today = datetime.date.today()
     first = today.replace(day=1)
     last_month = first - datetime.timedelta(days=1)
-    #last_month_cl = last_month.strftime('%B')
-   # last_month_cl = "".format(last_month.strftime('%m'))
+
     month = last_month.strftime('%m')
     year = last_month.strftime('%Y')
     last_month_cl = "("+month + " - " + year + ")"
@@ -163,7 +161,6 @@ def show_donations(request):
     }
     return render(request, "donations.html", context)
 
-
 def show_giftAdoption(request):
     dataNoticeBoard = serializers.serialize(
         'python', NoticeBoard.objects.all().order_by("order"))
@@ -171,6 +168,8 @@ def show_giftAdoption(request):
         'python', Dog.objects.all().exclude(va_name_eng=""))
 
     # return list of virtual adopters
+
+    #ip = request.META.get('REMOTE_ADDR', None)
 
     context = {
         "dataPeople": dataPeople,

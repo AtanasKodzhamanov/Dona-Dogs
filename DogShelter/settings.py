@@ -97,6 +97,8 @@ WSGI_APPLICATION = 'DogShelter.wsgi.application'
 # append this command ---> export POSTGRES_USERNAME="username"
 # append this command ---> export POSTGRES_PASSWORD="password"
 
+# Windows "Edit the system environment variables"
+
 POSTGRES_ENGINE = os.environ["POSTGRES_ENGINE"]
 POSTGRES_USERNAME = os.environ["POSTGRES_USERNAME"]
 POSTGRES_PASSWORD = os.environ["POSTGRES_PASSWORD"]
@@ -151,7 +153,6 @@ LANGUAGES = [
     ("en", "English"),
     ("bg", "Bulgarian"),
 ]
-
 
 # fix paths a bit
 LOCALE_PATHS = (
