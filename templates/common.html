@@ -85,36 +85,27 @@
     <hr>
     
     <div style="padding:5px; width:auto; height:auto;text-align:center;">
-      <p style="text-align:center;">
+      <h6 style="text-align:center;">
         <a  id="hyperlink"  href="https://www.facebook.com/groups/2508791972666990/">{% trans "Follow us on Facebook for up to date information!" %}</a> 
-      </p>
+      </h6>
     </div>
     <hr>
-    <form action="" method="POST">
-      {% csrf_token %}
-      {{ subscribeForm.as_p }}
-      <button type="submit">Send</button>
-    </form>
-    {{test}}
-    <hr>
-    <br>
-    <br>
-    <br>
-    <div id="footer">
-      <form action="https://www.paypal.com/donate" method="post" target="_top">
-        <input type="image"
-               src="https://pics.paypal.com/00/s/ZmJmYzIxMjItNGVmYS00ODQxLTk5M2QtMTIwY2U3MWQ4ZmQw/file.PNG"
-               border="0"
-               name="submit"
-               position="top"
-               title="PayPal - The safer, easier way to pay online!"
-               alt="Donate with PayPal button"
-               style="width:150px;
-                      height: 100%"/>
-        <input type="hidden" name="hosted_button_id" value="CL7UWKW3PY6M4" />
+    <div id="subscribeFormContainer">
+      {% trans "And don't forget to subscribe to our Monthly Newsletter" %}
+      <form id="footerSubscribeForm" action="" method="POST">
+        {% csrf_token %}
+        {{ subscribeForm.as_p }}
+        {% trans "Subscribe" %}<button type="submit">{% endtrans %}
       </form>
     </div>
-
+    {{test}}
+    <hr>
+    {% comment%}
+    <div id="footer">
+         To be decided 
+    </div>{% endcomment %}
+      <img id="footerImg" src="https://res.cloudinary.com/dxwb5ejff/image/upload/v1671329488/Static/DogItems_se8ey3.png
+      " style="background-color: transparent;" crossorigin="anonymous"/>
     <script src="{% static 'js/activeNav.js' %}"></script>
   </body>
 

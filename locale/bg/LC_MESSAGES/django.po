@@ -6,12 +6,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
+#: DogShelter/web/forms.py:69 DogShelter/web/forms.py:74
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-17 22:26+0000\n"
+"POT-Creation-Date: 2022-12-18 02:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,51 +22,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: DogShelter/web/forms.py:42
+#: DogShelter/web/forms.py:34
 msgid "Input name"
 msgstr "Въведете име"
 
-#: DogShelter/web/forms.py:49
+#: DogShelter/web/forms.py:41
 msgid "Virtual Adoption Status"
 msgstr "Статус на виртуално осиновяване"
 
-#: DogShelter/web/forms.py:51
+#: DogShelter/web/forms.py:43
 msgid "All dogs"
 msgstr "Всички"
 
-#: DogShelter/web/forms.py:52 templates/index.html:126
+#: DogShelter/web/forms.py:44 templates/index.html:125
 msgid "Virtually Adopted"
 msgstr "Виртуално осиновени"
 
-#: DogShelter/web/forms.py:53
+#: DogShelter/web/forms.py:45
 msgid "No Adoptors"
 msgstr "Без осиновители"
 
-#: DogShelter/web/forms.py:63
+#: DogShelter/web/forms.py:55
 msgid "Gender"
 msgstr "Пол"
 
-#: DogShelter/web/forms.py:65
+#: DogShelter/web/forms.py:57
 msgid "All genders"
 msgstr "Всички"
 
-#: DogShelter/web/forms.py:66
+#: DogShelter/web/forms.py:58
 msgid "M"
 msgstr "Мъжки"
 
-#: DogShelter/web/forms.py:67
+#: DogShelter/web/forms.py:59
 msgid "F"
 msgstr "Женски"
+
+#: DogShelter/web/forms.py:72
+msgid "Email"
+msgstr "Е-майл адрес"
+
+#: DogShelter/web/forms.py:77
+msgid "Name"
+msgstr "Име"
 
 #: templates/about.html:9
 msgid "ABOUT US"
 msgstr "ЗА НАС"
 
-#: templates/about.html:77
+#: templates/about.html:82
 msgid "You can find more information about the organisation's legal status"
 msgstr "Можете да видете повече информация за легалният статус на фондацията"
 
-#: templates/about.html:78
+#: templates/about.html:83
 msgid "here"
 msgstr "тук"
 
@@ -87,7 +96,7 @@ msgstr "Осиновени тази година"
 msgid "DOGS"
 msgstr "КУЧЕТА"
 
-#: templates/common.html:63 templates/index.html:143 templates/infirmary.html:9
+#: templates/common.html:63 templates/index.html:142 templates/infirmary.html:9
 msgid "CLINIC"
 msgstr "КЛИНИКА"
 
@@ -107,6 +116,14 @@ msgstr "НИЕ"
 msgid "Follow us on Facebook for up to date information!"
 msgstr "Последвайте ни на Facebook за повече снимки и най-новата информация!"
 
+#: templates/common.html:95
+msgid "And don't forget to subscribe to our Monthly Newsletter"
+msgstr "И не забравяйте да се абонирате за нашия месечен бюлетин"
+
+#: templates/common.html:99
+msgid "Subscribe"
+msgstr "Абонирай се"
+
 #: templates/deprecated/giftadoption.html:9 templates/donations.html:38
 #: templates/subtemplates/subdonations.html:11
 msgid "VIRTUAL ADOPTION"
@@ -116,7 +133,7 @@ msgstr "ВИРТУАЛНО ОСИНОВЯВАНЕ"
 msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!"
 msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
 
-#: templates/donations.html:9 templates/index.html:147
+#: templates/donations.html:9 templates/index.html:146
 msgid "HELP DONADOGS"
 msgstr "ПОМОГНЕТЕ НА ДОНАДОГС"
 

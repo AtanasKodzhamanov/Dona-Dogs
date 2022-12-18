@@ -4,23 +4,6 @@ from django.utils.translation import gettext_lazy as _
 from DogShelter.web.models import NewsletterSubscriber, AdoptionForm
 
 
-# Subscribe for the newsletter form
-class SubscribeForm(forms.ModelForm):
-    email = forms.EmailField(required=True, label="",
-    widget= forms.TextInput
-                           (attrs={
-                               'placeholder':'Email'
-                            }))
-    name = forms.CharField(required=True, label="",
-    widget= forms.TextInput
-                           (attrs={
-                               'placeholder':'Name'
-                            }))
-    
-    class Meta:
-        model = NewsletterSubscriber
-        fields = "__all__"
-
 # Contact form
 class ContactForm(forms.Form):
     name = forms.CharField(required=True, label='Name')
@@ -41,7 +24,6 @@ class AdoptForm(forms.Form):
         model = AdoptionForm
 
 # Dog filter form
-
 class DogFilterForm(forms.Form):
     dog_name = forms.CharField(
         required=False,
@@ -81,3 +63,19 @@ class genderFilterForm(forms.Form):
         'name': 'genderFilter',
         'id': 'genderFilter',
     })
+
+# Subscribe for the newsletter form
+class SubscribeForm(forms.ModelForm):
+    email = forms.EmailField(required=True, label=_(""),
+    widget= forms.TextInput
+                           (attrs={
+                               'placeholder':_('Email')
+                            }))
+    name = forms.CharField(required=True, label=_(""),
+    widget= forms.TextInput
+                           (attrs={
+                               'placeholder':_('Name')
+                            }))
+    class Meta:
+        model = NewsletterSubscriber
+        fields = "__all__"
