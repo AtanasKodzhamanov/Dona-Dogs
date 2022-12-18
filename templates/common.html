@@ -97,7 +97,7 @@
         {% csrf_token %}
         {{ subscribeForm.as_p }}
         <button type="submit">{% trans "Subscribe" %}</button>
-        {% if subscribeForm.errors %}
+        {% comment %} {% if subscribeForm.errors %}
           <div id="error-message">
             <h6>There were errors in the form submission:</h6>
             <ul>
@@ -106,11 +106,11 @@
               {% endfor %}
             </ul>
           </div>
-        {% endif %}
+        {% endif %} {% endcomment %}
       </form>
-      <div id="success-message" style="display:none">
+      {% comment %} <div id="success-message" style="display:none">
         <h6>Thank you for subscribing {{ subscribeForm.cleaned_data.name }}, {{ subscribeForm.cleaned_data.email }} !!!</h6>
-      </div>
+      </div> {% endcomment %}
     </div>
 
     <hr>
