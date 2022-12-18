@@ -91,17 +91,27 @@
     </div>
     <hr>
     {% comment%} SECURITY {% endcomment %}
-      <div id="subscribeFormContainer">
-        <h6>{% trans "And don't forget to subscribe to our Monthly Newsletter" %}</h6>
-        <form id="footerSubscribeForm" action="" method="POST">
-          {% csrf_token %}
-          {{ subscribeForm.as_p }}
-          <button type="submit">{% trans "Subscribe" %}</button>
-        </form>
-        <div id="success-message" style="display:none">
-          Thank you for subscribing!
-        </div>
+    <div id="subscribeFormContainer">
+      <h6>{% trans "And don't forget to subscribe to our Monthly Newsletter" %}</h6>
+      <form id="footerSubscribeForm" action="" method="POST">
+        {% csrf_token %}
+        {{ subscribeForm.as_p }}
+        <button type="submit">{% trans "Subscribe" %}</button>
+        {% if subscribeForm.errors %}
+          <div id="error-message">
+            <h6>There were errors in the form submission:</h6>
+            <ul>
+              {% for error in subscribeForm.errors %}
+                <li>{{ error }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </form>
+      <div id="success-message" style="display:none">
+        <h6>Thank you for subscribing {{ subscribeForm.cleaned_data.name }}, {{ subscribeForm.cleaned_data.email }} !!!</h6>
       </div>
+    </div>
 
     <hr>
     {% comment%}
