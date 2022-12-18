@@ -92,14 +92,17 @@
     <hr>
     {% comment%} SECURITY {% endcomment %}
       <div id="subscribeFormContainer">
-        <h6>{% trans "And don't forget to subscribe to our Monthly Newsletter" %}</h3>
+        <h6>{% trans "And don't forget to subscribe to our Monthly Newsletter" %}</h6>
         <form id="footerSubscribeForm" action="" method="POST">
           {% csrf_token %}
           {{ subscribeForm.as_p }}
           <button type="submit">{% trans "Subscribe" %}</button>
         </form>
+        <div id="success-message" style="display:none">
+          Thank you for subscribing!
+        </div>
       </div>
-    {{test}}
+
     <hr>
     {% comment%}
     <div id="footer">

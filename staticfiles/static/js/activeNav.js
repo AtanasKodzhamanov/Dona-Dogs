@@ -12,3 +12,9 @@ function setActiveNavItem(item) {
   const navItems = document.querySelectorAll('li.w3-bar-item');
   navItems.forEach(navItem => navItem.addEventListener('click', () => setActiveNavItem(navItem)));
   
+
+
+  document.getElementById('footerSubscribeForm').addEventListener('submit', function(event) {
+    document.getElementById('footerSubscribeForm').style.display = 'none';
+    document.getElementById('success-message').style.display = 'block';
+  });
