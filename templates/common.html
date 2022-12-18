@@ -90,14 +90,15 @@
       </h6>
     </div>
     <hr>
-    <div id="subscribeFormContainer">
-      {% trans "And don't forget to subscribe to our Monthly Newsletter" %}
-      <form id="footerSubscribeForm" action="" method="POST">
-        {% csrf_token %}
-        {{ subscribeForm.as_p }}
-        {% trans "Subscribe" %}<button type="submit">{% endtrans %}
-      </form>
-    </div>
+    {% comment%} SECURITY {% endcomment %}
+      <div id="subscribeFormContainer">
+        <h6>{% trans "And don't forget to subscribe to our Monthly Newsletter" %}</h3>
+        <form id="footerSubscribeForm" action="" method="POST">
+          {% csrf_token %}
+          {{ subscribeForm.as_p }}
+          <button type="submit">{% trans "Subscribe" %}</button>
+        </form>
+      </div>
     {{test}}
     <hr>
     {% comment%}
