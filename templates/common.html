@@ -46,6 +46,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/lineseparator.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/carousel.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/forms.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/languageButton.css' %}">
    
   </head>
   <body>
@@ -75,9 +76,38 @@
       <li  class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
         <a href="{% url 'about' %}"><h1>{% trans "ABOUT" %}</h1></a>
       </li>
-
-
     </nav>
+
+    {% comment %}
+     <form id="languageForm" action="{% url 'set_language' %}" method="post">
+      {% csrf_token %}
+      <input  name="next" type="hidden" value="{{ request.path }}">
+      <select id="select" name="language" onchange="this.form.submit()">
+        <option value="bg" {% if L == "bg" %} selected {% endif %}>Български</option>
+        <option value="en" {% if L == "en" %} selected {% endif %}>English</option>
+      </select>
+    </form> 
+    {% endcomment %}
+    <form id="languageForm" action="{% url 'set_language' %}" method="post">
+      {% csrf_token %}
+      <input type="hidden" value="{{ request.path }}">
+      <select name="language" onchange="this.form.submit()">
+        <option value="bg" {% if L == "bg" %} selected {% endif %} style="background-image: url({% static "\images\bulgarian-flag.png" %});" class="flag-select">Български</option>
+        <option value="en" {% if L == "en" %} selected {% endif %} style="background-image: url({% static "\images\uk-flag.png" %});" class="flag-select">English</option>
+      </select>
+    </form>
+
+
+    {% comment %} <form id="languageForm" action="{% url 'set_language' %}" method="post">
+      {% csrf_token %}
+      <input  name="next" type="hidden" value="{{ request.path }}">
+      <input width="25px" type="image" src={% static "\images\bulgarian-flag.png" %} id="bgFlag" name="language" value="bg" {% if L == "bg" %} style="display:none" {% endif %}>
+      <input width="25px" type="image" src={% static "\images\uk-flag.png" %} id="ukFlag" name="language" value="en" {% if L == "en" %} style="display:none" {% endif %}>
+    </form>
+     {% endcomment %}
+
+
+
     <div class="innerbody">
       <br>
     {% block page_content %}{% endblock %}

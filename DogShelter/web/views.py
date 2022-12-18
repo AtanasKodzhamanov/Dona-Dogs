@@ -1,13 +1,12 @@
 import datetime
 from django.core import serializers
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 import django.utils.translation
 from DogShelter.web.forms import SubscribeForm, ContactForm, AdoptForm, DogFilterForm, vaStatusForm, genderFilterForm
 from DogShelter.web.models import Dog, NoticeBoard, About, Donation
+from django.utils.translation import  activate
 
 # Create your views here.
-
-lang = django.utils.translation.get_language()
 
 def renderCommon(request):
     if request.method == "get":
@@ -107,12 +106,10 @@ def show_about(request):
     dataAbout = serializers.serialize(
         'python', About.objects.all().order_by("order"))
 
-
     context = {
         'subscribeForm': renderCommon(request),
         "dataAbout": dataAbout,
-        "dataNoticeBoard": dataNoticeBoard,
-        "lang": lang
+        "dataNoticeBoard": dataNoticeBoard
     }
     return render(request, "about.html", context)
 
@@ -168,10 +165,6 @@ def show_giftAdoption(request):
         'python', NoticeBoard.objects.all().order_by("order"))
     dataPeople = serializers.serialize(
         'python', Dog.objects.all().exclude(va_name_eng=""))
-
-    # return list of virtual adopters
-
-    #ip = request.META.get('REMOTE_ADDR', None)
 
     context = {
         'subscribeForm': renderCommon(request),
