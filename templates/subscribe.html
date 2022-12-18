@@ -14,3 +14,15 @@
     {% endfor %}
     <input type="submit" value="Subscribe">
 </form>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ subscribeForm }}
+    <input type="submit" value="Subscribe">
+</form>
+
+<form action="" method="post">
+
+    {{ subscribeForm }}
+    <input type="submit" value="Subscribe">
+</form>

@@ -10,6 +10,7 @@ from DogShelter.web.validators import validate_bulgarian, validate_english, vali
 MAX_URL_LENGTH = 300
 NAME_MAX_LENGTH = 60    
 ORDER = 99
+EMAIL_MAX_LENGTH = 60
 
 # Help text is provided for the Bulgarian speaking admin staff. 
 
@@ -532,8 +533,12 @@ class DonationStory(models.Model):
     )
 
 class NewsletterSubscriber(models.Model):
-    email = EmailField(required=True)
-    name = CharField(required=True)
+    email = models.EmailField(
+        max_length=EMAIL_MAX_LENGTH
+    )
+    name = models.CharField(
+        max_length=NAME_MAX_LENGTH
+    )
 
 class AdoptionForm(models.Model):
     name = models.CharField(max_length=255)

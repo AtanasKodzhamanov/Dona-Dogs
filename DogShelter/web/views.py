@@ -9,6 +9,14 @@ from DogShelter.web.models import Dog, NoticeBoard, About, Donation
 
 lang = django.utils.translation.get_language()
 
+def renderCommon(request):
+    if request.method == "get":
+        subscribeForm = SubscribeForm()
+    else:
+        subscribeForm = SubscribeForm(request.POST or None)
+        if subscribeForm.is_valid():
+            subscribeForm.save()   
+    return subscribeForm
 
 # def subscribe(request):
 #     form = SubscribeForm()
@@ -18,15 +26,6 @@ lang = django.utils.translation.get_language()
 #             form.save()
 #             # redirect to a success page
 #     return render(request, 'subscribe.html', {'subscribeForm': form})
-
-def subscribe(request):
-    if request.method == "get":
-        form = SubscribeForm()
-    else:
-        form = SubscribeForm(request.POST)
-        if form.is_valid():
-            form.save()
-    return render(request, 'subscribe.html', {'subscribeForm': form})
 
 def show_home(request):  # dashboard
     dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
@@ -38,16 +37,15 @@ def show_home(request):  # dashboard
     genderForm = genderFilterForm()
     nameForm = DogFilterForm()
     vaForm = vaStatusForm()
-    #subscribeForm = SubscribeForm()
     contactForm = ContactForm()
     adoptForm = AdoptForm()
     #dataDogs2 = Dog.objects.filter(status="Active")
 
     context = {
+        'subscribeForm': renderCommon(request),
         "genderFilterForm": genderForm,
         "adoptForm": adoptForm,
         "contactForm": contactForm,
-        #'subscribeForm': subscribeForm,
         'nameFilterForm': nameForm,
         'vaStatusForm': vaForm,
         "dataPeople": dataPeople,
@@ -55,9 +53,6 @@ def show_home(request):  # dashboard
         "dataNoticeBoard": dataNoticeBoard
     }
     return render(request, "index.html", context)
-
-
-
 
 # from django.views import View
 # from django.core import serializers
@@ -92,18 +87,19 @@ def show_home(request):  # dashboard
 #   assert ans == {this is what expect}
 
 
+
 def show_infirmary(request):  # dashboard
     dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
     dataNoticeBoard = serializers.serialize(
         'python', NoticeBoard.objects.all().order_by("order"))
 
     context = {
+        'subscribeForm': renderCommon(request),
         "dataDogs": dataDogs,
         "dataNoticeBoard": dataNoticeBoard
     }
 
     return render(request, "infirmary.html", context)
-
 
 def show_about(request):
     dataNoticeBoard = serializers.serialize(
@@ -111,7 +107,9 @@ def show_about(request):
     dataAbout = serializers.serialize(
         'python', About.objects.all().order_by("order"))
 
+
     context = {
+        'subscribeForm': renderCommon(request),
         "dataAbout": dataAbout,
         "dataNoticeBoard": dataNoticeBoard,
         "lang": lang
@@ -126,6 +124,7 @@ def show_adoptions(request):
         'python', NoticeBoard.objects.all().order_by("order"))
 
     context = {
+        'subscribeForm': renderCommon(request),
         "dataAdoptions": dataDogs,
         "dataNoticeBoard": dataNoticeBoard
     }
@@ -154,6 +153,7 @@ def show_donations(request):
         "person_name_bg", "person_name_eng").filter(date=last_month).order_by("person_name_bg"))
 
     context = {
+        'subscribeForm': renderCommon(request),
         "last_month": last_month,
         "dataPeople": dataPeople,
         "dataAbout": dataAbout,
@@ -174,6 +174,7 @@ def show_giftAdoption(request):
     #ip = request.META.get('REMOTE_ADDR', None)
 
     context = {
+        'subscribeForm': renderCommon(request),
         "dataPeople": dataPeople,
         "dataNoticeBoard": dataNoticeBoard
     }

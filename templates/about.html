@@ -13,6 +13,11 @@
   {% include "subtemplates/noticeboard.html" %}     
 {% endwith %}
 
+  <form action="/about" method="POST">
+    {% csrf_token %}
+    {{ subscribeForm.as_p }}
+    <button type="submit">Send</button>
+  </form>
 
   {% for instance in dataAbout %} 
     {% if instance.fields.location == "About" %}

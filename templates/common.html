@@ -89,7 +89,13 @@
         <a  id="hyperlink"  href="https://www.facebook.com/groups/2508791972666990/">{% trans "Follow us on Facebook for up to date information!" %}</a> 
       </p>
     </div>
-
+    <hr>
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{ subscribeForm.as_p }}
+      <button type="submit">Send</button>
+    </form>
+    {{test}}
     <hr>
     <br>
     <br>

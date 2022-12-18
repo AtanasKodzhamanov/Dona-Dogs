@@ -1,12 +1,22 @@
 from django import forms 
 from django.forms import CharField, Select
 from django.utils.translation import gettext_lazy as _
+from DogShelter.web.models import NewsletterSubscriber, AdoptionForm
 
-
-from DogShelter.web.models import AdoptionForm, NewsletterSubscriber
 
 # Subscribe for the newsletter form
 class SubscribeForm(forms.ModelForm):
+    email = forms.EmailField(required=True, label="",
+    widget= forms.TextInput
+                           (attrs={
+                               'placeholder':'Email'
+                            }))
+    name = forms.CharField(required=True, label="",
+    widget= forms.TextInput
+                           (attrs={
+                               'placeholder':'Name'
+                            }))
+    
     class Meta:
         model = NewsletterSubscriber
         fields = "__all__"
