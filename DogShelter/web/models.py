@@ -122,6 +122,14 @@ class Dog(models.Model):
         validators=[validate_url]
     )
 
+    pic_6 = models.URLField(
+        blank=True,
+        max_length=MAX_URL_LENGTH,
+        default="",
+        help_text="Албумна снимка.",
+        validators=[validate_url]
+    )
+
     # If alive, adopted or sick. If alive keep in the gallery, if adopted send put it inside the adoption page, if sick put at the top of the gallery.
     status = models.CharField(
         max_length=DOG_STATUS_LENGTH,

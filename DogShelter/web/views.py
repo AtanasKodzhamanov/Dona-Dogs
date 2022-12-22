@@ -1,12 +1,25 @@
 import datetime
+from django import views
 from django.core import serializers
 from django.shortcuts import redirect, render
+from django.urls import reverse_lazy
 import django.utils.translation
 from DogShelter.web.forms import SubscribeForm, ContactForm, AdoptForm, DogFilterForm, vaStatusForm, genderFilterForm
 from DogShelter.web.models import Dog, NoticeBoard, About, Donation
 from django.utils.translation import  activate
+from django.contrib.auth.forms import UserCreationForm
+from django.views.generic import DetailView
 
 # Create your views here.
+# class SignUpView(views.CreateView):
+#     form_class = UserCreationForm
+#     template_name = 'auth/signup.html'
+#     success_url = reverse_lazy('sign_up')
+
+# class SignUpForm(auth.forms.UserCreationForm):
+#     class Meta:
+#         model = User
+#         fields = ['username', 'email', 'password1', 'password2']
 
 def renderCommon(request):
     if request.method == "get":
@@ -17,14 +30,19 @@ def renderCommon(request):
             subscribeForm.save()   
     return subscribeForm
 
-# def subscribe(request):
-#     form = SubscribeForm()
-#     if request.method == 'POST':
-#         form = SubscribeForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             # redirect to a success page
-#     return render(request, 'subscribe.html', {'subscribeForm': form})
+class show_dog(DetailView):
+    model = Dog
+    template_name = "dog.html"
+    # pk_url_kwarg = 'name_eng'
+    queryset = Dog.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['subscribeForm'] = renderCommon(self.request)
+        return context
+    
+
+
 
 def show_home(request):  # dashboard
     dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% extends "common.html" %}
+{% load static %}
+{% load i18n %}
+{% get_current_language as L %}
+
+{% block page_content %}
+
+{% with location="DogAlbum" %}   
+    {% include "subtemplates/noticeboard.html" %}     
+{% endwith %}
+
+{% if L == "bg" %}
+    <h1>{{dog.name_bg}}</h1>
+{% else %}
+    <h1>{{dog.name_eng}}</h1>
+{% endif %}
+
+<hr>
+
+<div class="story-container-dog-album">
+    <h2>
+        {% if dog.gender == "F" %} 
+            {% trans "Her story" %}
+        {% else %}
+            {% trans "His story" %}
+        {% endif %}
+    </h2>
+    {% comment %} <img style="max-width:200px" src="{% static "/images/donalogo.png" %}" alt="dog profile pic"> {% endcomment %}
+    
+    {% if L == "bg" %}
+        <p> {{dog.story_bg}} </p>
+    {% else %}
+        <p> {{dog.story_eng}} </p>
+    {% endif %}
+    
+    {% if dog.va_name_eng %}
+        {% if L == "bg" %}
+            <p> Благодарим на <b>{{dog.va_name_bg}}</b>, че се грижи за {{dog.name_bg}} като виртуален осиновител.</p>
+        {% else %}
+            <p> We thank <b>{{dog.va_name_eng}}</b> for taking care of {{dog.name_eng}} as a virtual adopter.</p>
+        {% endif %}
+    {% endif %} 
+</div>
+
+<h2>{% trans "Before adoption" %}</h2>
+<br>
+<br>
+<div class="image-container-dog-album">
+    
+    {% if dog.profile_pic %}
+        <img class="image-dog-album" src="{{dog.profile_pic}}" alt="dog profile pic">
+    {% endif %}
+
+    {% if dog.pic_2 %}
+        <img class="image-dog-album" src="{{dog.pic_2}}" alt="dog pic">
+    {% endif %}
+
+    {% if dog.pic_3 %}
+        <img class="image-dog-album" src="{{dog.pic_3}}" alt="dog pic">
+    {% endif %}
+
+    {% if dog.pic_4 %}
+        <img class="image-dog-album" src="{{dog.pic_4}}" alt="dog pic">
+    {% endif %}
+
+    {% if dog.pic_5 %}
+        <img class="image-dog-album" src="{{dog.pic_5}}" alt="dog pic">
+    {% endif %}
+
+    {% if dog.pic_6 %}
+    <img class="image-dog-album" src="{{dog.pic_6}}" alt="dog pic">
+    {% endif %}
+</div>
+<br>
+<br>
+<h2>{% trans "After adoption" %}</h2>
+{% if dog.adoption_pic_after_1 == "" %}
+    <p style="text-align: center;">{% trans "Help us fill this gallery with happy ever after photos. Adopt " %}{{dog.name_eng}} !!!</p>
+    <p style="text-align: center;"> {% trans "To inquire about adoptions you can contact us on donadogsfoundation@gmail.com or directly on our Facebook group."%}</p>
+{% endif %}
+<div class="image-container-dog-album">
+    {% if dog.adoption_pic_after_1 %}
+        <img class="image-dog-album" src="{{dog.pic_6}}" alt="dog pic">
+    {% endif %}
+    {% if dog.adoption_pic_after_2 %}
+        <img class="image-dog-album" src="{{dog.pic_6}}" alt="dog pic">
+    {% endif %}
+
+    {% if dog.adoption_pic_after_3 %}
+        <img class="image-dog-album" src="{{dog.pic_6}}" alt="dog pic">
+    {% endif %}
+</div>
+
+
+
+<script src="{% static 'js/popupInfo.js' %}"></script>
+<script src="{% static 'js/filters.js' %}"></script>
+
+{% endblock %}

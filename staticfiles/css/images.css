@@ -51,3 +51,8 @@
         width: 80%;
     }
 }
+
+#sizingDogAlbum {
+    max-width: 500px;
+    height: auto;
+}
