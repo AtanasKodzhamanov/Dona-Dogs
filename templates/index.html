@@ -15,19 +15,6 @@
 
 <h2>{% trans "OUR DOGS" %}</h2>
 
-
-{% comment %} <form action="#" onsubmit="filterDogs(); return false;">
-  <label>Dog name:</label><br>
-  <input type="text" id="dogName" name="dogName"><br><br>
-  <input type="submit" value="Filter dogs">
-  <button id="showAllButton" type="button" style="display: none;" onclick="showAllDogs();">Show all</button>
-</form> {% endcomment %}
-
-<!-- dog_list.html -->
-<!-- dog_list.html -->
-
-{% comment %} <button id="filtersButton" onclick="toggleFilters()">Filters</button> {% endcomment %}
-
 {% comment %} Change class to hidden below and remove comments on filtersButton above, in JS and CSS to have a button that hides and shows the filters below. {% endcomment %}
 <div id="filtersContainer" class="display" >
   <div id="formsBar" >
@@ -61,13 +48,6 @@
 {% comment %}
 <form action="javascript:void(0)" method="POST">
   {% csrf_token %}
-  {{ subscribeForm }}
-  <input type="submit" value="Submit">
-</form>
-<br>
-<br>
-<form action="javascript:void(0)" method="POST">
-  {% csrf_token %}
   {{ contactForm }}
   <button type="submit">Send</button>
 </form>
@@ -79,22 +59,11 @@
 </form>
 {% endcomment %}
 
-{% comment %} <form>
-  <label for="adoptionStatus">Adoption Status:</label>
-  <select id="adoptionStatus" name="adoptionStatus">
-    <option value="all">All dogs</option>
-    <option value="va">Virtually Adopted</option>
-    <option value="no">No Adoptors</option>
-  </select>
-</form> {% endcomment %}
 
-{% comment %} Add a search name field: https://www.w3schools.com/howto/howto_js_filter_lists.asp  
-  https://www.w3schools.com/howto/howto_js_filter_lists.asp {% endcomment %}
-{% comment %} Add filters: diseases, old age, no virtual adopters, has been in the shelter for more than 2 years {% endcomment %}
 <div class="wrapper" id="dogList">
 {% for instance in dataDogs %} 
   {% if instance.fields.status == "Active" %}
-    <div id="Dog" class="panel, thumbnail, popup" onmouseover="myFunction1(this)" onmouseout="myFunction2(this)" vaName="{{instance.fields.va_name_eng}}" gender="{{instance.fields.gender}}">
+    <div id="Dog" class="panel, thumbnail, popup" onmouseover="myFunction1(this)" onmouseout="myFunction2(this)" vaName="{{instance.fields.va_name_eng}}" gender="{{instance.fields.gender}}" pk="{{instance.pk}}">
   
       <h2>
         {% if L == "bg" %}
@@ -125,8 +94,6 @@
         {% endif%}      
     </div>
   {% endif %}
-   
-
 
 {% endfor %}
   
@@ -141,17 +108,8 @@
 
 <script src="{% static 'js/popupInfo.js' %}"></script>
 <script src="{% static 'js/filters.js' %}"></script>
+<script src="{% static 'js/redirectToDogAlbum.js' %}"></script>
+
 
 {% endblock %}
 
-
-<!-- Useful resources -->
-{% comment %}  
-
-<div class="panel, thumbnail"><u><b>Doggo</b></u>
-    <img src="{% static "\images\Test Dog3.jpg"%}" style="width: 100%"/>
-</div>
-
-
-<div gsgid="sidebar"></div>
-{% endcomment %}

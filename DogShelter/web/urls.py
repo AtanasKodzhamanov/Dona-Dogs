@@ -11,6 +11,6 @@ urlpatterns = (
     path("giftadoption/", views.show_giftAdoption, name="giftadoption"),
     path("infirmary/", views.show_infirmary, name="infirmary"),
     # path('dogs/<str:name>/', views.show_dog.as_view(), name='dog'),
-    path('dogs/<int:pk>/', views.show_dog.as_view(), name='dog'),
+    path('dogs/<int:pk>/', views.show_dog.as_view(), name='dogs'),
     # path("sign_up/", views.SignUpView.as_view(), name="sign_up"),
 )
