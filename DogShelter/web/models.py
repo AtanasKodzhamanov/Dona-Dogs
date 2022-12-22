@@ -204,6 +204,19 @@ class Dog(models.Model):
         validators=[validate_url]
     )
 
+    adoption_story_eng = models.TextField(
+        blank=True,
+        default="",
+        help_text="История на осиновяване на кучето на Английски.",
+        validators=[validate_english]
+    )
+    adoption_story_bg = models.TextField(
+        blank=True,
+        default="",
+        help_text="История на осиновяване на кучето на Български.",
+        validators=[validate_bulgarian]
+    )
+
     # slug = models.SlugField(
     #     null=False,
     #     blank=True

@@ -30,6 +30,8 @@
         <h3>{{adoption.fields.adoption_country_eng}}</h3>
       {% endif %}
 
+
+      {% if adoption.fields.adoption_story_eng =="" %}
       <div>
         <p style="max-width:800px; height:auto; margin:auto; text-align:left; padding:15px;">
         {% if L == "bg" %}
@@ -39,7 +41,17 @@
         {% endif %}
         </p>
       </div>
-
+      {% else %}
+      <div>
+        <p style="max-width:800px; height:auto; margin:auto; text-align:left; padding:15px;">
+        {% if L == "bg" %}
+          {{adoption.fields.adoption_story_bg|safe}}
+        {% else %}
+          {{adoption.fields.adoption_story_eng|safe}}
+        {% endif %}
+        </p>
+      </div>
+      {% endif %}  
         <div class="child">
           <img id="sizingAdoptions" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.profile_pic}}" />
         </div>
