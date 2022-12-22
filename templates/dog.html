@@ -6,6 +6,7 @@
 
 {% block page_content %}
 
+
 {% with location="DogAlbum" %}   
     {% include "subtemplates/noticeboard.html" %}     
 {% endwith %}
@@ -92,6 +93,10 @@
     {% endif %}
 </div>
 
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0"></script>
+
+<div mobile lazy class="fb-comments" data-href="{% url "dog" pk=dog.pk %}" data-width="" data-numposts="5"></div>
 
 
 <script src="{% static 'js/popupInfo.js' %}"></script>
