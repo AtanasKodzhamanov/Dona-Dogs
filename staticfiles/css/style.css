@@ -294,3 +294,28 @@ max-height: 1000px; */
     opacity: 0.6;
   }
 }
+
+.story-container-dog-album {
+  background-color: rgb(245, 245, 245);
+  margin: auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 3px;
+  max-width: 1500px;
+}
+
+.image-container-dog-album {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25%, 40%));
+  grid-gap: 20px;
+  justify-content: center;
+}
+
+.image-dog-album {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
