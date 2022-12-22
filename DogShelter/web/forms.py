@@ -31,7 +31,7 @@ class DogFilterForm(forms.Form):
         widget=forms.TextInput(attrs={
             'name': 'dogName',
             'id': 'dogName',
-            'placeholder': _('Input name'),
+            'placeholder': _('Type name'),
         }),
     )
 

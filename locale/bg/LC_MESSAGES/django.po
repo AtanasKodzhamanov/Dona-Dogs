@@ -23,7 +23,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: DogShelter/web/forms.py:34
-msgid "Input name"
+msgid "Type name"
 msgstr "Въведете име"
 
 #: DogShelter/web/forms.py:41
