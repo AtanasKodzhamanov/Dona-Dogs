@@ -9,7 +9,9 @@
     <!-- W3 navbar sizing -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
+    <!-- Facebook SDK -->
+    <meta property="fb:app_id" content="708457490982348" />
+
     <!-- Google fonts - display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +54,11 @@
   <body>
     <!-- Facebook SDK -->
     <div id="fb-root"></div>
+    {% if L == "bg" %}
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/bg_BG/sdk.js#xfbml=1&version=v15.0&appId=708457490982348&autoLogAppEvents=1" nonce="fD8p5ofw"></script>
+    {% else %}
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0&appId=708457490982348&autoLogAppEvents=1" nonce="fD8p5ofw"></script>
+    {% endif %}
     <!-- Navigation Bar -->
     <img id="banner" src="{% static "\images\Navbar-image.jpg" %}"
          style="border:0px;
