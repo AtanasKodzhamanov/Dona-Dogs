@@ -75,9 +75,9 @@
 
       <p class="popuptext" id="myPopup">
         {% if L == "bg" %}
-        {{instance.fields.story_bg}}
+        {{instance.fields.story_bg|safe|truncatewords:21}}
         {% else %}
-        {{instance.fields.story_eng}}
+        {{instance.fields.story_eng|safe|truncatewords:21}}
       {% endif %}
       </p>
       <img  id="sizingGallery" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.profile_pic}}" />
