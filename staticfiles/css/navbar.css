@@ -91,7 +91,7 @@ nav li a h1 {
 @media only screen and (max-width: 500px) {
     nav li a h1 {
         padding: 1px 0px 1px 0px;
-        font-size: 3.7vw;
+        font-size: 3.4vw;
         margin:1px;
         margin-top:13px;
     }

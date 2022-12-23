@@ -46,13 +46,30 @@
     height: auto;
 }
 
-@media only screen and (max-width: 1111px) {
+@media only screen and (max-width: 600px) {
     #sizingPayPal {
-        width: 80%;
+        width: 200px;
     }
 }
 
 #sizingDogAlbum {
     max-width: 500px;
     height: auto;
+}
+
+#sizingNoticeBoard{ 
+    max-width: 400px;
+    height: auto;
+    float: left; 
+    margin-left:18px;
+    margin-right:5px;
+    margin-bottom:5px;
+    margin-top:20px;
+}   
+
+@media only screen and (max-width: 600px) {
+    #sizingNoticeBoard {
+        max-width: 150px;
+        height: auto;
+    }
 }
