@@ -1,3 +1,5 @@
+
+
 /* navbar */
 nav {
     display: flex;
@@ -23,9 +25,25 @@ nav {
     }
 }
 
-nav img{
+nav li a img{
     width: 20%;
     height:100%;
+    width: 200px; 
+    padding:10px;
+}
+@media only screen and (max-width: 1111px) {
+    nav li a img {
+        width: 120px;
+        padding: 2px;
+        
+    }
+}
+@media only screen and (max-width: 500px) {
+    nav li a img {
+        width: 90px;
+        padding: 1px;
+        
+    }
 }
 nav li {
     width: 25%;
@@ -34,8 +52,7 @@ nav li {
 
 @media only screen and (max-width: 1111px) {
     nav li {
-        padding-top: 2.5vw;
-        padding-bottom: 2.5vw;
+        padding:1px
     }
 }
 
@@ -45,11 +62,6 @@ nav li a {
     text-align: center;
     text-decoration: none;
     border-bottom: 5px solid #00000000;
-}
-
-nav li a h1 {
-    padding: 20px 0px 20px 0px;
-
 }
 
 @media only screen and (max-width: 1111px) {
@@ -64,8 +76,14 @@ nav li a h1 {
     }
 }
 
+nav li a h1 {
+    padding: 20px 0px 20px 0px;
+
+}
+
 @media only screen and (max-width: 1111px) {
     nav li a h1 {
+        padding: 5px 0px 20px 0px;
         font-size: 3.7vw;
     }
 }
@@ -80,3 +98,26 @@ nav li.active {
 }
 
 /* Navbar End */
+
+
+
+/* @media only screen and (max-width: 600px) {
+    .nav-dropdown {
+      display: none;
+    }
+    .nav-toggle {
+      display: block;
+    }
+    nav > li:not(:first-child) {
+        display: none;
+      }
+  }
+  
+@media only screen and (min-width: 601px) {
+.nav-dropdown {
+    display: block;
+}
+.nav-toggle {
+    display: none;
+}
+} */
