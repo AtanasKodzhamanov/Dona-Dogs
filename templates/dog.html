@@ -92,6 +92,9 @@
         <img class="image-dog-album" src="{{dog.pic_6}}" alt="dog pic" id="fullscreen">
     {% endif %}
 </div>
-<div class="fb-comments" data-href="www.donadogs.org/en/dogs/{{dog.pk}}" data-width="500" data-numposts="5"></div>
+
+<div style="text-align: center;">
+    <div  class="fb-comments" data-href="{{ request.build_absolute_uri }}/dogs/{{ dog.pk }}" data-width="500" data-numposts="5"></div>
+</div>
 <script src="{% static 'js/fullscreen.js' %}"></script>
-  {% endblock %}
+  {% endblock %}    

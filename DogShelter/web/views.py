@@ -33,7 +33,6 @@ def renderCommon(request):
 class show_dog(DetailView):
     model = Dog
     template_name = "dog.html"
-    # pk_url_kwarg = 'name_eng'
     queryset = Dog.objects.all()
 
     def get_context_data(self, **kwargs):
@@ -41,9 +40,6 @@ class show_dog(DetailView):
         context['subscribeForm'] = renderCommon(self.request)
         return context
     
-
-
-
 def show_home(request):  # dashboard
     dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
     dataNoticeBoard = serializers.serialize(
