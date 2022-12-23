@@ -19,13 +19,13 @@
       <br>
       {% for instance in dataDonations %}
           <div style="display: inline-block">
-            <h6 style="padding:5px">
+            <h5 style="padding:5px">
               {% if L == "bg" %}
                 {{instance.0}}
               {% else %}
                 {{instance.1}}
               {% endif %}
-            </h6>
+            </h5>
           </div>
       {% endfor %}
       <br>
@@ -60,13 +60,13 @@
         {% for instance in dataPeople %}
           {% if instance.0 %}
             <div style="display: inline-block">
-              <h6 style="padding:5px">
+              <h5 style="padding:5px">
                 {% if L == "bg" %}
                   {{instance.0}}
                 {% else %}
                   {{instance.1}}
                 {% endif %}
-              </h6>
+              </h5>
             </div>
           {% endif %}
         {% endfor %}
