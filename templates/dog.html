@@ -50,27 +50,27 @@
 <div class="image-container-dog-album">
     
     {% if dog.profile_pic %}
-        <img class="image-dog-album" src="{{dog.profile_pic}}" alt="dog profile pic">
+        <img class="image-dog-album" src="{{dog.profile_pic}}" alt="dog profile pic" id="fullscreen">
     {% endif %}
 
     {% if dog.pic_2 %}
-        <img class="image-dog-album" src="{{dog.pic_2}}" alt="dog pic">
+        <img class="image-dog-album" src="{{dog.pic_2}}" alt="dog pic" id="fullscreen">
     {% endif %}
 
     {% if dog.pic_3 %}
-        <img class="image-dog-album" src="{{dog.pic_3}}" alt="dog pic">
+        <img class="image-dog-album" src="{{dog.pic_3}}" alt="dog pic" id="fullscreen">
     {% endif %}
 
     {% if dog.pic_4 %}
-        <img class="image-dog-album" src="{{dog.pic_4}}" alt="dog pic">
+        <img class="image-dog-album" src="{{dog.pic_4}}" alt="dog pic" id="fullscreen">
     {% endif %}
 
     {% if dog.pic_5 %}
-        <img class="image-dog-album" src="{{dog.pic_5}}" alt="dog pic">
+        <img class="image-dog-album" src="{{dog.pic_5}}" alt="dog pic" id="fullscreen">
     {% endif %}
 
     {% if dog.pic_6 %}
-    <img class="image-dog-album" src="{{dog.pic_6}}" alt="dog pic">
+    <img class="image-dog-album" src="{{dog.pic_6}}" alt="dog pic" id="fullscreen">
     {% endif %}
 </div>
 <br>
@@ -82,15 +82,40 @@
 {% endif %}
 <div class="image-container-dog-album">
     {% if dog.adoption_pic_after_1 %}
-        <img class="image-dog-album" src="{{dog.pic_6}}" alt="dog pic">
+        <img class="image-dog-album" src="{{dog.pic_6}}" alt="dog pic" id="fullscreen">
     {% endif %}
     {% if dog.adoption_pic_after_2 %}
-        <img class="image-dog-album" src="{{dog.pic_6}}" alt="dog pic">
+        <img class="image-dog-album" src="{{dog.pic_6}}" alt="dog pic" id="fullscreen">
     {% endif %}
 
     {% if dog.adoption_pic_after_3 %}
-        <img class="image-dog-album" src="{{dog.pic_6}}" alt="dog pic">
+        <img class="image-dog-album" src="{{dog.pic_6}}" alt="dog pic" id="fullscreen">
     {% endif %}
 </div>
 
-{% endblock %}
+
+<script>
+    // Fullscreen API functions
+    function openFullscreen(element) {
+      if (element.requestFullscreen) {
+        element.requestFullscreen();
+      } else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+      } else if (element.webkitRequestFullscreen) {
+        element.webkitRequestFullscreen();
+      } else if (element.msRequestFullscreen) {
+        element.msRequestFullscreen();
+      }
+    }
+  
+    // Check screen size and apply events
+    var mobileQuery = window.matchMedia("(max-width: 767px)");
+    if (mobileQuery.matches) {
+      // Add onclick event to the image
+      var image = document.getElementById("fullscreen");
+      image.onclick = function() {
+        openFullscreen(this);
+      };
+    }
+  </script>
+  {% endblock %}

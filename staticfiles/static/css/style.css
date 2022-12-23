@@ -263,6 +263,8 @@ max-height: 1000px; */
   margin: 4px
 }
 
+
+
 /* Toggle this class when clicking on the popup container (hide and show the popup) */
 .popup .show {
   visibility: visible;
@@ -270,6 +272,13 @@ max-height: 1000px; */
   animation: fadeIn 0.1s;
   z-index: 1000;
 }
+
+@media only screen and (max-width: 600px) {
+  .popup .show {
+    visibility: hidden;
+  }
+}
+
 
 .popup .hide {
   visibility: hidden;

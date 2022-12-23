@@ -70,9 +70,10 @@
     #sizingNoticeBoard {
         max-width: 150px;
         height: auto;
-        margin-left:18px;
+        margin-left:15px;
         margin-right:5px;
         margin-bottom:5px;
         margin-top:20px;
+        padding:3px;
     }
 }
