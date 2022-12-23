@@ -5,7 +5,7 @@
 
 <html lang="{{L}}">
   <head>
-
+    
     <!-- W3 navbar sizing -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -53,27 +53,23 @@
 
     <!-- Navigation Bar -->
     <img id="banner" src="{% static "\images\Navbar-image.jpg" %}"
-         style="border: solid 1px black;
+         style="border:0px;
                 width: 100%"/>
     <!-- when you fix mobile style="margin:10px; margin-left:25px; margin-right:25px;"-->
     <nav >
-      <li class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
+      <li class="w3-hover-border-black w3-bar-item w3-mobile">
         <a href="{% url 'home' %}"><h1>{% trans "DOGS" %}</h1></a>
       </li>      
-      <li class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
+      <li class="w3-hover-border-black w3-bar-item w3-mobile">
         <a href="{% url 'infirmary' %}"><h1>{% trans "CLINIC" %}<h1></a>
       </li> 
-      <li  class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
+      <li  class="w3-hover-border-black w3-bar-item w3-mobile">
         <a href="{% url 'donations' %}"><h1>{% trans "HELP" %}</h1></a>
       </li>
-      <li class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
+      <li class="w3-hover-border-black w3-bar-item w3-mobile">
         <a href="{% url 'adoptions' %}"><h1>{% trans "ADOPT" %}</h1></a>
       </li>
-      {% comment %} <li class="w3-bottombar w3-hover-border-black w3-bar-item w3-mobile">
-        <a href="{% url 'giftadoption' %}">{% trans "Virtual Adoption" %}</a>
-      </li> {% endcomment %}
-    
-      <li  class="w3-bottombar w3-hover-border-black w3-bar-item  w3-mobile">
+      <li  class="w3-hover-border-black w3-bar-item w3-mobile">
         <a href="{% url 'about' %}"><h1>{% trans "ABOUT" %}</h1></a>
       </li>
     </nav>
