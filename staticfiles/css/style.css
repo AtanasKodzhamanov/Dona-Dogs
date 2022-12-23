@@ -244,6 +244,7 @@ max-height: 1000px; */
 .popup:hover {
   background-color: rgb(200, 200, 200);
   box-shadow: 1px 1px 4px 0px #888888;
+  cursor: pointer;
 }
 
 /* The actual popup (appears on top) */
