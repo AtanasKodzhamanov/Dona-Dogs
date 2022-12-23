@@ -101,10 +101,16 @@ nav li:hover:not(.active) {
     background-color: #ddd;
     border-bottom: 5px solid #000000;
 }
+/* to prevent the bottom bar from displacing space when hovering over */
+nav li {
+    border-bottom: 5px solid #00000000;
+}
 
 nav li.active {
     border-bottom: 5px solid #000000;
 }
+
+
 
 /* Navbar End */
 
