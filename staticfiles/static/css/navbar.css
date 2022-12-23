@@ -40,7 +40,7 @@ nav li a img{
 }
 @media only screen and (max-width: 500px) {
     nav li a img {
-        width: 90px;
+        width: 85px;
         padding: 1px;
         
     }
@@ -83,8 +83,17 @@ nav li a h1 {
 
 @media only screen and (max-width: 1111px) {
     nav li a h1 {
-        padding: 5px 0px 20px 0px;
+        padding: 5px 0px 5px 0px;
         font-size: 3.7vw;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    nav li a h1 {
+        padding: 1px 0px 1px 0px;
+        font-size: 3.7vw;
+        margin:1px;
+        margin-top:15px;
     }
 }
 
