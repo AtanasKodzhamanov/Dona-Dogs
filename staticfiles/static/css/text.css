@@ -35,6 +35,14 @@ p {
     }
 }
 
+@media only screen and (max-width: 600px) {
+    p {
+        margin: 3px;
+        padding: 15px;
+        font-size: 17px;
+    }
+}
+
 /* hyperlinks */
 #hyperlink {
     color: rgb(109, 109, 109);
