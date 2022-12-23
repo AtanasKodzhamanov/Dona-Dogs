@@ -8,7 +8,7 @@
     
     <!-- W3 navbar sizing -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     
     <!-- Google fonts - display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,19 +57,21 @@
                 width: 100%"/>
     <!-- when you fix mobile style="margin:10px; margin-left:25px; margin-right:25px;"-->
     <nav >
-      <li class="w3-hover-border-black w3-bar-item w3-mobile">
-        <a href="{% url 'home' %}"><h1>{% trans "DOGS" %}</h1></a>
-      </li>      
-      <li class="w3-hover-border-black w3-bar-item w3-mobile">
-        <a href="{% url 'infirmary' %}"><h1>{% trans "CLINIC" %}<h1></a>
-      </li> 
-      <li  class="w3-hover-border-black w3-bar-item w3-mobile">
+      <li>
+      <a href="{% url 'home' %}">
+        <img src="{% static '\images\donalogo.png' %}" style="width: 200px; padding:10px;" />
+      </a>
+      </li>
+      <li >
+        <a href="{% url 'infirmary' %}"><h1>{% trans "CLINIC" %}</h1></a>
+      </li>  
+      <li >
         <a href="{% url 'donations' %}"><h1>{% trans "HELP" %}</h1></a>
       </li>
-      <li class="w3-hover-border-black w3-bar-item w3-mobile">
+      <li >
         <a href="{% url 'adoptions' %}"><h1>{% trans "ADOPT" %}</h1></a>
       </li>
-      <li  class="w3-hover-border-black w3-bar-item w3-mobile">
+      <li >
         <a href="{% url 'about' %}"><h1>{% trans "ABOUT" %}</h1></a>
       </li>
     </nav>
@@ -84,15 +86,16 @@
       </select>
     </form> 
     {% endcomment %}
-    <form id="languageForm" action="{% url 'set_language' %}" method="post">
-      {% csrf_token %}
-      <input type="hidden" value="{{ request.path }}">
-      <select name="language" onchange="this.form.submit()">
-        <option value="bg" {% if L == "bg" %} selected {% endif %} style="background-image: url({% static "\images\bulgarian-flag.png" %});" class="flag-select">Български</option>
-        <option value="en" {% if L == "en" %} selected {% endif %} style="background-image: url({% static "\images\uk-flag.png" %});" class="flag-select">English</option>
-      </select>
-    </form>
-
+    <div id="languageFormContainer" style="text-align: right;">
+      <form id="languageForm" action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" value="{{ request.path }}">
+        <select name="language" onchange="this.form.submit()">
+          <option value="bg" {% if L == "bg" %} selected {% endif %} style="background-image: url({% static "\images\bulgarian-flag.png" %});" class="flag-select">Български</option>
+          <option value="en" {% if L == "en" %} selected {% endif %} style="background-image: url({% static "\images\uk-flag.png" %});" class="flag-select">English</option>
+        </select>
+      </form>
+    </div>
 
     {% comment %} <form id="languageForm" action="{% url 'set_language' %}" method="post">
       {% csrf_token %}
