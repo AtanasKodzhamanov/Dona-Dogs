@@ -150,9 +150,9 @@ msgstr "Помогнете ни да напълним тази галерия с
 
 #: templates/dog.html:82
 msgid ""
-"To inquire about adoptions you can contact us on donadogsfoundation@gmail."
+"To inquire about adoptions you can contact us on DonaDogsFoundation@gmail."
 "com or directly on our Facebook group."
-msgstr ""
+msgstr "За запитване относно осиновявания можете да се свържете с нас на DonaDogsFoundation@gmail.com или директно в нашата Facebook група."
 
 #: templates/donations.html:9 templates/index.html:108
 msgid "HELP DONADOGS"
