@@ -1,3 +1,4 @@
+from datetime import timezone
 from django.contrib import admin
 
 
@@ -35,6 +36,12 @@ class Donation(admin.ModelAdmin):
 @admin.register(DonationStory)
 class DonationStory(admin.ModelAdmin):
     list_display = ["donation_text_bg","donation_text_eng", "date"]
+
+    def get_form(self, request, obj=None, **kwargs):
+        form = super(DonationStory, self).get_form(request, obj, **kwargs)
+        form.base_fields['date'].initial = timezone.now().strftime("%Y-%b")[:3]
+        return form
+
 
 @admin.register(NewsletterSubscriber)
 class NewsletterSubscriber(admin.ModelAdmin):

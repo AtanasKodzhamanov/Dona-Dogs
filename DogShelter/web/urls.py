@@ -13,4 +13,5 @@ urlpatterns = (
     # path('dogs/<str:name>/', views.show_dog.as_view(), name='dog'),
     path('dogs/<int:pk>/', views.show_dog.as_view(), name='dogs'),
     # path("sign_up/", views.SignUpView.as_view(), name="sign_up"),
+    path('donations/history/<str:date>/', views.show_donation_story.as_view(), name='donationStory'),
 )
