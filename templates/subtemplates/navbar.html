@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+{% load i18n %}
+{% get_current_language as L %}
+{% load static %}
+
+{% block page_content %}
+<!-- Navigation Bar -->
+<img id="banner" src="{% static "\images\Navbar-image.jpg" %}"
+style="border:0px;
+        width: 100%"/>
+<!-- when you fix mobile style="margin:10px; margin-left:25px; margin-right:25px;"-->
+<nav>
+    <li>
+      <a href="{% url 'home' %}">
+        <img src="https://res.cloudinary.com/dxwb5ejff/image/upload/v1671778627/Static/donalogo_jxjo3l.webp" />
+      </a>
+    </li>
+    <li >
+      <a href="{% url 'infirmary' %}"><h1>{% trans "CLINIC" %}</h1></a>
+    </li>  
+    <li >
+      <a href="{% url 'donations' %}"><h1>{% trans "HELP" %}</h1></a>
+    </li>
+    <li >
+      <a href="{% url 'adoptions' %}"><h1>{% trans "ADOPT" %}</h1></a>
+    </li>
+    <li >
+      <a href="{% url 'about' %}"><h1>{% trans "ABOUT" %}</h1></a>
+    </li>
+  </nav>
+
+
+{% endblock %}

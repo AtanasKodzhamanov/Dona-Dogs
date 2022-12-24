@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+{% load i18n %}
+{% get_current_language as L %}
+{% load static %}
+
+{% block page_content %}
+    <!-- W3 navbar sizing -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Facebook SDK -->
+    <meta property="fb:app_id" content="708457490982348" />
+
+    <!-- Google fonts - display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Google fonts - paras -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-47BM43J4MJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-47BM43J4MJ');
+    </script>
+    <meta charset="UTF-8">
+    <meta property="og:url" content="https://www.donadogs.org/">
+    <meta property="og:type"          content="website" />
+    <meta property="og:title" content="DonaDogs">
+    <meta property="og:description" content="DonaDogs">
+    <meta property="og:image" content="https://res.cloudinary.com/dxwb5ejff/image/upload/v1668477644/Infirmary/meli_4_v9klhd.webp" />
+    <link rel="icon"
+          type="image/png"
+          href="https://res.cloudinary.com/dxwb5ejff/image/upload/v1668299954/Static/tiny_icon_emlpvk.webp">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/text.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/images.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lineseparator.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/carousel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/forms.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/languageButton.css' %}">
+{% endblock %}

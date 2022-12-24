@@ -5,51 +5,7 @@
 
 <html lang="{{L}}">
   <head>
-    
-    <!-- W3 navbar sizing -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Facebook SDK -->
-    <meta property="fb:app_id" content="708457490982348" />
-
-    <!-- Google fonts - display -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
-
-    <!-- Google fonts - paras -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-47BM43J4MJ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-47BM43J4MJ');
-    </script>
-    <meta charset="UTF-8">
-    <meta property="og:url" content="https://www.donadogs.org/">
-    <meta property="og:type"          content="website" />
-    <meta property="og:title" content="DonaDogs">
-    <meta property="og:description" content="DonaDogs">
-    <meta property="og:image" content="https://res.cloudinary.com/dxwb5ejff/image/upload/v1668477644/Infirmary/meli_4_v9klhd.webp" />
-    <link rel="icon"
-          type="image/png"
-          href="https://res.cloudinary.com/dxwb5ejff/image/upload/v1668299954/Static/tiny_icon_emlpvk.webp">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/text.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/images.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/lineseparator.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/carousel.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/forms.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/languageButton.css' %}">
-   
+    {% include "subtemplates/head.html" %}
   </head>
   <body>
     <!-- Facebook SDK -->
@@ -59,65 +15,32 @@
     {% else %}
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0&appId=708457490982348&autoLogAppEvents=1" nonce="fD8p5ofw"></script>
     {% endif %}
-    <!-- Navigation Bar -->
-    <img id="banner" src="{% static "\images\Navbar-image.jpg" %}"
-         style="border:0px;
-                width: 100%"/>
-    <!-- when you fix mobile style="margin:10px; margin-left:25px; margin-right:25px;"-->
-    <nav>
-      <li>
-        <a href="{% url 'home' %}">
-          <img src="https://res.cloudinary.com/dxwb5ejff/image/upload/v1671778627/Static/donalogo_jxjo3l.webp" />
-        </a>
-      </li>
-      <li >
-        <a href="{% url 'infirmary' %}"><h1>{% trans "CLINIC" %}</h1></a>
-      </li>  
-      <li >
-        <a href="{% url 'donations' %}"><h1>{% trans "HELP" %}</h1></a>
-      </li>
-      <li >
-        <a href="{% url 'adoptions' %}"><h1>{% trans "ADOPT" %}</h1></a>
-      </li>
-      <li >
-        <a href="{% url 'about' %}"><h1>{% trans "ABOUT" %}</h1></a>
-      </li>
-    </nav>
 
-    {% comment %}
-     <form id="languageForm" action="{% url 'set_language' %}" method="post">
-      {% csrf_token %}
-      <input  name="next" type="hidden" value="{{ request.path }}">
-      <select id="select" name="language" onchange="this.form.submit()">
-        <option value="bg" {% if L == "bg" %} selected {% endif %}>Български</option>
-        <option value="en" {% if L == "en" %} selected {% endif %}>English</option>
-      </select>
-    </form> 
-    {% endcomment %}
+    {% include "subtemplates/navbar.html" %}
+
+    <!-- Language Button -->
     <div id="languageFormContainer" style="text-align: right;">
       <form id="languageForm" action="{% url 'set_language' %}" method="post">
         {% csrf_token %}
         <input type="hidden" value="{{ request.path }}">
-        <select name="language" onchange="this.form.submit()">
-          <option value="bg" {% if L == "bg" %} selected {% endif %} style="background-image: url({% static "\images\bulgarian-flag.png" %});" class="flag-select">Български</option>
-          <option value="en" {% if L == "en" %} selected {% endif %} style="background-image: url({% static "\images\uk-flag.png" %});" class="flag-select">English</option>
-        </select>
+        <label for="bg">
+          <button style="padding:0px; border: none; margin:0px; background-color:#fff;" type="submit" name="language" value="bg" id="bg">
+            <img style="width: 25px; height: 25px; margin-right: 5px; margin-left: 5px;" src="{% static "\images\bulgarian-flag.png" %}" alt="Bulgarian flag">
+          </button>
+        </label>
+        <label for="en">
+          <button style="padding:0px; border: none; margin:0px; background-color:#fff;" type="submit" name="language" value="en" id="en">
+            <img style="width: 25px; height: 25px; margin-right: 5px; margin-left: 5px;" src="{% static "\images\uk-flag.png" %}" alt="UK flag">
+          </button>
+        </label>
       </form>
     </div>
-
-    {% comment %} <form id="languageForm" action="{% url 'set_language' %}" method="post">
-      {% csrf_token %}
-      <input  name="next" type="hidden" value="{{ request.path }}">
-      <input width="25px" type="image" src={% static "\images\bulgarian-flag.png" %} id="bgFlag" name="language" value="bg" {% if L == "bg" %} style="display:none" {% endif %}>
-      <input width="25px" type="image" src={% static "\images\uk-flag.png" %} id="ukFlag" name="language" value="en" {% if L == "en" %} style="display:none" {% endif %}>
-    </form>
-     {% endcomment %}
-
-
-
+  
     <div class="innerbody">
       <br>
-    {% block page_content %}{% endblock %}
+    {% block page_content %}
+      {% comment %} Content {% endcomment %}
+    {% endblock %}
     </div>
     <hr>
     
@@ -134,30 +57,10 @@
         {% csrf_token %}
         {{ subscribeForm.as_p }}
         <button type="submit">{% trans "Subscribe" %}</button>
-        {% comment %} {% if subscribeForm.errors %}
-          <div id="error-message">
-            <h6>There were errors in the form submission:</h6>
-            <ul>
-              {% for error in subscribeForm.errors %}
-                <li>{{ error }}</li>
-              {% endfor %}
-            </ul>
-          </div>
-        {% endif %} {% endcomment %}
       </form>
-      {% comment %} <div id="success-message" style="display:none">
-        <h6>Thank you for subscribing {{ subscribeForm.cleaned_data.name }}, {{ subscribeForm.cleaned_data.email }} !!!</h6>
-      </div> {% endcomment %}
     </div>
-
     <hr>
-    {% comment%}
-    <div id="footer">
-         To be decided 
-    </div>{% endcomment %}
-      <img id="footerImg" src="https://res.cloudinary.com/dxwb5ejff/image/upload/v1671329488/Static/DogItems_se8ey3.png
+    <img id="footerImg" src="https://res.cloudinary.com/dxwb5ejff/image/upload/v1671329488/Static/DogItems_se8ey3.png
       " style="background-color: transparent;" crossorigin="anonymous"/>
     <script src="{% static 'js/activeNav.js' %}"></script>
   </body>
-
-
