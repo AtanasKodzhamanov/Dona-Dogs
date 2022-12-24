@@ -21,14 +21,6 @@ from django.views.generic import DetailView, ListView
 #         model = User
 #         fields = ['username', 'email', 'password1', 'password2']
 
-def empty2():
-    queryset= DonationStory.objects.all()
-    for i in queryset:
-        print(i.date)
-    pk_url_kwarg = 'date'
-    print(pk_url_kwarg)
-empty2()
-
 def renderCommon(request):
     if request.method == "get":
         subscribeForm = SubscribeForm()
@@ -39,7 +31,7 @@ def renderCommon(request):
     return subscribeForm
 
 class show_donation_story(ListView):
-    model = DonationStory
+    model = [DonationStory, Donation]
     template_name = "donationStory.html"
     context_object_name = 'donations'
 
@@ -50,6 +42,9 @@ class show_donation_story(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['date_pk'] = self.kwargs['date_pk']
+
+        donations = Donation.objects.all()
+        context['donation_names'] = donations
         return context
 
 class show_dog(DetailView):
