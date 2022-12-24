@@ -8,12 +8,32 @@
 <h1>{% trans "DONADOGS" %}</h1>
 <hr>
 
+
+
+<div id="slideshow">
+ {% for donation in donations %}
+  <div class="slide">
+    <h2>Slide 1</h2>
+    <p>Content for slide 1</p>
+    <img src="image1.jpg" alt="image 1">
+  </div>
+  {% endfor %}
+</div>
+
+
+
+
+
+
 {% with location="Gallery" %}   
   {% include "subtemplates/noticeboard.html" %}     
 {% endwith %}
 
 
 <h2>{% trans "OUR DOGS" %}</h2>
+
+
+
 
 {% comment %} Change class to hidden below and remove comments on filtersButton above, in JS and CSS to have a button that hides and shows the filters below. {% endcomment %}
 <div id="filtersContainer" class="display" >
