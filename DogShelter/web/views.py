@@ -5,7 +5,7 @@ from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 import django.utils.translation
 from DogShelter.web.forms import SubscribeForm, ContactForm, AdoptForm, DogFilterForm, vaStatusForm, genderFilterForm
-from DogShelter.web.models import Dog, DonationStory, NoticeBoard, About, Donation
+from DogShelter.web.models import Dog, NoticeBoard, About, Donation
 from django.utils.translation import  activate
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import DetailView, ListView
@@ -21,13 +21,13 @@ from django.views.generic import DetailView, ListView
 #         model = User
 #         fields = ['username', 'email', 'password1', 'password2']
 
-def empty2():
-    queryset= DonationStory.objects.all()
-    for i in queryset:
-        print(i.date)
-    pk_url_kwarg = 'date'
-    print(pk_url_kwarg)
-empty2()
+# def empty2():
+#     queryset= DonationStory.objects.all()
+#     for i in queryset:
+#         print(i.date)
+#     pk_url_kwarg = 'date'
+#     print(pk_url_kwarg)
+# empty2()
 
 def renderCommon(request):
     if request.method == "get":
@@ -38,15 +38,15 @@ def renderCommon(request):
             subscribeForm.save()   
     return subscribeForm
 
-class show_donation_story(ListView):
-    model = DonationStory
-    template_name = "donationStory.html"
-    context_object_name = 'donation_list'
-    # convert date to a year-month format such as 2022-Nov
+# class show_donation_story(ListView):
+#     model = DonationStory
+#     template_name = "donationStory.html"
+#     context_object_name = 'donation_list'
+#     # convert date to a year-month format such as 2022-Nov
 
-    def get_queryset(self):
-        date = self.kwargs['date']
-        return DonationStory.objects.filter(date=date)
+#     def get_queryset(self):
+#         date = self.kwargs['date']
+#         return DonationStory.objects.filter(date=date)
     
 
 class show_dog(DetailView):
