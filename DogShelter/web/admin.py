@@ -48,7 +48,7 @@ class DonationStory(admin.ModelAdmin):
     def get_form(self, request, obj=None, **kwargs):
         form = super(DonationStory, self).get_form(request, obj, **kwargs)
         # set initial value of date field to current month
-        form.base_fields['date'].initial = timezone.now().strftime("%Y-%b")[:3]
+        form.base_fields['date'].initial = datetime.datetime.now().strftime("%Y-%b")[:3]
         return form
 
 
