@@ -8,13 +8,7 @@
     {% include "subtemplates/head.html" %}
   </head>
   <body>
-    <!-- Facebook SDK -->
-    <div id="fb-root"></div>
-    {% if L == "bg" %}
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/bg_BG/sdk.js#xfbml=1&version=v15.0&appId=708457490982348&autoLogAppEvents=1" nonce="fD8p5ofw"></script>
-    {% else %}
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0&appId=708457490982348&autoLogAppEvents=1" nonce="fD8p5ofw"></script>
-    {% endif %}
+    
 
     {% include "subtemplates/navbar.html" %}
 
@@ -42,7 +36,7 @@
       {% comment %} Content {% endcomment %}
     {% endblock %}
     </div>
-    <hr>
+  
     
     <div style="padding:5px; width:auto; height:auto;text-align:center;">
       <h6 style="text-align:center;">
