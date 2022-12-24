@@ -45,8 +45,8 @@ class show_donation_story(ListView):
     # convert date to a year-month format such as 2022-Nov
 
     def get_queryset(self):
-        date = self.kwargs['date']
-        return DonationStory.objects.filter(date=date)
+        date_pk = self.kwargs['date_pk']
+        return DonationStory.objects.filter(date_pk=date_pk)
     
 
 class show_dog(DetailView):
