@@ -498,6 +498,23 @@ class Donation(models.Model):
         validators=[validate_bulgarian]
     )
 
+class NewsletterSubscriber(models.Model):
+    email = models.EmailField(
+        max_length=EMAIL_MAX_LENGTH
+    )
+    name = models.CharField(
+        max_length=NAME_MAX_LENGTH
+    )
+
+class AdoptionForm(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20)
+    city = models.CharField(max_length=255)
+    country = models.CharField(max_length=255)
+    dog = models.CharField(max_length=255)
+
+
 class DonationStory(models.Model):
 
     """
@@ -508,6 +525,22 @@ class DonationStory(models.Model):
 
     class Meta:
         verbose_name_plural = "DonationStories"
+    
+    MAX_TITLE_LENGTH=100
+
+    # title_eng = models.CharField(
+    #     max_length=MAX_TITLE_LENGTH,
+    #     default="",
+    #     help_text="Заглавие на дарението на Английски.",
+    #     validators=[validate_english]
+    # )
+
+    # title_bg = models.CharField(
+    #     max_length=MAX_TITLE_LENGTH,
+    #     default="",
+    #     help_text="Заглавие на дарението на Български.",
+    #     validators=[validate_bulgarian]
+    # )
 
     donation_text_eng = models.TextField(
         blank=True,
@@ -588,19 +621,3 @@ class DonationStory(models.Model):
         max_length=6,
         help_text="Приоритетът ще определя сортирането на донациите и дизайнът на това как се показват. low е нисък, high е висок.",
     )
-
-class NewsletterSubscriber(models.Model):
-    email = models.EmailField(
-        max_length=EMAIL_MAX_LENGTH
-    )
-    name = models.CharField(
-        max_length=NAME_MAX_LENGTH
-    )
-
-class AdoptionForm(models.Model):
-    name = models.CharField(max_length=255)
-    email = models.EmailField()
-    phone = models.CharField(max_length=20)
-    city = models.CharField(max_length=255)
-    country = models.CharField(max_length=255)
-    dog = models.CharField(max_length=255)

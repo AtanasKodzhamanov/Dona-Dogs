@@ -41,13 +41,16 @@ def renderCommon(request):
 class show_donation_story(ListView):
     model = DonationStory
     template_name = "donationStory.html"
-    context_object_name = 'donation_list'
-    # convert date to a year-month format such as 2022-Nov
+    context_object_name = 'donations'
 
     def get_queryset(self):
         date_pk = self.kwargs['date_pk']
         return DonationStory.objects.filter(date_pk=date_pk)
-    
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['date_pk'] = self.kwargs['date_pk']
+        return context
 
 class show_dog(DetailView):
     model = Dog

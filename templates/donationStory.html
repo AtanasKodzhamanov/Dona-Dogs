@@ -6,7 +6,11 @@
 
 {% block page_content %}
 
-      <h1>{% trans "DONATIONS" %}</h1>
-      <hr>
+      <h1>{% trans "DONATIONS" %} - {{date_pk}}</h1>
+      <hr>{{donation.date}}
+
+      {% for donation in donations %}
+      {{donation.date_pk}}
+      {% endfor %}
 
 {% endblock %}    
