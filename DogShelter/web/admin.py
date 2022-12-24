@@ -5,7 +5,7 @@ from django.contrib import admin
 from DogShelter.web import models
 
 
-from DogShelter.web.models import Dog, NoticeBoard, About, Donation, NewsletterSubscriber
+from DogShelter.web.models import Dog, NoticeBoard, About, Donation, NewsletterSubscriber, DonationStory
 # Register your models here.
 
 
@@ -35,9 +35,9 @@ class Donation(admin.ModelAdmin):
     list_display = ["person_name_eng", "date"]
     list_per_page = 100
 
-# @admin.register(DonationStory)
-# class DonationStory(admin.ModelAdmin):
-#     list_display = ["donation_text_bg","donation_text_eng", "date"]
+@admin.register(DonationStory)
+class DonationStory(admin.ModelAdmin):
+    list_display = ["donation_text_bg","donation_text_eng", "date"]
 
 @admin.register(NewsletterSubscriber)
 class NewsletterSubscriber(admin.ModelAdmin):
