@@ -561,9 +561,27 @@ class DonationStory(models.Model):
         validators=[validate_url]
     )
 
-    priority = models.IntegerField(
-        default=0,
-        help_text="Приоритетът ще определя .",
+    donation_pic_5 = models.URLField(
+        max_length=MAX_URL_LENGTH,
+        blank=True,
+        default="",
+        help_text="Снимка 4 в секцията.",
+        validators=[validate_url]
+    )
+
+    donation_pic_6 = models.URLField(
+        max_length=MAX_URL_LENGTH,
+        blank=True,
+        default="",
+        help_text="Снимка 4 в секцията.",
+        validators=[validate_url]
+    )
+
+    priority = models.CharField(
+        choices=[('low', 'Low'), ('high', 'High')],
+        default='low',
+        max_length=6,
+        help_text="Приоритетът ще определя сортирането на донациите и дизайнът на това как се показват. low е нисък, high е висок.",
     )
 
 class NewsletterSubscriber(models.Model):
