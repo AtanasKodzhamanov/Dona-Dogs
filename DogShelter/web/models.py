@@ -553,6 +553,19 @@ class DonationStory(models.Model):
         validators=[validate_url]
     )
 
+    donation_pic_4 = models.URLField(
+        max_length=MAX_URL_LENGTH,
+        blank=True,
+        default="",
+        help_text="Снимка 4 в секцията.",
+        validators=[validate_url]
+    )
+
+    priority = models.IntegerField(
+        default=0,
+        help_text="Приоритетът ще определя .",
+    )
+
 class NewsletterSubscriber(models.Model):
     email = models.EmailField(
         max_length=EMAIL_MAX_LENGTH
