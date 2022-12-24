@@ -525,22 +525,11 @@ class DonationStory(models.Model):
 
     date = models.DateField(
         blank=False,
-        max_length=7,
+        max_length=8,
         help_text="Дата на дарението. По подразбиране е последният ден на предходния месец. Например ако дарението е направено на 1.01.2020, то по подразбиране ще се показва на 31.12.2019. Това е за да се показват даренията в последния месец."
     )
 
-    def save(self, *args, **kwargs):
-    # if date is not set, set it to the previous month
-        if not self.date:
-            current_month = datetime.datetime.now().month
-            current_year = datetime.datetime.now().year
-            if current_month == 1:
-                self.date = f"{current_year-1}-Dec"
-            else:
-                self.date = f"{current_year}-{datetime.datetime.now().strftime('%b')[:3]}"
-        super().save(*args, **kwargs)
 
-        
 
     donation_pic_1 = models.URLField(
         max_length=MAX_URL_LENGTH,

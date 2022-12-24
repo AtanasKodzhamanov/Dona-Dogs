@@ -1,6 +1,8 @@
 from datetime import timezone
 import datetime
+from django import forms
 from django.contrib import admin
+from DogShelter.web import models
 
 
 from DogShelter.web.models import Dog, NoticeBoard, About, Donation, DonationStory, NewsletterSubscriber
@@ -38,9 +40,15 @@ class Donation(admin.ModelAdmin):
 class DonationStory(admin.ModelAdmin):
     list_display = ["donation_text_bg","donation_text_eng", "date"]
 
+    # add form field for date
+    formfield_overrides = {
+        models.CharField: {'widget': forms.TextInput(attrs={'size':'8'})},
+    }
+    
     def get_form(self, request, obj=None, **kwargs):
         form = super(DonationStory, self).get_form(request, obj, **kwargs)
-        form.base_fields['date'].initial = datetime.datetime.now().strftime("%Y-%b")[:3]
+        # set initial value of date field to current month
+        form.base_fields['date'].initial = timezone.now().strftime("%Y-%b")[:3]
         return form
 
 
