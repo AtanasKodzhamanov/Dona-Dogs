@@ -522,15 +522,11 @@ class DonationStory(models.Model):
         help_text="Текст на дарението на Български (за секцията със снимки на дарания).",
         validators=[validate_bulgarian]
     )
-
     date = models.DateField(
-        blank=False,
-        max_length=8,
+        blank=True,
+        default=last_month,
         help_text="Дата на дарението. По подразбиране е последният ден на предходния месец. Например ако дарението е направено на 1.01.2020, то по подразбиране ще се показва на 31.12.2019. Това е за да се показват даренията в последния месец."
     )
-
-
-
     donation_pic_1 = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,

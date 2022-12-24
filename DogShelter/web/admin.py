@@ -30,7 +30,6 @@ class About(admin.ModelAdmin):
     list_display = ["section_title_bg", "section_title_eng"]
     readonly_fields = ('id',)
 
-
 @admin.register(Donation)
 class Donation(admin.ModelAdmin):
     list_display = ["person_name_eng", "date"]
@@ -39,18 +38,6 @@ class Donation(admin.ModelAdmin):
 @admin.register(DonationStory)
 class DonationStory(admin.ModelAdmin):
     list_display = ["donation_text_bg","donation_text_eng", "date"]
-
-    # add form field for date
-    formfield_overrides = {
-        models.CharField: {'widget': forms.TextInput(attrs={'size':'8'})},
-    }
-    
-    def get_form(self, request, obj=None, **kwargs):
-        form = super(DonationStory, self).get_form(request, obj, **kwargs)
-        # set initial value of date field to current month
-        form.base_fields['date'].initial = datetime.datetime.now().strftime("%Y-%b")[:3]
-        return form
-
 
 @admin.register(NewsletterSubscriber)
 class NewsletterSubscriber(admin.ModelAdmin):
