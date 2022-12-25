@@ -10,8 +10,7 @@
       <hr>{{donation.date}}
 
       <div class="parent" style="text-align: center;  background-color: #cca43b">
-            <h2>{% trans "WE THANK YOU ALL FOR SUPPORTING US" %}</h2>
-            <h4> {% trans "LAST MONTH WE RECEIVED HELP FROM" %}</h4>
+            <h2>{% trans "WE THANK YOU ALL FOR SUPPORTING US" %}</h2> 
             <br>
             {% for donation in donation_names %}
                 <div style="display: inline-block">
@@ -30,8 +29,10 @@
 
       {% for donation in donations %} 
       {% if L == "bg" %}
+            <h2>{{donation.title_bg}}</h2>
             <p>{{donation.donation_text_bg}}</p>
             {% else %}
+            <h2>{{donation.title_eng}}</h2>
             <p>{{donation.donation_text_eng}}</p>
       {% endif %}
       <div class="image-container-dog-album">

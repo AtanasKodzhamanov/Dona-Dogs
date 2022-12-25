@@ -4,24 +4,23 @@
 {% block page_content %}
 
     {% for notice in dataNoticeBoard %}
-    {% if notice.fields.location == location %}
-    <article style="max-width: 1500px;  margin:auto;">
-        <div>
-            {% if notice.fields.note_pic_1 %}
-            <img id="sizingNoticeBoard" src={{ notice.fields.note_pic_1 }}>
-            {% endif %}
-        <p>
-        {% if L == "bg" %}
-        {{notice.fields.note_bg|safe}}
-        {% else %}           
-        {{notice.fields.note_eng|safe }}
-        {% endif %}   
-      
-        </p>
-        </div>
-    </article>
-    <hr />
-    {% endif %}
+        {% if notice.fields.location == location %}
+        <article style="max-width: 1500px;  margin:auto;">
+            <div>
+                {% if notice.fields.note_pic_1 %}
+                    <img id="sizingNoticeBoard" src={{ notice.fields.note_pic_1 }}>
+                {% endif %}
+            <p>
+                {% if L == "bg" %}
+                    {{notice.fields.note_bg|safe}}
+                {% else %}           
+                    {{notice.fields.note_eng|safe }}
+                {% endif %}   
+            </p>
+            </div>
+        </article>
+        <hr>
+        {% endif %}
     {% endfor %}
 
 {% endblock %}

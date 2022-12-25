@@ -10,24 +10,47 @@
 
 
 
-<div id="slideshow">
- {% for donation in donations %}
+{% comment %} <div id="slideshow">
+ {% for donation in donation_stories %}
   <div class="slide">
-    <h2>Slide 1</h2>
-    <p>Content for slide 1</p>
-    <img src="image1.jpg" alt="image 1">
+    <div display="inline-block">
+    <p>{{ donation.donation_text_eng }}</p>
+    <img style="max-width:300px" src="{{ donation.donation_pic_1}}" alt="image 1">
+    </div>
   </div>
   {% endfor %}
-</div>
-
-
-
-
-
+</div> {% endcomment %}
 
 {% with location="Gallery" %}   
   {% include "subtemplates/noticeboard.html" %}     
 {% endwith %}
+
+  {% for donation in donation_stories  %}
+  <div id="slides-container"  style="max-width: 1500px;  margin:auto;">
+    <div class="slides-donations fade">
+                {% if donation.donation_pic_1 %}
+            <img id="sizingDonationsSlide" src={{ donation.donation_pic_1 }}>
+        {% endif %} 
+        {% if L == "bg" %}
+            <p>{{donation.donation_text_bg|safe}}</p>
+        {% else %}           
+            <p>{{donation.donation_text_eng|safe }}</p>
+        {% endif %}
+
+    </div>
+  </div>
+{% endfor %}
+
+<div id="dots-container" style="display: flex; justify-content: center;">
+  
+</div> 
+<!-- The dots/circles -->
+{% comment %} 
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+{% endcomment %}
+<hr>
 
 
 <h2>{% trans "OUR DOGS" %}</h2>
@@ -126,6 +149,7 @@
 <h1>{% trans "HELP DONADOGS" %}</h1>
 {% include "subtemplates/subdonations.html" %}
 
+<script src="{% static 'js/slides.js' %}"></script>
 <script src="{% static 'js/popupInfo.js' %}"></script>
 <script src="{% static 'js/filters.js' %}"></script>
 <script src="{% static 'js/redirectToDogAlbum.js' %}"></script>
