@@ -58,7 +58,7 @@
 }
 
 #sizingNoticeBoard{ 
-    max-width: 350px;
+    max-width: 600px;
     height: auto;
     float: left; 
     padding:25px;
@@ -79,7 +79,7 @@
 }
 
 #sizingDonationsSlide{ 
-    max-width: 350px;
+    max-width: 600px;
     height: auto;
     float: right; 
     padding:25px;
