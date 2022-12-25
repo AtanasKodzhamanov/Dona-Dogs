@@ -26,25 +26,7 @@
 {% endwith %}
 
 
-      {% for donation in donation_stories  %}
-      <div id="slides-container"  style="max-width: 1500px;  margin:auto;">
-        <div class="slides-donations fade">
-                    {% if donation.donation_pic_1 %}
-                <img id="sizingDonationsSlide" src={{ donation.donation_pic_1 }}>
-            {% endif %} 
-            {% if L == "bg" %}
-                <p>{{donation.donation_text_bg|safe}}</p>
-            {% else %}           
-                <p>{{donation.donation_text_eng|safe }}</p>
-            {% endif %}
-            <br>
-            <p>{% trans "You can see more information about our last month's donations " %} <a id="hyperlink" href="/donations/history/{{date_pk}}/">{% trans "here" %}</a>.</p>    </div>
-      </div>
-    {% endfor %}
 
-    <div id="dots-container" style="display: flex; justify-content: center;">
-      {% comment %} JS will append dots here {% endcomment %}
-    </div> 
 
 
 <hr>
@@ -53,35 +35,7 @@
 <p> We have {{countDogs}} dogs in the shelter. Last year we helped {{countAdoptedLastYear}} dogs get adopted in several countries across Europe. You can see more information about this year's adoptions here: <a id="hyperlink" href="/adoptions/">ADOPTIONS</a>.</p>
 <br>
 <p> Currently there are {{countSick}} sick dogs receiving intensive treatement at the clinic. You can see more information about them here. Please help us help them so that we can continue to provide treatement for any dog that needs it: <a id="hyperlink" href="/infirmary/">CLINIC</a>.</p>
-
-{% comment %} Change class to hidden below and remove comments on filtersButton above, in JS and CSS to have a button that hides and shows the filters below. {% endcomment %}
-<div id="filtersContainer" class="display" >
-  <div id="formsBar" >
-    <div class="form-group">
-      <form  action="javascript:void(0)">
-        {% csrf_token %}
-        {{ nameFilterForm }}
-        {% comment %} <button id="showAllButton" type="button" style="display: none;" onclick="showAllDogs();">All</button> {% endcomment %}
-      </form>
-    </div>
-
-    <div class="form-group">
-      <form action="" method="post">
-        {% csrf_token %}
-        {{ vaStatusForm  }}
-      </form>
-    </div>
-
-    <div class="form-group">
-      <form action="/subscribe" method="post">
-        {% csrf_token %}
-        {{ genderFilterForm  }}
-      </form>
-    </div>
-  </div>
-</div>
-
-
+<p> See all of our dogs here: <a id="hyperlink" href="{% url 'all_dogs' %}">ALL DOGS</a>.</p>
 
 
 {% comment %}
@@ -120,23 +74,35 @@
       {% endif %}
       </p>
       <img  id="sizingGallery" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.profile_pic}}" />
-      
-        {% if instance.fields.va_name_eng %} 
-          <div class="virtual-adopter-block" >
-              {% trans "Virtually Adopted" %} <br> 
-              {% if L == "bg" %}
-              {{instance.fields.va_name_bg}}  
-              {% else %}
-              {{instance.fields.va_name_eng}} 
-            {% endif %}
-            </div>
-        {% endif%}      
     </div>
   {% endif %}
 
 {% endfor %}
-  
-</div>{% comment %}
+</div>  
+
+{% for donation in donation_stories  %}
+<div id="slides-container"  style="max-width: 1500px;  margin:auto;">
+  <div class="slides-donations fade">
+              {% if donation.donation_pic_1 %}
+          <img id="sizingDonationsSlide" src={{ donation.donation_pic_1 }}>
+      {% endif %} 
+      {% if L == "bg" %}
+          <p>{{donation.donation_text_bg|safe}}</p>
+      {% else %}           
+          <p>{{donation.donation_text_eng|safe }}</p>
+      {% endif %}
+      <br>
+      <p>{% trans "You can see more information about our last month's donations " %} <a id="hyperlink" href="/donations/history/{{date_pk}}/">{% trans "here" %}</a>.</p>    </div>
+</div>
+{% endfor %}
+<br>
+<div id="dots-container" style="display: flex; justify-content: center;">
+{% comment %} JS will append dots here {% endcomment %}
+</div> 
+
+
+
+{% comment %}
 <hr>
 <h1>{% trans "CLINIC" %}</h1>
 

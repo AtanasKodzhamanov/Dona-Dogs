@@ -59,6 +59,28 @@ class show_dog(DetailView):
         context['subscribeForm'] = renderCommon(self.request)
         return context
     
+def show_all_dogs(request):
+    dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
+    dataPeople = set(Dog.objects.values_list(
+        "va_name_bg", "va_name_eng").exclude(va_name_eng=""))
+    genderForm = genderFilterForm()
+    nameForm = DogFilterForm()
+    vaForm = vaStatusForm()
+    contactForm = ContactForm()
+    adoptForm = AdoptForm()
+
+    context = {
+        'subscribeForm': renderCommon(request),
+        "genderFilterForm": genderForm,
+        "adoptForm": adoptForm,
+        "contactForm": contactForm,
+        'nameFilterForm': nameForm,
+        'vaStatusForm': vaForm,
+        "dataPeople": dataPeople,
+        "dataDogs": dataDogs,
+    }
+    return render(request, "dogs.html", context)
+
 def show_home(request):  # dashboard
     dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
     # get only active dogs
