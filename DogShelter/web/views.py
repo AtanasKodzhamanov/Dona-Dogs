@@ -33,7 +33,6 @@ def renderCommon(request):
 class show_donation_story(ListView):
     model = [DonationStory, Donation]
     template_name = "donationStory.html"
-    context_object_name = 'donations'
 
     def get_queryset(self):
         date_pk = self.kwargs['date_pk']
@@ -43,8 +42,10 @@ class show_donation_story(ListView):
         context = super().get_context_data(**kwargs)
         context['date_pk'] = self.kwargs['date_pk']
 
-        donations = Donation.objects.all()
-        context['donation_names'] = donations
+        donation_names = Donation.objects.all()
+        donations = DonationStory.objects.all()
+        context['donation_names'] = donation_names
+        context['donations'] = donations
         return context
 
 class show_dog(DetailView):
@@ -64,6 +65,11 @@ def show_home(request):  # dashboard
     dataPeople = set(Dog.objects.values_list(
         "va_name_bg", "va_name_eng").exclude(va_name_eng=""))
     
+    today = datetime.date.today()
+    first = today.replace(day=1)
+    last_month = first - datetime.timedelta(days=1)
+
+    donation_stories = DonationStory.objects.filter(date=last_month)
     genderForm = genderFilterForm()
     nameForm = DogFilterForm()
     vaForm = vaStatusForm()
@@ -72,6 +78,7 @@ def show_home(request):  # dashboard
     #dataDogs2 = Dog.objects.filter(status="Active")
 
     context = {
+        "donation_stories": donation_stories,
         'subscribeForm': renderCommon(request),
         "genderFilterForm": genderForm,
         "adoptForm": adoptForm,
@@ -87,27 +94,6 @@ def show_home(request):  # dashboard
 # from django.views import View
 # from django.core import serializers
 # from .models import Dog, NoticeBoard
-
-# class ShowHome(View):
-#     def dispatch(request, *args, **kwargs):
-#         dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
-#         dataNoticeBoard = serializers.serialize(
-#             'python', NoticeBoard.objects.all().order_by("order"))
-#         dataPeople = set(Dog.objects.values_list(
-#             "va_name_bg", "va_name_eng").exclude(va_name_eng=""))
-
-#         #dataDogs2 = Dog.objects.filter(status="Active")
-
-#         context = {
-#             "dataPeople": dataPeople,
-#             "dataDogs": dataDogs,
-#             "dataNoticeBoard": dataNoticeBoard
-#         }
-#         return self.render_to_response(context)
-
-# urlpatterns = [
-#     path('', ShowHome.as_view(), name='home'),
-# ]
 
 # tdd = test driven dev
 # pytest
@@ -191,17 +177,17 @@ def show_donations(request):
     }
     return render(request, "donations.html", context)
 
-def show_giftAdoption(request):
-    dataNoticeBoard = serializers.serialize(
-        'python', NoticeBoard.objects.all().order_by("order"))
-    dataPeople = serializers.serialize(
-        'python', Dog.objects.all().exclude(va_name_eng=""))
+# def show_giftAdoption(request):
+#     dataNoticeBoard = serializers.serialize(
+#         'python', NoticeBoard.objects.all().order_by("order"))
+#     dataPeople = serializers.serialize(
+#         'python', Dog.objects.all().exclude(va_name_eng=""))
 
-    context = {
-        'subscribeForm': renderCommon(request),
-        "dataPeople": dataPeople,
-        "dataNoticeBoard": dataNoticeBoard
-    }
+#     context = {
+#         'subscribeForm': renderCommon(request),
+#         "dataPeople": dataPeople,
+#         "dataNoticeBoard": dataNoticeBoard
+#     }
 
-    return render(request, "giftadoption.html", context)
+#     return render(request, "giftadoption.html", context)
 

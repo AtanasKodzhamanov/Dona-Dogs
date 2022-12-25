@@ -528,19 +528,19 @@ class DonationStory(models.Model):
     
     MAX_TITLE_LENGTH=100
 
-    # title_eng = models.CharField(
-    #     max_length=MAX_TITLE_LENGTH,
-    #     default="",
-    #     help_text="Заглавие на дарението на Английски.",
-    #     validators=[validate_english]
-    # )
+    title_eng = models.CharField(
+        max_length=MAX_TITLE_LENGTH,
+        default="",
+        help_text="Заглавие на дарението на Английски.",
+        validators=[validate_english]
+    )
 
-    # title_bg = models.CharField(
-    #     max_length=MAX_TITLE_LENGTH,
-    #     default="",
-    #     help_text="Заглавие на дарението на Български.",
-    #     validators=[validate_bulgarian]
-    # )
+    title_bg = models.CharField(
+        max_length=MAX_TITLE_LENGTH,
+        default="",
+        help_text="Заглавие на дарението на Български.",
+        validators=[validate_bulgarian]
+    )
 
     donation_text_eng = models.TextField(
         blank=True,
