@@ -81,17 +81,29 @@ nav li a h1 {
 
 }
 
+@media only screen and (max-width: 1600px) {
+    nav li a h1 {
+        font-size: 28px;
+    }
+}
+
+@media only screen and (max-width: 1350px) {
+    nav li a h1 {
+        font-size: 26px;
+    }
+}
+
 @media only screen and (max-width: 1111px) {
     nav li a h1 {
         padding: 5px 0px 5px 0px;
-        font-size: 3.7vw;
+        font-size: 24px;
     }
 }
 
 @media only screen and (max-width: 500px) {
     nav li a h1 {
         padding: 1px 0px 1px 0px;
-        font-size: 3.4vw;
+        font-size: 3.2vw;
         margin:1px;
         margin-top:13px;
     }

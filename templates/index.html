@@ -25,38 +25,34 @@
   {% include "subtemplates/noticeboard.html" %}     
 {% endwith %}
 
-  {% for donation in donation_stories  %}
-  <div id="slides-container"  style="max-width: 1500px;  margin:auto;">
-    <div class="slides-donations fade">
-                {% if donation.donation_pic_1 %}
-            <img id="sizingDonationsSlide" src={{ donation.donation_pic_1 }}>
-        {% endif %} 
-        {% if L == "bg" %}
-            <p>{{donation.donation_text_bg|safe}}</p>
-        {% else %}           
-            <p>{{donation.donation_text_eng|safe }}</p>
-        {% endif %}
 
-    </div>
-  </div>
-{% endfor %}
+      {% for donation in donation_stories  %}
+      <div id="slides-container"  style="max-width: 1500px;  margin:auto;">
+        <div class="slides-donations fade">
+                    {% if donation.donation_pic_1 %}
+                <img id="sizingDonationsSlide" src={{ donation.donation_pic_1 }}>
+            {% endif %} 
+            {% if L == "bg" %}
+                <p>{{donation.donation_text_bg|safe}}</p>
+            {% else %}           
+                <p>{{donation.donation_text_eng|safe }}</p>
+            {% endif %}
+            <br>
+            <p>{% trans "You can see more information about our last month's donations " %} <a id="hyperlink" href="/donations/history/{{date_pk}}/">{% trans "here" %}</a>.</p>    </div>
+      </div>
+    {% endfor %}
 
-<div id="dots-container" style="display: flex; justify-content: center;">
-  
-</div> 
-<!-- The dots/circles -->
-{% comment %} 
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-{% endcomment %}
+    <div id="dots-container" style="display: flex; justify-content: center;">
+      {% comment %} JS will append dots here {% endcomment %}
+    </div> 
+
+
 <hr>
 
-
 <h2>{% trans "OUR DOGS" %}</h2>
-
-
-
+<p> We have {{countDogs}} dogs in the shelter. Last year we helped {{countAdoptedLastYear}} dogs get adopted in several countries across Europe. You can see more information about this year's adoptions here: <a id="hyperlink" href="/adoptions/">ADOPTIONS</a>.</p>
+<br>
+<p> Currently there are {{countSick}} sick dogs receiving intensive treatement at the clinic. You can see more information about them here. Please help us help them so that we can continue to provide treatement for any dog that needs it: <a id="hyperlink" href="/infirmary/">CLINIC</a>.</p>
 
 {% comment %} Change class to hidden below and remove comments on filtersButton above, in JS and CSS to have a button that hides and shows the filters below. {% endcomment %}
 <div id="filtersContainer" class="display" >
@@ -140,13 +136,13 @@
 
 {% endfor %}
   
-</div>
+</div>{% comment %}
 <hr>
 <h1>{% trans "CLINIC" %}</h1>
 
-{% include "subtemplates/subinfirmary.html" %}
+ {% include "subtemplates/subinfirmary.html" %} 
 <hr>
-<h1>{% trans "HELP DONADOGS" %}</h1>
+<h1>{% trans "HELP DONADOGS" %}</h1>{% endcomment %}
 {% include "subtemplates/subdonations.html" %}
 
 <script src="{% static 'js/slides.js' %}"></script>

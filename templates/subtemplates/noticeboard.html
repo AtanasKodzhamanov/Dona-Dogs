@@ -6,21 +6,62 @@
     {% for notice in dataNoticeBoard %}
         {% if notice.fields.location == location %}
         <article style="max-width: 1500px;  margin:auto;">
-            <div>
-                {% if notice.fields.note_pic_1 %}
-                    <img id="sizingNoticeBoard" src={{ notice.fields.note_pic_1 }}>
-                {% endif %}
-            <p>
+            <div id="noticeDiv">
+              {% if notice.fields.note_pic_1 %}
+                <img id="sizingNoticeBoard" src={{ notice.fields.note_pic_1 }}>
+              {% endif %}
+              <p id="noticeText">
                 {% if L == "bg" %}
-                    {{notice.fields.note_bg|safe}}
+                  {{notice.fields.note_bg|safe}}
                 {% else %}           
-                    {{notice.fields.note_eng|safe }}
+                  {{notice.fields.note_eng|safe }}
                 {% endif %}   
-            </p>
+              </p>
             </div>
-        </article>
-        <hr>
+            <div style="text-align:center">
+            <button id="showMoreButton" style="display: none;">Show More</button>
+            </div>
+          </article>
+          <hr>          
         {% endif %}
     {% endfor %}
+
+
+    <script>
+        // Get the notice div, notice text, and show more button
+        const noticeDiv = document.getElementById('noticeDiv');
+        const noticeText = document.getElementById('noticeText');
+        const showMoreButton = document.getElementById('showMoreButton');
+      
+        // Set the maximum height of the notice div
+        const maxHeight = 500;
+      
+        // Check if the notice div is taller than the maximum height
+        if (noticeDiv.offsetHeight > maxHeight) {
+          // If it is, show the show more button
+          showMoreButton.style.display = 'block';
+      
+          // Set the notice div's height to the maximum height
+          noticeDiv.style.height = maxHeight + 'px';
+          noticeDiv.style.overflow = 'hidden';
+      
+          // Add an event listener to the show more button
+          showMoreButton.addEventListener('click', () => {
+            // When the button is clicked, set the notice div's height to 'auto'
+            // and hide the show more button
+            noticeDiv.style.height = 'auto';
+            showMoreButton.style.display = 'none';
+          });
+      
+          // Truncate the text to fit within the maximum height
+          let truncatedText = noticeText.innerHTML;
+          while (noticeDiv.offsetHeight > maxHeight) {
+            // Remove the last character from the text
+            truncatedText = truncatedText.substring(0, truncatedText.length - 1);
+            noticeText.innerHTML = truncatedText + '...';
+          }
+        }
+      </script>
+      
 
 {% endblock %}

@@ -46,6 +46,7 @@ class show_donation_story(ListView):
         donations = DonationStory.objects.all()
         context['donation_names'] = donation_names
         context['donations'] = donations
+        context['subscribeForm'] = renderCommon(self.request)
         return context
 
 class show_dog(DetailView):
@@ -68,6 +69,7 @@ def show_home(request):  # dashboard
     today = datetime.date.today()
     first = today.replace(day=1)
     last_month = first - datetime.timedelta(days=1)
+    date_pk = last_month.strftime("%Y-%b")
 
     donation_stories = DonationStory.objects.filter(date=last_month)
     genderForm = genderFilterForm()
@@ -76,8 +78,15 @@ def show_home(request):  # dashboard
     contactForm = ContactForm()
     adoptForm = AdoptForm()
     #dataDogs2 = Dog.objects.filter(status="Active")
+    countDogs = Dog.objects.filter(status="Active").count() + Dog.objects.filter(status="Sick").count()
+    countSick = Dog.objects.filter(status="Sick").count()
+    # count the number of dogs that were adopted this year using adoption year field to filter 
+    countAdoptedLastYear = Dog.objects.filter(adoption_year=today.year).count()
 
     context = {
+        "countDogs": countDogs,
+        "countSick": countSick,
+        "countAdoptedLastYear": countAdoptedLastYear,
         "donation_stories": donation_stories,
         'subscribeForm': renderCommon(request),
         "genderFilterForm": genderForm,
@@ -87,6 +96,7 @@ def show_home(request):  # dashboard
         'vaStatusForm': vaForm,
         "dataPeople": dataPeople,
         "dataDogs": dataDogs,
+        "date_pk":date_pk,
         "dataNoticeBoard": dataNoticeBoard
     }
     return render(request, "index.html", context)

@@ -18,3 +18,4 @@ document.getElementById('footerSubscribeForm').addEventListener('submit', functi
   document.getElementById('success-message').style.display = 'block';
 });
 
+

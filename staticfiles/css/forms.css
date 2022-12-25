@@ -25,7 +25,7 @@ button:hover {
   text-align: left;
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1600px) {
   #formsBar {
       display: none;
   }
@@ -95,4 +95,18 @@ button:hover {
 
 .form-group button:hover {
   background-color: rgb(49, 49, 49);
+}
+
+
+#showMoreButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-left: 15px;
+  font-size: 14px;
+  background-color: #6b6b6b;
+  color: #fff;
+  border: none;
+  padding: 3px 3px;  
+  cursor: pointer;
 }
