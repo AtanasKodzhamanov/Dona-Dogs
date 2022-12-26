@@ -19,8 +19,6 @@ nav {
 @media only screen and (max-width: 1111px) {
     nav {
         display: flex;
-        font-size: 3.5vw;
-
     }
 }
 
@@ -69,8 +67,6 @@ nav li a {
         padding-left: 0;
         padding-right: 0;
         margin: 2px;
-        font-size: 16px;
-      
     }
 }
 
@@ -79,29 +75,16 @@ nav li a h1 {
 
 }
 
-@media only screen and (max-width: 1600px) {
-    nav li a h1 {
-        font-size: 28px;
-    }
-}
-
-@media only screen and (max-width: 1350px) {
-    nav li a h1 {
-        font-size: 26px;
-    }
-}
 
 @media only screen and (max-width: 1111px) {
     nav li a h1 {
         padding: 5px 0px 5px 0px;
-        font-size: 24px;
     }
 }
 
 @media only screen and (max-width: 500px) {
     nav li a h1 {
         padding: 1px 0px 1px 0px;
-        font-size: 3.2vw;
         margin:1px;
         margin-top:13px;
     }
@@ -147,6 +130,6 @@ nav li.active {
 } */
 
 a:-webkit-any-link {
-    color: #414141;
+    color: -webkit-link;
     cursor: pointer;
 }

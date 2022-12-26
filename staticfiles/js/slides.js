@@ -30,12 +30,13 @@ let slides = document.getElementsByClassName("slides-donations");
 console.log(slides)
 
 for (let i = 0; i < slides.length; i++) {
-  console.log("print dot")
-  let dot = document.createElement("span");
-  dot.className = "dot";
-  dot.onclick = function () { currentSlide(i + 1) };
-  dotsContainer.appendChild(dot);
-
+  if (slides.lenght>1){
+    console.log("print dot")
+    let dot = document.createElement("span");
+    dot.className = "dot";
+    dot.onclick = function () { currentSlide(i + 1) };
+    dotsContainer.appendChild(dot);
+  }
 }
 
 // Initialize the slide show

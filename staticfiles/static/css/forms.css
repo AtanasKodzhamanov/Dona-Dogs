@@ -110,3 +110,48 @@ button:hover {
   padding: 3px 3px;  
   cursor: pointer;
 }
+
+#subscribeFormContainer .hideSubscribeForm {
+  display: none;
+}
+
+
+
+#footerSubscribeForm input[type="text"],
+#footerSubscribeForm input[type="email"] {
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#footerSubscribeForm button[type="submit"] {
+  font-size: 14px;
+  background-color: #6b6b6b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#footerSubscribeForm p{
+  padding:4px;
+  margin:0px;
+}
+
+@media only screen and (max-width: 1200px) {
+  #subscribeFormContainer h3 {
+    font-size: 17px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #subscribeFormContainer h3 {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #subscribeFormContainer h3 {
+    font-size: 14px;
+  }
+}

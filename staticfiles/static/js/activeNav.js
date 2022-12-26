@@ -10,8 +10,13 @@ navLinks.forEach(link => {
   }
 });
 
+// Footer subscribe form
+const subscribeFormContainer = document.getElementById('subscribeFormContainer');
+const hideSubscribeForm = document.querySelector('.hideSubscribeForm');
 
-
+subscribeFormContainer.addEventListener('mouseover', function() {
+  hideSubscribeForm.style.display = 'block';
+});
 // Footer subscribe form
 document.getElementById('footerSubscribeForm').addEventListener('submit', function(event) {
   document.getElementById('footerSubscribeForm').style.display = 'none';
