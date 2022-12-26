@@ -216,26 +216,3 @@ def show_donations(request):
         "dataNoticeBoard": dataNoticeBoard
     }
     return render(request, "donations.html", context)
-
-# def show_giftAdoption(request):
-#     dataNoticeBoard = serializers.serialize(
-#         'python', NoticeBoard.objects.all().order_by("order"))
-#     dataPeople = serializers.serialize(
-#         'python', Dog.objects.all().exclude(va_name_eng=""))
-
-#     context = {
-#         'subscribeForm': renderCommon(request),
-#         "dataPeople": dataPeople,
-#         "dataNoticeBoard": dataNoticeBoard
-#     }
-
-#     return render(request, "giftadoption.html", context)
-today = datetime.date.today()
-adopted = Dog.objects.filter(adoption_year=today.year-1)
-print(adopted)
-# filter away adopted for dogs where there is no adoption_pic_after_1 
-adopted = adopted.exclude(adoption_pic_after_1="")
-print(adopted)
-adopted = adopted.order_by("?")[0]
-print(adopted)
-print(adopted.adoption_pic_after_1)
