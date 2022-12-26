@@ -85,7 +85,7 @@ def show_home(request):  # dashboard
     dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
     # get only active dogs
     dataDogs = [dog for dog in dataDogs if dog['fields']['status'] == 'Active']
-    dataDogs = dataDogs[:6]
+    dataDogs = dataDogs[:3]
     dataNoticeBoard = serializers.serialize(
         'python', NoticeBoard.objects.all().order_by("order"))
     dataPeople = set(Dog.objects.values_list(
