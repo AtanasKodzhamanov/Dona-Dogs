@@ -252,7 +252,7 @@ class NoticeBoard(models.Model):
         return self.note_eng
 
     LOCATION_CHOICES = [(x, x) for x in ("Gallery", "About", "Infirmery",
-                                 "Adoptions", "Virtual", "Donations")]
+                                 "Adoptions", "Virtual", "Donations","AllDogs")]
 
     LOCATION_LENGTH = 25
     DEFAULT_LOCATION = "Gallery"

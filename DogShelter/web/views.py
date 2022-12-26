@@ -105,10 +105,15 @@ def show_home(request):  # dashboard
     #dataDogs2 = Dog.objects.filter(status="Active")
     countDogs = Dog.objects.filter(status="Active").count() + Dog.objects.filter(status="Sick").count()
     countSick = Dog.objects.filter(status="Sick").count()
-    # count the number of dogs that were adopted this year using adoption year field to filter 
-    countAdoptedLastYear = Dog.objects.filter(adoption_year=today.year).count()
+    # count the number of dogs that were adopted last year using adoption year field to filter 
+    countAdoptedLastYear = Dog.objects.filter(adoption_year=today.year-1).count()
 
+    adopted = Dog.objects.filter(adoption_year=today.year-1)
+    # filter away adopted for dogs where there is no adoption_pic_after_1 
+    adopted = adopted.exclude(adoption_pic_after_1="")
+    adopted = adopted.order_by("?")[0]
     context = {
+        "adoptedPuppy": adopted,
         "countDogs": countDogs,
         "countSick": countSick,
         "countAdoptedLastYear": countAdoptedLastYear,
@@ -225,4 +230,12 @@ def show_donations(request):
 #     }
 
 #     return render(request, "giftadoption.html", context)
-
+today = datetime.date.today()
+adopted = Dog.objects.filter(adoption_year=today.year-1)
+print(adopted)
+# filter away adopted for dogs where there is no adoption_pic_after_1 
+adopted = adopted.exclude(adoption_pic_after_1="")
+print(adopted)
+adopted = adopted.order_by("?")[0]
+print(adopted)
+print(adopted.adoption_pic_after_1)

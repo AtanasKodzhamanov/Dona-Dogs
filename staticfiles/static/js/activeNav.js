@@ -23,4 +23,30 @@ document.getElementById('footerSubscribeForm').addEventListener('submit', functi
   document.getElementById('success-message').style.display = 'block';
 });
 
+// Donation container
+const donationsContainer = document.getElementById('donationContainer');
+const hideDonations = document.querySelector('.hideDonationsBox');
 
+donationsContainer.addEventListener('mouseover', function() {
+  hideDonations.style.display = 'block';
+});
+
+
+// Virtual adoption container
+const vaContainer = document.getElementById('vaContainer');
+const hideVA = document.querySelector('.hideVA');
+
+vaContainer.addEventListener('mouseover', function() {
+  hideVA.style.display = 'block';
+});
+
+
+document.getElementById('showAllDogs').addEventListener('click', function(event) {
+  event.preventDefault();
+  window.location.href = '/dogs';
+});
+
+document.getElementById('showAllAdoptions').addEventListener('click', function(event) {
+  event.preventDefault();
+  window.location.href = '/adoptions';
+});

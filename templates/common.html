@@ -31,32 +31,28 @@
     </div>
   
     <div class="innerbody">
-      <br>
     {% block page_content %}
       {% comment %} Content {% endcomment %}
     {% endblock %}
-    </div>
-  
-    
-    <div style="padding:5px; width:auto; height:auto;text-align:center;">
-      <h3 style="text-align:center;">
-        {% trans "Follow us on " %}<a  id="hyperlink"  href="https://www.facebook.com/groups/2508791972666990/"><b>Facebook</b></a> {% trans " for up to date information!" %}
-      </h3>
-    </div>
-    <hr>
-    {% comment%} SECURITY {% endcomment %}
-    <div id="subscribeFormContainer" >
-      <h3>{% trans "Subscribe to our Monthly Newsletter" %}</h3>
-      <div class="hideSubscribeForm">
-        <form id="footerSubscribeForm" action="" method="POST">
-        {% csrf_token %}
-        {{ subscribeForm.as_p }}
-        <button type="submit">{% trans "Subscribe" %}</button>
-      </form>
+
+      <div id="subscribeFormContainer" >
+        <h2>{% trans "SUBSCRIBE TO OUR MONTHLY NEWSLETTER" %}</h3>
+        <div class="hideSubscribeForm">
+          <form id="footerSubscribeForm" action="" method="POST">
+          {% csrf_token %}
+          {{ subscribeForm.as_p }}
+          <button type="submit">{% trans "Subscribe" %}</button>
+        </form>
+        </div>
       </div>
+      <img id="footerImg" src="https://res.cloudinary.com/dxwb5ejff/image/upload/v1671329488/Static/DogItems_se8ey3.png
+        " style="background-color: transparent;" crossorigin="anonymous"/>
+      
+        <div style="padding:5px; width:auto; height:auto;text-align:center;">
+          <h3 style="text-align:center;">
+            {% trans "Follow us on " %}<a  id="hyperlink"  href="https://www.facebook.com/groups/2508791972666990/"><b>Facebook</b></a> {% trans " for up to date information!" %}
+          </h3>
+        </div>
     </div>
-    <hr>
-    <img id="footerImg" src="https://res.cloudinary.com/dxwb5ejff/image/upload/v1671329488/Static/DogItems_se8ey3.png
-      " style="background-color: transparent;" crossorigin="anonymous"/>
-    <script src="{% static 'js/activeNav.js' %}"></script>
+      <script src="{% static 'js/activeNav.js' %}"></script>
   </body>

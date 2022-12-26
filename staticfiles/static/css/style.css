@@ -147,9 +147,9 @@ max-height: 1000px; */
 .parent {
   background-color: rgb(245, 245, 245);
   margin: auto;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  padding: 4rem 2rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
   text-align: center;
   border-radius: 3px;
   max-width: 1500px;
@@ -195,15 +195,6 @@ max-height: 1000px; */
 }
 
 
-
-@media only screen and (max-width: 1111px) {
-  .child:hover {
-    transform: scale(1.0);
-    box-shadow: 2px 2px 5px 2px #888888;
-  }
-}
-
-
 /* TO FIX WRONG ASSIGNMENT BELOW */
 /* Popup container */
 
@@ -221,7 +212,6 @@ max-height: 1000px; */
 /* .popup .hover because popup overwrittes previous one */
 .popup:hover {
   background-color: rgb(200, 200, 200);
-  box-shadow: 1px 1px 4px 0px #888888;
   cursor: pointer;
 }
 
@@ -395,4 +385,15 @@ max-height: 1000px; */
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+
+#showAllDogs:hover {
+  background-color: rgb(200, 200, 200);
+  cursor: pointer;
+}
+
+#showAllAdoptions:hover {
+  background-color: rgb(200, 200, 200);
+  cursor: pointer;
 }

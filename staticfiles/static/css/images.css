@@ -79,9 +79,9 @@
 }
 
 #sizingDonationsSlide{ 
-    max-width: 600px;
+    max-width: 35%;
     height: auto;
-    float: right; 
+    float: left; 
     padding:25px;
     padding-top:15px;
 
@@ -98,4 +98,9 @@
         margin-top:20px;
         padding:3px
     }
+}
+
+#sizingAdoptedPuppy{
+    width: 50%;
+    padding:10px;
 }

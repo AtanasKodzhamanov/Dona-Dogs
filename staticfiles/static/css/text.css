@@ -7,8 +7,6 @@ h5,
 h6 {
     margin: 5px;
     text-align: center;
-    text-transform: lowercase;
-    text-transform: capitalize;
     font-family: 'Montserrat', sans-serif;
     color:#414141;
 }

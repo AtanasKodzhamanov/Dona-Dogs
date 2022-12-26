@@ -6,6 +6,9 @@
 
 {% block page_content %}
 
+{% with location="AllDogs" %}   
+  {% include "subtemplates/noticeboard.html" %}     
+{% endwith %}
 
 {% comment %} Change class to hidden below and remove comments on filtersButton above, in JS and CSS to have a button that hides and shows the filters below. {% endcomment %}
 <div id="filtersContainer" class="display" >

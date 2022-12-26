@@ -35,8 +35,6 @@
 <p> We have {{countDogs}} dogs in the shelter. Last year we helped {{countAdoptedLastYear}} dogs get adopted in several countries across Europe. You can see more information about this year's adoptions here: <a id="hyperlink" href="/adoptions/">ADOPTIONS</a>.</p>
 <br>
 <p> Currently there are {{countSick}} sick dogs receiving intensive treatement at the clinic. You can see more information about them here. Please help us help them so that we can continue to provide treatement for any dog that needs it: <a id="hyperlink" href="/infirmary/">CLINIC</a>.</p>
-<p> See all of our dogs here: <a id="hyperlink" href="{% url 'all_dogs' %}">ALL DOGS</a>.</p>
-
 
 {% comment %}
 <form action="javascript:void(0)" method="POST">
@@ -80,12 +78,50 @@
 {% endfor %}
 </div>  
 
+
+<div class="parent" id="showAllDogs">
+  <div>
+  <h2>{% trans "ALL DOGS" %}</h2>
+  </div>
+</div>
+<br>
+
+<h2>{% trans "Last year " %}{{ adoptedPuppy.name_eng }}{% trans " got adopted in " %} {{adoptedPuppy.adoption_country_eng}}</h2>
+<div id="adoptedPuppyContainer">
+  <div id="adoptedPuppy" style="display: flex">
+    <img id="sizingAdoptedPuppy" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{ adoptedPuppy.profile_pic }}" />
+    <img id="sizingAdoptedPuppy" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{ adoptedPuppy.adoption_pic_after_1 }}" />
+  </div>
+  <div id="adoptedPuppyText">
+    <p>
+      {% if L == "bg" %}
+      {{ adoptedPuppy.story_bg|safe }}
+      {% else %}
+      {{ adoptedPuppy.story_eng|safe }}
+      {% endif %}
+    </p>
+  </div>
+</div>
+
+
+<div class="parent" id="showAllAdoptions">
+  <div>
+  <h2>{% trans "ALL ADOPTIONS" %}</h2>
+  </div>
+</div>
+<br>
+
+<h2>{% trans "Last month's donations" %}</h2>
+
 {% for donation in donation_stories  %}
 <div id="slides-container"  style="max-width: 1500px;  margin:auto;">
   <div class="slides-donations fade">
-              {% if donation.donation_pic_1 %}
+      {% if donation.donation_pic_1 %}
           <img id="sizingDonationsSlide" src={{ donation.donation_pic_1 }}>
       {% endif %} 
+      {% if donation.donation_pic_2 %}
+          <img id="sizingDonationsSlide" src={{ donation.donation_pic_2 }}>
+      {% endif %}
       {% if L == "bg" %}
           <p>{{donation.donation_text_bg|safe}}</p>
       {% else %}           
@@ -100,15 +136,6 @@
 {% comment %} JS will append dots here {% endcomment %}
 </div> 
 
-
-
-{% comment %}
-<hr>
-<h1>{% trans "CLINIC" %}</h1>
-
- {% include "subtemplates/subinfirmary.html" %} 
-<hr>
-<h1>{% trans "HELP DONADOGS" %}</h1>{% endcomment %}
 {% include "subtemplates/subdonations.html" %}
 
 <script src="{% static 'js/slides.js' %}"></script>

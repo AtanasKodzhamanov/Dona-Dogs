@@ -114,8 +114,13 @@ button:hover {
 #subscribeFormContainer .hideSubscribeForm {
   display: none;
 }
+#donationContainer .hideDonationsBox {
+  display: none;
+}
 
-
+#vaContainer .hideVA {
+  display: none;
+}
 
 #footerSubscribeForm input[type="text"],
 #footerSubscribeForm input[type="email"] {
