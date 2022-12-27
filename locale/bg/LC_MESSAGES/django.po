@@ -245,8 +245,8 @@ msgid "Last month's donations"
 msgstr "ДАРЕНИЯ ОТ МИНАЛИЯ МЕСЕЦ"
 
 #: templates/index.html:144
-msgid "You can see more information about our last month's donations "
-msgstr "Можете да видете повече информация за легалният статус на фондацията"
+msgid "You can see more information about last month's donations "
+msgstr "Можете да видите повече информация за даренията от миналия месец "
 
 #: templates/subtemplates/footerInfoBoxes.html:12
 msgid "SUBSCRIBE TO OUR MONTHLY NEWSLETTER"
