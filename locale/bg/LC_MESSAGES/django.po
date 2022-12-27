@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-27 15:12+0000\n"
+"POT-Creation-Date: 2022-12-27 15:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,11 +74,11 @@ msgstr "ЗА НАС"
 msgid "You can find more information about the organisation's legal status"
 msgstr "Можете да видете повече информация за легалният статус на фондацията"
 
-#: templates/about.html:77 templates/index.html:132
+#: templates/about.html:77 templates/index.html:144
 msgid "here"
 msgstr "тук"
 
-#: templates/adoptions.html:10
+#: templates/adoptions.html:10 templates/index.html:43
 msgid "ADOPTIONS"
 msgstr "ОСИНОВЕНИ КУЧЕТА"
 
@@ -98,7 +98,8 @@ msgstr "Последвайте ни във"
 msgid " for up to date information!"
 msgstr " за повече снимки и най-новата информация!"
 
-#: templates/common_child/navbar.html:18 templates/infirmary.html:9
+#: templates/common_child/navbar.html:18 templates/index.html:50
+#: templates/infirmary.html:9
 msgid "CLINIC"
 msgstr "КЛИНИКА"
 
@@ -151,7 +152,7 @@ msgstr ""
 "За запитване относно осиновявания можете да се свържете с нас на "
 "DonaDogsFoundation@gmail.com или директно в нашата Facebook група."
 
-#: templates/dog.html:108 templates/index.html:85
+#: templates/dog.html:108 templates/index.html:97
 #, fuzzy
 #| msgid "DOGS"
 msgid "ALL DOGS"
@@ -197,23 +198,53 @@ msgstr "ДОНАДОГС"
 msgid "OUR DOGS"
 msgstr "НАШИТЕ КУЧЕТА"
 
-#: templates/index.html:90
+#: templates/index.html:37
+msgid "We have "
+msgstr "Ние имаме "
+
+#: templates/index.html:39
+msgid "dogs in the shelter. Last year we helped "
+msgstr "кучета в приюта. Миналата година помогнахме на "
+
+#: templates/index.html:41
+msgid ""
+"dogs get adopted in several countries across Europe. You can see more "
+"information about this year's adoptions here: "
+msgstr ""
+"кучета да се осиновят в няколко страни в Европа. Можете да видите повече "
+"информация за тазгодишните осиновявания тук: "
+
+#: templates/index.html:47
+msgid "Currently there are "
+msgstr "В момента има "
+
+#: templates/index.html:49
+msgid ""
+"sick dogs receiving intensive treatement at the clinic. You can see more "
+"information about them here. Please help us help them so that we can "
+"continue to provide treatement for any dog that needs it: "
+msgstr ""
+"болни кучета на интензивно лечение в клиниката. Можете да видите повече "
+"информация за тях тук. Моля, помогнете ни да им помогнем, за да можем да "
+"продължим да предоставяме лечение за всяко куче, което се нуждае от него: "
+
+#: templates/index.html:102
 msgid "Last year "
 msgstr "Миналата година "
 
-#: templates/index.html:90
+#: templates/index.html:102
 msgid " got adopted in "
 msgstr " беше осиновено в "
 
-#: templates/index.html:110
+#: templates/index.html:122
 msgid "ALL ADOPTIONS"
 msgstr "ВСИЧКИ ОСИНОВЕНИ КУЧЕТА"
 
-#: templates/index.html:115
+#: templates/index.html:127
 msgid "Last month's donations"
 msgstr "ДАРЕНИЯ ОТ МИНАЛИЯ МЕСЕЦ"
 
-#: templates/index.html:132
+#: templates/index.html:144
 msgid "You can see more information about our last month's donations "
 msgstr "Можете да видете повече информация за легалният статус на фондацията"
 
@@ -225,21 +256,29 @@ msgstr "АБОНИРАЙТЕ СЕ ЗА НАШИЯ МЕСЕЧЕН БЮЛЕТИН"
 msgid "Subscribe"
 msgstr "Абонирай се"
 
+#: templates/subtemplates/footerInfoBoxes.html:29
+msgid ""
+"If you liked one of our dogs, but you don't have the opportunity to adopt, you can become their virtual adopter until they find a real one. To become a virtual adopter you have to cover the cost of taking care of the dog: food every month, its deworming and an annual vaccine. It costs us around 20 euros per month to support a healthy dog and we have more than 50 dogs at any point in time, some of them with chronic diseases that require expensive treatment."
+msgstr ""
+"Ако сте харесали някое от нашите кучета, но нямате възможност да осиновите, можете да станете техен виртуален осиновител, докато не намерят истински. За да станете виртуален осиновител, трябва да покриете разходите за грижа за кучето: храна всеки месец, обезпаразитяване и годишна ваксина. Струва ни около 20 евро на месец, за да поддържаме здраво куче и имаме повече от 50 кучета във всеки един момент, някои от които с хронични заболявания, които изискват скъпо лечение."
 
 #: templates/subtemplates/footerInfoBoxes.html:32
 msgid ""
-"It's hard for us to do it all alone. We are putting our time and our "
-"resources to make a positive change in the lives of these dogs and equally "
-"importantly to send a message to the community that mistreating dogs is "
-"wrong, barbaric and has no place in 21st century Bulgaria."
+"It's hard for us to do it all alone. We are putting our time and our resources to make a positive change in the lives of these dogs and equally importantly to send a message to the community that mistreating dogs is wrong, barbaric and has no place in 21st century Bulgaria."
 msgstr ""
+"Трудно ни е да се справим сами. Влагаме времето и ресурсите си, за да направим положителна промяна в живота на тези кучета и да изпратим послание до общността, че малтретирането на кучета е грешно, варварско и няма място в България в 21 век."
 
+#: templates/subtemplates/footerInfoBoxes.html:35
+msgid ""
+"To become a virtual adopter, you can set up a recurring payment equivalent to 20 EUR using PayPal or bank transfer. Make sure to specify the name of the dog you wish to virtually adopt!"
+msgstr ""
+"За да станете виртуален осиновител, можете да настроите периодично плащане, равностойно на 20 евро, като използвате PayPal или банков превод. Не забравяйте да посочите името на кучето, което искате да осиновите виртуално!"
 
 #: templates/subtemplates/footerInfoBoxes.html:38
 msgid ""
-"Check out our albums, like a dog, write to us on donadogsfoundation@email."
-"com. Together we can do more!"
+"Check out our albums, like a dog, write to us on donadogsfoundation@email.com. Together we can do more!"
 msgstr ""
+"Разгледайте нашите албуми, като куче, пишете ни на donadogsfoundation@email.com. Заедно можем повече!"
 
 #~ msgid "And don't forget to subscribe to our Monthly Newsletter"
 #~ msgstr "И не забравяйте да се абонирате за нашия месечен бюлетин"

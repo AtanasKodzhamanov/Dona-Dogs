@@ -32,9 +32,21 @@
 <hr>
 
 <h2>{% trans "OUR DOGS" %}</h2>
-<p> We have {{countDogs}} dogs in the shelter. Last year we helped {{countAdoptedLastYear}} dogs get adopted in several countries across Europe. You can see more information about this year's adoptions here: <a id="hyperlink" href="/adoptions/">ADOPTIONS</a>.</p>
+<p> 
+  {% trans "We have " %}
+  {{countDogs}}
+  {% trans "dogs in the shelter. Last year we helped " %} 
+   {{countAdoptedLastYear}} 
+   {% trans "dogs get adopted in several countries across Europe. You can see more information about this year's adoptions here: " %}  
+   <a id="hyperlink" href="/adoptions/">
+    {% trans "ADOPTIONS" %}
+  </a>.</p>
 <br>
-<p> Currently there are {{countSick}} sick dogs receiving intensive treatement at the clinic. You can see more information about them here. Please help us help them so that we can continue to provide treatement for any dog that needs it: <a id="hyperlink" href="/infirmary/">CLINIC</a>.</p>
+<p> 
+  {% trans "Currently there are " %} 
+  {{countSick}} 
+  {% trans "sick dogs receiving intensive treatement at the clinic. You can see more information about them here. Please help us help them so that we can continue to provide treatement for any dog that needs it: " %} 
+  <a id="hyperlink" href="/infirmary/">{% trans "CLINIC" %} </a>.</p>
 
 {% comment %}
 <form action="javascript:void(0)" method="POST">
