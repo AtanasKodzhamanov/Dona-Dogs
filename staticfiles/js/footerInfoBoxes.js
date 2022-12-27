@@ -47,7 +47,7 @@ const box3 = document.querySelector('.box3');
 box3.addEventListener('mouseover', function() {
   hideVA.style.display = 'none';
   hideSubscribeForm.style.display = 'none';
-  hideDonations.style.display = 'block';
+  hideDonations.style.display = 'flex';
 
   hideVA.style.opacity = 0;
   hideSubscribeForm.style.opacity = 0;

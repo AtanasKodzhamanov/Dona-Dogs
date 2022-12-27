@@ -305,21 +305,6 @@ max-height: 1000px; */
   object-fit: contain;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Hide the images by default */
 .slides-donations {
   display: none;
@@ -387,3 +372,13 @@ max-height: 1000px; */
   to {opacity: 1}
 }
 
+.compressedText {
+  max-width: 70%;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .compressedText {
+    max-width: 95%;
+  }
+}  
