@@ -98,7 +98,13 @@
 </div>
 <br>
 
-<h2>{% trans "Last year " %}{{ adoptedPuppy.name_eng }}{% trans " got adopted in " %} {{adoptedPuppy.adoption_country_eng}}</h2>
+<h2>{% trans "Last year " %}{{ adoptedPuppy.name_eng }}{% trans " got adopted in " %} 
+  {% if L == "bg" %}
+  {{adoptedPuppy.adoption_country_bg}}
+  {% else %}
+  {{adoptedPuppy.adoption_country_eng}}
+{% endif %}
+</h2>
 <div id="adoptedPuppyContainer">
   <div id="adoptedPuppy" style="display: flex">
     <img id="sizingAdoptedPuppy" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{ adoptedPuppy.profile_pic }}" />
