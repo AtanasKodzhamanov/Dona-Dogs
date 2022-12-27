@@ -300,16 +300,16 @@ class NoticeBoard(models.Model):
         help_text="Място на съобщението - всяка страница разполага със способност за съобщения."
     )
 
-class AboutPhoto(models.Model):
-    """
+# class AboutPhoto(models.Model):
+#     """
 
-    To store an unlimited amount of photos for each section in About model.
+#     To store an unlimited amount of photos for each section in About model.
 
-    """
-    url = models.URLField(
-        max_length=MAX_URL_LENGTH,
-        validators=[validate_url]
-        )
+#     """
+#     url = models.URLField(
+#         max_length=MAX_URL_LENGTH,
+#         validators=[validate_url]
+#         )
 
 class About(models.Model):
 
