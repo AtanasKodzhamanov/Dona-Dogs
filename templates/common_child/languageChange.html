@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+{% load i18n %}
+{% get_current_language as L %}
+{% load static %}
+
+{% block page_content %}
+<!-- Language Button Alternative -->
+{% comment %} <div id="languageFormContainer" style="text-align: left; width:20%;">
+    <form id="languageForm" action="{% url 'set_language' %}" method="post">
+      {% csrf_token %}
+      <input type="hidden" value="{{ request.path }}">
+      <label for="bg">
+        <button style="padding:0px; border: none; margin:0px; background-color:#fff;" type="submit" name="language" value="bg" id="bg">
+            <h3 class="languageText" >BG</h3>
+        </button>
+      </label>
+      <label for="en">
+        <button style="padding:0px; border: none; margin:0px; background-color:#fff;" type="submit" name="language" value="en" id="en">
+            <h3 class="languageText" >EN</h3>
+        </button>
+      </label>
+    </form>
+  </div> {% endcomment %}
+  
+    <!-- Language Button -->
+    <div id="languageFormContainer" style="text-align: right;">
+      <form id="languageForm" action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" value="{{ request.path }}">
+        <label for="bg">
+          <button style="padding:0px; border: none; margin:0px; background-color:#fff;" type="submit" name="language" value="bg" id="bg">
+            <img style="width: 25px; height: 25px; margin-right: 5px; margin-left: 5px;" src="{% static "\images\bulgarian-flag.png" %}" alt="Bulgarian flag">
+          </button>
+        </label>
+        <label for="en">
+          <button style="padding:0px; border: none; margin:0px; background-color:#fff;" type="submit" name="language" value="en" id="en">
+            <img style="width: 25px; height: 25px; margin-right: 5px; margin-left: 5px;" src="{% static "\images\uk-flag.png" %}" alt="UK flag">
+          </button>
+        </label>
+      </form>
+    </div>
+
+{% endblock %}

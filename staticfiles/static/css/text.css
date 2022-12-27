@@ -104,3 +104,15 @@ p {
     color: rgb(77, 77, 77);
     font-weight: bold;
 }
+
+
+/* Alternative language button
+
+.languageText {
+    padding:25px;
+    text-decoration: underline;
+}
+.languageText:hover {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+} */
