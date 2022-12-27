@@ -32,7 +32,7 @@ msgstr "Статус на виртуално осиновяване"
 
 #: DogShelter/web/forms.py:43
 msgid "All dogs"
-msgstr "Всички"
+msgstr "Всички кучета"
 
 #: DogShelter/web/forms.py:44 templates/dogs.html:67
 msgid "Virtually Adopted"

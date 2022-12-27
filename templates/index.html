@@ -98,7 +98,14 @@
 </div>
 <br>
 
-<h2>{% trans "Last year " %}{{ adoptedPuppy.name_eng }}{% trans " got adopted in " %} 
+<h2>{% trans "Last year " %}
+  {% if L == "bg" %}
+  {{ adoptedPuppy.name_bg }}
+  {% else %}
+  {{ adoptedPuppy.name_eng }}
+  {% endif %}
+  
+  {% trans " got adopted in " %} 
   {% if L == "bg" %}
   {{adoptedPuppy.adoption_country_bg}}
   {% else %}
