@@ -92,7 +92,7 @@ msgstr "Минали осиновявания"
 
 #: templates/common.html:30
 msgid "Follow us on "
-msgstr "Последвайте ни във"
+msgstr "Последвайте ни във "
 
 #: templates/common.html:30
 msgid " for up to date information!"
