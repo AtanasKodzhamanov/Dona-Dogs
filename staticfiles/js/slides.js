@@ -27,11 +27,9 @@ let dotsContainer = document.getElementById("dots-container");
 
 // Create a dot for each slide
 let slides = document.getElementsByClassName("slides-donations");
-console.log(slides)
 
 for (let i = 0; i < slides.length; i++) {
   if (slides.lenght>1){
-    console.log("print dot")
     let dot = document.createElement("span");
     dot.className = "dot";
     dot.onclick = function () { currentSlide(i + 1) };

@@ -49,16 +49,16 @@ h3{
 }
 @media only screen and (max-width: 400px) {
     h1{
-        font-size: 14px;
+        font-size: 13px;
     }
     h2{
-        font-size: 14px;
+        font-size: 13px;
     }
     h3{
-        font-size: 14px;
+        font-size: 13px;
     }
     p{
-        font-size: 14px;
+        font-size: 13px;
     }
 }
 
@@ -104,3 +104,15 @@ p {
     color: rgb(77, 77, 77);
     font-weight: bold;
 }
+
+
+/* Alternative language button
+
+.languageText {
+    padding:25px;
+    text-decoration: underline;
+}
+.languageText:hover {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+} */
