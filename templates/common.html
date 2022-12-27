@@ -35,16 +35,8 @@
       {% comment %} Content {% endcomment %}
     {% endblock %}
 
-      <div id="subscribeFormContainer" >
-        <h2>{% trans "SUBSCRIBE TO OUR MONTHLY NEWSLETTER" %}</h3>
-        <div class="hideSubscribeForm">
-          <form id="footerSubscribeForm" action="" method="POST">
-          {% csrf_token %}
-          {{ subscribeForm.as_p }}
-          <button type="submit">{% trans "Subscribe" %}</button>
-        </form>
-        </div>
-      </div>
+    {% include "subtemplates/footerInfoBoxes.html" %}
+
       <img id="footerImg" src="https://res.cloudinary.com/dxwb5ejff/image/upload/v1671329488/Static/DogItems_se8ey3.png
         " style="background-color: transparent;" crossorigin="anonymous"/>
       
@@ -55,4 +47,5 @@
         </div>
     </div>
       <script src="{% static 'js/activeNav.js' %}"></script>
+      <script src="{% static 'js/footerInfoBoxes.js' %}"></script>
   </body>

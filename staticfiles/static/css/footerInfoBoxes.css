@@ -1,0 +1,33 @@
+
+#showAllDogs:hover {
+    background-color: rgb(200, 200, 200);
+    cursor: pointer;
+    }
+  
+#showAllAdoptions:hover {
+    background-color: rgb(200, 200, 200);
+    cursor: pointer;
+    }
+
+#footerContainer {
+    display: flex;
+    }
+    
+.box1, .box2, .box3 {
+    width: 33.333%;
+    text-align: center;
+    }
+
+#subscribeFormContainer .hideSubscribeForm {
+    display: none;
+    transition: all 0.5s ease-in-out;
+    }
+#donationContainer .hideDonationsBox {
+    display: none;
+    transition: all 0.5s ease-in-out;
+    }
+
+#vaContainer .hideVA {
+    display: none;
+    transition: all 0.5s ease-in-out;
+    }

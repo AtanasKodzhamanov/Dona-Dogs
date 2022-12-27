@@ -111,17 +111,6 @@ button:hover {
   cursor: pointer;
 }
 
-#subscribeFormContainer .hideSubscribeForm {
-  display: none;
-}
-#donationContainer .hideDonationsBox {
-  display: none;
-}
-
-#vaContainer .hideVA {
-  display: none;
-}
-
 #footerSubscribeForm input[type="text"],
 #footerSubscribeForm input[type="email"] {
   padding: 0.5em;

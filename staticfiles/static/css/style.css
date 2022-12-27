@@ -387,13 +387,3 @@ max-height: 1000px; */
   to {opacity: 1}
 }
 
-
-#showAllDogs:hover {
-  background-color: rgb(200, 200, 200);
-  cursor: pointer;
-}
-
-#showAllAdoptions:hover {
-  background-color: rgb(200, 200, 200);
-  cursor: pointer;
-}
