@@ -18,16 +18,16 @@
     text-align: center;
     }
 
-#subscribeFormContainer .hideSubscribeForm {
+.hideSubscribeForm {
     display: none;
     transition: all 0.5s ease-in-out;
     }
-#donationContainer .hideDonationsBox {
+.hideDonationsBox {
     display: none;
     transition: all 0.5s ease-in-out;
     }
 
-#vaContainer .hideVA {
+.hideVA {
     display: none;
     transition: all 0.5s ease-in-out;
     }
