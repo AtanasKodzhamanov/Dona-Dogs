@@ -25,7 +25,7 @@ box1.addEventListener('mouseover', function() {
   hideDonations.style.opacity = 0;
   setTimeout(function() {
     hideVA.style.opacity = 1;
-  }, 150);
+  }, 100);
 });
 
 const box2 = document.querySelector('.box2');
@@ -39,7 +39,7 @@ box2.addEventListener('mouseover', function() {
 
   setTimeout(function() {
     hideSubscribeForm.style.opacity = 1;
-  }, 150);
+  }, 100);
   
 });
 
@@ -51,8 +51,8 @@ box3.addEventListener('mouseover', function() {
 
   hideVA.style.opacity = 0;
   hideSubscribeForm.style.opacity = 0;
-  
+
   setTimeout(function() {
     hideDonations.style.opacity = 1;
-  }, 150);
+  }, 100);
 });
