@@ -443,16 +443,12 @@ class About(models.Model):
 
     section_title_eng = models.TextField(
         max_length=MAX_TITLE_LENGTH,
-        blank=True,
-        default="",
         help_text="Заглавие на секцията на Английски.",
         validators=[validate_english]
     )
 
     section_title_bg = models.TextField(
         max_length=MAX_TITLE_LENGTH,
-        blank=True,
-        default="",
         help_text="Заглавие на секцията на Български.",
         validators=[validate_bulgarian]
     )
