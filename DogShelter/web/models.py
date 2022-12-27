@@ -457,7 +457,7 @@ class About(models.Model):
         validators=[validate_bulgarian]
     )
 
-    photos = models.ManyToManyField(AboutPhoto)
+    # photos = models.ManyToManyField(AboutPhoto)
 
 # The following is used to get the last day of the previous month for the "last_month" variable.
 # This is used to set the default value for the "date_of_donation" field in the donations models.
