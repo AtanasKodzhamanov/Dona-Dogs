@@ -148,10 +148,12 @@ def show_infirmary(request):  # dashboard
     dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
     dataNoticeBoard = serializers.serialize(
         'python', NoticeBoard.objects.all().order_by("order"))
-
+    dataAbout = serializers.serialize(
+        'python', About.objects.all().order_by("order"))
     context = {
         'subscribeForm': renderCommon(request),
         "dataDogs": dataDogs,
+        "dataAbout": dataAbout,
         "dataNoticeBoard": dataNoticeBoard
     }
 
