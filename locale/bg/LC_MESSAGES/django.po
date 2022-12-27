@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-23 04:38+0000\n"
+"POT-Creation-Date: 2022-12-27 15:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgstr "Статус на виртуално осиновяване"
 msgid "All dogs"
 msgstr "Всички"
 
-#: DogShelter/web/forms.py:44 templates/index.html:89
+#: DogShelter/web/forms.py:44 templates/dogs.html:67
 msgid "Virtually Adopted"
 msgstr "Виртуално осиновени"
 
@@ -74,7 +74,7 @@ msgstr "ЗА НАС"
 msgid "You can find more information about the organisation's legal status"
 msgstr "Можете да видете повече информация за легалният статус на фондацията"
 
-#: templates/about.html:77
+#: templates/about.html:77 templates/index.html:132
 msgid "here"
 msgstr "тук"
 
@@ -90,36 +90,32 @@ msgstr "Осиновени тази година"
 msgid "Past adoptions"
 msgstr "Минали осиновявания"
 
-#: templates/common.html:66 templates/index.html:104 templates/infirmary.html:9
+#: templates/common.html:30
+msgid "Follow us on "
+msgstr "Последвайте ни във"
+
+#: templates/common.html:30
+msgid " for up to date information!"
+msgstr " за повече снимки и най-новата информация!"
+
+#: templates/common_child/navbar.html:18 templates/infirmary.html:9
 msgid "CLINIC"
 msgstr "КЛИНИКА"
 
-#: templates/common.html:69
+#: templates/common_child/navbar.html:21
 msgid "HELP"
 msgstr "ДАРИ"
 
-#: templates/common.html:72
+#: templates/common_child/navbar.html:24
 msgid "ADOPT"
 msgstr "ОСИНОВИ"
 
-#: templates/common.html:75
+#: templates/common_child/navbar.html:27
 msgid "ABOUT"
 msgstr "ЗА НАС"
 
-#: templates/common.html:120
-msgid "Follow us on Facebook for up to date information!"
-msgstr "Последвайте ни на Facebook за повече снимки и най-новата информация!"
-
-#: templates/common.html:127
-msgid "And don't forget to subscribe to our Monthly Newsletter"
-msgstr "И не забравяйте да се абонирате за нашия месечен бюлетин"
-
-#: templates/common.html:131
-msgid "Subscribe"
-msgstr "Абонирай се"
-
 #: templates/deprecated/giftadoption.html:9 templates/donations.html:38
-#: templates/subtemplates/subdonations.html:11
+#: templates/subtemplates/footerInfoBoxes.html:9
 msgid "VIRTUAL ADOPTION"
 msgstr "ВИРТУАЛНО ОСИНОВЯВАНЕ"
 
@@ -127,40 +123,51 @@ msgstr "ВИРТУАЛНО ОСИНОВЯВАНЕ"
 msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!"
 msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
 
-#: templates/dog.html:25
+#: templates/dog.html:31
 msgid "Her story"
 msgstr "Нейната история"
 
-#: templates/dog.html:27
+#: templates/dog.html:33
 msgid "His story"
 msgstr "Неговата история"
 
-#: templates/dog.html:48
+#: templates/dog.html:55
 msgid "Before adoption"
 msgstr "Преди осиновяване"
 
-#: templates/dog.html:79
+#: templates/dog.html:88
 msgid "After adoption"
 msgstr "След осиновяване"
 
-#: templates/dog.html:81
+#: templates/dog.html:90
 msgid "Help us fill this gallery with happy ever after photos. Adopt "
 msgstr "Помогнете ни да напълним тази галерия със щастливи снимки. Осиновете "
 
-
-#: templates/dog.html:82
+#: templates/dog.html:91
 msgid ""
 "To inquire about adoptions you can contact us on DonaDogsFoundation@gmail."
 "com or directly on our Facebook group."
-msgstr "За запитване относно осиновявания можете да се свържете с нас на DonaDogsFoundation@gmail.com или директно в нашата Facebook група."
+msgstr ""
+"За запитване относно осиновявания можете да се свържете с нас на "
+"DonaDogsFoundation@gmail.com или директно в нашата Facebook група."
 
-#: templates/donations.html:9 templates/index.html:108
-msgid "HELP DONADOGS"
-msgstr "ПОМОГНЕТЕ НА ДОНАДОГС"
+#: templates/dog.html:108 templates/index.html:85
+#, fuzzy
+#| msgid "DOGS"
+msgid "ALL DOGS"
+msgstr "КУЧЕТА"
 
-#: templates/donations.html:17
+#: templates/donationStory.html:9
+msgid "DONATIONS"
+msgstr "ДАРЕНИЯ"
+
+#: templates/donationStory.html:13 templates/donations.html:17
 msgid "WE THANK YOU ALL FOR SUPPORTING US"
 msgstr "БЛАГОДАРИМ ЗА ВАШАТА ПОДКРЕПА"
+
+#: templates/donations.html:9
+msgid "HELP DONADOGS"
+msgstr "ПОМОГНЕТЕ НА ДОНАДОГС"
 
 #: templates/donations.html:18
 msgid "LAST MONTH WE RECEIVED HELP FROM"
@@ -170,11 +177,11 @@ msgstr "МИНАЛИЯ МЕСЕЦ ПОЛУЧИХМЕ ПОМОЩ ОТ"
 msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS"
 msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
 
-#: templates/donations.html:81 templates/subtemplates/subdonations.html:31
+#: templates/donations.html:81 templates/subtemplates/footerInfoBoxes.html:15
 msgid "DONATION METHODS"
 msgstr "МЕТОДИ ЗА ДАРЕНИЕ"
 
-#: templates/donations.html:82 templates/subtemplates/subdonations.html:32
+#: templates/donations.html:82 templates/subtemplates/footerInfoBoxes.html:44
 msgid ""
 "We welcome direct <b> food or shelter</b> deliveries to Bulgaria, "
 "Stambolyski, 4210, Vasil Levski 40."
@@ -186,26 +193,58 @@ msgstr ""
 msgid "DONADOGS"
 msgstr "ДОНАДОГС"
 
-#: templates/index.html:16
+#: templates/index.html:35
 msgid "OUR DOGS"
 msgstr "НАШИТЕ КУЧЕТА"
 
-#~ msgid "DOGS"
-#~ msgstr "КУЧЕТА"
+#: templates/index.html:90
+msgid "Last year "
+msgstr "Миналата година "
 
-#~ msgid ""
-#~ "To become a virtual adopter, you can set up a recurring payment "
-#~ "equivalent to 20 EUR using PayPal or ideally Revolut due to the lack of "
-#~ "transaction fees."
-#~ msgstr ""
-#~ "За да станете виртуален осиновител, можете да настроите периодично "
-#~ "плащане на стойност 20 EUR чрез PayPal или в идеалния случай Revolut "
-#~ "поради липсата на такси."
+#: templates/index.html:90
+msgid " got adopted in "
+msgstr " беше осиновено в "
+
+#: templates/index.html:110
+msgid "ALL ADOPTIONS"
+msgstr "ВСИЧКИ ОСИНОВЕНИ КУЧЕТА"
+
+#: templates/index.html:115
+msgid "Last month's donations"
+msgstr "ДАРЕНИЯ ОТ МИНАЛИЯ МЕСЕЦ"
+
+#: templates/index.html:132
+msgid "You can see more information about our last month's donations "
+msgstr "Можете да видете повече информация за легалният статус на фондацията"
+
+#: templates/subtemplates/footerInfoBoxes.html:12
+msgid "SUBSCRIBE TO OUR MONTHLY NEWSLETTER"
+msgstr "АБОНИРАЙТЕ СЕ ЗА НАШИЯ МЕСЕЧЕН БЮЛЕТИН"
+
+#: templates/subtemplates/footerInfoBoxes.html:23
+msgid "Subscribe"
+msgstr "Абонирай се"
+
+
+#: templates/subtemplates/footerInfoBoxes.html:32
+msgid ""
+"It's hard for us to do it all alone. We are putting our time and our "
+"resources to make a positive change in the lives of these dogs and equally "
+"importantly to send a message to the community that mistreating dogs is "
+"wrong, barbaric and has no place in 21st century Bulgaria."
+msgstr ""
+
+
+#: templates/subtemplates/footerInfoBoxes.html:38
+msgid ""
+"Check out our albums, like a dog, write to us on donadogsfoundation@email."
+"com. Together we can do more!"
+msgstr ""
+
+#~ msgid "And don't forget to subscribe to our Monthly Newsletter"
+#~ msgstr "И не забравяйте да се абонирате за нашия месечен бюлетин"
 
 #~ msgid ""
 #~ "Make sure to specify the name of the dog you wish to virtually adopt!"
 #~ msgstr ""
 #~ "Не забравяйте да посочите името на кучето, което искате да осиновите!"
-
-#~ msgid "DONATIONS"
-#~ msgstr "ДАРЕНИЯ"
