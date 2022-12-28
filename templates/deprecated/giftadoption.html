@@ -2,44 +2,42 @@
 {% extends 'common.html' %}
 {% load i18n %}
 {% get_current_language as L %}
-
 {% block page_content %}
   <!-- Edit Expense Form -->
   <div>
     <h1>{% trans "VIRTUAL ADOPTION" %}</h1>
   </div>
   <hr>
-
-
-
-  {% for notice in dataNoticeBoard %} 
-  {% if notice.fields.location == "Virtual" %}
-  <article>
-    <div ><p>
-      {% if L == "bg" %}
-      {{notice.fields.note_bg}}
-      {% else %}
-      {{notice.fields.note_eng}}
-    {% endif %}</p>
-    </div>
-  </article>
-  <hr>
-  {% endif %}
-{% endfor %}
-
+  {% for notice in dataNoticeBoard %}
+    {% if notice.fields.location == "Virtual" %}
+      <article>
+        <div >
+          <p>
+            {% if L == "bg" %}
+              {{ notice.fields.note_bg }}
+            {% else %}
+              {{ notice.fields.note_eng }}
+            {% endif %}
+          </p>
+        </div>
+      </article>
+      <hr>
+    {% endif %}
+  {% endfor %}
   <div style="text-align:center; ">
     <h2>{% trans "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!" %}</h2>
-  {% for instance in dataPeople %}
-    {% if instance.fields.virtual_adopter == "Y" %}
-
-    {% if L == "bg" %}
-    <p >{{instance.fields.person_name_bg}} &nbsp<p>
-    {% else %}
-    <p >{{instance.fields.person_name_eng}} &nbsp<p>
-  {% endif %}
-
-      {% endif %}
-  {% endfor %}
-</div>
-
-{% endblock %}
+    {% for instance in dataPeople %}
+      {% if instance.fields.virtual_adopter == "Y" %}
+        {% if L == "bg" %}
+          <p >
+            {{ instance.fields.person_name_bg }} &nbsp
+            <p>
+            {% else %}
+              <p >
+                {{ instance.fields.person_name_eng }} &nbsp
+                <p>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endblock %}

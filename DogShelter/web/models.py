@@ -8,11 +8,12 @@ import datetime
 from DogShelter.web.validators import validate_bulgarian, validate_english, validate_url
 
 MAX_URL_LENGTH = 300
-NAME_MAX_LENGTH = 60    
+NAME_MAX_LENGTH = 60
 ORDER = 99
 EMAIL_MAX_LENGTH = 60
 
-# Help text is provided for the Bulgarian speaking admin staff. 
+# Help text is provided for the Bulgarian speaking admin staff.
+
 
 class Dog(models.Model):
 
@@ -231,6 +232,7 @@ class Dog(models.Model):
     class Meta:
         ordering = ('-pk',)
 
+
 class NoticeBoard(models.Model):
 
     """
@@ -252,7 +254,7 @@ class NoticeBoard(models.Model):
         return self.note_eng
 
     LOCATION_CHOICES = [(x, x) for x in ("Gallery", "About", "Infirmery",
-                                 "Adoptions", "Virtual", "Donations","AllDogs")]
+                                         "Adoptions", "Virtual", "Donations", "AllDogs")]
 
     LOCATION_LENGTH = 25
     DEFAULT_LOCATION = "Gallery"
@@ -310,6 +312,7 @@ class NoticeBoard(models.Model):
 #         max_length=MAX_URL_LENGTH,
 #         validators=[validate_url]
 #         )
+
 
 class About(models.Model):
 
@@ -459,9 +462,11 @@ class About(models.Model):
 # This is used to set the default value for the "date_of_donation" field in the donations models.
 # Donations are added to the database on the first day of the month, so the default value for the "date_of_donation" field is the last day of the previous month.
 
+
 today = datetime.date.today()
 first = today.replace(day=1)
 last_month = first - datetime.timedelta(days=1)
+
 
 class Donation(models.Model):
 
@@ -494,6 +499,7 @@ class Donation(models.Model):
         validators=[validate_bulgarian]
     )
 
+
 class NewsletterSubscriber(models.Model):
     email = models.EmailField(
         max_length=EMAIL_MAX_LENGTH
@@ -501,6 +507,7 @@ class NewsletterSubscriber(models.Model):
     name = models.CharField(
         max_length=NAME_MAX_LENGTH
     )
+
 
 class AdoptionForm(models.Model):
     name = models.CharField(max_length=255)
@@ -521,8 +528,8 @@ class DonationStory(models.Model):
 
     class Meta:
         verbose_name_plural = "DonationStories"
-    
-    MAX_TITLE_LENGTH=100
+
+    MAX_TITLE_LENGTH = 100
 
     title_eng = models.CharField(
         max_length=MAX_TITLE_LENGTH,
@@ -558,7 +565,7 @@ class DonationStory(models.Model):
     )
 
     date_pk = models.CharField(max_length=8, blank=True, editable=False)
-    
+
     def save(self, *args, **kwargs):
         self.date_pk = self.date.strftime("%Y-%b")
         super().save(*args, **kwargs)

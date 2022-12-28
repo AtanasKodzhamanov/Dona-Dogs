@@ -1,39 +1,44 @@
-    
-#AdoptionButton:hover {
-    background-color: rgb(200, 200, 200);
-    cursor: pointer;
+    #AdoptionButton:hover {
+        background-color: rgb(200, 200, 200);
+        cursor: pointer;
     }
 
-#showAllDogs:hover {
-    background-color: rgb(200, 200, 200);
-    cursor: pointer;
-    }
-  
-#showAllAdoptions:hover {
-    background-color: rgb(200, 200, 200);
-    cursor: pointer;
+    #showAllDogs:hover {
+        background-color: rgb(200, 200, 200);
+        cursor: pointer;
     }
 
-#footerContainer {
-    display: flex;
-    }
-    
-.box1, .box2, .box3 {
-    width: 33.333%;
-    text-align: center;
+    #showAllAdoptions:hover {
+        background-color: rgb(200, 200, 200);
+        cursor: pointer;
     }
 
-.hideSubscribeForm {
-    display: none;
-    transition: all 0.5s ease-in-out;
+    #footerContainer {
+        display: flex;
     }
-.hideDonationsBox {
-    display: none;
-    transition: all 0.5s ease-in-out;
-    }
-.hideDonationsBox .d {width: 33.333%;}
 
-.hideVA {   
-    display: none;
-    transition: all 0.5s ease-in-out;
+    .box1,
+    .box2,
+    .box3 {
+        width: 33.333%;
+        text-align: center;
+    }
+
+    .hideSubscribeForm {
+        display: none;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .hideDonationsBox {
+        display: none;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .hideDonationsBox .d {
+        width: 33.333%;
+    }
+
+    .hideVA {
+        display: none;
+        transition: all 0.5s ease-in-out;
     }

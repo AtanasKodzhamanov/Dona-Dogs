@@ -1,29 +1,24 @@
 {% load i18n %}
 {% get_current_language as L %}
-
 {% block page_content %}
-
-    {% for notice in dataNoticeBoard %}
-        {% if notice.fields.location == location %}
-        <article style="max-width: 1500px;  margin:auto;">
-            <div id="noticeDiv">
-              {% if notice.fields.note_pic_1 %}
-                <img id="sizingNoticeBoard" src={{ notice.fields.note_pic_1 }}>
-              {% endif %}
-              <p id="noticeText">
-                {% if L == "bg" %}
-                  {{notice.fields.note_bg|safe}}
-                {% else %}           
-                  {{notice.fields.note_eng|safe }}
-                {% endif %}   
-              </p>
-            </div>
-            <div style="text-align:center">
-            <button id="showMoreButton" style="display: none;">Show More</button>
-            </div>
-          </article>
-          <hr>          
-        {% endif %}
-    {% endfor %}
-
+  {% for notice in dataNoticeBoard %}
+    {% if notice.fields.location == location %}
+      <article style="max-width: 1500px;  margin:auto;">
+        <div id="noticeDiv">
+          {% if notice.fields.note_pic_1 %}<img id="sizingNoticeBoard" src={{ notice.fields.note_pic_1 }}>{% endif %}
+          <p id="noticeText">
+            {% if L == "bg" %}
+              {{ notice.fields.note_bg|safe }}
+            {% else %}
+              {{ notice.fields.note_eng|safe }}
+            {% endif %}
+          </p>
+        </div>
+        <div style="text-align:center">
+          <button id="showMoreButton" style="display: none;">Show More</button>
+        </div>
+      </article>
+      <hr>
+    {% endif %}
+  {% endfor %}
 {% endblock %}

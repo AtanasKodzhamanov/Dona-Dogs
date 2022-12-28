@@ -70,12 +70,12 @@ function filterDogs() {
     var dog = dogList.children[i];
     //console.log(dog)
     var vaName = dog.getAttribute("vaName");
-    if (!vaName){vaName="None"}
+    if (!vaName) { vaName = "None" }
     var gender = dog.getAttribute("gender");
 
     // Check if the dog matches both selected options
     if ((selectedVa == "all" || (selectedVa == "va" && vaName != "None") || (selectedVa == "no" && vaName == "None")) &&
-        (selectedGender == "all" || (selectedGender == "male" && gender == "M") || (selectedGender == "female" && gender == "F"))) {
+      (selectedGender == "all" || (selectedGender == "male" && gender == "M") || (selectedGender == "female" && gender == "F"))) {
       // If the dog matches both selected options, show the dog
       dog.style.display = "";
     } else {

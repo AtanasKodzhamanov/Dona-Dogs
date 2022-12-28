@@ -1,4 +1,4 @@
-from django import forms 
+from django import forms
 from django.forms import CharField, Select
 from django.utils.translation import gettext_lazy as _
 from DogShelter.web.models import NewsletterSubscriber, AdoptionForm
@@ -9,13 +9,16 @@ class ContactForm(forms.Form):
     name = forms.CharField(required=True, label='Name')
     email = forms.EmailField(required=True, label='Email')
     subject = forms.CharField(required=True, label='Subject')
-    message = forms.CharField(widget=forms.Textarea, required=True, label='Message')
+    message = forms.CharField(widget=forms.Textarea,
+                              required=True, label='Message')
 
 # Adopt form
+
+
 class AdoptForm(forms.Form):
     name = forms.CharField(required=True, label='Name')
     email = forms.EmailField(required=True, label='Email')
-    phone = forms.CharField(required=True, label='Phone')   
+    phone = forms.CharField(required=True, label='Phone')
     city = forms.CharField(required=True, label='City')
     country = forms.CharField(required=True, label='Country')
     dog = forms.CharField(required=True, label='Dog Name')
@@ -24,6 +27,8 @@ class AdoptForm(forms.Form):
         model = AdoptionForm
 
 # Dog filter form
+
+
 class DogFilterForm(forms.Form):
     dog_name = forms.CharField(
         required=False,
@@ -34,6 +39,7 @@ class DogFilterForm(forms.Form):
             'placeholder': _('Type name'),
         }),
     )
+
 
 class vaStatusForm(forms.Form):
     # Define the form fields
@@ -50,6 +56,7 @@ class vaStatusForm(forms.Form):
         'id': 'adoptionStatus',
     })
 
+
 class genderFilterForm(forms.Form):
     gender = forms.CharField(
         label=_("Gender"),
@@ -65,17 +72,20 @@ class genderFilterForm(forms.Form):
     })
 
 # Subscribe for the newsletter form
+
+
 class SubscribeForm(forms.ModelForm):
     email = forms.EmailField(required=True, label=_(""),
-    widget= forms.TextInput
-                           (attrs={
-                               'placeholder':_('Email')
-                            }))
+                             widget=forms.TextInput
+                             (attrs={
+                                 'placeholder': _('Email')
+                             }))
     name = forms.CharField(required=True, label=_(""),
-    widget= forms.TextInput
+                           widget=forms.TextInput
                            (attrs={
-                               'placeholder':_('Name')
-                            }))
+                               'placeholder': _('Name')
+                           }))
+
     class Meta:
         model = NewsletterSubscriber
         fields = "__all__"

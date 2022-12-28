@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 import django.utils.translation
 from DogShelter.web.forms import SubscribeForm, ContactForm, AdoptForm, DogFilterForm, vaStatusForm, genderFilterForm
 from DogShelter.web.models import Dog, DonationStory, NoticeBoard, About, Donation
-from django.utils.translation import  activate
+from django.utils.translation import activate
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import DetailView, ListView
 
@@ -21,14 +21,16 @@ from django.views.generic import DetailView, ListView
 #         model = User
 #         fields = ['username', 'email', 'password1', 'password2']
 
+
 def renderCommon(request):
     if request.method == "get":
         subscribeForm = SubscribeForm()
     else:
         subscribeForm = SubscribeForm(request.POST or None)
         if subscribeForm.is_valid():
-            subscribeForm.save()   
+            subscribeForm.save()
     return subscribeForm
+
 
 class show_donation_story(ListView):
     model = [DonationStory, Donation]
@@ -49,6 +51,7 @@ class show_donation_story(ListView):
         context['subscribeForm'] = renderCommon(self.request)
         return context
 
+
 class show_dog(DetailView):
     model = Dog
     template_name = "dog.html"
@@ -58,7 +61,8 @@ class show_dog(DetailView):
         context = super().get_context_data(**kwargs)
         context['subscribeForm'] = renderCommon(self.request)
         return context
-    
+
+
 def show_all_dogs(request):
     dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
     dataPeople = set(Dog.objects.values_list(
@@ -81,6 +85,7 @@ def show_all_dogs(request):
     }
     return render(request, "dogs.html", context)
 
+
 def show_home(request):  # dashboard
     dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
     # get only active dogs
@@ -90,7 +95,7 @@ def show_home(request):  # dashboard
         'python', NoticeBoard.objects.all().order_by("order"))
     dataPeople = set(Dog.objects.values_list(
         "va_name_bg", "va_name_eng").exclude(va_name_eng=""))
-    
+
     today = datetime.date.today()
     first = today.replace(day=1)
     last_month = first - datetime.timedelta(days=1)
@@ -102,14 +107,16 @@ def show_home(request):  # dashboard
     vaForm = vaStatusForm()
     contactForm = ContactForm()
     adoptForm = AdoptForm()
-    #dataDogs2 = Dog.objects.filter(status="Active")
-    countDogs = Dog.objects.filter(status="Active").count() + Dog.objects.filter(status="Sick").count()
+    # dataDogs2 = Dog.objects.filter(status="Active")
+    countDogs = Dog.objects.filter(status="Active").count(
+    ) + Dog.objects.filter(status="Sick").count()
     countSick = Dog.objects.filter(status="Sick").count()
-    # count the number of dogs that were adopted last year using adoption year field to filter 
-    countAdoptedLastYear = Dog.objects.filter(adoption_year=today.year-1).count()
+    # count the number of dogs that were adopted last year using adoption year field to filter
+    countAdoptedLastYear = Dog.objects.filter(
+        adoption_year=today.year-1).count()
 
     adopted = Dog.objects.filter(adoption_year=today.year-1)
-    # filter away adopted for dogs where there is no adoption_pic_after_1 
+    # filter away adopted for dogs where there is no adoption_pic_after_1
     adopted = adopted.exclude(adoption_pic_after_1="")
     adopted = adopted.order_by("?")[0]
     context = {
@@ -126,7 +133,7 @@ def show_home(request):  # dashboard
         'vaStatusForm': vaForm,
         "dataPeople": dataPeople,
         "dataDogs": dataDogs,
-        "date_pk":date_pk,
+        "date_pk": date_pk,
         "dataNoticeBoard": dataNoticeBoard
     }
     return render(request, "index.html", context)
@@ -143,7 +150,6 @@ def show_home(request):  # dashboard
 #   assert ans == {this is what expect}
 
 
-
 def show_infirmary(request):  # dashboard
     dataDogs = serializers.serialize('python', Dog.objects.all().order_by("?"))
     dataNoticeBoard = serializers.serialize(
@@ -158,6 +164,7 @@ def show_infirmary(request):  # dashboard
     }
 
     return render(request, "infirmary.html", context)
+
 
 def show_about(request):
     dataNoticeBoard = serializers.serialize(
@@ -185,7 +192,7 @@ def show_adoptions(request):
     years = sorted(years, reverse=True)
 
     context = {
-        "years":years,
+        "years": years,
         "dogs": dogs,
         'subscribeForm': renderCommon(request),
         "dataAdoptions": dataDogs,

@@ -10,12 +10,12 @@ navLinks.forEach(link => {
   }
 });
 
-document.getElementById('showAllDogs').addEventListener('click', function(event) {
+document.getElementById('showAllDogs').addEventListener('click', function (event) {
   event.preventDefault();
   window.location.href = '/dogs';
 });
 
-document.getElementById('showAllAdoptions').addEventListener('click', function(event) {
+document.getElementById('showAllAdoptions').addEventListener('click', function (event) {
   event.preventDefault();
   window.location.href = '/adoptions';
 });

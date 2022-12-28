@@ -1,84 +1,108 @@
 <!DOCTYPE html>
 {% extends 'common.html' %}
 {% block page_content %}
-{% load static%}
-{% load i18n %}
-{% load shuffle %}
-
-{% get_current_language as L %}
-
-      <h1>{% trans "ADOPTIONS" %}</h1>
-      <hr>
-
-      {% with location="Adoptions" %}   
-        {% include "subtemplates/noticeboard.html" %}     
-      {% endwith %}
-
-    {% for year in years%}
+  {% load static %}
+  {% load i18n %}
+  {% load shuffle %}
+  {% get_current_language as L %}
+  <h1>{% trans "ADOPTIONS" %}</h1>
+  <hr>
+  {% with location="Adoptions" %}
+    {% include "subtemplates/noticeboard.html" %}
+  {% endwith %}
+  <h2>{% trans "SOME OF OUR PAST ADOPTIONS" %}</h2>
+  <hr>
+  {% for year in years %}
     <div id="AdoptionExpand">
-    <div class="parent" id="AdoptionButton">
-      <div>
-      <h2>{{year}}</h2>
+      <div class="parent" id="AdoptionButton">
+        <div>
+          <h2>{{ year }}</h2>
+        </div>
       </div>
-    </div>
       {% for adoption in dataAdoptions %}
         {% if adoption.fields.status == "Adopted" and adoption.fields.adoption_year == year %}
           <div class="parent" id="AdoptionCard" style="display: none">
             {% if L == "bg" %}
-              <h2>{{adoption.fields.name_bg}}</h2>
+              <h2>{{ adoption.fields.name_bg }}</h2>
             {% else %}
-              <h2>{{adoption.fields.name_eng}}</h2>
+              <h2>{{ adoption.fields.name_eng }}</h2>
             {% endif %}
             {% if L == "bg" %}
-              <h3>{{adoption.fields.adoption_country_bg}}</h3>
-              {% else %}
-              <h3>{{adoption.fields.adoption_country_eng}}</h3>
+              <h3>{{ adoption.fields.adoption_country_bg }}</h3>
+            {% else %}
+              <h3>{{ adoption.fields.adoption_country_eng }}</h3>
             {% endif %}
             {% if adoption.fields.adoption_story_eng == "" %}
               <div>
-                <p style="max-width:800px; height:auto; margin:auto; text-align:left; padding:15px;">
-                {% if L == "bg" %}
-                  {{adoption.fields.story_bg|safe}}
-                {% else %}
-                  {{adoption.fields.story_eng|safe}}
-                {% endif %}
+                <p style="max-width:800px;
+                          height:auto;
+                          margin:auto;
+                          text-align:left;
+                          padding:15px">
+                  {% if L == "bg" %}
+                    {{ adoption.fields.story_bg|safe }}
+                  {% else %}
+                    {{ adoption.fields.story_eng|safe }}
+                  {% endif %}
                 </p>
               </div>
             {% else %}
               <div>
-                <p style="max-width:800px; height:auto; margin:auto; text-align:left; padding:15px;">
+                <p style="max-width:800px;
+                          height:auto;
+                          margin:auto;
+                          text-align:left;
+                          padding:15px">
                   {% if L == "bg" %}
-                    {{adoption.fields.adoption_story_bg|safe}}
+                    {{ adoption.fields.adoption_story_bg|safe }}
                   {% else %}
-                    {{adoption.fields.adoption_story_eng|safe}}
+                    {{ adoption.fields.adoption_story_eng|safe }}
                   {% endif %}
                 </p>
               </div>
-            {% endif %}  
-              <div class="child">
-                <img id="sizingAdoptions" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.profile_pic}}" />
-              </div>
+            {% endif %}
+            <div class="child">
+              <img id="sizingAdoptions"
+                   decoding="async"
+                   lazy-sizes="auto"
+                   class="roundDogImage"
+                   loading="lazy"
+                   src="{{ adoption.fields.profile_pic }}"/>
+            </div>
             {% if adoption.fields.adoption_pic_after_1 %}
               <div class="child">
-                <img id="sizingAdoptions" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_after_1}}" />
+                <img id="sizingAdoptions"
+                     decoding="async"
+                     lazy-sizes="auto"
+                     class="roundDogImage"
+                     loading="lazy"
+                     src="{{ adoption.fields.adoption_pic_after_1 }}"/>
               </div>
             {% endif %}
             {% if adoption.fields.adoption_pic_after_2 %}
               <div class="child">
-                <img id="sizingAdoptions" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_after_2}}" />
+                <img id="sizingAdoptions"
+                     decoding="async"
+                     lazy-sizes="auto"
+                     class="roundDogImage"
+                     loading="lazy"
+                     src="{{ adoption.fields.adoption_pic_after_2 }}"/>
               </div>
             {% endif %}
             {% if adoption.fields.adoption_pic_after_3 %}
               <div class="child">
-                <img id="sizingAdoptions" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{adoption.fields.adoption_pic_after_3}}" />
+                <img id="sizingAdoptions"
+                     decoding="async"
+                     lazy-sizes="auto"
+                     class="roundDogImage"
+                     loading="lazy"
+                     src="{{ adoption.fields.adoption_pic_after_3 }}"/>
               </div>
             {% endif %}
           </div>
         {% endif %}
       {% endfor %}
     </div>
-    {% endfor %}
-    <script src="{% static 'js/adoptions.js' %}"></script>
+  {% endfor %}
+  <script src="{% static 'js/adoptions.js' %}"></script>
 {% endblock %}
-
-

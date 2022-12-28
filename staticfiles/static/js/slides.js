@@ -11,16 +11,16 @@ function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("slides-donations");
   let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" activeslide", "");
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " activeslide";
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " activeslide";
 }
 
 let dotsContainer = document.getElementById("dots-container");
@@ -29,7 +29,7 @@ let dotsContainer = document.getElementById("dots-container");
 let slides = document.getElementsByClassName("slides-donations");
 
 for (let i = 0; i < slides.length; i++) {
-  if (slides.lenght>1){
+  if (slides.lenght > 1) {
     let dot = document.createElement("span");
     dot.className = "dot";
     dot.onclick = function () { currentSlide(i + 1) };
@@ -43,11 +43,11 @@ showSlides(slideIndex);
 let intervalId; // Declare a variable to store the interval ID
 
 // Set timeout to start interval after 2 seconds
-setTimeout(function() {
-    // Set interval to call showSlides function every 5 seconds
-    intervalId = setInterval(function() {
-      if (!manualControl) { // Only change slides if manualControl flag is false
-        showSlides(slideIndex += 1);
-      }
-    }, 7000);
-  }, 2000);
+setTimeout(function () {
+  // Set interval to call showSlides function every 5 seconds
+  intervalId = setInterval(function () {
+    if (!manualControl) { // Only change slides if manualControl flag is false
+      showSlides(slideIndex += 1);
+    }
+  }, 7000);
+}, 2000);

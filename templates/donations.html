@@ -1,155 +1,224 @@
 <!DOCTYPE html>
-
-
 {% extends 'common.html' %}
 {% load i18n %}
 {% get_current_language as L %}
 {% block page_content %}
   <!-- Edit Expense Form -->
-      <h1>{% trans "HELP DONADOGS" %}</h1>
-    <hr>
-
-    {% with location="Donations" %}
+  <h1>{% trans "HELP DONADOGS" %}</h1>
+  <hr>
+  {% with location="Donations" %}
     {% include "subtemplates/noticeboard.html" %}
   {% endwith %}
-
-    <div class="parent" style="text-align: center;  background-color: #cca43b">
-      <h2>{% trans "WE THANK YOU ALL FOR SUPPORTING US" %}</h2>
-      <h3> {% trans "LAST MONTH WE RECEIVED HELP FROM" %}</h3>
-      <br>
-      {% for instance in dataDonations %}
-          <div style="display: inline-block">
-            <h5 style="padding:5px">
-              {% if L == "bg" %}
-                {{instance.0}}
-              {% else %}
-                {{instance.1}}
-              {% endif %}
-            </h5>
-          </div>
-      {% endfor %}
-      <br>
-    </div>
-
-
-
-    <div class="parent">
-      <div>
-        <h2>{% trans "VIRTUAL ADOPTION" %}</h2>
+  <div class="parent" style="text-align: center;  background-color: #cca43b">
+    <h2>{% trans "WE THANK YOU ALL FOR SUPPORTING US" %}</h2>
+    <h3>{% trans "LAST MONTH WE RECEIVED HELP FROM" %}</h3>
+    <br>
+    {% for instance in dataDonations %}
+      <div style="display: inline-block">
+        <h5 style="padding:5px">
+          {% if L == "bg" %}
+            {{ instance.0 }}
+          {% else %}
+            {{ instance.1 }}
+          {% endif %}
+        </h5>
       </div>
-
-
-
-      {% for notice in dataNoticeBoard %}
-        {% if notice.fields.location == "Virtual" %}
+    {% endfor %}
+    <br>
+  </div>
+  <div class="parent">
+    <div>
+      <h2>{% trans "VIRTUAL ADOPTION" %}</h2>
+    </div>
+    {% for notice in dataNoticeBoard %}
+      {% if notice.fields.location == "Virtual" %}
         <article>
-          <div ><p>
-            {% if L == "bg" %}
-              {{notice.fields.note_bg|safe}}
-            {% else %}
-              {{notice.fields.note_eng|safe}}
-          {% endif %}</p>
+          <div >
+            <p>
+              {% if L == "bg" %}
+                {{ notice.fields.note_bg|safe }}
+              {% else %}
+                {{ notice.fields.note_eng|safe }}
+              {% endif %}
+            </p>
           </div>
         </article>
-        {% endif %}
+      {% endif %}
     {% endfor %}
-      </div>
-      <div class="parent" style="text-align: center;background-color: #cca43b" >
-        <h2>{% trans "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS" %}</h2>
-
-        {% for instance in dataPeople %}
-          {% if instance.0 %}
-            <div style="display: inline-block">
-              <h5 style="padding:5px">
-                {% if L == "bg" %}
-                  {{instance.0}}
-                {% else %}
-                  {{instance.1}}
-                {% endif %}
-              </h5>
-            </div>
-          {% endif %}
-        {% endfor %}
-        <br>
-      </div>
-
-
-
-
-<hr>
-    <div class="parent" >
-      <h2>{% trans "DONATION METHODS" %}</h2>
-      <p class="simplechild" style="max-width: 400px; height: auto; background-color: #D9D9DA" >{% trans "We welcome direct <b> food or shelter</b> deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40." %}</p>
-
-      <p class="simplechild" style="max-width: 400px; height: auto; background-color: #D9D9DA"> <b>IBAN</b>: BG69 IABG 7096 1002 6438 01 
-        <br> <b>BIC</b>: IABGBGSF
-        <br> International Asset Bank
-        <br> <b>DONA DOGS</b>
-      </p>
-
-      <div>
-        <form action="https://www.paypal.com/donate" method="post" target="_top" align="center" >
-        <input id="sizingPayPal" type="image" src="https://pics.paypal.com/00/s/ZmJmYzIxMjItNGVmYS00ODQxLTk5M2QtMTIwY2U3MWQ4ZmQw/file.PNG" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button"/>
-        <input type="hidden" name="hosted_button_id" value="CL7UWKW3PY6M4" />
-        </form>
-      </div>  
-    </div>
-
-  <hr>
-    {% for instance in dataAbout %}
-    {% if instance.fields.location == "Donations" %}
-  <div class="parent">
-
-    {% if L == "bg" %}
-    <h2>{{instance.fields.section_title_bg}}</h2>
-    {% else %}
-    <h2>{{instance.fields.section_title_eng}}</h2>
-  {% endif %}
-  <br>
-    <div>
-      {% if L == "bg" %}
-      <p>{{instance.fields.section_desc_bg}}</p>
-      {% else %}
-      <p>{{instance.fields.section_desc_eng}}</p>
-    {% endif %}
-    </div>
-
-    {% if instance.fields.about_pic_1 %}
-    <div class="child"> <img id="sizingDonations" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.about_pic_1}}" /> </div>
-    {% endif %}
-    {% if instance.fields.about_pic_2 %}
-    <div class="child"> <img id="sizingDonations" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.about_pic_2}}" /> </div>
-    {% endif %}
-    {% if instance.fields.about_pic_3 %}
-    <div class="child"> <img id="sizingDonations" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.about_pic_3}}" /> </div>
-    {% endif %}
-    {% if instance.fields.about_pic_4 %}
-    <div class="child"> <img id="sizingDonations" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.about_pic_4}}" /> </div>
-    {% endif %}
-    {% if instance.fields.about_pic_5 %}
-    <div class="child"> <img id="sizingDonations" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.about_pic_5}}" /> </div>
-    {% endif %}
-    {% if instance.fields.about_pic_6 %}
-    <div class="child"> <img id="sizingDonations" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.about_pic_6}}" /> </div>
-    {% endif %}
-    {% if instance.fields.about_pic_7 %}
-    <div class="child"> <img id="sizingDonations" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.about_pic_7}}" /> </div>
-    {% endif %}
-    {% if instance.fields.about_pic_8 %}
-    <div class="child"> <img id="sizingDonations" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.about_pic_8}}" /> </div>
-    {% endif %}
-    {% if instance.fields.about_pic_9 %}
-    <div class="child"> <img id="sizingDonations" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.about_pic_9}}" /> </div>
-    {% endif %}
-    {% if instance.fields.about_pic_10 %}
-    <div class="child"> <img id="sizingDonations" decoding="async" lazy-sizes="auto" class="roundDogImage" loading="lazy" src="{{instance.fields.about_pic_10}}"/> </div>
-    {% endif %}
+  </div>
+  <div class="parent" style="text-align: center;background-color: #cca43b">
+    <h2>{% trans "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS" %}</h2>
+    {% for instance in dataPeople %}
+      {% if instance.0 %}
+        <div style="display: inline-block">
+          <h5 style="padding:5px">
+            {% if L == "bg" %}
+              {{ instance.0 }}
+            {% else %}
+              {{ instance.1 }}
+            {% endif %}
+          </h5>
+        </div>
+      {% endif %}
+    {% endfor %}
+    <br>
   </div>
   <hr>
+  <div class="parent">
+    <h2>{% trans "DONATION METHODS" %}</h2>
+    <p class="simplechild"
+       style="max-width: 400px;
+              height: auto;
+              background-color: #D9D9DA">
+      {% trans "We welcome direct <b> food or shelter</b> deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40." %}
+    </p>
+    <p class="simplechild"
+       style="max-width: 400px;
+              height: auto;
+              background-color: #D9D9DA">
+      <b>IBAN</b>: BG69 IABG 7096 1002 6438 01
+      <br>
+      <b>BIC</b>: IABGBGSF
+      <br>
+      International Asset Bank
+      <br>
+      <b>DONA DOGS</b>
+    </p>
+    <div>
+      <form action="https://www.paypal.com/donate"
+            method="post"
+            target="_top"
+            align="center">
+        <input id="sizingPayPal"
+               type="image"
+               src="https://pics.paypal.com/00/s/ZmJmYzIxMjItNGVmYS00ODQxLTk5M2QtMTIwY2U3MWQ4ZmQw/file.PNG"
+               name="submit"
+               title="PayPal - The safer, easier way to pay online!"
+               alt="Donate with PayPal button"/>
+        <input type="hidden" name="hosted_button_id" value="CL7UWKW3PY6M4" />
+      </form>
+    </div>
+  </div>
+  <hr>
+  {% for instance in dataAbout %}
+    {% if instance.fields.location == "Donations" %}
+      <div class="parent">
+        {% if L == "bg" %}
+          <h2>{{ instance.fields.section_title_bg }}</h2>
+        {% else %}
+          <h2>{{ instance.fields.section_title_eng }}</h2>
+        {% endif %}
+        <br>
+        <div>
+          {% if L == "bg" %}
+            <p>{{ instance.fields.section_desc_bg }}</p>
+          {% else %}
+            <p>{{ instance.fields.section_desc_eng }}</p>
+          {% endif %}
+        </div>
+        {% if instance.fields.about_pic_1 %}
+          <div class="child">
+            <img id="sizingDonations"
+                 decoding="async"
+                 lazy-sizes="auto"
+                 class="roundDogImage"
+                 loading="lazy"
+                 src="{{ instance.fields.about_pic_1 }}"/>
+          </div>
+        {% endif %}
+        {% if instance.fields.about_pic_2 %}
+          <div class="child">
+            <img id="sizingDonations"
+                 decoding="async"
+                 lazy-sizes="auto"
+                 class="roundDogImage"
+                 loading="lazy"
+                 src="{{ instance.fields.about_pic_2 }}"/>
+          </div>
+        {% endif %}
+        {% if instance.fields.about_pic_3 %}
+          <div class="child">
+            <img id="sizingDonations"
+                 decoding="async"
+                 lazy-sizes="auto"
+                 class="roundDogImage"
+                 loading="lazy"
+                 src="{{ instance.fields.about_pic_3 }}"/>
+          </div>
+        {% endif %}
+        {% if instance.fields.about_pic_4 %}
+          <div class="child">
+            <img id="sizingDonations"
+                 decoding="async"
+                 lazy-sizes="auto"
+                 class="roundDogImage"
+                 loading="lazy"
+                 src="{{ instance.fields.about_pic_4 }}"/>
+          </div>
+        {% endif %}
+        {% if instance.fields.about_pic_5 %}
+          <div class="child">
+            <img id="sizingDonations"
+                 decoding="async"
+                 lazy-sizes="auto"
+                 class="roundDogImage"
+                 loading="lazy"
+                 src="{{ instance.fields.about_pic_5 }}"/>
+          </div>
+        {% endif %}
+        {% if instance.fields.about_pic_6 %}
+          <div class="child">
+            <img id="sizingDonations"
+                 decoding="async"
+                 lazy-sizes="auto"
+                 class="roundDogImage"
+                 loading="lazy"
+                 src="{{ instance.fields.about_pic_6 }}"/>
+          </div>
+        {% endif %}
+        {% if instance.fields.about_pic_7 %}
+          <div class="child">
+            <img id="sizingDonations"
+                 decoding="async"
+                 lazy-sizes="auto"
+                 class="roundDogImage"
+                 loading="lazy"
+                 src="{{ instance.fields.about_pic_7 }}"/>
+          </div>
+        {% endif %}
+        {% if instance.fields.about_pic_8 %}
+          <div class="child">
+            <img id="sizingDonations"
+                 decoding="async"
+                 lazy-sizes="auto"
+                 class="roundDogImage"
+                 loading="lazy"
+                 src="{{ instance.fields.about_pic_8 }}"/>
+          </div>
+        {% endif %}
+        {% if instance.fields.about_pic_9 %}
+          <div class="child">
+            <img id="sizingDonations"
+                 decoding="async"
+                 lazy-sizes="auto"
+                 class="roundDogImage"
+                 loading="lazy"
+                 src="{{ instance.fields.about_pic_9 }}"/>
+          </div>
+        {% endif %}
+        {% if instance.fields.about_pic_10 %}
+          <div class="child">
+            <img id="sizingDonations"
+                 decoding="async"
+                 lazy-sizes="auto"
+                 class="roundDogImage"
+                 loading="lazy"
+                 src="{{ instance.fields.about_pic_10 }}"/>
+          </div>
+        {% endif %}
+      </div>
+      <hr>
     {% endif %}
   {% endfor %}
-
-
-
-  </div>
+</div>
 {% endblock %}

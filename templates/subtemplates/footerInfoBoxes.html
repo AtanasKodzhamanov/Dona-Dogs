@@ -1,61 +1,72 @@
 <!DOCTYPE html>
 {% load i18n %}
 {% get_current_language as L %}
-
 {% block page_content %}
-
-<div class="parent" id="footerContainer" >
-  <div class="box1">
-    <h3>{% trans "VIRTUAL ADOPTION" %}</h3>
+  <div class="parent" id="footerContainer">
+    <div class="box1">
+      <h3>{% trans "VIRTUAL ADOPTION" %}</h3>
+    </div>
+    <div class="box2">
+      <h3>{% trans "SUBSCRIBE TO OUR MONTHLY NEWSLETTER" %}</h3>
+    </div>
+    <div class="box3">
+      <h3>{% trans "DONATION METHODS" %}</h3>
+    </div>
   </div>
-  <div class="box2">
-    <h3>{% trans "SUBSCRIBE TO OUR MONTHLY NEWSLETTER" %}</h3>
-  </div>
-  <div class="box3">
-    <h3>{% trans "DONATION METHODS" %}</h3>
-  </div>
-</div>
-
-<div class="hideSubscribeForm" id="subscribeFormContainer" style="display: none">
-  <form id="footerSubscribeForm" action="" method="POST">
-  {% csrf_token %}
-  {{ subscribeForm.as_p }}
-  <button type="submit">{% trans "Subscribe" %}</button>
-</form>
-</div>
-
-<div class="hideVA">
-  <p>
-    {% trans "If you liked one of our dogs, but you don't have the opportunity to adopt, you can become their virtual adopter until they find a real one. To become a virtual adopter you have to cover the cost of taking care of the dog: food every month, its deworming and an annual vaccine. It costs us around 20 euros per month to support a healthy dog and we have more than 50 dogs at any point in time, some of them with chronic diseases that require expensive treatment." %}
-    <br>
-    <br>
-    {% trans "It's hard for us to do it all alone. We are putting our time and our resources to make a positive change in the lives of these dogs and equally importantly to send a message to the community that mistreating dogs is wrong, barbaric and has no place in 21st century Bulgaria." %}
-    <br>
-    <br> 
-    {% trans "To become a virtual adopter, you can set up a recurring payment equivalent to 20 EUR using PayPal or bank transfer. Make sure to specify the name of the dog you wish to virtually adopt!" %}
-    <br>
-    <br>
-    {% trans "Check out our albums, like a dog, write to us on donadogsfoundation@email.com. Together we can do more!" %}
-  </p>
-</div>
-
-<div class="hideDonationsBox" >
-  <div class="d" >
-    <p class="simplechild" >{% trans "We welcome direct <b> food or shelter</b> deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40." %}</p>
-  </div>
-  <div class="d" >
-  <p class="simplechild"> <b>IBAN</b>: BG69 IABG 7096 1002 6438 01 
-    <br> <b>BIC</b>: IABGBGSF
-    <br> International Asset Bank
-    <br> <b>DONA DOGS</b>
-  </p>
-</div >
-  <div class="d" >
-    <form action="https://www.paypal.com/donate" method="post" target="_top" align="center" >
-    <input id="sizingPayPal" type="image" src="https://pics.paypal.com/00/s/ZmJmYzIxMjItNGVmYS00ODQxLTk5M2QtMTIwY2U3MWQ4ZmQw/file.PNG" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button"/>
-    <input type="hidden" name="hosted_button_id" value="CL7UWKW3PY6M4" />
+  <div class="hideSubscribeForm"
+       id="subscribeFormContainer"
+       style="display: none">
+    <form id="footerSubscribeForm" action="" method="POST">
+      {% csrf_token %}
+      {{ subscribeForm.as_p }}
+      <button type="submit">{% trans "Subscribe" %}</button>
     </form>
   </div>
-</div>
-<br>
+  <div class="hideVA">
+    <p>
+      {% trans "If you liked one of our dogs, but you don't have the opportunity to adopt, you can become their virtual adopter until they find a real one. To become a virtual adopter you have to cover the cost of taking care of the dog: food every month, its deworming and an annual vaccine. It costs us around 20 euros per month to support a healthy dog and we have more than 50 dogs at any point in time, some of them with chronic diseases that require expensive treatment." %}
+      <br>
+      <br>
+      {% trans "It's hard for us to do it all alone. We are putting our time and our resources to make a positive change in the lives of these dogs and equally importantly to send a message to the community that mistreating dogs is wrong, barbaric and has no place in 21st century Bulgaria." %}
+      <br>
+      <br>
+      {% trans "To become a virtual adopter, you can set up a recurring payment equivalent to 20 EUR using PayPal or bank transfer. Make sure to specify the name of the dog you wish to virtually adopt!" %}
+      <br>
+      <br>
+      {% trans "Check out our albums, like a dog, write to us on donadogsfoundation@email.com. Together we can do more!" %}
+    </p>
+  </div>
+  <div class="hideDonationsBox">
+    <div class="d">
+      <p class="simplechild">
+        {% trans "We welcome direct <b> food or shelter</b> deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40." %}
+      </p>
+    </div>
+    <div class="d">
+      <p class="simplechild">
+        <b>IBAN</b>: BG69 IABG 7096 1002 6438 01
+        <br>
+        <b>BIC</b>: IABGBGSF
+        <br>
+        International Asset Bank
+        <br>
+        <b>DONA DOGS</b>
+      </p>
+    </div >
+    <div class="d">
+      <form action="https://www.paypal.com/donate"
+            method="post"
+            target="_top"
+            align="center">
+        <input id="sizingPayPal"
+               type="image"
+               src="https://pics.paypal.com/00/s/ZmJmYzIxMjItNGVmYS00ODQxLTk5M2QtMTIwY2U3MWQ4ZmQw/file.PNG"
+               name="submit"
+               title="PayPal - The safer, easier way to pay online!"
+               alt="Donate with PayPal button"/>
+        <input type="hidden" name="hosted_button_id" value="CL7UWKW3PY6M4" />
+      </form>
+    </div>
+  </div>
+  <br>
 {% endblock %}
