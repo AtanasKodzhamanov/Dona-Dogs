@@ -178,8 +178,15 @@ def show_adoptions(request):
         'python', Dog.objects.all().order_by("-adoption_year"))
     dataNoticeBoard = serializers.serialize(
         'python', NoticeBoard.objects.all().order_by("order"))
+    dogs = Dog.objects.all().filter(adoption_year__gt=0).order_by("-adoption_year")
+    # Get only adoption_year from Dog model
+    years = set(dogs.values_list("adoption_year", flat=True))
+    # Sort years in descending order
+    years = sorted(years, reverse=True)
 
     context = {
+        "years":years,
+        "dogs": dogs,
         'subscribeForm': renderCommon(request),
         "dataAdoptions": dataDogs,
         "dataNoticeBoard": dataNoticeBoard
