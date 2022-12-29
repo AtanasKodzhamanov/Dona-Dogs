@@ -146,9 +146,9 @@
           <p>{{ donation.donation_text_eng|safe }}</p>
         {% endif %}
         <br>
-        <p>
+        {% comment %} <p>
           {% trans "You can see more information about last month's donations " %} <a id="hyperlink" href="/donations/history/{{ date_pk }}/">{% trans "here" %}</a>.
-        </p>
+        </p> {% endcomment %}
       </div>
     </div>
   {% endfor %}
