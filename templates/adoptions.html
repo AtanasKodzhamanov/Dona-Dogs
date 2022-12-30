@@ -10,7 +10,7 @@
   {% with location="Adoptions" %}
     {% include "subtemplates/noticeboard.html" %}
   {% endwith %}
-  <h2>{% trans "SOME OF OUR PAST ADOPTIONS" %}</h2>
+  {% comment %} <h2>{% trans "SOME OF OUR PAST ADOPTIONS" %}</h2> {% endcomment %}
   <hr>
   {% for year in years %}
     <div id="AdoptionExpand">
