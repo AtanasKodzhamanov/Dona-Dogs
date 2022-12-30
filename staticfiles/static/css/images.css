@@ -48,7 +48,7 @@
 
 @media only screen and (max-width: 600px) {
     #sizingPayPal {
-        width: 200px;
+        max-width: 200px;
     }
 }
 

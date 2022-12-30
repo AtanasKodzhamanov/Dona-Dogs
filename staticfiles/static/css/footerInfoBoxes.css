@@ -38,7 +38,24 @@
         width: 33.333%;
     }
 
+    @media only screen and (max-width: 600px) {
+        .hideDonationsBox .d
+        {
+            display: block;
+        }
+    }
+
+
+    @media only screen and (max-width: 600px) {
+        .hideDonationsBox .d
+        {
+            width: 90%;
+        }
+    }
+
     .hideVA {
         display: none;
         transition: all 0.5s ease-in-out;
     }
+
+    
