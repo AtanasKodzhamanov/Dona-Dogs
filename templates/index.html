@@ -86,8 +86,6 @@
   </div>
   <br>  
   <br>
-  <br>
-  <br>
   <h2>
     {% trans "Last year " %}
     {% if L == "bg" %}
@@ -131,10 +129,7 @@
   </div>
   <br>  
   <br>
-  <br>
-  <br>
   <h2>{% trans "Last month's donations" %}</h2>
-  <br>
   <br>
   {% for donation in donation_stories  %}
     <div id="slides-container"  style="max-width: 1500px;  margin:auto;">
@@ -159,19 +154,19 @@
   </div>
 <br>
 <br>
-<br>
+
   <div class="parent" id="showAllDogs">
     <div>
       <h2>{% trans "SEE ALL OF OUR DOGS HERE" %}</h2>
     </div>
   </div>
-  <br>
+
   <div class="parent" id="showAllAdoptions">
     <div>
       <h2>{% trans "SEE MORE ADOPTIONS HERE" %}</h2>
     </div>
   </div>
-  <br>
+
 
   <script src="{% static 'js/slides.js' %}"></script>
   <script src="{% static 'js/popupInfo.js' %}"></script>
