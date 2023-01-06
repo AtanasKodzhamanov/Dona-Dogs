@@ -21,6 +21,7 @@
   {% endwith %}
   <hr>
   <h2>{% trans "OUR DOGS" %}</h2>
+  <br>
   <p>
     {% trans "We have " %}
     {{ countDogs }}
@@ -83,7 +84,9 @@
       {% endif %}
     {% endfor %}
   </div>
-
+  <br>  
+  <br>
+  <br>
   <br>
   <h2>
     {% trans "Last year " %}
@@ -99,6 +102,8 @@
       {{ adoptedPuppy.adoption_country_eng }}
     {% endif %}
   </h2>
+  <br>
+  <br>
   <div id="adoptedPuppyContainer">
     <div id="adoptedPuppy" style="display: flex">
       <img id="sizingAdoptedPuppy"
@@ -124,9 +129,13 @@
       </p>
     </div>
   </div>
-
+  <br>  
+  <br>
+  <br>
   <br>
   <h2>{% trans "Last month's donations" %}</h2>
+  <br>
+  <br>
   {% for donation in donation_stories  %}
     <div id="slides-container"  style="max-width: 1500px;  margin:auto;">
       <div class="slides-donations fade">
@@ -149,19 +158,20 @@
     {% comment %} JS will append dots here {% endcomment %}
   </div>
 <br>
-
+<br>
+<br>
   <div class="parent" id="showAllDogs">
     <div>
       <h2>{% trans "SEE ALL OF OUR DOGS HERE" %}</h2>
     </div>
   </div>
-
+  <br>
   <div class="parent" id="showAllAdoptions">
     <div>
       <h2>{% trans "SEE MORE ADOPTIONS HERE" %}</h2>
     </div>
   </div>
-
+  <br>
 
   <script src="{% static 'js/slides.js' %}"></script>
   <script src="{% static 'js/popupInfo.js' %}"></script>

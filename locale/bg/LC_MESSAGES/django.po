@@ -220,7 +220,7 @@ msgstr ""
 
 #: templates/index.html:90
 msgid "SEE ALL OF OUR DOGS HERE"
-msgstr "ВИЖТЕ ВСИЧКИ КУЧЕТА ТУК"
+msgstr "ВИЖТЕ ВСИЧКИ КУЧЕТА"
 
 #: templates/index.html:95
 msgid "Last year "
@@ -228,11 +228,11 @@ msgstr "Миналата година "
 
 #: templates/index.html:101
 msgid " got adopted in "
-msgstr " беше осиновено в "
+msgstr " намери дом в "
 
 #: templates/index.html:135
 msgid "SEE MORE ADOPTIONS HERE"
-msgstr "ВИЖТЕ ОЩЕ ОСИНОВЕНИ КУЧЕТА ТУК"
+msgstr "ВИЖТЕ ОЩЕ ОСИНОВЕНИ КУЧЕТА"
 
 #: templates/index.html:139
 msgid "Last month's donations"
