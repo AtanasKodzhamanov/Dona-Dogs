@@ -219,8 +219,6 @@ msgstr ""
 "продължим да предоставяме лечение за всяко куче, което се нуждае от него: "
 
 #: templates/index.html:90
-#, fuzzy
-#| msgid "DOGS"
 msgid "SEE ALL DOGS HERE"
 msgstr "ВИЖТЕ ВСИЧКИ КУЧЕТА ТУК"
 
@@ -233,8 +231,6 @@ msgid " got adopted in "
 msgstr " беше осиновено в "
 
 #: templates/index.html:135
-#, fuzzy
-#| msgid "ALL ADOPTIONS"
 msgid "SEE ALL ADOPTIONS HERE"
 msgstr "ВИЖТЕ ВСИЧКИ ОСИНОВЕНИ КУЧЕТА ТУК"
 
