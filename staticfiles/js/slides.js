@@ -29,7 +29,7 @@ let dotsContainer = document.getElementById("dots-container");
 let slides = document.getElementsByClassName("slides-donations");
 
 for (let i = 0; i < slides.length; i++) {
-  if (slides.lenght > 1) {
+  if (slides.length > 1) {
     let dot = document.createElement("span");
     dot.className = "dot";
     dot.onclick = function () { currentSlide(i + 1) };
