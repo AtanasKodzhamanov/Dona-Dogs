@@ -35,19 +35,7 @@
     {% trans "sick dogs receiving intensive treatement at the clinic. Please help us help them so that we can continue to provide treatement for any dog that needs it: " %}
     <a id="hyperlink" href="/infirmary/">{% trans "CLINIC" %}</a>.
   </p>
-  {% comment %}
-<form action="javascript:void(0)" method="POST">
-  {% csrf_token %}
-  {{ contactForm }}
-  <button type="submit">Send</button>
-</form>
 
-<form action="javascript:void(0)" method="POST">
-  {% csrf_token %}
-  {{ adoptForm }}
-  <button type="submit">Send</button>
-</form>
-  {% endcomment %}
   <div class="wrapper" id="dogList">
     {% for instance in dataDogs %}
       {% if instance.fields.status == "Active" %}
