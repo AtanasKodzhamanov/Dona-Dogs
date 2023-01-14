@@ -7,12 +7,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 #: DogShelter/web/forms.py:78 DogShelter/web/forms.py:83
-#, fuzzy
+
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-06 19:01+0000\n"
+"POT-Creation-Date: 2023-01-14 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,7 +78,7 @@ msgstr "Можете да видете повече информация за л
 msgid "here"
 msgstr "тук"
 
-#: templates/adoptions.html:8 templates/index.html:31
+#: templates/adoptions.html:8 templates/index.html:30
 msgid "ADOPTIONS"
 msgstr "ОСИНОВЕНИ КУЧЕТА"
 
@@ -90,7 +90,7 @@ msgstr "Последвайте ни във "
 msgid " for up to date information!"
 msgstr " за повече снимки и най-новата информация!"
 
-#: templates/common_child/navbar.html:17 templates/index.html:38
+#: templates/common_child/navbar.html:17 templates/index.html:37
 #: templates/infirmary.html:7
 msgid "CLINIC"
 msgstr "КЛИНИКА"
@@ -180,23 +180,19 @@ msgstr ""
 "Приветстваме директни доставки на храна или подслон за Стамболийски, 4210, "
 "Васил Левски 40."
 
-#: templates/index.html:7
-msgid "DONADOGS"
-msgstr "ДОНАДОГС"
-
-#: templates/index.html:24
+#: templates/index.html:22
 msgid "OUR DOGS"
 msgstr "НАШИТЕ КУЧЕТА"
 
-#: templates/index.html:26
+#: templates/index.html:25
 msgid "We have "
 msgstr "Ние имаме "
 
-#: templates/index.html:28
+#: templates/index.html:27
 msgid "dogs in the shelter. Last year we helped "
 msgstr "кучета в приюта. Миналата година помогнахме на "
 
-#: templates/index.html:30
+#: templates/index.html:29
 msgid ""
 "dogs get adopted in several countries across Europe. You can see more "
 "information about this year's adoptions here: "
@@ -204,39 +200,39 @@ msgstr ""
 "кучета да се осиновят в няколко страни в Европа. Можете да видите повече "
 "информация за тазгодишните осиновявания тук: "
 
-#: templates/index.html:35
+#: templates/index.html:34
 msgid "Currently there are "
 msgstr "В момента има "
 
-#: templates/index.html:37
+#: templates/index.html:36
 msgid ""
-"sick dogs receiving intensive treatement at the clinic. You can see more "
-"information about them here. Please help us help them so that we can "
-"continue to provide treatement for any dog that needs it: "
+"sick dogs receiving intensive treatement at the clinic. Please help us help "
+"them so that we can continue to provide treatement for any dog that needs "
+"it: "
 msgstr ""
-"болни кучета на интензивно лечение в клиниката. Можете да видите повече "
-"информация за тях тук. Моля, помогнете ни да им помогнем, за да можем да "
+"болни кучета на интензивно лечение в клиниката. "
+"Моля, помогнете ни да им помогнем, за да можем да "
 "продължим да предоставяме лечение за всяко куче, което се нуждае от него: "
 
 #: templates/index.html:90
-msgid "SEE ALL OF OUR DOGS HERE"
-msgstr "ВИЖТЕ ВСИЧКИ КУЧЕТА"
-
-#: templates/index.html:95
 msgid "Last year "
 msgstr "Миналата година "
 
-#: templates/index.html:101
+#: templates/index.html:96
 msgid " got adopted in "
 msgstr " намери дом в "
 
-#: templates/index.html:135
-msgid "SEE MORE ADOPTIONS HERE"
-msgstr "ВИЖТЕ ОЩЕ ОСИНОВЕНИ КУЧЕТА"
-
-#: templates/index.html:139
+#: templates/index.html:132
 msgid "Last month's donations"
 msgstr "ДАРЕНИЯ ОТ МИНАЛИЯ МЕСЕЦ"
+
+#: templates/index.html:162
+msgid "SEE ALL OF OUR DOGS HERE"
+msgstr "ВИЖТЕ ВСИЧКИ КУЧЕТА"
+
+#: templates/index.html:168
+msgid "SEE MORE ADOPTIONS HERE"
+msgstr "ВИЖТЕ ОЩЕ ОСИНОВЕНИ КУЧЕТА"
 
 #: templates/subtemplates/footerInfoBoxes.html:10
 msgid "SUBSCRIBE TO OUR MONTHLY NEWSLETTER"
@@ -293,6 +289,9 @@ msgid ""
 msgstr ""
 "Разгледайте нашите албуми, като куче, пишете ни на donadogsfoundation@email."
 "com. Заедно можем повече!"
+
+#~ msgid "DONADOGS"
+#~ msgstr "ДОНАДОГС"
 
 #~ msgid "This year's adoptions"
 #~ msgstr "Осиновени тази година"
