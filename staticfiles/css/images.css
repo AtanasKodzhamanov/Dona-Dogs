@@ -68,7 +68,7 @@
 
 @media only screen and (max-width: 600px) {
     #sizingNoticeBoard {
-        max-width: 150px;
+        max-width: 175px;
         height: auto;
         margin-left: 15px;
         margin-right: 5px;
