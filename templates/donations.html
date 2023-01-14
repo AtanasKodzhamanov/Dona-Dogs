@@ -9,23 +9,24 @@
   {% with location="Donations" %}
     {% include "subtemplates/noticeboard.html" %}
   {% endwith %}
-  <div class="parent" style="text-align: center;  background-color: #cca43b">
+  <div class="parent" style="text-align: center;  background-color: #fff">
     <h2>{% trans "WE THANK YOU ALL FOR SUPPORTING US" %}</h2>
     <h3>{% trans "LAST MONTH WE RECEIVED HELP FROM" %}</h3>
     <br>
     {% for instance in dataDonations %}
       <div style="display: inline-block">
-        <h5 style="padding:5px">
+        <h4 style="padding:5px">
           {% if L == "bg" %}
             {{ instance.0 }}
           {% else %}
             {{ instance.1 }}
           {% endif %}
-        </h5>
+        </h4>
       </div>
     {% endfor %}
     <br>
   </div>
+  <br>
   <div class="parent">
     <div>
       <h2>{% trans "VIRTUAL ADOPTION" %}</h2>
@@ -46,44 +47,44 @@
       {% endif %}
     {% endfor %}
   </div>
-  <div class="parent" style="text-align: center;background-color: #cca43b">
+  <br>
+  <div class="parent" style="text-align: center;background-color: #fff">
     <h2>{% trans "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS" %}</h2>
     {% for instance in dataPeople %}
       {% if instance.0 %}
         <div style="display: inline-block">
-          <h5 style="padding:5px">
+          <h4 style="padding:5px">
             {% if L == "bg" %}
               {{ instance.0 }}
             {% else %}
               {{ instance.1 }}
             {% endif %}
-          </h5>
+          </h4>
         </div>
       {% endif %}
     {% endfor %}
     <br>
   </div>
-  <hr>
+  <br>
+  <br>
   <div class="parent">
     <h2>{% trans "DONATION METHODS" %}</h2>
-    <p class="simplechild"
-       style="max-width: 400px;
-              height: auto;
-              background-color: #D9D9DA">
-      {% trans "We welcome direct <b> food or shelter</b> deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40." %}
-    </p>
-    <p class="simplechild"
-       style="max-width: 400px;
-              height: auto;
-              background-color: #D9D9DA">
-      <b>IBAN</b>: BG69 IABG 7096 1002 6438 01
-      <br>
-      <b>BIC</b>: IABGBGSF
-      <br>
-      International Asset Bank
-      <br>
-      <b>DONA DOGS</b>
-    </p>
+    <div>
+      <p class="simplechild">
+        {% trans "We welcome direct <b> food or shelter</b> deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40." %}
+      </p>
+    </div>
+    <div>
+      <p class="simplechild">
+        <b>IBAN</b>: BG69 IABG 7096 1002 6438 01
+        <br>
+        <b>BIC</b>: IABGBGSF
+        <br>
+        International Asset Bank
+        <br>
+        <b>DONA DOGS</b>
+      </p>
+    </div >
     <div>
       <form action="https://www.paypal.com/donate"
             method="post"
