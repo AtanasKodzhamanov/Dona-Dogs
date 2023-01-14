@@ -10,13 +10,21 @@ navLinks.forEach(link => {
   }
 });
 
-document.getElementById('showAllDogs').addEventListener('click', function (event) {
-  event.preventDefault();
-  window.location.href = '/dogs';
-});
 
-document.getElementById('showAllAdoptions').addEventListener('click', function (event) {
-  event.preventDefault();
-  window.location.href = '/adoptions';
-});
+let showAllDogsBtn = document.getElementById('showAllDogs');
+if (showAllDogsBtn) {
+  showAllDogsBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    window.location.href = '/dogs';
+  });
+}
+
+let showAllAdoptionsBtn = document.getElementById('showAllAdoptions');
+if (showAllAdoptionsBtn) {
+  showAllAdoptionsBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    window.location.href = '/adoptions';
+  });
+}
+
 
