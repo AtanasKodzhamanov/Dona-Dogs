@@ -63,7 +63,7 @@ h3 {
 p {
     font-family: 'Montserrat', sans-serif;
     padding: 10px 30px;
-    line-height: 150%;
+    line-height: 200%;
     font-size: 16px;
     color: #414141;
     text-align: center;
@@ -75,6 +75,7 @@ p {
 
 @media only screen and (max-width: 1200px) {
     p {
+        line-height:125%;
         margin: 5px;
         padding: 20px;
     }
