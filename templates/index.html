@@ -44,13 +44,13 @@
              vaName="{{ instance.fields.va_name_eng }}"
              gender="{{ instance.fields.gender }}"
              pk="{{ instance.pk }}">
-          <h2>
+          <h1>
             {% if L == "bg" %}
               {{ instance.fields.name_bg }}
             {% else %}
               {{ instance.fields.name_eng }}
             {% endif %}
-          </h2>
+          </h1>
           <p class="popuptext" id="myPopup">
             {% if L == "bg" %}
               {{ instance.fields.story_bg|safe|truncatewords:21 }}

@@ -80,6 +80,12 @@ max-height: 1000px; */
   grid-auto-rows: minmax(auto, auto);
 }
 
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    padding: 0px;
+  }
+}
+
 
 .panel {
   /* needed for the flex layout*/
