@@ -58,8 +58,8 @@ class vaStatusForm(forms.Form):
 
 
 class genderFilterForm(forms.Form):
+    label = "",
     gender = forms.CharField(
-        label=_("Gender"),
         widget=Select(choices=(
             ("all", _("All genders")),
             ("male", _("M")),

@@ -8,6 +8,7 @@
     {% include "subtemplates/noticeboard.html" %}
   {% endwith %}
   {% comment %} Change class to hidden below and remove comments on filtersButton above, in JS and CSS to have a button that hides and shows the filters below. {% endcomment %}
+  
   <div id="filtersContainer" class="display">
     <div id="formsBar">
       <div class="form-group">
@@ -24,13 +25,14 @@
         </form>
       </div>
       <div class="form-group">
-        <form action="/subscribe" method="post">
+        <form action="" method="post">
           {% csrf_token %}
           {{ genderFilterForm  }}
         </form>
       </div>
     </div>
   </div>
+
   <div class="wrapper" id="dogList">
     {% for instance in dataDogs %}
       {% if instance.fields.status == "Active" %}
