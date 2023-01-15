@@ -15,7 +15,7 @@ let showAllDogsBtn = document.getElementById('showAllDogs');
 if (showAllDogsBtn) {
   showAllDogsBtn.addEventListener('click', function (event) {
     event.preventDefault();
-    window.location.href = '/dogs';
+    window.location.href = '/dogGallery';
   });
 }
 

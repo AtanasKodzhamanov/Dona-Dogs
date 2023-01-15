@@ -34,7 +34,7 @@ def renderCommon(request):
 
 class show_donation_story(ListView):
     model = [DonationStory, Donation]
-    template_name = "donationStory.html"
+    template_name = "donationMonthly.html"
 
     def get_queryset(self):
         date_pk = self.kwargs['date_pk']
@@ -54,7 +54,7 @@ class show_donation_story(ListView):
 
 class show_dog(DetailView):
     model = Dog
-    template_name = "dog.html"
+    template_name = "dogProfile.html"
     queryset = Dog.objects.all()
 
     def get_context_data(self, **kwargs):
@@ -83,7 +83,7 @@ def show_all_dogs(request):
         "dataPeople": dataPeople,
         "dataDogs": dataDogs,
     }
-    return render(request, "dogs.html", context)
+    return render(request, "dogGallery.html", context)
 
 
 def show_home(request):  # dashboard
@@ -136,7 +136,7 @@ def show_home(request):  # dashboard
         "date_pk": date_pk,
         "dataNoticeBoard": dataNoticeBoard
     }
-    return render(request, "index.html", context)
+    return render(request, "home.html", context)
 
 # from django.views import View
 # from django.core import serializers
@@ -162,8 +162,7 @@ def show_infirmary(request):  # dashboard
         "dataAbout": dataAbout,
         "dataNoticeBoard": dataNoticeBoard
     }
-
-    return render(request, "infirmary.html", context)
+    return render(request, "clinic.html", context)
 
 
 def show_about(request):
@@ -177,7 +176,8 @@ def show_about(request):
         "dataAbout": dataAbout,
         "dataNoticeBoard": dataNoticeBoard
     }
-    return render(request, "about.html", context)
+
+    return render(request, "ourstory.html", context)
 
 
 def show_adoptions(request):
@@ -231,4 +231,5 @@ def show_donations(request):
         "dataDonations": dataDonations,
         "dataNoticeBoard": dataNoticeBoard
     }
+
     return render(request, "donations.html", context)
