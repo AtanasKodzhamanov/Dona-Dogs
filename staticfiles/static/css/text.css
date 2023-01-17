@@ -72,7 +72,7 @@ p {
     text-align: left;
 }
 
-p .pAdjustment {
+p.pAdjustment {
     max-width:800px;
     height:auto;
     margin:auto;
