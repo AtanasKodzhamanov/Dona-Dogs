@@ -19,19 +19,11 @@
         {% endif %}
         {% if L == "bg" %}
           <div>
-            <p style="max-width:800px;
-            height:auto;
-            margin:auto;
-            text-align:left;
-            padding:15px">{{ instance.fields.section_desc_bg|safe }}</p>
+            <p class="pAdjustment">{{ instance.fields.section_desc_bg|safe }}</p>
           </div>
         {% else %}
           <div>
-            <p style="max-width:800px;
-            height:auto;
-            margin:auto;
-            text-align:left;
-            padding:15px">{{ instance.fields.section_desc_eng|safe }}</p>
+            <p class="pAdjustment">{{ instance.fields.section_desc_eng|safe }}</p>
           </div>
         {% endif %}
         {% if instance.fields.about_pic_1 %}

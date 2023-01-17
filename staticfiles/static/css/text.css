@@ -72,6 +72,14 @@ p {
     text-align: left;
 }
 
+.pAdjustment {
+    max-width:800px;
+    height:auto;
+    margin:auto;
+    text-align:left;
+    padding:15px;
+}
+
 
 @media only screen and (max-width: 1200px) {
     p {

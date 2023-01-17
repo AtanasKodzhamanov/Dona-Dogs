@@ -13,8 +13,8 @@
   {% comment %} <h2>{% trans "SOME OF OUR PAST ADOPTIONS" %}</h2> {% endcomment %}
   <hr>
   {% for year in years %}
-    <div id="AdoptionExpand">
-      <div class="parent" id="AdoptionButton">
+    <div class="AdoptionExpand" id="AdoptionExpand">
+      <div class="parent AdoptionButton" id="AdoptionButton">
         <div>
           <h2>{{ year }}</h2>
         </div>
@@ -34,11 +34,7 @@
             {% endif %}
             {% if adoption.fields.adoption_story_eng == "" %}
               <div>
-                <p style="max-width:800px;
-                          height:auto;
-                          margin:auto;
-                          text-align:left;
-                          padding:15px">
+                <p class="pAdjustment">
                   {% if L == "bg" %}
                     {{ adoption.fields.story_bg|safe }}
                   {% else %}
@@ -48,11 +44,7 @@
               </div>
             {% else %}
               <div>
-                <p style="max-width:800px;
-                          height:auto;
-                          margin:auto;
-                          text-align:left;
-                          padding:15px">
+                <p class="pAdjustment">
                   {% if L == "bg" %}
                     {{ adoption.fields.adoption_story_bg|safe }}
                   {% else %}
@@ -104,5 +96,5 @@
       {% endfor %}
     </div>
   {% endfor %}
-  <script src="{% static 'js/adoptions.js' %}"></script>
+  <script src="{% static 'js/adoptionsExpand.js' %}"></script>
 {% endblock %}
