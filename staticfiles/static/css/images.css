@@ -68,9 +68,9 @@
 
 @media only screen and (max-width: 600px) {
     #sizingNoticeBoard {
-        width: 100vw;
+        height: 100vh;
         margin:0px;
-        margin-bottom:3px;
+        margin-bottom:20px;
         padding: 0px;
     }
 }

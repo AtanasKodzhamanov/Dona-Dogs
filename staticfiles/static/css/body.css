@@ -50,6 +50,6 @@ body {
   
   @media only screen and (max-width: 600px) {
     #navbarPadding {
-      padding-bottom: 10px;
+      padding-bottom: 0px;
     }
   }
