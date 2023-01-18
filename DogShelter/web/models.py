@@ -564,8 +564,13 @@ class DonationStory(models.Model):
         help_text="Дата на дарението. По подразбиране е последният ден на предходния месец. Например ако дарението е направено на 1.01.2020, то по подразбиране ще се показва на 31.12.2019. Това е за да се показват даренията в последния месец."
     )
 
-    date_pk = models.CharField(max_length=8, blank=True, editable=False)
+    date_pk = models.CharField(
+        max_length=8,
+        blank=True,
+        editable=False
+    )
 
+    # This is a custom save method that will save the date in a format that can be used as a primary key - 2022-Dec
     def save(self, *args, **kwargs):
         self.date_pk = self.date.strftime("%Y-%b")
         super().save(*args, **kwargs)

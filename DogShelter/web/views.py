@@ -33,22 +33,26 @@ def renderCommon(request):
 
 
 class show_donation_story(ListView):
-    model = [DonationStory, Donation]
+    model = DonationStory
     template_name = "donationMonthly.html"
-
-    def get_queryset(self):
-        date_pk = self.kwargs['date_pk']
-        return DonationStory.objects.filter(date_pk=date_pk)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['date_pk'] = self.kwargs['date_pk']
 
-        donation_names = Donation.objects.all()
-        donations = DonationStory.objects.all()
+        date = datetime.datetime.strptime(self.kwargs['date_pk'], '%Y-%b')
+
+        # filter Donation for this month
+        donation_names = Donation.objects.filter(
+            date__year=date.year, date__month=date.month)
+
+        # filter DonationStory for this month
+        donations = self.model.objects.filter(
+            date__year=date.year, date__month=date.month)
+
+        # return context into donationNames and donationStories
         context['donation_names'] = donation_names
         context['donations'] = donations
-        context['subscribeForm'] = renderCommon(self.request)
         return context
 
 
