@@ -26,18 +26,20 @@
         <h1>{{ dog.name_eng }}</h1>
     {% endif %}
     <div class="story-container-dog-album">
-        {% if L == "bg" %}
-            <p>{{ dog.story_bg }}</p>
-        {% else %}
-            <p>{{ dog.story_eng }}</p>
-        {% endif %}
+        <p class="compressedText">
+            {% if L == "bg" %}
+                {{ dog.story_bg }}
+            {% else %}
+                {{ dog.story_eng }}
+            {% endif %}
+        </p>
         {% if dog.va_name_eng %}
             {% if L == "bg" %}
-                <p>
+                <p class="compressedText">
                     Благодарим на <b>{{ dog.va_name_bg }}</b>, че се грижи за {{ dog.name_bg }} като виртуален осиновител.
                 </p>
             {% else %}
-                <p>
+                <p class="compressedText">
                     We thank <b>{{ dog.va_name_eng }}</b> for taking care of {{ dog.name_eng }} as a virtual adopter.
                 </p>
             {% endif %}
