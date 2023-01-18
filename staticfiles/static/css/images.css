@@ -58,7 +58,8 @@
 }
 
 #sizingNoticeBoard {
-    max-width: 450px;
+    /* max-width: 450px; */
+    width: 50%;
     height: auto;
     float: left;
     padding: 25px;
