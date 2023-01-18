@@ -25,14 +25,13 @@ class DogAdmin(admin.ModelAdmin):
 @admin.register(NoticeBoard)
 class NoticeBoardAdmin(admin.ModelAdmin):
     list_display = ["id", "location", "note_bg", "note_pic_1", "note_pic_2"]
-    list_display_links = ["note_pic_1", "note_pic_2"]
+    list_display_links = ["id"]
 
 
 @admin.register(About)
 class AboutAdmin(admin.ModelAdmin):
     list_display = ["id", "section_title_bg", "section_title_eng"]
     list_display_links = ["id"]
-    readonly_fields = ('id',)
 
 
 @admin.register(Donation)
