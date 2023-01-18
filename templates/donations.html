@@ -11,6 +11,7 @@
   {% endwith %}
   <div class="parent" style="text-align: center;  background-color: #fff">
     <h2>{% trans "WE THANK YOU ALL FOR SUPPORTING US" %}</h2>
+    <br>
     <h3>{% trans "LAST MONTH WE RECEIVED HELP FROM" %}</h3>
     <br>
     {% for instance in dataDonations %}
@@ -26,7 +27,6 @@
     {% endfor %}
     <br>
   </div>
-  <br>
   <div class="parent">
     <div>
       <h2>{% trans "VIRTUAL ADOPTION" %}</h2>
@@ -47,7 +47,6 @@
       {% endif %}
     {% endfor %}
   </div>
-  <br>
   <div class="parent" style="text-align: center;background-color: #fff">
     <h2>{% trans "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS" %}</h2>
     {% for instance in dataPeople %}
@@ -65,8 +64,7 @@
     {% endfor %}
     <br>
   </div>
-  <br>
-  <br>
+ 
   <div class="parent">
     <h2>{% trans "DONATION METHODS" %}</h2>
     <div>

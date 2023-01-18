@@ -1,0 +1,64 @@
+
+/* Dog Gallery */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/*responsible for the size of the entire wrapper*/
+/* controls margins between boxes*/
+.wrapper {
+  padding: 25px;
+  display: grid;
+  grid-gap: 50px;
+  margin: 20 40;
+  margin-top: 0px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: minmax(auto, auto);
+}
+
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    padding: 0px;
+    grid-gap:0px;
+  }
+}
+
+
+/*controls the dog card. Add a dog outline as a background image to make loading look better and in case links are broken have a substitute in place as a check in the template.*/
+.wrapper>* {
+  background-color: #fff;
+  color: rgb(10, 10, 46);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper>* {
+    padding: 0px;
+    padding-top: 5px;
+  }
+}
+
+.virtual-adopter-block {
+  position: relative;
+  bottom: 72px;
+  text-align: center;
+  background-color: #90760093;
+  color: rgb(255, 255, 255);
+  width: auto;
+  font-size: 18px;
+  margin-bottom: -60px;
+  border: solid black 3px;
+  border-left: none;
+  border-right: none;
+}
+
+#Dog:hover{
+    background-color: rgb(200, 200, 200);
+    cursor: pointer;
+  }
+  

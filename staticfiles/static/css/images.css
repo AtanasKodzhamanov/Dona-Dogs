@@ -13,7 +13,7 @@
 
 @media only screen and (max-width: 1111px) {
     #sizingGallery {
-        max-width: 100%;
+        width: 100%;
         height: auto;
     }
 }
@@ -26,12 +26,12 @@
 
 @media only screen and (max-width: 1111px) {
     #sizingAdoptions {
-        width: 90%;
+        width: 100%;
     }
 }
 
 #sizingDonations {
-    width: 350px;
+    max-width: 400px;
     height: auto;
 }
 
@@ -68,41 +68,28 @@
 
 @media only screen and (max-width: 600px) {
     #sizingNoticeBoard {
-        max-width: 175px;
-        height: auto;
-        margin-left: 15px;
-        margin-right: 5px;
-        margin-bottom: 5px;
-        margin-top: 20px;
-        padding: 3px;
+        width: 100vw;
+        margin:0px;
+        margin-bottom:3px;
+        padding: 0px;
     }
 }
 
-#sizingDonationsSlide {
-    max-width: 35%;
-    height: auto;
-    float: left;
-    padding: 25px;
-    padding-top: 15px;
 
+#sizingDonationsSlide {
+    width: 50%;
+    padding: 25px;
 }
 
 @media only screen and (max-width: 600px) {
     #sizingDonationsSlide {
-        max-width: 150px;
-        max-height: 150px;
-        height: auto;
-        margin-left: 15px;
-        margin-right: 5px;
-        margin-bottom: 5px;
-        margin-top: 20px;
-        padding: 3px
+        padding: 0px;
     }
 }
 
 #sizingAdoptedPuppy {
     width: 50%;
-    padding: 15px;
+    padding: 25px;
 }
 
 @media only screen and (max-width: 600px) {

@@ -19,24 +19,13 @@
                 src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0&appId=708457490982348&autoLogAppEvents=1"
                 nonce="fD8p5ofw"></script>
     {% endif %}
-    {% with location="DogAlbum" %}
-        {% include "subtemplates/noticeboard.html" %}
-    {% endwith %}
+
     {% if L == "bg" %}
         <h1>{{ dog.name_bg }}</h1>
     {% else %}
         <h1>{{ dog.name_eng }}</h1>
     {% endif %}
-    <hr>
     <div class="story-container-dog-album">
-        <h2>
-            {% if dog.gender == "F" %}
-                {% trans "Her story" %}
-            {% else %}
-                {% trans "His story" %}
-            {% endif %}
-        </h2>
-        {% comment %} <img style="max-width:200px" src="{% static "/images/donalogo.png" %}" alt="dog profile pic"> {% endcomment %}
         {% if L == "bg" %}
             <p>{{ dog.story_bg }}</p>
         {% else %}
@@ -57,7 +46,6 @@
     {% if dog.adoption_pic_after_1 %}
         <h2>{% trans "Before adoption" %}</h2>
     {% endif %}
-    <br>
     <br>
     <div class="image-container-dog-album">
         {% if dog.profile_pic %}

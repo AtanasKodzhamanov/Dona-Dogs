@@ -2,6 +2,7 @@
 {% extends "common.html" %}
 {% load static %}
 {% load i18n %}
+{% load truncatetext %}
 {% get_current_language as L %}
 {% block page_content %}
   {% comment %} <div id="slideshow">
@@ -40,7 +41,7 @@
     {% for instance in dataDogs %}
       {% if instance.fields.status == "Active" %}
         <div id="Dog"
-             class="panel, thumbnail, popup"
+             class="panel, thumbnail"
              vaName="{{ instance.fields.va_name_eng }}"
              gender="{{ instance.fields.gender }}"
              pk="{{ instance.pk }}">
@@ -51,19 +52,19 @@
               {{ instance.fields.name_eng }}
             {% endif %}
           </h1>
-          <p class="popuptext" id="myPopup">
-            {% if L == "bg" %}
-              {{ instance.fields.story_bg|safe|truncatewords:21 }}
-            {% else %}
-              {{ instance.fields.story_eng|safe|truncatewords:21 }}
-            {% endif %}
-          </p>
           <img id="sizingGallery"
                decoding="async"
                lazy-sizes="auto"
                class="roundDogImage"
                loading="lazy"
                src="{{ instance.fields.profile_pic }}"/>
+               <p>
+                {% if L == "bg" %}
+                  {{ instance.fields.story_bg|safe|truncatetext:130 }}
+                {% else %}
+                  {{ instance.fields.story_eng|safe|truncatetext:130 }}
+                {% endif %}
+              </p>  
         </div>
       {% endif %}
     {% endfor %}
@@ -116,22 +117,16 @@
   <h2>{% trans "Last month's donations" %}</h2>
   <br>
   {% for donation in donation_stories  %}
-    <div id="slides-container"  style="max-width: 1500px;  margin:auto;">
-      <div class="slides-donations fade">
+    <div id="slides-container">
+      <div class="slides-donations fade" style="display: flex">
         {% if donation.donation_pic_1 %}<img id="sizingDonationsSlide" src={{ donation.donation_pic_1 }}>{% endif %}
         {% if donation.donation_pic_2 %}<img id="sizingDonationsSlide" src={{ donation.donation_pic_2 }}>{% endif %}
-        {% if L == "bg" %}
-          <p>{{ donation.donation_text_bg|safe }}</p>
-        {% else %}
-          <p>{{ donation.donation_text_eng|safe }}</p>
-        {% endif %}
-        <br>
-        {% comment %} <p>
-          {% trans "You can see more information about last month's donations " %} <a id="hyperlink" href="/donations/history/{{ date_pk }}/">{% trans "here" %}</a>.
-        </p> {% endcomment %}
       </div>
     </div>
-  {% endfor %}
+  {% endfor %}        
+  {% comment %} <p>
+      {% trans "You can see more information about last month's donations " %} <a id="hyperlink" href="/donations/history/{{ date_pk }}/">{% trans "here" %}</a>.
+  </p>  {% endcomment %}
   <br>
   <div id="dots-container" style="display: flex; justify-content: center;">
     {% comment %} JS will append dots here {% endcomment %}
@@ -152,7 +147,7 @@
   </div>
 
 
-  <script src="{% static 'js/slides.js' %}"></script>
+  <script src="{% static 'js/donationSlides.js' %}"></script>
   <script src="{% static 'js/popupInfo.js' %}"></script>
   <script src="{% static 'js/redirectToDogAlbum.js' %}"></script>
   {% comment %} <script src="{% static 'js/showMoreText.js' %}"></script> {% endcomment %}

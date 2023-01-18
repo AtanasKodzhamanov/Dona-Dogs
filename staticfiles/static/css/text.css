@@ -109,13 +109,12 @@ p.pAdjustment {
 }
 
 
-/* Alternative language button
-
-.languageText {
-    padding:25px;
-    text-decoration: underline;
+.compressedText {
+    max-width: 70%;
+  }
+  
+@media only screen and (max-width: 600px) {
+.compressedText {
+    max-width: 95%;
 }
-.languageText:hover {
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-} */
+}

@@ -2,6 +2,7 @@
 {% extends "common.html" %}
 {% load static %}
 {% load i18n %}
+{% load truncatetext %}
 {% get_current_language as L %}
 {% block page_content %}
   {% with location="AllDogs" %}
@@ -48,19 +49,13 @@
               {{ instance.fields.name_eng }}
             {% endif %}
           </h1>
-          <p class="popuptext" id="myPopup">
-            {% if L == "bg" %}
-              {{ instance.fields.story_bg|safe|truncatewords:21 }}
-            {% else %}
-              {{ instance.fields.story_eng|safe|truncatewords:21 }}
-            {% endif %}
-          </p>
+
           <img id="sizingGallery"
                decoding="async"
                lazy-sizes="auto"
                class="roundDogImage"
                loading="lazy"
-               src="{{ instance.fields.profile_pic }}"/>
+               src="{{ instance.fields.profile_pic }}"/>  
           {% if instance.fields.va_name_eng %}
             <div class="virtual-adopter-block">
               {% trans "Virtually Adopted" %}
@@ -72,6 +67,13 @@
               {% endif %}
             </div>
           {% endif %}
+          <p>
+            {% if L == "bg" %}
+              {{ instance.fields.story_bg|safe|truncatetext:130 }}
+            {% else %}
+              {{ instance.fields.story_eng|safe|truncatetext:130 }}
+            {% endif %}
+          </p>  
         </div>
       {% endif %}
     {% endfor %}

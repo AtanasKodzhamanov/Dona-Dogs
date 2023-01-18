@@ -80,6 +80,7 @@ TEMPLATES = [
 
             ], 'libraries':  {
                 'shuffle': 'DogShelter.web.templatestags.shuffle',
+                "truncatetext": "DogShelter.web.templatestags.truncatetext",
             }
         },
     },
