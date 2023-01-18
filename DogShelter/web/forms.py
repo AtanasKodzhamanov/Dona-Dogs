@@ -58,7 +58,7 @@ class vaStatusForm(forms.Form):
 
 
 class genderFilterForm(forms.Form):
-    label = "",
+
     gender = forms.CharField(
         widget=Select(choices=(
             ("all", _("All genders")),
@@ -70,6 +70,10 @@ class genderFilterForm(forms.Form):
         'name': 'genderFilter',
         'id': 'genderFilter',
     })
+
+    def __init__(self, *args, **kwargs):
+        super(genderFilterForm, self).__init__(*args, **kwargs)
+        self.fields['gender'].label = ""
 
 # Subscribe for the newsletter form
 
