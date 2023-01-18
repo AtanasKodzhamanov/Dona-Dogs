@@ -1,0 +1,94 @@
+
+/* content containers in About, Donations, Adoptions */
+.parent {
+    background-color: rgb(245, 245, 245);
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 3px;
+    max-width: 1500px;
+  }
+  
+@media only screen and (max-width: 1111px) {
+    .parent {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0.2rem;
+    }
+}
+
+
+.child {
+    display: inline-block;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 1111px) {
+    .child {
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 0px;
+    }
+}
+
+.simplechild {
+    display: inline-block;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.childnamebox {
+    display: inline-block;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 0%;
+    border: solid black 0.5px;
+
+
+}
+
+
+/* content containers in Dog Album */
+
+.story-container-dog-album {
+    background-color: rgb(245, 245, 245);
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    max-width: 1500px;
+  }
+  
+@media only screen and (max-width: 600px) {
+    .story-container-dog-album {
+    margin: 0px;
+    padding: 0px;
+    }
+}
+
+.image-container-dog-album {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25%, 40%));
+    grid-gap: 20px;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .image-container-dog-album {
+    display: block;
+    }
+}
+
+.image-dog-album {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
