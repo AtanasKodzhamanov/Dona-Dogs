@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% extends 'common.html' %}
+{% load static %}
 {% load i18n %}
 {% get_current_language as L %}
 {% block page_content %}
@@ -110,7 +111,7 @@
         <br>
         <div>
           {% if L == "bg" %}
-            <p>{{ instance.fields.section_desc_bg }}</p>
+            <p >{{ instance.fields.section_desc_bg }}</p>
           {% else %}
             <p>{{ instance.fields.section_desc_eng }}</p>
           {% endif %}
@@ -219,5 +220,10 @@
       <hr>
     {% endif %}
   {% endfor %}
+  <div id="pastDonations">
+  </div>
 </div>
+
+<script src="{% static 'js/pastDonations.js' %}"></script>
+
 {% endblock %}

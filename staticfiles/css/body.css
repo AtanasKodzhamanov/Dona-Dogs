@@ -53,3 +53,26 @@ body {
       padding-bottom: 0px;
     }
   }
+
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 10px;
+}
+
+a.hyperlink {
+  color: rgb(109, 109, 109) !important;
+  text-decoration: none !important;
+}
+
+a.hyperlink:hover {
+  color: rgb(77, 77, 77) !important;
+  font-weight: bold !important;
+}
+.year-heading {
+
+  cursor: pointer;
+}

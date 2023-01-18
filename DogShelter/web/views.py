@@ -53,6 +53,7 @@ class show_donation_story(ListView):
         # return context into donationNames and donationStories
         context['donation_names'] = donation_names
         context['donations'] = donations
+        context['subscribeForm'] = renderCommon(self.request)
         return context
 
 

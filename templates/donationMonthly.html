@@ -4,10 +4,10 @@
 {% load i18n %}
 {% get_current_language as L %}
 {% block page_content %}
-  <h1>{% trans "DONATIONS" %} - {{ date_pk }}</h1>
+  <h1>{% trans "DONATIONS" %}</h1>
   <hr>
   {{ donation.date }}
-  <div class="parent" style="text-align: center;  background-color: #cca43b">
+  <div class="parent" style="text-align: center;">
     <h2>{% trans "WE THANK YOU ALL FOR SUPPORTING US" %}</h2>
     <br>
     {% for donation in donation_names %}
@@ -26,10 +26,10 @@
   {% for donation in donations %}
     {% if L == "bg" %}
       <h2>{{ donation.title_bg }}</h2>
-      <p>{{ donation.donation_text_bg }}</p>
+      <p class="compressedText">{{ donation.donation_text_bg }}</p>
     {% else %}
       <h2>{{ donation.title_eng }}</h2>
-      <p>{{ donation.donation_text_eng }}</p>
+      <p class="compressedText">{{ donation.donation_text_eng }}</p>
     {% endif %}
     <div class="image-container-dog-album">
       {% if donation.donation_pic_1 %}
