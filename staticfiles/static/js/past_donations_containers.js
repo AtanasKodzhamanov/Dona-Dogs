@@ -11,9 +11,11 @@ function createContainer() {
   while (year < currentYear || (year == currentYear && month < currentMonth)) {
     // create new div container for each year
     const yearContainer = document.createElement("div");
+    const monthsContainer = document.createElement("div");
     yearContainer.classList.add("parent");
     yearContainer.classList.add("year-heading");
     container.appendChild(yearContainer);
+    container.appendChild(monthsContainer);
 
     const yearHeading = document.createElement("h2");
     yearHeading.innerText = year;
@@ -23,7 +25,7 @@ function createContainer() {
     const gridContainer = document.createElement("div");
     gridContainer.classList.add("grid-container");
     gridContainer.style.display = "none";
-    yearContainer.appendChild(gridContainer);
+    monthsContainer.appendChild(gridContainer);
 
     while (
       (year == currentYear && month <= currentMonth) ||
@@ -55,7 +57,7 @@ function createContainer() {
         break;
       }
     }
-    yearHeading.addEventListener("click", function () {
+    yearContainer.addEventListener("click", function () {
       if (gridContainer.style.display === "none") {
         gridContainer.style.display = "grid";
       } else {
