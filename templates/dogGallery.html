@@ -34,7 +34,7 @@
     </div>
   </div>
 
-  <div class="wrapper" id="dogList">
+  <div class="wrapper">
     {% for instance in dataDogs %}
       {% if instance.fields.status == "Active" %}
         <div id="Dog"
@@ -79,5 +79,6 @@
     {% endfor %}
   </div>
   <script src="{% static 'js/dog_album_redirect.js' %}"></script>
-  <script src="{% static 'js/gallery_filters.js' %}"></script>
+  <script src="{% static 'js/gallery_name_search.js' %}"></script>
+  <script src="{% static 'js/gallery_other_filters.js' %}"></script>
 {% endblock %}
