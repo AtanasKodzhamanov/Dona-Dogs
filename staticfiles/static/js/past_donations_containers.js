@@ -1,3 +1,6 @@
+// Create a section that displays all past donations with each year having as a parent container that contains months.
+// Months would then link to the donation history page for that month.
+
 function createContainer() {
   const container = document.getElementById("pastDonations");
   let year = 2022;
@@ -6,7 +9,7 @@ function createContainer() {
   const currentMonth = currentDate.getMonth();
   const currentYear = currentDate.getFullYear();
   while (year < currentYear || (year == currentYear && month < currentMonth)) {
-    //create new div container for each year
+    // create new div container for each year
     const yearContainer = document.createElement("div");
     yearContainer.classList.add("parent");
     yearContainer.classList.add("year-heading");
@@ -16,7 +19,7 @@ function createContainer() {
     yearHeading.innerText = year;
     yearContainer.appendChild(yearHeading);
 
-    //create new grid container for months within each year
+    // create new grid container for months within each year
     const gridContainer = document.createElement("div");
     gridContainer.classList.add("grid-container");
     gridContainer.style.display = "none";
