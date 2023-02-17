@@ -8,6 +8,7 @@ function createContainer() {
   const currentDate = new Date();
   const currentMonth = currentDate.getMonth();
   const currentYear = currentDate.getFullYear();
+
   while (year < currentYear || (year == currentYear && month < currentMonth)) {
     // create new div container for each year
     const yearContainer = document.createElement("div");
@@ -28,7 +29,7 @@ function createContainer() {
     monthsContainer.appendChild(gridContainer);
 
     while (
-      (year == currentYear && month <= currentMonth) ||
+      (year == currentYear && month < currentMonth) ||
       year < currentYear
     ) {
       const monthName = new Date(year, month, 1).toLocaleString("default", {
@@ -45,6 +46,7 @@ function createContainer() {
       link.href = window.location.href + `history/${year}-${monthName}`;
       const h3 = document.createElement("h3");
       // h3.innerText = `${monthNameFull}`;
+      // Need to deal with translation of month names
       h3.innerText = `${year} / ${month + 1}`;
       link.appendChild(h3);
       link.classList.add("hyperlink");
