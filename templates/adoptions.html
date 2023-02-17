@@ -5,12 +5,10 @@
   {% load i18n %}
   {% load shuffle %}
   {% get_current_language as L %}
-  <h1>{% trans "ADOPTIONS" %}</h1>
-  <hr>
   {% with location="Adoptions" %}
     {% include "subtemplates/noticeboard.html" %}
   {% endwith %}
-  {% comment %} <h2>{% trans "SOME OF OUR PAST ADOPTIONS" %}</h2> {% endcomment %}
+  <h2>{% trans "PAST ADOPTIONS" %}</h2>
   <hr>
   {% for year in years %}
     <div class="AdoptionExpand" id="AdoptionExpand">

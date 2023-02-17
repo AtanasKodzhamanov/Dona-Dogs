@@ -4,8 +4,6 @@
 {% get_current_language as L %}
 {% block page_content %}
   {% load static %}
-  <h1>{% trans "CLINIC" %}</h1>
-  <hr>
   {% with location="Infirmery" %}
     {% include "subtemplates/noticeboard.html" %}
   {% endwith %}
