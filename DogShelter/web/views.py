@@ -161,7 +161,10 @@ def show_infirmary(request):  # dashboard
         'python', NoticeBoard.objects.all().order_by("order"))
     dataAbout = serializers.serialize(
         'python', About.objects.all().order_by("order"))
+    about_pic_fields = [f'about_pic_{i}' for i in range(1, 11)]
+
     context = {
+        'about_pic_fields': about_pic_fields,
         'subscribeForm': renderCommon(request),
         "dataDogs": dataDogs,
         "dataAbout": dataAbout,
@@ -175,8 +178,9 @@ def show_about(request):
         'python', NoticeBoard.objects.all().order_by("order"))
     dataAbout = serializers.serialize(
         'python', About.objects.all().order_by("order"))
-
+    about_pic_fields = [f'about_pic_{i}' for i in range(1, 11)]
     context = {
+        'about_pic_fields': about_pic_fields,
         'subscribeForm': renderCommon(request),
         "dataAbout": dataAbout,
         "dataNoticeBoard": dataNoticeBoard
@@ -195,8 +199,11 @@ def show_adoptions(request):
     years = set(dogs.values_list("adoption_year", flat=True))
     # Sort years in descending order
     years = sorted(years, reverse=True)
+    field_names = ['adoption_pic_after_1',
+                   'adoption_pic_after_2', 'adoption_pic_after_3']
 
     context = {
+        'field_names': field_names,
         "years": years,
         "dogs": dogs,
         'subscribeForm': renderCommon(request),
@@ -226,8 +233,9 @@ def show_donations(request):
 
     dataDonations = set(Donation.objects.values_list(
         "person_name_bg", "person_name_eng").filter(date=last_month).order_by("person_name_bg"))
-
+    about_pic_fields = [f'about_pic_{i}' for i in range(1, 11)]
     context = {
+        'about_pic_fields': about_pic_fields,
         'subscribeForm': renderCommon(request),
         "last_month": last_month,
         "dataPeople": dataPeople,

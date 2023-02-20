@@ -4,6 +4,7 @@
   {% load static %}
   {% load i18n %}
   {% load shuffle %}
+  {% load field_loop %}
   {% get_current_language as L %}
   {% with location="Adoptions" %}
     {% include "subtemplates/noticeboard.html" %}
@@ -25,11 +26,13 @@
             {% else %}
               <h2>{{ adoption.fields.name_eng }}</h2>
             {% endif %}
+
             {% if L == "bg" %}
               <h3>{{ adoption.fields.adoption_country_bg }}</h3>
             {% else %}
               <h3>{{ adoption.fields.adoption_country_eng }}</h3>
             {% endif %}
+
             {% if adoption.fields.adoption_story_eng == "" %}
               <div>
                 <p class="pAdjustment">
@@ -51,6 +54,7 @@
                 </p>
               </div>
             {% endif %}
+
             <div class="child">
               <img id="sizingAdoptions"
                    decoding="async"
@@ -59,36 +63,20 @@
                    loading="lazy"
                    src="{{ adoption.fields.profile_pic }}"/>
             </div>
-            {% if adoption.fields.adoption_pic_after_1 %}
-              <div class="child">
-                <img id="sizingAdoptions"
-                     decoding="async"
-                     lazy-sizes="auto"
-                     class="roundDogImage"
-                     loading="lazy"
-                     src="{{ adoption.fields.adoption_pic_after_1 }}"/>
-              </div>
-            {% endif %}
-            {% if adoption.fields.adoption_pic_after_2 %}
-              <div class="child">
-                <img id="sizingAdoptions"
-                     decoding="async"
-                     lazy-sizes="auto"
-                     class="roundDogImage"
-                     loading="lazy"
-                     src="{{ adoption.fields.adoption_pic_after_2 }}"/>
-              </div>
-            {% endif %}
-            {% if adoption.fields.adoption_pic_after_3 %}
-              <div class="child">
-                <img id="sizingAdoptions"
-                     decoding="async"
-                     lazy-sizes="auto"
-                     class="roundDogImage"
-                     loading="lazy"
-                     src="{{ adoption.fields.adoption_pic_after_3 }}"/>
-              </div>
-            {% endif %}
+
+            {% for field_name in field_names %}
+              {% if adoption.fields|field_loop:field_name %}
+                <div class="child">
+                  <img id="sizingAdoptions"
+                      decoding="async"
+                      lazy-sizes="auto"
+                      class="roundDogImage"
+                      loading="lazy"
+                      src="{{ adoption.fields|field_loop:field_name }}"/>
+                </div>
+              {% endif %}
+            {% endfor %}
+
           </div>
         {% endif %}
       {% endfor %}
