@@ -9,6 +9,8 @@ from DogShelter.web.models import Dog, DonationStory, NoticeBoard, About, Donati
 from django.utils.translation import activate
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import DetailView, ListView
+from django.forms.models import model_to_dict
+
 
 # Create your views here.
 # class SignUpView(views.CreateView):
@@ -50,9 +52,13 @@ class show_donation_story(ListView):
         donations = self.model.objects.filter(
             date__year=date.year, date__month=date.month)
 
+        donation_pic_fields = [f'donation_pic_{i}' for i in range(1, 7)]
+        donations_data = [model_to_dict(donation) for donation in donations]
+
         # return context into donationNames and donationStories
+        context['donation_pic_fields'] = donation_pic_fields
         context['donation_names'] = donation_names
-        context['donations'] = donations
+        context['donations'] = donations_data
         context['subscribeForm'] = renderCommon(self.request)
         return context
 

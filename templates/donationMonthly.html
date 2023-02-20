@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 {% extends "common.html" %}
 {% load static %}
+{% load field_loop %}
 {% load i18n %}
 {% get_current_language as L %}
 {% block page_content %}
-  <h1>{% trans "DONATIONS" %}</h1>
-  <hr>
   {{ donation.date }}
   <div class="parent" style="text-align: center;">
     <h2>{% trans "WE THANK YOU ALL FOR SUPPORTING US" %}</h2>
@@ -32,60 +31,18 @@
       <p class="compressedText">{{ donation.donation_text_eng }}</p>
     {% endif %}
     <div class="image-container-dog-album">
-      {% if donation.donation_pic_1 %}
-        <div >
-          <img class="image-dog-album"
-               decoding="async"
-               lazy-sizes="auto"
-               loading="lazy"
-               src="{{ donation.donation_pic_1 }}"/>
-        </div>
-      {% endif %}
-      {% if donation.donation_pic_2 %}
-        <div >
-          <img class="image-dog-album"
-               decoding="async"
-               lazy-sizes="auto"
-               loading="lazy"
-               src="{{ donation.donation_pic_2 }}"/>
-        </div>
-      {% endif %}
-      {% if donation.donation_pic_3 %}
-        <div >
-          <img class="image-dog-album"
-               decoding="async"
-               lazy-sizes="auto"
-               loading="lazy"
-               src="{{ donation.donation_pic_3 }}"/>
-        </div>
-      {% endif %}
-      {% if donation.donation_pic_4 %}
-        <div >
-          <img class="image-dog-album"
-               decoding="async"
-               lazy-sizes="auto"
-               loading="lazy"
-               src="{{ donation.donation_pic_4 }}"/>
-        </div>
-      {% endif %}
-      {% if donation.donation_pic_5 %}
-        <div>
-          <img class="image-dog-album"
-               decoding="async"
-               lazy-sizes="auto"
-               loading="lazy"
-               src="{{ donation.donation_pic_5 }}"/>
-        </div>
-      {% endif %}
-      {% if donation.donation_pic_6 %}
-        <div >
-          <img class="image-dog-album"
-               decoding="async"
-               lazy-sizes="auto"
-               loading="lazy"
-               src="{{ donation.donation_pic_6 }}"/>
-        </div>
-      {% endif %}
+      {% for field_name in donation_pic_fields %}
+        {% if donation|field_loop:field_name %}
+          <div>
+            <img class="image-dog-album"
+                decoding="async"
+                lazy-sizes="auto"
+                loading="lazy"
+                src="{{ donation|field_loop:field_name }}"
+                alt="{{ field_name }}">
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
     <br>
     <br>
