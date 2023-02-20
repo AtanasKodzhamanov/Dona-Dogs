@@ -4,21 +4,6 @@
 {% load i18n %}
 {% get_current_language as L %}
 {% block page_content %}
-    <!-- Facebook SDK -->
-    <div id="fb-root"></div>
-    {% if L == "bg" %}
-        <script async
-                defer
-                crossorigin="anonymous"
-                src="https://connect.facebook.net/bg_BG/sdk.js#xfbml=1&version=v15.0&appId=708457490982348&autoLogAppEvents=1"
-                nonce="fD8p5ofw"></script>
-    {% else %}
-        <script async
-                defer
-                crossorigin="anonymous"
-                src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0&appId=708457490982348&autoLogAppEvents=1"
-                nonce="fD8p5ofw"></script>
-    {% endif %}
 
     {% if L == "bg" %}
         <h1>{{ dog.name_bg }}</h1>
@@ -94,19 +79,16 @@
             <img class="image-dog-album"
                  src="{{ dog.pic_6 }}"
                  alt="dog pic"
-                 id="fullscreen">
         {% endif %}
         {% if dog.adoption_pic_after_2 %}
             <img class="image-dog-album"
                  src="{{ dog.pic_6 }}"
                  alt="dog pic"
-                 id="fullscreen">
         {% endif %}
         {% if dog.adoption_pic_after_3 %}
             <img class="image-dog-album"
                  src="{{ dog.pic_6 }}"
                  alt="dog pic"
-                 id="fullscreen">
         {% endif %}
     </div>
     <br>
@@ -116,7 +98,5 @@
         </div>
     </div>
     <br>
-    {% comment %} <div style="text-align: center;">
-        <div class="fb-comments" data-width="500" data-numposts="5"></div>
-    </div> {% endcomment %}
+
 {% endblock %}
