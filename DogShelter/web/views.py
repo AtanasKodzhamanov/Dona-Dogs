@@ -168,7 +168,6 @@ def show_infirmary(request):  # dashboard
     dataAbout = serializers.serialize(
         'python', About.objects.all().order_by("order"))
     about_pic_fields = [f'about_pic_{i}' for i in range(1, 11)]
-
     context = {
         'about_pic_fields': about_pic_fields,
         'subscribeForm': renderCommon(request),
