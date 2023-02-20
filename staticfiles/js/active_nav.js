@@ -16,24 +16,3 @@ navLinks.forEach((link) => {
     link.parentElement.classList.add("active");
   }
 });
-
-// The code below is responsible for redirecting the user to the dog gallery and adoptions page.
-// Kept as part of the active_nav.js file for simplicity.
-
-// Select the "Show All Dogs" button and add an event listener to redirect to the dog gallery page
-let showAllDogsBtn = document.getElementById("showAllDogs");
-if (showAllDogsBtn) {
-  showAllDogsBtn.addEventListener("click", function (event) {
-    event.preventDefault();
-    window.location.href = "/dogGallery";
-  });
-}
-
-// Select the "Show All Adoptions" button and add an event listener to redirect to the adoptions page
-let showAllAdoptionsBtn = document.getElementById("showAllAdoptions");
-if (showAllAdoptionsBtn) {
-  showAllAdoptionsBtn.addEventListener("click", function (event) {
-    event.preventDefault();
-    window.location.href = "/adoptions";
-  });
-}
