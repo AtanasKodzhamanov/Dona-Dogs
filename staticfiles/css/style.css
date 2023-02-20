@@ -107,11 +107,6 @@ max-height: 1000px; */
 
 }
 
-/*Controls image corner rounding*/
-.roundDogImage {
-  border-radius: 0%;
-}
-
 .virtual-adopter-block {
   position: relative;
   bottom: 72px;
