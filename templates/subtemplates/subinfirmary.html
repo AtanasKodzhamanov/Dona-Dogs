@@ -4,7 +4,7 @@
 {% block page_content %}
   {% load static %}
   {% for instance in dataDogs %}
-    {% if instance.fields.status == 'Sick' and instance.fields.story_eng %}
+    {% if instance.fields.story_eng %}
       <div class="parent">
         <h2>
           {% if L == "bg" %}

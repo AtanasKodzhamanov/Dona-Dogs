@@ -9,7 +9,7 @@
   {% with location="About" %}
     {% include "subtemplates/noticeboard.html" %}
   {% endwith %}
-  {% for instance in dataAbout %}
+  {% for instance in contentContainer %}
     {% if instance.fields.location == "About" %}
       <div class="parent">
         {% if L == "bg" %}
@@ -26,7 +26,7 @@
             <p class="pAdjustment">{{ instance.fields.section_desc_eng|safe }}</p>
           </div>
         {% endif %}
-        {% for field_name in about_pic_fields %}
+        {% for field_name in content_containter_pics %}
           {% if instance.fields|field_loop:field_name %}
             <div class="child">
               <img id="sizingAdoptions"

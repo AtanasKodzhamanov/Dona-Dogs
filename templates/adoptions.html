@@ -18,28 +18,28 @@
           <h2>{{ year }}</h2>
         </div>
       </div>
-      {% for adoption in dataAdoptions %}
-        {% if adoption.fields.status == "Adopted" and adoption.fields.adoption_year == year %}
+      {% for dog in dataDogs %}
+        {% if dog.fields.status == "Adopted" and dog.fields.adoption_year == year %}
           <div class="parent" id="AdoptionCard" style="display: none">
             {% if L == "bg" %}
-              <h2>{{ adoption.fields.name_bg }}</h2>
+              <h2>{{ dog.fields.name_bg }}</h2>
             {% else %}
-              <h2>{{ adoption.fields.name_eng }}</h2>
+              <h2>{{ dog.fields.name_eng }}</h2>
             {% endif %}
 
             {% if L == "bg" %}
-              <h3>{{ adoption.fields.adoption_country_bg }}</h3>
+              <h3>{{ dog.fields.adoption_country_bg }}</h3>
             {% else %}
-              <h3>{{ adoption.fields.adoption_country_eng }}</h3>
+              <h3>{{ dog.fields.adoption_country_eng }}</h3>
             {% endif %}
 
-            {% if adoption.fields.adoption_story_eng == "" %}
+            {% if dog.fields.adoption_story_eng == "" %}
               <div>
                 <p class="pAdjustment">
                   {% if L == "bg" %}
-                    {{ adoption.fields.story_bg|safe }}
+                    {{ dog.fields.story_bg|safe }}
                   {% else %}
-                    {{ adoption.fields.story_eng|safe }}
+                    {{ dog.fields.story_eng|safe }}
                   {% endif %}
                 </p>
               </div>
@@ -47,9 +47,9 @@
               <div>
                 <p class="pAdjustment">
                   {% if L == "bg" %}
-                    {{ adoption.fields.adoption_story_bg|safe }}
+                    {{ dog.fields.adoption_story_bg|safe }}
                   {% else %}
-                    {{ adoption.fields.adoption_story_eng|safe }}
+                    {{ dog.fields.adoption_story_eng|safe }}
                   {% endif %}
                 </p>
               </div>
@@ -60,17 +60,17 @@
                    decoding="async"
                    lazy-sizes="auto"
                    loading="lazy"
-                   src="{{ adoption.fields.profile_pic }}"/>
+                   src="{{ dog.fields.profile_pic }}"/>
             </div>
 
             {% for field_name in field_names %}
-              {% if adoption.fields|field_loop:field_name %}
+              {% if dog.fields|field_loop:field_name %}
                 <div class="child">
                   <img id="sizingAdoptions"
                       decoding="async"
                       lazy-sizes="auto"
                       loading="lazy"
-                      src="{{ adoption.fields|field_loop:field_name }}"/>
+                      src="{{ dog.fields|field_loop:field_name }}"/>
                 </div>
               {% endif %}
             {% endfor %}

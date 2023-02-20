@@ -32,14 +32,12 @@
   <div class="parent">
     <div>
       <h2>{% trans "VIRTUAL ADOPTION" %}</h2>
-      <img src="https://as1.ftcdn.net/v2/jpg/03/35/83/52/1000_F_335835242_pRz7nRF2zo2xvUBav7f5WtSonCNqlfjQ.jpg"
-      alt="Dog using laptop computer"
-      style="max-width: 400px; max-height: 400px;">
      </div>
     {% for notice in dataNoticeBoard %}
       {% if notice.fields.location == "Virtual" %}
         <article>
           <div >
+            {% if notice.fields.note_pic_1 %}<img id="sizingAdoptions" src={{ notice.fields.note_pic_1 }}>{% endif %}
             <p>
               {% if L == "bg" %}
                 {{ notice.fields.note_bg|safe }}
@@ -67,9 +65,9 @@
         </div>
       {% endif %}
     {% endfor %}
-    <br>
   </div>
- 
+
+  {% comment %}
   <div class="parent">
     <h2>{% trans "DONATION METHODS" %}</h2>
     <img src="https://ascmv.org/wp-content/uploads/2017/09/iStock-646326890.png"
@@ -90,7 +88,7 @@
         <b>DONA DOGS</b>
       </p>
     </div >
-    {% comment %}
+   
     <div>
       <form action="https://www.paypal.com/donate"
             method="post"
@@ -108,7 +106,7 @@
     {% endcomment %}
   </div>
   <hr>
-  {% for instance in dataAbout %}
+  {% for instance in contentContainer %}
     {% if instance.fields.location == "Donations" %}
       <div class="parent">
         {% if L == "bg" %}
@@ -119,12 +117,12 @@
         <br>
         <div>
           {% if L == "bg" %}
-            <p >{{ instance.fields.section_desc_bg }}</p>
+            <p >{{ instance.fields.section_desc_bg|safe }}</p>
           {% else %}
-            <p>{{ instance.fields.section_desc_eng }}</p>
+            <p>{{ instance.fields.section_desc_eng|safe }}</p>
           {% endif %}
         </div>
-        {% for field_name in about_pic_fields %}
+        {% for field_name in content_containter_pics %}
           {% if instance.fields|field_loop:field_name %}
             <div class="child">
               <img id="sizingDonations"
