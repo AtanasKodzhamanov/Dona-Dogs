@@ -66,10 +66,13 @@ class show_donation_story(ListView):
 class show_dog(DetailView):
     model = Dog
     template_name = "dogProfile.html"
-    queryset = Dog.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        dog_pic_fields = [f'pic_{i}' for i in range(2, 7)]
+        adoption_pic_fields = [f'adoption_pic_after_{i}' for i in range(1, 4)]
+        context['adoption_pic_fields'] = adoption_pic_fields
+        context['dog_pic_fields'] = dog_pic_fields
         context['subscribeForm'] = renderCommon(self.request)
         return context
 
@@ -204,7 +207,7 @@ def show_adoptions(request):
     years = set(dogs.values_list("adoption_year", flat=True))
     # Sort years in descending order
     years = sorted(years, reverse=True)
-    field_names = ['adoption_pic_after_1',
+    field_names = ['pic_2', 'pic_3', 'pic_4', 'pic_5', 'pic_6', 'adoption_pic_after_1',
                    'adoption_pic_after_2', 'adoption_pic_after_3']
 
     context = {

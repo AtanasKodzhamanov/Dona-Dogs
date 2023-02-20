@@ -2,6 +2,8 @@
 {% extends "common.html" %}
 {% load static %}
 {% load i18n %}
+{% load field_loop %}
+{% load get_attribute %}
 {% get_current_language as L %}
 {% block page_content %}
 
@@ -38,59 +40,50 @@
         {% if dog.profile_pic %}
             <img class="image-dog-album"
                  src="{{ dog.profile_pic }}"
-                 alt="dog profile pic"
-                 id="fullscreen">
+                 alt="dog profile pic">
         {% endif %}
-        {% if dog.pic_2 %}<img class="image-dog-album"
-     src="{{ dog.pic_2 }}"
-     alt="dog pic"
-     id="fullscreen">{% endif %}
-        {% if dog.pic_3 %}<img class="image-dog-album"
-     src="{{ dog.pic_3 }}"
-     alt="dog pic"
-     id="fullscreen">{% endif %}
-        {% if dog.pic_4 %}<img class="image-dog-album"
-     src="{{ dog.pic_4 }}"
-     alt="dog pic"
-     id="fullscreen">{% endif %}
-        {% if dog.pic_5 %}<img class="image-dog-album"
-     src="{{ dog.pic_5 }}"
-     alt="dog pic"
-     id="fullscreen">{% endif %}
-        {% if dog.pic_6 %}<img class="image-dog-album"
-     src="{{ dog.pic_6 }}"
-     alt="dog pic"
-     id="fullscreen">{% endif %}
+          
+        {% for field_name in dog_pic_fields %}
+            {% with field=dog|getattribute:field_name %}
+                {% if field %}
+                    <img class="image-dog-album"
+                        src="{{ field }}"
+                        alt="dog pic">
+                {% endif %}
+            {% endwith %}
+        {% endfor %}
+    
     </div>
     <br>
     <br>
     {% if dog.adoption_pic_after_1 %}
         <h2>{% trans "After adoption" %}</h2>
+        <br>
     {% else %}
         <p style="text-align: center;">
-            {% trans "Help us fill this gallery with happy ever after photos. Adopt " %}{{ dog.name_eng }} !!!
+            {% trans "Help us fill this gallery with happy ever after photos. Adopt " %}    
+            {% if L == "bg" %}
+                {{ dog.name_bg }}
+            {% else %}
+                {{ dog.name_eng }}
+            {% endif %} 
+            !!!
         </p>
         <p style="text-align: center;">
             {% trans "To inquire about adoptions you can contact us on DonaDogsFoundation@gmail.com or directly on our Facebook group." %}
         </p>
     {% endif %}
     <div class="image-container-dog-album">
-        {% if dog.adoption_pic_after_1 %}
-            <img class="image-dog-album"
-                 src="{{ dog.pic_6 }}"
-                 alt="dog pic"
-        {% endif %}
-        {% if dog.adoption_pic_after_2 %}
-            <img class="image-dog-album"
-                 src="{{ dog.pic_6 }}"
-                 alt="dog pic"
-        {% endif %}
-        {% if dog.adoption_pic_after_3 %}
-            <img class="image-dog-album"
-                 src="{{ dog.pic_6 }}"
-                 alt="dog pic"
-        {% endif %}
-    </div>
+         {% for field_name in adoption_pic_fields %}
+            {% with field=dog|getattribute:field_name %}
+                {% if field %}
+                    <img class="image-dog-album"
+                        src="{{ field }}"
+                        alt="dog pic">
+                {% endif %}
+            {% endwith %}
+        {% endfor %} 
+    </div>      
     <br>
     <div class="parent" id="showAllDogs">
         <div>
