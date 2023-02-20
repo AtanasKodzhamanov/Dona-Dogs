@@ -5,10 +5,10 @@
 {% load truncatetext %}
 {% get_current_language as L %}
 {% block page_content %}
+
   {% with location="AllDogs" %}
     {% include "subtemplates/noticeboard.html" %}
   {% endwith %}
-  {% comment %} Change class to hidden below and remove comments on filtersButton above, in JS and CSS to have a button that hides and shows the filters below. {% endcomment %}
   
   <div id="filtersContainer" class="display">
     <div id="formsBar">
@@ -16,7 +16,6 @@
         <form action="javascript:void(0)">
           {% csrf_token %}
           {{ nameFilterForm }}
-          {% comment %} <button id="showAllButton" type="button" style="display: none;" onclick="showAllDogs();">All</button> {% endcomment %}
         </form>
       </div>
       <div class="form-group">
@@ -33,8 +32,8 @@
       </div>
     </div>
   </div>
-
-  <div class="wrapper">
+  
+  <div class="wrapper" id="dogList">
     {% for instance in dataDogs %}
       {% if instance.fields.status == "Active" %}
         <div id="Dog"
