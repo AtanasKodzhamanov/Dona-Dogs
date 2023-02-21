@@ -9,51 +9,14 @@
   {% with location="Donations" %}
     {% include "subtemplates/noticeboard.html" %}
   {% endwith %}
-  <div class="parent" style="text-align: center;  background-color: #fff">
-    <h2>{% trans "WE THANK YOU ALL FOR SUPPORTING US" %}</h2>
-    <br>
-    <img src="https://res.cloudinary.com/dxwb5ejff/image/upload/v1676926813/Static/327104738_3336867696578733_6908209498626857260_n_eswll5.jpg" alt="heart image" style="width: 200px; height: 200px;">
+  <div style="border:solid; border-color:orange;">
+    <div class="parent" style="text-align: center;  background-color: #fff">
+      <h2>{% trans "WE THANK YOU ALL FOR SUPPORTING US" %}</h2>
+      <br>
 
-    <h3>{% trans "LAST MONTH WE RECEIVED HELP FROM" %}</h3>
-    <br>
-    {% for instance in dataDonations %}
-      <div style="display: inline-block">
-        <h4 style="padding:5px">
-          {% if L == "bg" %}
-            {{ instance.0 }}
-          {% else %}
-            {{ instance.1 }}
-          {% endif %}
-        </h4>
-      </div>
-    {% endfor %}
-    <br>
-  </div>
-  <div class="parent">
-    <div>
-      <h2>{% trans "VIRTUAL ADOPTION" %}</h2>
-     </div>
-    {% for notice in dataNoticeBoard %}
-      {% if notice.fields.location == "Virtual" %}
-        <article>
-          <div >
-            {% if notice.fields.note_pic_1 %}<img id="sizingAdoptions" src={{ notice.fields.note_pic_1 }}>{% endif %}
-            <p>
-              {% if L == "bg" %}
-                {{ notice.fields.note_bg|safe }}
-              {% else %}
-                {{ notice.fields.note_eng|safe }}
-              {% endif %}
-            </p>
-          </div>
-        </article>
-      {% endif %}
-    {% endfor %}
-  </div>
-  <div class="parent" style="text-align: center;background-color: #fff">
-    <h2>{% trans "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS" %}</h2>
-    {% for instance in dataPeople %}
-      {% if instance.0 %}
+      <h3>{% trans "LAST MONTH WE RECEIVED HELP FROM" %}</h3>
+      <br>
+      {% for instance in dataDonations %}
         <div style="display: inline-block">
           <h4 style="padding:5px">
             {% if L == "bg" %}
@@ -63,10 +26,30 @@
             {% endif %}
           </h4>
         </div>
-      {% endif %}
-    {% endfor %}
+      {% endfor %}
+      <br>
+      <br>
+      <img src="https://res.cloudinary.com/dxwb5ejff/image/upload/v1676926813/Static/327104738_3336867696578733_6908209498626857260_n_eswll5.jpg" alt="heart image" style="width: 200px; height: 200px;">
+    </div>
+    
+    <div class="parent" style="text-align: center;background-color: #fff">
+      <h2>{% trans "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS" %}</h2>
+      {% for instance in dataPeople %}
+        {% if instance.0 %}
+          <div style="display: inline-block">
+            <h4 style="padding:5px">
+              {% if L == "bg" %}
+                {{ instance.0 }}
+              {% else %}
+                {{ instance.1 }}
+              {% endif %}
+            </h4>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
-
+  <br>
   {% comment %}
   <div class="parent">
     <h2>{% trans "DONATION METHODS" %}</h2>
@@ -103,8 +86,9 @@
         <input type="hidden" name="hosted_button_id" value="CL7UWKW3PY6M4" />
       </form>
     </div>
-    {% endcomment %}
+    
   </div>
+  {% endcomment %}
   {% with location="Donations" %}
         {% include "subtemplates/mainContainer.html" %}   
   {% endwith %}
