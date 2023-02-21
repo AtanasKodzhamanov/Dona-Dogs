@@ -476,6 +476,17 @@ class LongPost(models.Model):
         validators=[validate_bulgarian]
     )
 
+    text_color = models.CharField(
+        max_length=7,
+        blank=True,
+        help_text="Въведете шестнадесетичен код на цвета, за да промените цвета на текста (#414141)."
+    )
+
+    background_color = models.CharField(
+        max_length=7,
+        blank=True,
+        help_text="Въведете шестнадесетичен код на цвета, за да промените цвета на текста (#F5F5F5)."
+    )
     visible = models.BooleanField(
         default=True,
         help_text="Скриване или показване на публикацията. Показва се по подразбиране."
