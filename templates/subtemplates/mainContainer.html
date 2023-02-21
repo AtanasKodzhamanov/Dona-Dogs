@@ -11,9 +11,9 @@
                 {{ instance.fields.section_title_eng }}
             {% endif %}
         </h1>
-        {% if instance.fields.text_position == "Top" %}
+        {% if instance.fields.text_position == "top" %}
         <div>
-            <p class="pAdjustment" {% if instance.fields.text_color %} style="color: {{ instance.fields.text_color }};" {% endif %}>
+            <p class="pAdjustment" style="text-align: {{ instance.fields.text_align }};" {% if instance.fields.text_color %} style="color: {{ instance.fields.text_color }};" {% endif %}>
                 {% if L == "bg" %}
                     {{ instance.fields.section_desc_bg|safe }}
                 {% else %}
@@ -35,9 +35,9 @@
             {% endif %}
         {% endfor %}
         
-        {% if instance.fields.text_position == "Bottom" %}
+        {% if instance.fields.text_position == "bottom" %}
         <div>
-            <p class="pAdjustment" {% if instance.fields.text_color %} style="color: {{ instance.fields.text_color }};" {% endif %}>
+            <p class="pAdjustment" style="text-align: {{ instance.fields.text_align }};" {% if instance.fields.text_color %} style="color: {{ instance.fields.text_color }};" {% endif %}>
                 {% if L == "bg" %}
                     {{ instance.fields.section_desc_bg|safe }}
                 {% else %}
