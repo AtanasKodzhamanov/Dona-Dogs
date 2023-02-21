@@ -15,7 +15,7 @@
   </div>
   {% endfor %}
   </div> {% endcomment %}
-  {% with location="Gallery" %}
+  {% with location="Home" %}
     {% include "subtemplates/noticeboard.html" %}
   {% endwith %}
   <h2>{% trans "OUR DOGS" %}</h2>
@@ -129,6 +129,10 @@
   </div>
 <br>
 <br>
+
+{% with location="Home" %}
+  {% include "subtemplates/mainContainer.html" %}
+{% endwith %}
 
   <div class="parent" id="showAllDogs">
     <div>

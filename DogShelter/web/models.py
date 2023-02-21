@@ -253,8 +253,8 @@ class NoticeBoard(models.Model):
     def __str__(self):
         return self.note_eng
 
-    LOCATION_CHOICES = [(x, x) for x in ("Gallery", "About", "Infirmery",
-                                         "Adoptions", "Virtual", "Donations", "AllDogs")]
+    LOCATION_CHOICES = [(x, x) for x in ("Gallery", "About", "Infirmary",
+                                         "Adoptions", "Donations", "Home")]
 
     LOCATION_LENGTH = 25
     DEFAULT_LOCATION = "About"
@@ -350,7 +350,7 @@ class LongPost(models.Model):
         return self.section_title_eng
 
     LOCATION = [(x, x) for x in ("Gallery", "About", "Infirmary",
-                                 "Adoptions", "Virtual", "Donations")]
+                                 "Adoptions", "Donations", "Home")]
 
     MAX_TITLE_LENGTH = 100
     MAX_LOCATION_LENGTH = 25
