@@ -15,6 +15,7 @@ function createContainer() {
     const monthsContainer = document.createElement("div");
     yearContainer.classList.add("parent");
     yearContainer.classList.add("year-heading");
+    yearContainer.classList.add("button-box");
     container.appendChild(yearContainer);
     container.appendChild(monthsContainer);
 
@@ -40,6 +41,7 @@ function createContainer() {
       });
       const item = document.createElement("div");
       item.classList.add("grid-item");
+      item.classList.add("month-container");
       // add ID to each month
 
       const link = document.createElement("a");

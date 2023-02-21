@@ -97,3 +97,76 @@
     max-width: 1500px;  
     margin:auto;
 }
+
+
+/* Buttons */
+
+
+#AdoptionButton:hover {
+    background-color: rgb(200, 200, 200);
+    cursor: pointer;
+}
+
+#showAllDogs:hover {
+    background-color: rgb(200, 200, 200);
+    cursor: pointer;
+}
+
+#showAllAdoptions:hover {
+    background-color: rgb(200, 200, 200);
+    cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+    #AdoptionButton {
+        padding: 10px;
+    }
+    
+    #showAllDogs {
+        padding: 10px;
+    }
+    
+    #showAllAdoptions{
+        padding: 10px;
+    }
+}
+
+
+.year-heading:hover {
+    background-color: rgb(200, 200, 200);
+    cursor: pointer;
+}
+
+.month-container{
+    margin:25px;
+    text-align: center;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .month-container{
+        margin: 0 auto
+    } 
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .grid-container{
+        grid-template-columns:none;
+    }
+}
+
+.month-container:hover {
+    background-color: rgb(200, 200, 200);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .button-box {
+        padding:10px;
+    }
+}
