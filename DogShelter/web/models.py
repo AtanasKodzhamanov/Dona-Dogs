@@ -503,7 +503,7 @@ class LongPost(models.Model):
 
     text_position = models.CharField(
         max_length=6,
-        choices=[('top', 'Top'), ('bottom', 'Botton')],
+        choices=[('top', 'Top'), ('bottom', 'Bottom')],
         default='top',
         help_text="Изберете позицията на текста в контейнера. Горе или долу."
     )

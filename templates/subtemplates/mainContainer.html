@@ -11,6 +11,7 @@
                 {{ instance.fields.section_title_eng }}
             {% endif %}
         </h1>
+        {% if instance.fields.text_position=="Top" %}
         <div>
             <p class="pAdjustment" {% if instance.fields.text_color %} style="color: {{ instance.fields.text_color }};" {% endif %}>
                 {% if L == "bg" %}
@@ -20,6 +21,8 @@
                 {% endif %}
             </p>
         </div>
+        {% endif %}
+
         {% for field_name in content_containter_pics %}
             {% if instance.fields|field_loop:field_name %}
             <div class="child">
@@ -31,6 +34,19 @@
             </div>
             {% endif %}
         {% endfor %}
+        
+        {% if instance.fields.text_position=="Bottom" %}
+        <div>
+            <p class="pAdjustment" {% if instance.fields.text_color %} style="color: {{ instance.fields.text_color }};" {% endif %}>
+                {% if L == "bg" %}
+                    {{ instance.fields.section_desc_bg|safe }}
+                {% else %}
+                    {{ instance.fields.section_desc_eng|safe }}
+                {% endif %}
+            </p>
+        </div>
+        {% endif %}
+
     </div>
     <hr>
     {% endif %}
