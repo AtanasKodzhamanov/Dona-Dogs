@@ -476,6 +476,11 @@ class LongPost(models.Model):
         validators=[validate_bulgarian]
     )
 
+    visible = models.BooleanField(
+        default=True,
+        help_text="Скриване или показване на публикацията. Показва се по подразбиране."
+    )
+
     # photos = models.ManyToManyField(AboutPhoto)
 
 # The following is used to get the last day of the previous month for the "last_month" variable.

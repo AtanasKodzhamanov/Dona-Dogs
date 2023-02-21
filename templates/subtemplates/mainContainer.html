@@ -2,7 +2,7 @@
 {% block page_content %}
 
 {% for instance in contentContainer %}
-    {% if instance.fields.location == location %}
+    {% if instance.fields.location == location and instance.fields.visible %}
     <div class="parent">
         <h1>
             {% if L == "bg" %}
