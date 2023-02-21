@@ -319,7 +319,7 @@ class NoticeBoard(models.Model):
 
     visible = models.BooleanField(
         default=True,
-        help_text="Скриване или показване на публикацията. Показва се по подразбиране. Променете на false, за да скриете."
+        help_text="Скриване или показване на публикацията. Показва се по подразбиране."
     )
 
 # class AboutPhoto(models.Model):

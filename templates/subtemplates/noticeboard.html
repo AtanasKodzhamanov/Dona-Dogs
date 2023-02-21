@@ -3,10 +3,9 @@
 {% block page_content %}
 
   {% for notice in dataNoticeBoard %}
-    {% if notice.fields.location == location %}
+    {% if notice.fields.location == location and notice.fields.visible %}
       <article id="noticeBoard">
         <div>
-          
           {% if notice.fields.section_title_bg %}
           <h2>
             {% if L == "bg" %}
