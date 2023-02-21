@@ -1,12 +1,30 @@
 {% load i18n %}
 {% get_current_language as L %}
 {% block page_content %}
+
   {% for notice in dataNoticeBoard %}
     {% if notice.fields.location == location %}
-      <article style="max-width: 1500px;  margin:auto;">
-        <div id="noticeDiv">
-          {% if notice.fields.note_pic_1 %}<img id="sizingNoticeBoard" src={{ notice.fields.note_pic_1 }}>{% endif %}
-          <p id="noticeText">
+      <article id="noticeBoard">
+        <div>
+          
+          {% if notice.fields.section_title_bg %}
+          <h2>
+            {% if L == "bg" %}
+                {{ notice.fields.section_title_bg }}
+            {% else %}
+                {{ notice.fields.section_title_eng }}
+            {% endif %}
+          </h2>
+          {% endif %}
+
+          {% if notice.fields.note_pic_1 %}<img id="sizingNoticeBoardImgOne" src={{ notice.fields.note_pic_1 }}>
+            <br>
+            <br>
+            <br>
+          {% endif %}
+
+          {% if notice.fields.note_pic_2 %}<img id="sizingNoticeBoardImgTwo" src={{ notice.fields.note_pic_2 }}>{% endif %}
+          <p>
             {% if L == "bg" %}
               {{ notice.fields.note_bg|safe }}
             {% else %}
@@ -14,11 +32,9 @@
             {% endif %}
           </p>
         </div>
-        <div style="text-align:center">
-          <button id="showMoreButton" style="display: none;">Show More</button>
-        </div>
       </article>
       <hr>
     {% endif %}
   {% endfor %}
+
 {% endblock %}

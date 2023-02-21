@@ -92,3 +92,8 @@
     height: auto;
     object-fit: contain;
 }
+
+#noticeBoard{
+    max-width: 1500px;  
+    margin:auto;
+}
