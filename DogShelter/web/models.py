@@ -317,6 +317,11 @@ class NoticeBoard(models.Model):
         validators=[validate_bulgarian]
     )
 
+    visible = models.BooleanField(
+        default=True,
+        help_text="Скриване или показване на публикацията. Показва се по подразбиране. Променете на false, за да скриете."
+    )
+
 # class AboutPhoto(models.Model):
 #     """
 
