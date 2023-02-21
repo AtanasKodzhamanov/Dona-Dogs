@@ -493,6 +493,21 @@ class LongPost(models.Model):
         blank=True,
         help_text="Въведете шестнадесетичен код на цвета, за да промените цвета на контейнера (#F5F5F5)."
     )
+
+    text_align = models.CharField(
+        max_length=6,
+        choices=[('left', 'Left'), ('center', 'Center'), ('right', 'Right')],
+        default='left',
+        help_text="Изберете подравняването на текста за известието. Ляво, дясно или централно."
+    )
+
+    text_position = models.CharField(
+        max_length=6,
+        choices=[('top', 'Top'), ('bottom', 'Botton')],
+        default='top',
+        help_text="Изберете позицията на текста в контейнера. Горе или долу."
+    )
+
     visible = models.BooleanField(
         default=True,
         help_text="Скриване или показване на публикацията. Показва се по подразбиране."
