@@ -4,7 +4,7 @@
 {% for instance in contentContainer %}
     {% if instance.fields.location == location and instance.fields.visible %}
     <div class="parent" {% if instance.fields.background_color %} style="background-color: {{ instance.fields.background_color }};" {% endif %}>
-        <h1>
+        <h1 {% if instance.fields.title_color %} style="color: {{ instance.fields.title_color }};" {% endif %}>
             {% if L == "bg" %}
                 {{ instance.fields.section_title_bg }}
             {% else %}

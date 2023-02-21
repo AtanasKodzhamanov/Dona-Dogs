@@ -482,6 +482,12 @@ class LongPost(models.Model):
         help_text="Въведете шестнадесетичен код на цвета, за да промените цвета на текста (#414141)."
     )
 
+    title_color = models.CharField(
+        max_length=7,
+        blank=True,
+        help_text="Въведете шестнадесетичен код на цвета, за да промените цвета на заглавието (#414141)."
+    )
+
     background_color = models.CharField(
         max_length=7,
         blank=True,
