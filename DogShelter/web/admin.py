@@ -24,7 +24,7 @@ class NoticeBoardAdmin(admin.ModelAdmin):
 
 @admin.register(LongPost)
 class AboutAdmin(admin.ModelAdmin):
-    list_display = ["id", "section_title_bg", "section_title_eng"]
+    list_display = ["id", "location", "section_title_bg", "section_title_eng"]
     list_display_links = ["id"]
 
 
