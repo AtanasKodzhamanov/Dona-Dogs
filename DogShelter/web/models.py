@@ -329,7 +329,7 @@ class NoticeBoard(models.Model):
 #         )
 
 
-class About(models.Model):
+class LongPost(models.Model):
 
     """
 
@@ -339,7 +339,7 @@ class About(models.Model):
     """
 
     class Meta:
-        verbose_name_plural = "About"
+        verbose_name_plural = "Long Posts"
 
     def __str__(self):
         return self.section_title_eng

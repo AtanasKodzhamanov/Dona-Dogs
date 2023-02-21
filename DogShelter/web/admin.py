@@ -1,11 +1,5 @@
-from datetime import timezone
-import datetime
-from django import forms
 from django.contrib import admin
-from DogShelter.web import models
-
-
-from DogShelter.web.models import Dog, NoticeBoard, About, Donation, NewsletterSubscriber, DonationStory
+from DogShelter.web.models import Dog, NoticeBoard, LongPost, Donation, NewsletterSubscriber, DonationStory
 # Register your models here.
 
 
@@ -28,7 +22,7 @@ class NoticeBoardAdmin(admin.ModelAdmin):
     list_display_links = ["id"]
 
 
-@admin.register(About)
+@admin.register(LongPost)
 class AboutAdmin(admin.ModelAdmin):
     list_display = ["id", "section_title_bg", "section_title_eng"]
     list_display_links = ["id"]

@@ -3,7 +3,7 @@ from django.core import serializers
 from django.forms.models import model_to_dict
 from django.views.generic import DetailView, ListView, TemplateView
 from DogShelter.web.forms import SubscribeForm, DogFilterForm, vaStatusForm, genderFilterForm
-from DogShelter.web.models import Dog, DonationStory, NoticeBoard, About, Donation
+from DogShelter.web.models import Dog, DonationStory, NoticeBoard, LongPost, Donation
 
 # responsible for the subscribe form in the footnote of every page
 
@@ -38,7 +38,7 @@ class BaseView(TemplateView):
 
         # get all content container items from the database
         context['contentContainer'] = serializers.serialize(
-            'python', About.objects.all().order_by("order"))
+            'python', LongPost.objects.all().order_by("order"))
 
         context['content_containter_pics'] = [
             f'about_pic_{i}' for i in range(1, 11)]
