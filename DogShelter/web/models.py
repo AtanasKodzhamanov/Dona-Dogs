@@ -248,7 +248,7 @@ class NoticeBoard(models.Model):
     """
 
     class Meta:
-        verbose_name_plural = "Posts"
+        verbose_name_plural = "Notice Board Posts"
 
     def __str__(self):
         return self.note_eng
@@ -257,7 +257,8 @@ class NoticeBoard(models.Model):
                                          "Adoptions", "Virtual", "Donations", "AllDogs")]
 
     LOCATION_LENGTH = 25
-    DEFAULT_LOCATION = "Gallery"
+    DEFAULT_LOCATION = "About"
+    MAX_TITLE_LENGTH = 100
 
     note_eng = models.TextField(
         blank=True,
@@ -300,6 +301,20 @@ class NoticeBoard(models.Model):
         choices=LOCATION_CHOICES,
         default=DEFAULT_LOCATION,
         help_text="Място на съобщението - всяка страница разполага със способност за съобщения."
+    )
+
+    section_title_eng = models.TextField(
+        max_length=MAX_TITLE_LENGTH,
+        blank=True,
+        help_text="Заглавие на секцията на Английски. Не е задължително.",
+        validators=[validate_english]
+    )
+
+    section_title_bg = models.TextField(
+        max_length=MAX_TITLE_LENGTH,
+        blank=True,
+        help_text="Заглавие на секцията на Български. Не е задължително.",
+        validators=[validate_bulgarian]
     )
 
 # class AboutPhoto(models.Model):
