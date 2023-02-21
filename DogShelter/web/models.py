@@ -485,7 +485,7 @@ class LongPost(models.Model):
     background_color = models.CharField(
         max_length=7,
         blank=True,
-        help_text="Въведете шестнадесетичен код на цвета, за да промените цвета на текста (#F5F5F5)."
+        help_text="Въведете шестнадесетичен код на цвета, за да промените цвета на контейнера (#F5F5F5)."
     )
     visible = models.BooleanField(
         default=True,
