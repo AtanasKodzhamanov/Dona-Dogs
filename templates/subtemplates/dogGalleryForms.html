@@ -1,0 +1,24 @@
+{% block page_content %}
+    <div id="filtersContainer" class="display">
+        <div id="formsBar">
+            <div class="form-group">
+                <form action="javascript:void(0)">
+                {% csrf_token %}
+                {{ nameFilterForm }}
+                </form>
+            </div>
+            <div class="form-group">
+                <form action="" method="post">
+                {% csrf_token %}
+                {{ vaStatusForm  }}
+                </form>
+            </div>
+            <div class="form-group">
+                <form action="" method="post" >
+                {% csrf_token %}
+                {{ genderFilterForm  }}
+                </form>
+            </div>
+        </div>
+  </div>
+{% endblock %}

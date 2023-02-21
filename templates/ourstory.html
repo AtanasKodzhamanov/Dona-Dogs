@@ -8,40 +8,9 @@
 
   {% with location="About" %}
     {% include "subtemplates/noticeboard.html" %}
+    {% include "subtemplates/mainContainer.html" %}
   {% endwith %}
-  {% for instance in contentContainer %}
-    {% if instance.fields.location == "About" %}
-      <div class="parent">
-        {% if L == "bg" %}
-          <h1>{{ instance.fields.section_title_bg }}</h1>
-        {% else %}
-          <h1>{{ instance.fields.section_title_eng }}</h1>
-        {% endif %}
-        {% if L == "bg" %}
-          <div>
-            <p class="pAdjustment">{{ instance.fields.section_desc_bg|safe }}</p>
-          </div>
-        {% else %}
-          <div>
-            <p class="pAdjustment">{{ instance.fields.section_desc_eng|safe }}</p>
-          </div>
-        {% endif %}
-        {% for field_name in content_containter_pics %}
-          {% if instance.fields|field_loop:field_name %}
-            <div class="child">
-              <img id="sizingAdoptions"
-                  decoding="async"
-                  lazy-sizes="auto"
-                  loading="lazy"
-                  src="{{ instance.fields|field_loop:field_name }}"/>
-            </div>
-          {% endif %}
-        {% endfor %}
 
-      </div>
-      <hr>
-    {% endif %}
-  {% endfor %}
   <!-- Edit Expense Form -->
   <div>
     <p style="text-align:center">

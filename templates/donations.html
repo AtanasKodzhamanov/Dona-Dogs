@@ -105,41 +105,13 @@
     </div>
     {% endcomment %}
   </div>
-  <hr>
-  {% for instance in contentContainer %}
-    {% if instance.fields.location == "Donations" %}
-      <div class="parent">
-        {% if L == "bg" %}
-          <h2>{{ instance.fields.section_title_bg }}</h2>
-        {% else %}
-          <h2>{{ instance.fields.section_title_eng }}</h2>
-        {% endif %}
-        <br>
-        <div>
-          {% if L == "bg" %}
-            <p >{{ instance.fields.section_desc_bg|safe }}</p>
-          {% else %}
-            <p>{{ instance.fields.section_desc_eng|safe }}</p>
-          {% endif %}
-        </div>
-        {% for field_name in content_containter_pics %}
-          {% if instance.fields|field_loop:field_name %}
-            <div class="child">
-              <img id="sizingDonations"
-                  decoding="async"
-                  lazy-sizes="auto"
-                  loading="lazy"
-                  src="{{ instance.fields|field_loop:field_name }}"/>
-            </div>
-          {% endif %}
-        {% endfor %}
-      
-      </div>
-      <hr>
-    {% endif %}
-  {% endfor %}
+  {% with location="Donations" %}
+        {% include "subtemplates/mainContainer.html" %}   
+  {% endwith %}
+
   <div id="pastDonations">
   </div>
+
 </div>
 
 <script src="{% static 'js/past_donations_containers.js' %}"></script>

@@ -1,0 +1,39 @@
+{% load field_loop %}
+{% block page_content %}
+
+{% for instance in contentContainer %}
+    {% if instance.fields.location == location %}
+    <div class="parent">
+        <h1>
+            {% if L == "bg" %}
+                {{ instance.fields.section_title_bg }}
+            {% else %}
+                {{ instance.fields.section_title_eng }}
+            {% endif %}
+        </h1>
+        <div>
+            <p class="pAdjustment">
+                {% if L == "bg" %}
+                    {{ instance.fields.section_desc_bg|safe }}
+                {% else %}
+                    {{ instance.fields.section_desc_eng|safe }}
+                {% endif %}
+            </p>
+        </div>
+        {% for field_name in content_containter_pics %}
+            {% if instance.fields|field_loop:field_name %}
+            <div class="child">
+                <img id="sizingAdoptions"
+                    decoding="async"
+                    lazy-sizes="auto"
+                    loading="lazy"
+                    src="{{ instance.fields|field_loop:field_name }}"/>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <hr>
+    {% endif %}
+{% endfor %}
+
+{% endblock %}

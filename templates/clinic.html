@@ -4,41 +4,62 @@
 {% load field_loop %}
 {% get_current_language as L %}
 {% block page_content %}
-  {% load static %}
-  {% with location="Infirmery" %}
-    {% include "subtemplates/noticeboard.html" %}
-  {% endwith %}
-  {% for instance in contentContainer %}
-    {% if instance.fields.location == "Infirmary" %}
-      <div class="parent">
-        {% if L == "bg" %}
-          <h1>{{ instance.fields.section_title_bg }}</h1>
-        {% else %}
-          <h1>{{ instance.fields.section_title_eng }}</h1>
-        {% endif %}
-        {% if L == "bg" %}
-          <div>
-            <p class="pAdjustment">{{ instance.fields.section_desc_bg|safe }}</p>
-          </div>
-        {% else %}
-          <div>
-            <p class="pAdjustment">{{ instance.fields.section_desc_eng|safe }}</p>
-          </div>
-        {% endif %}
-        {% for field_name in content_containter_pics %}
-          {% if instance.fields|field_loop:field_name %}
-            <div class="child">
-              <img id="sizingAdoptions"
-                  decoding="async"
-                  lazy-sizes="auto"
-                  loading="lazy"
-                  src="{{ instance.fields|field_loop:field_name }}"/>
-            </div>
-          {% endif %}
-        {% endfor %}
+{% load static %}
+
+{% with location="Infirmery" %}
+  {% include "subtemplates/noticeboard.html" %}
+  {% include "subtemplates/mainContainer.html" %}   
+{% endwith %}
+
+{% for instance in dataDogs %}
+{% if instance.fields.story_eng %}
+  <div class="parent">
+    <h2>
+      {% if L == "bg" %}
+        {{ instance.fields.name_bg }}
+      {% else %}
+        {{ instance.fields.name_eng }}
+      {% endif %}
+    </h2>
+    <p style="max-width:800px;
+              height:auto;
+              margin:auto;
+              text-align:left;
+              padding:15px">
+      {% if L == "bg" %}
+        {{ instance.fields.story_bg }}
+      {% else %}
+        {{ instance.fields.story_eng }}
+      {% endif %}
+    </p>
+    <hr style="max-width:800px;">
+    <div class="child">
+      <img id="sizingAdoptions"
+           decoding="async"
+           lazy-sizes="auto"
+           loading="lazy"
+           src="{{ instance.fields.profile_pic }}"/>
+    </div>
+    {% if instance.fields.pic_2 %}
+      <div class="child">
+        <img id="sizingAdoptions"
+             decoding="async"
+             lazy-sizes="auto"
+             loading="lazy"
+             src="{{ instance.fields.pic_2 }}"/>
       </div>
-      <hr>
     {% endif %}
-  {% endfor %}
-  {% include "subtemplates/subinfirmary.html" %}
+    {% if instance.fields.pic_3 %}
+      <div class="child">
+        <img id="sizingAdoptions"
+             decoding="async"
+             lazy-sizes="auto"
+             loading="lazy"
+             src="{{ instance.fields.pic_3 }}"/>
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
+{% endfor %}
+
 {% endblock %}
