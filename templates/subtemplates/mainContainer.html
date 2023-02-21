@@ -12,15 +12,7 @@
             {% endif %}
         </h1>
         {% if instance.fields.text_position == "top" %}
-        <div>
-            <p class="pAdjustment" style="text-align: {{ instance.fields.text_align }};" {% if instance.fields.text_color %} style="color: {{ instance.fields.text_color }};" {% endif %}>
-                {% if L == "bg" %}
-                    {{ instance.fields.section_desc_bg|safe }}
-                {% else %}
-                    {{ instance.fields.section_desc_eng|safe }}
-                {% endif %}
-            </p>
-        </div>
+            {% include "subtemplates/mainContainerText.html" %} 
         {% endif %}
 
         {% for field_name in content_containter_pics %}
@@ -36,15 +28,7 @@
         {% endfor %}
         
         {% if instance.fields.text_position == "bottom" %}
-        <div>
-            <p class="pAdjustment" style="text-align: {{ instance.fields.text_align }};" {% if instance.fields.text_color %} style="color: {{ instance.fields.text_color }};" {% endif %}>
-                {% if L == "bg" %}
-                    {{ instance.fields.section_desc_bg|safe }}
-                {% else %}
-                    {{ instance.fields.section_desc_eng|safe }}
-                {% endif %}
-            </p>
-        </div>
+            {% include "subtemplates/mainContainerText.html" %} 
         {% endif %}
 
     </div>
