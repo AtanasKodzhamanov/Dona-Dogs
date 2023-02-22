@@ -42,8 +42,8 @@ msgid "No Adoptors"
 msgstr "Без осиновители"
 
 #: DogShelter/web/forms.py:64
-msgid "All genders"
-msgstr "Всички"
+msgid "Gender"
+msgstr "Пол"
 
 #: DogShelter/web/forms.py:65
 msgid "M"
@@ -288,8 +288,6 @@ msgstr ""
 #~ msgid "ABOUT US"
 #~ msgstr "ЗА НАС"
 
-#~ msgid "Gender"
-#~ msgstr "Пол"
 
 #~ msgid "Her story"
 #~ msgstr "Нейната история"

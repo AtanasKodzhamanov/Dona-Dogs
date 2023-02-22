@@ -44,7 +44,8 @@ class DogFilterForm(forms.Form):
 class vaStatusForm(forms.Form):
     # Define the form fields
     adoption_status = forms.CharField(
-        label=_("Virtual Adoption Status"),
+        # label=_("Virtual Adoption Status"),
+        label="",
         widget=Select(choices=(
             ("all", _("All dogs")),
             ("va", _("Virtually Adopted")),
@@ -61,7 +62,7 @@ class genderFilterForm(forms.Form):
 
     gender = forms.CharField(
         widget=Select(choices=(
-            ("all", _("All genders")),
+            ("all", _("Gender")),
             ("male", _("M")),
             ("female", _("F")),
         ))
