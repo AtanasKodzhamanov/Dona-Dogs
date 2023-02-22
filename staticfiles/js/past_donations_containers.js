@@ -9,6 +9,35 @@ function createContainer() {
   const currentMonth = currentDate.getMonth();
   const currentYear = currentDate.getFullYear();
 
+  const monthNames = [
+    gettext("January"),
+    gettext("February"),
+    gettext("March"),
+    gettext("April"),
+    gettext("May"),
+    gettext("June"),
+    gettext("July"),
+    gettext("August"),
+    gettext("September"),
+    gettext("October"),
+    gettext("November"),
+    gettext("December"),
+  ];
+  const monthNamez = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
   while (year < currentYear || (year == currentYear && month < currentMonth)) {
     // create new div container for each year
     const yearContainer = document.createElement("div");
@@ -36,9 +65,12 @@ function createContainer() {
       const monthName = new Date(year, month, 1).toLocaleString("default", {
         month: "short",
       });
-      const monthNameFull = new Date(year, month, 1).toLocaleString("default", {
+      var monthNameFull = new Date(year, month, 1).toLocaleString("default", {
         month: "long",
       });
+      const monthIndex = monthNamez.indexOf(monthNameFull);
+      console.log(monthNameFull);
+      monthNameFull = monthNames[monthIndex];
       const item = document.createElement("div");
       item.classList.add("grid-item");
       item.classList.add("month-container");
@@ -47,9 +79,8 @@ function createContainer() {
       const link = document.createElement("a");
       link.href = window.location.href + `history/${year}-${monthName}`;
       const h3 = document.createElement("h3");
-      // h3.innerText = `${monthNameFull}`;
-      // Need to deal with translation of month names
-      h3.innerText = `${year} / ${month + 1}`;
+      h3.innerText = `${monthNameFull}`;
+
       link.appendChild(h3);
       link.classList.add("hyperlink");
       item.appendChild(link);
