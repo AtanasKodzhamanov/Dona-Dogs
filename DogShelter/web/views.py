@@ -1,4 +1,5 @@
 import datetime
+import json
 from django.core import serializers
 from django.forms.models import model_to_dict
 from django.views.generic import DetailView, ListView, TemplateView
@@ -150,6 +151,13 @@ class DogProfileView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
+        # Get all dogs with a status of "active"
+        active_dogs = Dog.objects.filter(status__in=["Active", "Sick"])
+
+        # Extract the IDs of the active dogs into an array
+        active_dog_ids = [dog.id for dog in active_dogs]
+        active_dog_ids.reverse()
+
         # create a list of the pic_2, pic_3, etc. image fields for the template to loop through
         dog_pic_fields = [f'pic_{i}' for i in range(2, 7)]
         adoption_pic_fields = [f'adoption_pic_after_{i}' for i in range(1, 4)]
@@ -157,6 +165,7 @@ class DogProfileView(DetailView):
         # return context
         context['adoption_pic_fields'] = adoption_pic_fields
         context['dog_pic_fields'] = dog_pic_fields
+        context['active_dog_ids'] = json.dumps(active_dog_ids)
 
         # common context data
         context['subscribeForm'] = renderCommon(self.request)
