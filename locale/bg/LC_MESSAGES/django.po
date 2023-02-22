@@ -314,3 +314,38 @@ msgstr ""
 #~ msgstr ""
 #~ "Не забравяйте да посочите името на кучето, което искате да осиновите!"
 
+msgid "January"
+msgstr "Януари"
+
+msgid "February"
+msgstr "Февруари"
+
+msgid "March"
+msgstr "Март"
+
+msgid "April"
+msgstr "Април"
+
+msgid "May"
+msgstr "Май"
+
+msgid "June"
+msgstr "Юни"
+
+msgid "July"
+msgstr "Юли"
+
+msgid "August"
+msgstr "Август"
+
+msgid "September"
+msgstr "Септември"
+
+msgid "October"
+msgstr "Октомври"
+
+msgid "November"
+msgstr "Ноември"
+
+msgid "December"
+msgstr "Декември"
