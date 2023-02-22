@@ -14,7 +14,7 @@
   {% include "subtemplates/dogGalleryForms.html" %}
   
   <div class="wrapper" id="dogList">
-    {% for instance in dataDogs %}
+    {% for instance in data_dogs %}
       {% if instance.fields.status == "Active" %}
         <div id="Dog"
              class="panel, thumbnail, popup"

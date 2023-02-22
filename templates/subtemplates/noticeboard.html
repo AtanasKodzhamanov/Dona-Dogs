@@ -2,7 +2,7 @@
 {% get_current_language as L %}
 {% block page_content %}
 
-  {% for notice in dataNoticeBoard %}
+  {% for notice in data_notice_board %}
     {% if notice.fields.location == location and notice.fields.visible %}
       <article id="noticeBoard">
         <div>

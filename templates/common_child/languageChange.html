@@ -8,7 +8,7 @@
   <div id="languageFormContainer" style="text-align: right;">
     <form id="languageForm" action="{% url 'set_language' %}" method="post">
       {% csrf_token %}
-      <input type="hidden" value="{{ request.path }}">
+      <input type="hidden" name="next" value="{{ request.path }}">
       <label for="bg">
         <button style="padding:0px;
                        border: none;

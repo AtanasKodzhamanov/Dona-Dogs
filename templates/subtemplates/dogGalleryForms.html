@@ -4,19 +4,19 @@
             <div class="form-group">
                 <form action="javascript:void(0)">
                 {% csrf_token %}
-                {{ nameFilterForm }}
+                {{ name_filter_form }}
                 </form>
             </div>
             <div class="form-group">
                 <form action="" method="post">
                 {% csrf_token %}
-                {{ vaStatusForm  }}
+                {{ va_status_form  }}
                 </form>
             </div>
             <div class="form-group">
                 <form action="" method="post" >
                 {% csrf_token %}
-                {{ genderFilterForm  }}
+                {{ gender_filter_form  }}
                 </form>
             </div>
         </div>

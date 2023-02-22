@@ -18,7 +18,7 @@
        style="display: none">
     <form id="footerSubscribeForm" action="" method="POST">
       {% csrf_token %}
-      {{ subscribeForm.as_p }}
+      {{ subscribe_form.as_p }}
       <button type="submit">{% trans "Subscribe" %}</button>
     </form>
   </div>

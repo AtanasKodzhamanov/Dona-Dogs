@@ -1,7 +1,7 @@
 {% load field_loop %}
 {% block page_content %}
 
-{% for instance in contentContainer %}
+{% for instance in content_container %}
     {% if instance.fields.location == location and instance.fields.visible %}
     <div class="parent" {% if instance.fields.background_color %} style="background-color: {{ instance.fields.background_color }};" {% endif %}>
         

@@ -15,7 +15,7 @@
 
       <h3>{% trans "LAST MONTH WE RECEIVED HELP FROM" %}</h3>
       <br>
-      {% for instance in dataDonations %}
+      {% for instance in data_donations %}
         <div style="display: inline-block">
           <h4 style="padding:5px">
             {% if L == "bg" %}
@@ -33,7 +33,7 @@
     
     <div class="parent" style="text-align: center;background-color: #fff">
       <h2>{% trans "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS" %}</h2>
-      {% for instance in dataPeople %}
+      {% for instance in data_people %}
         {% if instance.0 %}
           <div style="display: inline-block">
             <h4 style="padding:5px">

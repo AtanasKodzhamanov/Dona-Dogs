@@ -22,22 +22,22 @@
   <br>
   <p class="compressedText">
     {% trans "We have " %}
-    {{ countDogs }}
+    {{ count_dogs }}
     {% trans "dogs in the shelter. Last year we helped " %}
-    {{ countAdoptedLastYear }}
+    {{ count_adopted_last_year }}
     {% trans "dogs get adopted in several countries across Europe. You can see more information about this year's adoptions here: " %}
     <a id="hyperlink" href="/adoptions/">{% trans "ADOPTIONS" %}</a>.
   </p>
   <br>
   <p class="compressedText">
     {% trans "Currently there are " %}
-    {{ countSick }}
+    {{ count_sick }}
     {% trans "sick dogs receiving intensive treatement at the clinic. Please help us help them so that we can continue to provide treatement for any dog that needs it: " %}
     <a id="hyperlink" href="/clinic/">{% trans "CLINIC" %}</a>.
   </p>
 
   <div class="wrapper">
-    {% for instance in dataDogs %}
+    {% for instance in data_dogs %}
       {% if instance.fields.status == "Active" %}
         <div id="Dog"
              class="panel, thumbnail"
@@ -72,15 +72,15 @@
   <h2 >
     {% trans "Last year " %}
     {% if L == "bg" %}
-      {{ adoptedPuppy.name_bg }}
+      {{ adopted_puppy.name_bg }}
     {% else %}
-      {{ adoptedPuppy.name_eng }}
+      {{ adopted_puppy.name_eng }}
     {% endif %}
     {% trans " got adopted in " %}
     {% if L == "bg" %}
-      {{ adoptedPuppy.adoption_country_bg }}
+      {{ adopted_puppy.adoption_country_bg }}
     {% else %}
-      {{ adoptedPuppy.adoption_country_eng }}
+      {{ adopted_puppy.adoption_country_eng }}
     {% endif %}
   </h2>
   <br>
@@ -91,19 +91,19 @@
            decoding="async"
            lazy-sizes="auto"
            loading="lazy"
-           src="{{ adoptedPuppy.profile_pic }}"/>
+           src="{{ adopted_puppy.profile_pic }}"/>
       <img id="sizingAdoptedPuppy"
            decoding="async"
            lazy-sizes="auto"
            loading="lazy"
-           src="{{ adoptedPuppy.adoption_pic_after_1 }}"/>
+           src="{{ adopted_puppy.adoption_pic_after_1 }}"/>
     </div>
     <div id="adoptedPuppyText">
       <p class="compressedText">
         {% if L == "bg" %}
-          {{ adoptedPuppy.story_bg|safe }}
+          {{ adopted_puppy.story_bg|safe }}
         {% else %}
-          {{ adoptedPuppy.story_eng|safe }}
+          {{ adopted_puppy.story_eng|safe }}
         {% endif %}
       </p>
     </div>

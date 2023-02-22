@@ -34,18 +34,18 @@ class BaseView(TemplateView):
         context = {}
 
         # get all notice board items from the database
-        context['dataNoticeBoard'] = serializers.serialize(
+        context['data_notice_board'] = serializers.serialize(
             'python', NoticeBoard.objects.all().order_by("order"))
 
         # get all content container items from the database
-        context['contentContainer'] = serializers.serialize(
+        context['content_container'] = serializers.serialize(
             'python', LongPost.objects.all().order_by("order"))
 
         context['content_containter_pics'] = [
             f'about_pic_{i}' for i in range(1, 11)]
 
         # get the subscribe form for the footer
-        context['subscribeForm'] = renderCommon(self.request)
+        context['subscribe_form'] = renderCommon(self.request)
 
         return context
 
@@ -62,13 +62,13 @@ class HomeView(BaseView):
         context = super().get_common_context_data()
 
         # get all dogs from the database
-        dataDogs = serializers.serialize(
+        data_dogs = serializers.serialize(
             'python', Dog.objects.all().order_by("?"))
 
         # filter for the active dogs only (alive, healthy and not adopted) and pick 6 random dogs to display on the home page
-        dataDogs = [dog for dog in dataDogs if dog['fields']
-                    ['status'] == 'Active']
-        dataDogs = dataDogs[:6]
+        data_dogs = [dog for dog in data_dogs if dog['fields']
+                     ['status'] == 'Active']
+        data_dogs = data_dogs[:6]
 
         today = datetime.date.today()
         last_month = today.replace(day=1) - datetime.timedelta(days=1)
@@ -77,9 +77,9 @@ class HomeView(BaseView):
         donation_stories = DonationStory.objects.filter(date=last_month)
 
         # statistics for the home page
-        countDogs = Dog.objects.filter(status__in=["Active", "Sick"]).count()
-        countSick = Dog.objects.filter(status="Sick").count()
-        countAdoptedLastYear = Dog.objects.filter(
+        count_dogs = Dog.objects.filter(status__in=["Active", "Sick"]).count()
+        count_sick = Dog.objects.filter(status="Sick").count()
+        cound_adopted_last_year = Dog.objects.filter(
             adoption_year=today.year-1).count()
 
         # filter away adopted dogs where there is no post adoption pic available and return a random dog
@@ -89,16 +89,16 @@ class HomeView(BaseView):
 
         context.update({
             # statistics for the home page
-            "adoptedPuppy": adopted,
-            "countDogs": countDogs,
-            "countSick": countSick,
-            "countAdoptedLastYear": countAdoptedLastYear,
+            "adopted_puppy": adopted,
+            "count_dogs": count_dogs,
+            "count_sick": count_sick,
+            "count_adopted_last_year": cound_adopted_last_year,
 
             # donations slideshow data
             "donation_stories": donation_stories,
 
             # core dog data
-            "dataDogs": dataDogs,
+            "data_dogs": data_dogs,
 
             # date for the donations slideshow
             "date_pk": date_pk,
@@ -139,7 +139,7 @@ class DonationStoryView(ListView):
         context["date"] = date
 
         # common context data
-        context['subscribeForm'] = renderCommon(self.request)
+        context['subscribe_form'] = renderCommon(self.request)
         return context
 
 # responsible for showing the individual dog profile pages
@@ -169,7 +169,7 @@ class DogProfileView(DetailView):
         context['active_dog_ids'] = json.dumps(active_dog_ids)
 
         # common context data
-        context['subscribeForm'] = renderCommon(self.request)
+        context['subscribe_form'] = renderCommon(self.request)
         return context
 
 # responsible for rendering the gallery page
@@ -182,14 +182,14 @@ class GalleryView(BaseView):
         context = super().get_common_context_data()
 
         # add forms to the context
-        context['genderFilterForm'] = genderFilterForm()
-        context['nameFilterForm'] = DogFilterForm()
-        context['vaStatusForm'] = vaStatusForm()
+        context['gender_filter_form'] = genderFilterForm()
+        context['name_filter_form'] = DogFilterForm()
+        context['va_status_form'] = vaStatusForm()
 
         # add dog and virtual adopter data to the context
-        context['dataDogs'] = serializers.serialize(
+        context['data_dogs'] = serializers.serialize(
             'python', Dog.objects.all().order_by("?"))
-        context['dataPeople'] = set(Dog.objects.values_list(
+        context['data_people'] = set(Dog.objects.values_list(
             "va_name_bg", "va_name_eng").exclude(va_name_eng=""))
 
         return context
@@ -205,11 +205,11 @@ class ClinicView(BaseView):
         context = super().get_common_context_data()
 
         # add infirmary-specific data to the context
-        dataDogs = serializers.serialize(
+        data_dogs = serializers.serialize(
             'python', Dog.objects.filter(status="Sick").order_by("?"))
 
         context.update({
-            "dataDogs": dataDogs
+            "data_dogs": data_dogs
         })
 
         return context
@@ -241,7 +241,7 @@ class AdoptionsView(BaseView):
         context = super().get_common_context_data()
 
         # add adoptions-specific data to the context
-        dataDogs = serializers.serialize(
+        data_dogs = serializers.serialize(
             'python', Dog.objects.all().order_by("-adoption_year"))
         dogs = Dog.objects.all().filter(adoption_year__gt=0).order_by("-adoption_year")
         years = sorted(set(dogs.values_list(
@@ -249,7 +249,7 @@ class AdoptionsView(BaseView):
         field_names = ['pic_2', 'pic_3', 'pic_4', 'pic_5', 'pic_6', 'adoption_pic_after_1',
                        'adoption_pic_after_2', 'adoption_pic_after_3']
         context.update({
-            "dataDogs": dataDogs,
+            "data_dogs": data_dogs,
             "dogs": dogs,
             "years": years,
             "field_names": field_names
@@ -267,20 +267,20 @@ class DonationsView(BaseView):
         context = super().get_common_context_data()
 
         # add donations-specific data to the context
-        dataPeople = set(Dog.objects.values_list(
+        data_people = set(Dog.objects.values_list(
             "va_name_bg", "va_name_eng").exclude(va_name_eng=""))
         today = datetime.date.today()
         last_month = today.replace(day=1) - datetime.timedelta(days=1)
         last_month_cl = "("+last_month.strftime('%m') + \
             " - " + last_month.strftime('%Y') + ")"
-        dataDonations = set(Donation.objects.values_list(
+        data_donations = set(Donation.objects.values_list(
             "person_name_bg", "person_name_eng").filter(date=last_month).order_by("person_name_bg"))
 
         context.update({
-            "dataPeople": dataPeople,
+            "data_people": data_people,
             "last_month": last_month,
             "month": last_month_cl,
-            "dataDonations": dataDonations
+            "dataDonations": data_donations
         })
 
         return context
