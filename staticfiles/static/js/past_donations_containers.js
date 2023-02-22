@@ -70,7 +70,6 @@ function createContainer() {
         month: "long",
       });
       const monthIndex = monthNamez.indexOf(monthNameFull);
-      console.log(monthNameFull);
       monthNameFull = monthNames[monthIndex];
       const item = document.createElement("div");
       item.classList.add("grid-item");
