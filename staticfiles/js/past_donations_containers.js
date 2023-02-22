@@ -45,8 +45,9 @@ function createContainer() {
     yearContainer.classList.add("parent");
     yearContainer.classList.add("year-heading");
     yearContainer.classList.add("button-box");
-    container.appendChild(yearContainer);
-    container.appendChild(monthsContainer);
+    const firstChild = container.firstChild;
+    container.insertBefore(yearContainer, firstChild);
+    container.insertBefore(monthsContainer, firstChild);
 
     const yearHeading = document.createElement("h2");
     yearHeading.innerText = year;
