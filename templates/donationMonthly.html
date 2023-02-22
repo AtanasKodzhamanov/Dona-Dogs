@@ -5,9 +5,11 @@
 {% load i18n %}
 {% get_current_language as L %}
 {% block page_content %}
-  {{ donation.date }}
+
   <div class="parent" style="text-align: center;">
+
     <h2>{% trans "WE THANK YOU ALL FOR SUPPORTING US" %}</h2>
+    <h4>{{ date|date:"F-Y" }}</h4>
     <br>
     {% for donation in donation_names %}
       <div style="display: inline-block">

@@ -136,6 +136,7 @@ class DonationStoryView(ListView):
         context['donation_pic_fields'] = donation_pic_fields
         context['donation_names'] = donation_names
         context['donations'] = donations_data
+        context["date"] = date
 
         # common context data
         context['subscribeForm'] = renderCommon(self.request)

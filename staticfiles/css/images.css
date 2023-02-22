@@ -19,19 +19,19 @@
 }
 
 #sizingAdoptions {
-    max-width: 400px;
+    width: 500px;
     height: auto;
 
 }
 
-@media only screen and (max-width: 1111px) {
+@media only screen and (max-width: 600px) {
     #sizingAdoptions {
         width: 100%;
     }
 }
 
 #sizingDonations {
-    max-width: 400px;
+    max-width: 500px;
     height: auto;
 }
 
@@ -41,7 +41,7 @@
     }
 }
 
-#sizingPayPal {
+/* #sizingPayPal {
     width: 250px;
     height: auto;
 }
@@ -50,7 +50,7 @@
     #sizingPayPal {
         max-width: 200px;
     }
-}
+} */
 
 #sizingDogAlbum {
     max-width: 400px;

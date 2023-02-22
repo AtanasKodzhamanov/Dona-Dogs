@@ -313,3 +313,4 @@ msgstr ""
 #~ "Make sure to specify the name of the dog you wish to virtually adopt!"
 #~ msgstr ""
 #~ "Не забравяйте да посочите името на кучето, което искате да осиновите!"
+
