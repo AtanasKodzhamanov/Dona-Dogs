@@ -44,7 +44,7 @@
              vaName="{{ instance.fields.va_name_eng }}"
              gender="{{ instance.fields.gender }}"
              pk="{{ instance.pk }}">
-          <h1>
+          <h1 id="puppyName">
             {% if L == "bg" %}
               {{ instance.fields.name_bg }}
             {% else %}
@@ -69,7 +69,7 @@
   </div>
   <br>  
   <br>
-  <h2>
+  <h2 >
     {% trans "Last year " %}
     {% if L == "bg" %}
       {{ adoptedPuppy.name_bg }}
