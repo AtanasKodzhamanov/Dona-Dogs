@@ -1,0 +1,42 @@
+{% load truncatetext %}
+{% load i18n %}
+{% block page_content %}
+<div id="Dog"
+             class="panel, thumbnail, popup"
+             vaName="{{ instance.va_name_eng }}"
+             gender="{{ instance.gender }}"
+             pk="{{ instance.pk }}">
+          <h1>
+            {% if L == "bg" %}
+              {{ instance.name_bg }}
+            {% else %}
+              {{ instance.name_eng }}
+            {% endif %}
+          </h1>
+
+          <img class="gallery-size-img"
+               decoding="async"
+               lazy-sizes="auto"
+               loading="lazy"
+               src="{{ instance.profile_pic }}"/>  
+          {% if instance.va_name_eng %}
+            <div class="virtual-adopter-block">
+              {% trans "Virtually Adopted" %}
+              <br>
+              {% if L == "bg" %}
+                {{ instance.va_name_bg }}
+              {% else %}
+                {{ instance.va_name_eng }}
+              {% endif %}
+            </div>
+          {% endif %}
+          <p>
+            {% if L == "bg" %}
+              {{ instance.story_bg|safe|truncatetext:130 }}
+            {% else %}
+              {{ instance.story_eng|safe|truncatetext:130 }}
+            {% endif %}
+          </p>  
+        </div>
+
+{% endblock %}
