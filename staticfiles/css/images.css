@@ -23,6 +23,14 @@
 
 }
 
+@media only screen and (max-width: 1200px) {
+    .main-container-img {
+        width: 400px;
+        height: auto;
+    }
+}
+
+
 @media only screen and (max-width: 600px) {
     .main-container-img {
         width: 100%;
