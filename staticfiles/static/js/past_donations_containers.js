@@ -85,6 +85,11 @@ function createContainer() {
       link.classList.add("hyperlink");
       item.appendChild(link);
       gridContainer.appendChild(item);
+
+      item.addEventListener("click", function () {
+        window.location.href = link.href;
+      });
+
       month += 1;
       if (month > 11) {
         month = 0;
