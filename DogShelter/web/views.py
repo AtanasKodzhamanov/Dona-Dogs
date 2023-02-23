@@ -154,7 +154,7 @@ class DogProfileView(DetailView):
         context = super().get_context_data(**kwargs)
 
         # Get all dogs with a status of "active"
-        active_dogs = Dog.objects.filter(status__in=["Active", "Sick"])
+        active_dogs = Dog.objects.filter(status__in=["Active", "Sick", "New"])
 
         # Extract the IDs of the active dogs into an array
         active_dog_ids = [dog.id for dog in active_dogs]
