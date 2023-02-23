@@ -10,7 +10,7 @@
     {% include "subtemplates/noticeboard.html" %}
     {% include "subtemplates/mainContainer.html" %}
   {% endwith %}  
-  <div class="parent button-hover" id="showAllDogs">
+  <div class="parent button-hover" id="show-all-dogs-btn">
     <div>
       <h2>{% trans "SEE ALL DOGS AVAILABLE FOR ADOPTION HERE" %}</h2>
     </div>
@@ -21,7 +21,7 @@
   <hr>
   {% for year in years %}
     <div class="AdoptionExpand" id="AdoptionExpand">
-      <div class="parent button-hover" id="AdoptionButton">
+      <div class="parent button-hover" id="adoption-expand-button">
         <div>
           <h2>{{ year }}</h2>
         </div>

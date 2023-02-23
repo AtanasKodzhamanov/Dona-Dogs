@@ -108,15 +108,15 @@
 }
 
 @media only screen and (max-width: 600px) {
-    #AdoptionButton {
+    #adoption-expand-button {
         padding: 10px;
     }
     
-    #showAllDogs {
+    #show-all-dogs-btn {
         padding: 10px;
     }
     
-    #showAllAdoptions{
+    #show-all-adoptions-btn{
         padding: 10px;
     }
 }

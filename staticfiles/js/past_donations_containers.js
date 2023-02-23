@@ -2,7 +2,7 @@
 // Months would then link to the donation history page for that month.
 
 function createContainer() {
-  const container = document.getElementById("pastDonations");
+  const container = document.getElementById("past-donations");
   let year = 2022;
   let month = 10;
   const currentDate = new Date();

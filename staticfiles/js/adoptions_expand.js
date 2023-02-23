@@ -1,5 +1,5 @@
-// Select all elements with the ID "AdoptionButton"
-const triggers = document.querySelectorAll("#AdoptionButton");
+// Select all elements with the ID "adoption-expand-button"
+const triggers = document.querySelectorAll("#adoption-expand-button");
 
 // Loop through each element and add a click event listener
 triggers.forEach((trigger) => {
