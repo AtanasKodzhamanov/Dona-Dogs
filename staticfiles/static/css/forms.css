@@ -1,17 +1,5 @@
 
-#filtersButton{
-  margin-left: 25px;
-  margin-bottom: 10px;
-  padding:5px;
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 4px;
-}
-
-button:hover {
-  background-color: rgb(200, 200, 200);
-} */
-
-#forms-container {
+#forms-bar {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   padding: 0px;
@@ -23,7 +11,7 @@ button:hover {
 }
 
 @media only screen and (max-width: 1600px) {
-  #forms-container {
+  #forms-bar {
     display: none;
   }
 }
@@ -31,6 +19,8 @@ button:hover {
 .hidden {
   display: none;
 }
+
+
 
 .form-group {
   display: grid;
@@ -47,6 +37,7 @@ button:hover {
 .form-group:nth-child(n+2) {
   justify-self: end;
 }
+
 
 .form-col {
   display: flex;
@@ -87,6 +78,20 @@ button:hover {
 
 .form-group button:hover {
   background-color: rgb(49, 49, 49);
+}
+
+
+#showMoreButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-left: 15px;
+  font-size: 14px;
+  background-color: #6b6b6b;
+  color: #fff;
+  border: none;
+  padding: 3px 3px;
+  cursor: pointer;
 }
 
 #footer-subscribe-form input[type="text"],
