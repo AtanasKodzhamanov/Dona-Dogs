@@ -1,6 +1,6 @@
 // Redirects to the dog album page when the dog card is clicked
 
-const dogCards = document.querySelectorAll("#Dog");
+const dogCards = document.querySelectorAll(".dog");
 
 dogCards.forEach((card) => {
   card.addEventListener("click", () => {

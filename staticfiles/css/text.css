@@ -57,12 +57,12 @@ h3 {
     }
 }
 
-#puppyName {
+.puppy-name {
     font-size: 25px;
 }
 
 @media only screen and (max-width: 600px) {
-    #puppyName {
+    .puppy-name {
         font-size: 21px;
     }
 }
@@ -79,7 +79,7 @@ p {
     text-align: left;
 }
 
-p.pAdjustment {
+p.container-text {
     max-width:800px;
     height:auto;
     margin:auto;
@@ -115,12 +115,12 @@ a.hyperlink:hover {
 }
 
 
-.compressedText {
+.compressed-text {
     max-width: 70%;
   }
   
 @media only screen and (max-width: 600px) {
-.compressedText {
+.compressed-text {
     max-width: 95%;
 }
 }

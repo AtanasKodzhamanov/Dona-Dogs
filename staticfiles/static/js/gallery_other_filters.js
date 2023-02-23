@@ -3,7 +3,7 @@
 // Get a reference to the select element and the dog list div
 var selectVa = document.querySelector("#adoptionStatus");
 var selectGender = document.querySelector("#genderFilter");
-var dogList = document.querySelector("#dogList");
+var dogList = document.querySelector("#dog-list");
 
 // Add event listeners to both select elements that listen for when the user changes the selected option
 selectVa.addEventListener("change", filterDogs);

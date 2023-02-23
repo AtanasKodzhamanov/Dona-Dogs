@@ -20,15 +20,15 @@
   <h2>{% trans "PAST ADOPTIONS" %}</h2>
   <hr>
   {% for year in years %}
-    <div class="AdoptionExpand" id="AdoptionExpand">
-      <div class="parent button-hover" id="adoption-expand-button">
+    <div>
+      <div class="parent button-hover adoption-expand-button">
         <div>
           <h2>{{ year }}</h2>
         </div>
       </div>
       {% for dog in data_dogs %}
         {% if dog.fields.status == "Adopted" and dog.fields.adoption_year == year %}
-          <div class="parent" id="AdoptionCard" style="display: none">
+          <div class="parent adoption-card" style="display: none">
             {% if L == "bg" %}
               <h2>{{ dog.fields.name_bg }}</h2>
             {% else %}
@@ -43,7 +43,7 @@
 
             {% if dog.fields.adoption_story_eng == "" %}
               <div>
-                <p class="pAdjustment">
+                <p class="container-text">
                   {% if L == "bg" %}
                     {{ dog.fields.story_bg|safe }}
                   {% else %}
@@ -53,7 +53,7 @@
               </div>
             {% else %}
               <div>
-                <p class="pAdjustment">
+                <p class="container-text">
                   {% if L == "bg" %}
                     {{ dog.fields.adoption_story_bg|safe }}
                   {% else %}

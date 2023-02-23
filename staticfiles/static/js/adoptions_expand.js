@@ -1,11 +1,11 @@
-// Select all elements with the ID "adoption-expand-button"
-const triggers = document.querySelectorAll("#adoption-expand-button");
+// Select all elements with the "adoption-expand-button"
+const triggers = document.querySelectorAll(".adoption-expand-button");
 
 // Loop through each element and add a click event listener
 triggers.forEach((trigger) => {
   trigger.addEventListener("click", function () {
     // Select all elements with the ID "AdoptionCard" that are descendants of the parent element
-    const adoptionCards = this.parentNode.querySelectorAll("#AdoptionCard");
+    const adoptionCards = this.parentNode.querySelectorAll(".adoption-card");
 
     // Loop through each element and toggle its display style between "block" and "none"
     adoptionCards.forEach((adoptionCard) => {

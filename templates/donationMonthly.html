@@ -27,10 +27,10 @@
   {% for donation in donations %}
     {% if L == "bg" %}
       <h2>{{ donation.title_bg }}</h2>
-      <p class="compressedText">{{ donation.donation_text_bg }}</p>
+      <p class="compressed-text">{{ donation.donation_text_bg }}</p>
     {% else %}
       <h2>{{ donation.title_eng }}</h2>
-      <p class="compressedText">{{ donation.donation_text_eng }}</p>
+      <p class="compressed-text">{{ donation.donation_text_eng }}</p>
     {% endif %}
     <div class="image-container-dog-album">
       {% for field_name in donation_pic_fields %}

@@ -108,7 +108,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-    #adoption-expand-button {
+    .adoption-expand-button {
         padding: 10px;
     }
     

@@ -1,6 +1,6 @@
 {% block page_content %}
     <div>
-        <p class="pAdjustment" style="text-align: {{ instance.fields.text_align }};" {% if instance.fields.text_color %} style="color: {{ instance.fields.text_color }};" {% endif %}>
+        <p class="container-text" style="text-align: {{ instance.fields.text_align }};" {% if instance.fields.text_color %} style="color: {{ instance.fields.text_color }};" {% endif %}>
             {% if L == "bg" %}
                 {{ instance.fields.section_desc_bg|safe }}
             {% else %}
