@@ -30,13 +30,14 @@ class Dog(models.Model):
 
     OPTIONS_CHOICES = [(x, x) for x in ("Y", "N", "Unknown")]
     GENDER_CHOICES = [(x, x) for x in ("F", "M")]
-    STATUS_CHOICES = [(x, x) for x in ("Active", "Dead", "Adopted", "Sick")]
+    STATUS_CHOICES = [(x, x)
+                      for x in ("Active", "New", "Dead", "Adopted", "Sick")]
 
     DEFAULT_UNKNOWN_YEAR = 0
     DOG_STATUS_LENGTH = 10
     GENDER_MAX_LENGTH = 7
     DISEASES_MAX_LENGTH = 7
-    DEFAULT_STATUS = "Active"
+    DEFAULT_STATUS = "New"
 
     # Fields(Columns)
 
