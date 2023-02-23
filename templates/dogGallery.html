@@ -11,21 +11,19 @@
     {% include "subtemplates/mainContainer.html" %}
   {% endwith %}
   
-  {% include "subtemplates/dogGalleryForms.html" %}
-  
-  <div class="wrapper" id="dogList">
-    {% for instance in data_dogs %}
-      {% if instance.fields.status == "Active" %}
+  <h2> {% trans "Latest Arrivals" %} </h2>
+  <div class="wrapper" id="new_dogs">
+    {% for instance in new_dogs %}
         <div id="Dog"
              class="panel, thumbnail, popup"
-             vaName="{{ instance.fields.va_name_eng }}"
-             gender="{{ instance.fields.gender }}"
+             vaName="{{ instance.va_name_eng }}"
+             gender="{{ instance.gender }}"
              pk="{{ instance.pk }}">
           <h1>
             {% if L == "bg" %}
-              {{ instance.fields.name_bg }}
+              {{ instance.name_bg }}
             {% else %}
-              {{ instance.fields.name_eng }}
+              {{ instance.name_eng }}
             {% endif %}
           </h1>
 
@@ -33,27 +31,71 @@
                decoding="async"
                lazy-sizes="auto"
                loading="lazy"
-               src="{{ instance.fields.profile_pic }}"/>  
-          {% if instance.fields.va_name_eng %}
+               src="{{ instance.profile_pic }}"/>  
+          {% if instance.va_name_eng %}
             <div class="virtual-adopter-block">
               {% trans "Virtually Adopted" %}
               <br>
               {% if L == "bg" %}
-                {{ instance.fields.va_name_bg }}
+                {{ instance.va_name_bg }}
               {% else %}
-                {{ instance.fields.va_name_eng }}
+                {{ instance.va_name_eng }}
               {% endif %}
             </div>
           {% endif %}
           <p>
             {% if L == "bg" %}
-              {{ instance.fields.story_bg|safe|truncatetext:130 }}
+              {{ instance.story_bg|safe|truncatetext:130 }}
             {% else %}
-              {{ instance.fields.story_eng|safe|truncatetext:130 }}
+              {{ instance.story_eng|safe|truncatetext:130 }}
             {% endif %}
           </p>  
         </div>
-      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% include "subtemplates/dogGalleryForms.html" %}
+  <br>
+  <h2> {% trans "Our Dogs" %} </h2>
+  <div class="wrapper" id="dogList">
+    {% for instance in active_dogs %}
+        <div id="Dog"
+             class="panel, thumbnail, popup"
+             vaName="{{ instance.va_name_eng }}"
+             gender="{{ instance.gender }}"
+             pk="{{ instance.pk }}">
+          <h1>
+            {% if L == "bg" %}
+              {{ instance.name_bg }}
+            {% else %}
+              {{ instance.name_eng }}
+            {% endif %}
+          </h1>
+
+          <img class="gallery-size-img"
+               decoding="async"
+               lazy-sizes="auto"
+               loading="lazy"
+               src="{{ instance.profile_pic }}"/>  
+          {% if instance.va_name_eng %}
+            <div class="virtual-adopter-block">
+              {% trans "Virtual sponsor" %}
+              <br>
+              {% if L == "bg" %}
+                {{ instance.va_name_bg }}
+              {% else %}
+                {{ instance.va_name_eng }}
+              {% endif %}
+            </div>
+          {% endif %}
+          <p>
+            {% if L == "bg" %}
+              {{ instance.story_bg|safe|truncatetext:130 }}
+            {% else %}
+              {{ instance.story_eng|safe|truncatetext:130 }}
+            {% endif %}
+          </p>  
+        </div>
     {% endfor %}
   </div>
   <script src="{% static 'js/dog_album_redirect.js' %}"></script>

@@ -77,7 +77,8 @@ class HomeView(BaseView):
         donation_stories = DonationStory.objects.filter(date=last_month)
 
         # statistics for the home page
-        count_dogs = Dog.objects.filter(status__in=["Active", "Sick"]).count()
+        count_dogs = Dog.objects.filter(
+            status__in=["Active", "Sick", "New"]).count()
         count_sick = Dog.objects.filter(status="Sick").count()
         cound_adopted_last_year = Dog.objects.filter(
             adoption_year=today.year-1).count()
@@ -187,8 +188,10 @@ class GalleryView(BaseView):
         context['va_status_form'] = vaStatusForm()
 
         # add dog and virtual adopter data to the context
-        context['data_dogs'] = serializers.serialize(
-            'python', Dog.objects.all().order_by("?"))
+        context['new_dogs'] = Dog.objects.filter(
+            status__in=["New"])
+        context['active_dogs'] = Dog.objects.filter(
+            status__in=["Active", "Sick"]).order_by("arrival_year")
         context['data_people'] = set(Dog.objects.values_list(
             "va_name_bg", "va_name_eng").exclude(va_name_eng=""))
 

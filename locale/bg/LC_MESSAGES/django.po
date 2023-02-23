@@ -6,12 +6,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-#: DogShelter/web/forms.py:82 DogShelter/web/forms.py:87
+#: DogShelter/web/forms.py:83 DogShelter/web/forms.py:88
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-21 21:41+0000\n"
+"POT-Creation-Date: 2023-02-23 04:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,49 +25,47 @@ msgstr ""
 msgid "Type name"
 msgstr "Въведете име"
 
-#: DogShelter/web/forms.py:47
-msgid "Virtual Adoption Status"
-msgstr "Статус на виртуално осиновяване"
-
-#: DogShelter/web/forms.py:49
+#: DogShelter/web/forms.py:50
 msgid "All dogs"
 msgstr "Всички кучета"
 
-#: DogShelter/web/forms.py:50 templates/dogGallery.html:39
+#: DogShelter/web/forms.py:51 templates/dogGallery.html:37
+#, fuzzy
+#| msgid "Virtual Adoption Status"
 msgid "Virtually Adopted"
-msgstr "Виртуално осиновени"
+msgstr "Статус на виртуално осиновяване"
 
-#: DogShelter/web/forms.py:51
+#: DogShelter/web/forms.py:52
 msgid "No Adoptors"
 msgstr "Без осиновители"
 
-#: DogShelter/web/forms.py:64
+#: DogShelter/web/forms.py:65
 msgid "Gender"
 msgstr "Пол"
 
-#: DogShelter/web/forms.py:65
+#: DogShelter/web/forms.py:66
 msgid "M"
 msgstr "Мъжки"
 
-#: DogShelter/web/forms.py:66
+#: DogShelter/web/forms.py:67
 msgid "F"
 msgstr "Женски"
 
-#: DogShelter/web/forms.py:85
+#: DogShelter/web/forms.py:86
 msgid "Email"
 msgstr "Е-майл адрес"
 
-#: DogShelter/web/forms.py:90
+#: DogShelter/web/forms.py:91
 msgid "Name"
 msgstr "Име"
 
-#: templates/adoptions.html:13
-msgid "PAST ADOPTIONS"
-msgstr "ОСИНОВЕНИ КУЧЕТА"
-
-#: templates/adoptions.html:87
+#: templates/adoptions.html:15
 msgid "SEE ALL DOGS AVAILABLE FOR ADOPTION HERE"
 msgstr "ВИЖТЕ ВСИЧКИ КУЧЕТА, СВОБОДНИ ЗА ОСИНОВЯВАНЕ ТУК"
+
+#: templates/adoptions.html:20
+msgid "PAST ADOPTIONS"
+msgstr "ОСИНОВЕНИ КУЧЕТА"
 
 #: templates/common.html:30
 msgid "Follow us on "
@@ -102,6 +100,18 @@ msgstr "ВИРТУАЛНО ОСИНОВЯВАНЕ"
 msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!"
 msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
 
+#: templates/dogGallery.html:14
+msgid "Latest Arrivals"
+msgstr "Новопристигнали"
+
+#: templates/dogGallery.html:59
+msgid "Our Dogs"
+msgstr "Нашите кучета"
+
+#: templates/dogGallery.html:82
+msgid "Virtual sponsor"
+msgstr "Виртуален осиновител"
+
 #: templates/dogProfile.html:36
 msgid "Before adoption"
 msgstr "Преди осиновяване"
@@ -110,11 +120,7 @@ msgstr "Преди осиновяване"
 msgid "After adoption"
 msgstr "След осиновяване"
 
-#: templates/dogProfile.html:64
-msgid "Help us fill this gallery with happy ever after photos. Adopt "
-msgstr "Помогнете ни да напълним тази галерия със щастливи снимки. Осиновете "
-
-#: templates/dogProfile.html:73
+#: templates/dogProfile.html:76
 msgid ""
 "To inquire about adoptions you can contact us on DonaDogsFoundation@gmail."
 "com or directly on our Facebook group."
@@ -122,11 +128,11 @@ msgstr ""
 "За запитване относно осиновявания можете да се свържете с нас на "
 "DonaDogsFoundation@gmail.com или директно в нашата Facebook група."
 
-#: templates/dogProfile.html:89
+#: templates/dogProfile.html:92
 msgid "ALL DOGS"
 msgstr "ВСИЧКИ КУЧЕТА"
 
-#: templates/donationMonthly.html:10 templates/donations.html:13
+#: templates/donationMonthly.html:11 templates/donations.html:13
 msgid "WE THANK YOU ALL FOR SUPPORTING US"
 msgstr "БЛАГОДАРИМ ЗА ВАШАТА ПОДКРЕПА"
 
@@ -192,7 +198,7 @@ msgstr "ДАРЕНИЯ ОТ МИНАЛИЯ МЕСЕЦ"
 msgid "You can see more information about last month's donations "
 msgstr "Можете да видите повече информация за даренията от миналия месец "
 
-#: templates/home.html:125 templates/ourstory.html:19
+#: templates/home.html:125 templates/ourstory.html:18
 msgid "here"
 msgstr "тук"
 
@@ -204,7 +210,7 @@ msgstr "ВИЖТЕ ВСИЧКИ КУЧЕТА"
 msgid "SEE MORE ADOPTIONS HERE"
 msgstr "ВИЖТЕ ОЩЕ ОСИНОВЕНИ КУЧЕТА"
 
-#: templates/ourstory.html:17
+#: templates/ourstory.html:16
 msgid "You can find more information about the organisation's legal status"
 msgstr "Можете да видете повече информация за легалният статус на фондацията"
 
@@ -276,6 +282,10 @@ msgstr ""
 "Приветстваме директни доставки на храна или подслон за Стамболийски, 4210, "
 "Васил Левски 40."
 
+#~ msgid "Help us fill this gallery with happy ever after photos. Adopt "
+#~ msgstr ""
+#~ "Помогнете ни да напълним тази галерия със щастливи снимки. Осиновете "
+
 #~ msgid "DONATIONS"
 #~ msgstr "ДАРЕНИЯ"
 
@@ -287,7 +297,6 @@ msgstr ""
 
 #~ msgid "ABOUT US"
 #~ msgstr "ЗА НАС"
-
 
 #~ msgid "Her story"
 #~ msgstr "Нейната история"
@@ -312,38 +321,38 @@ msgstr ""
 #~ msgstr ""
 #~ "Не забравяйте да посочите името на кучето, което искате да осиновите!"
 
-msgid "January"
-msgstr "Януари"
+#~ msgid "January"
+#~ msgstr "Януари"
 
-msgid "February"
-msgstr "Февруари"
+#~ msgid "February"
+#~ msgstr "Февруари"
 
-msgid "March"
-msgstr "Март"
+#~ msgid "March"
+#~ msgstr "Март"
 
-msgid "April"
-msgstr "Април"
+#~ msgid "April"
+#~ msgstr "Април"
 
-msgid "May"
-msgstr "Май"
+#~ msgid "May"
+#~ msgstr "Май"
 
-msgid "June"
-msgstr "Юни"
+#~ msgid "June"
+#~ msgstr "Юни"
 
-msgid "July"
-msgstr "Юли"
+#~ msgid "July"
+#~ msgstr "Юли"
 
-msgid "August"
-msgstr "Август"
+#~ msgid "August"
+#~ msgstr "Август"
 
-msgid "September"
-msgstr "Септември"
+#~ msgid "September"
+#~ msgstr "Септември"
 
-msgid "October"
-msgstr "Октомври"
+#~ msgid "October"
+#~ msgstr "Октомври"
 
-msgid "November"
-msgstr "Ноември"
+#~ msgid "November"
+#~ msgstr "Ноември"
 
-msgid "December"
-msgstr "Декември"
+#~ msgid "December"
+#~ msgstr "Декември"
