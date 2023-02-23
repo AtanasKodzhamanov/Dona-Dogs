@@ -4,7 +4,7 @@
 
   {% for notice in data_notice_board %}
     {% if notice.fields.location == location and notice.fields.visible %}
-      <article id="noticeBoard">
+      <article class="notice-board">
         <div>
           {% if notice.fields.section_title_bg %}
           <h2>
@@ -16,13 +16,13 @@
           </h2>
           {% endif %}
 
-          {% if notice.fields.note_pic_1 %}<img id="sizingNoticeBoardImgOne" src={{ notice.fields.note_pic_1 }}>
+          {% if notice.fields.note_pic_1 %}<img class="noticeboard-size-img-one" src={{ notice.fields.note_pic_1 }}>
             <br>
             <br>
             <br>
           {% endif %}
 
-          {% if notice.fields.note_pic_2 %}<img id="sizingNoticeBoardImgTwo" src={{ notice.fields.note_pic_2 }}>{% endif %}
+          {% if notice.fields.note_pic_2 %}<img class="noticeboard-size-img-two" src={{ notice.fields.note_pic_2 }}>{% endif %}
           <p>
             {% if L == "bg" %}
               {{ notice.fields.note_bg|safe }}

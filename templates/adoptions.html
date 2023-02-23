@@ -10,7 +10,7 @@
     {% include "subtemplates/noticeboard.html" %}
     {% include "subtemplates/mainContainer.html" %}
   {% endwith %}  
-  <div class="parent" id="showAllDogs">
+  <div class="parent button-hover" id="showAllDogs">
     <div>
       <h2>{% trans "SEE ALL DOGS AVAILABLE FOR ADOPTION HERE" %}</h2>
     </div>
@@ -21,7 +21,7 @@
   <hr>
   {% for year in years %}
     <div class="AdoptionExpand" id="AdoptionExpand">
-      <div class="parent AdoptionButton" id="AdoptionButton">
+      <div class="parent button-hover" id="AdoptionButton">
         <div>
           <h2>{{ year }}</h2>
         </div>
@@ -64,7 +64,7 @@
             {% endif %}
 
             <div class="child">
-              <img id="sizingAdoptions"
+              <img class="main-container-img"
                    decoding="async"
                    lazy-sizes="auto"
                    loading="lazy"
@@ -74,7 +74,7 @@
             {% for field_name in field_names %}
               {% if dog.fields|field_loop:field_name %}
                 <div class="child">
-                  <img id="sizingAdoptions"
+                  <img class="main-container-img"
                       decoding="async"
                       lazy-sizes="auto"
                       loading="lazy"

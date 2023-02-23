@@ -13,10 +13,10 @@
       <h3>{% trans "DONATION METHODS" %}</h3>
     </div>
   </div>
-  <div class="hideSubscribeForm"
-       id="subscribeFormContainer"
+  <div class="subscribe-form-hide"
+       id="subscribe-form-container"
        style="display: none">
-    <form id="footerSubscribeForm" action="" method="POST">
+    <form id="footer-subscribe-form" action="" method="POST">
       {% csrf_token %}
       {{ subscribe_form.as_p }}
       <button type="submit">{% trans "Subscribe" %}</button>
@@ -36,7 +36,7 @@
       {% trans "Check out our albums, like a dog, write to us on donadogsfoundation@email.com. Together we can do more!" %}
     </p>
   </div>
-  <div class="hideDonationsBox">
+  <div class="hide-donations-box">
     <div class="d">
       <p class="simplechild">
         {% trans "We welcome direct <b> food or shelter</b> deliveries to Bulgaria, Stambolyski, 4210, Vasil Levski 40." %}

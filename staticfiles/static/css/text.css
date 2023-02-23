@@ -103,15 +103,14 @@ p.pAdjustment {
     }
 }
 
-/* hyperlinks */
-#hyperlink {
-    color: rgb(255, 128, 0);
+a.hyperlink {
+    color: rgb(255, 128, 0) !important;
     text-decoration: none;
     text-decoration: bold;
 }
 
-#hyperlink:hover {
-    color: rgb(77, 77, 77);
+a.hyperlink:hover {
+    color: rgb(77, 77, 77) !important;;
     font-weight: bold;
 }
 

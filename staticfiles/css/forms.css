@@ -14,7 +14,7 @@ button:hover {
   background-color: rgb(200, 200, 200);
 } */
 
-#formsBar {
+#forms-container {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   padding: 5px;
@@ -26,17 +26,13 @@ button:hover {
 }
 
 @media only screen and (max-width: 1600px) {
-  #formsBar {
+  #forms-container {
     display: none;
   }
 }
 
 .hidden {
   display: none;
-}
-
-#formsBar {
-  transition: height 0.5s ease;
 }
 
 .form-group {
@@ -54,7 +50,6 @@ button:hover {
 .form-group:nth-child(n+2) {
   justify-self: end;
 }
-
 
 .form-col {
   display: flex;
@@ -97,29 +92,15 @@ button:hover {
   background-color: rgb(49, 49, 49);
 }
 
-
-#showMoreButton {
-  display: flex;
-  justify-content: center;
-  margin-top: 5px;
-  margin-left: 15px;
-  font-size: 14px;
-  background-color: #6b6b6b;
-  color: #fff;
-  border: none;
-  padding: 3px 3px;
-  cursor: pointer;
-}
-
-#footerSubscribeForm input[type="text"],
-#footerSubscribeForm input[type="email"] {
+#footer-subscribe-form input[type="text"],
+#footer-subscribe-form input[type="email"] {
   padding: 0.5em;
   margin-bottom: 0.5em;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-#footerSubscribeForm button[type="submit"] {
+#footer-subscribe-form button[type="submit"] {
   font-size: 14px;
   background-color: #6b6b6b;
   color: #fff;
@@ -127,25 +108,25 @@ button:hover {
   cursor: pointer;
 }
 
-#footerSubscribeForm p {
+#footer-subscribe-form p {
   padding: 4px;
   margin: 0px;
 }
 
 @media only screen and (max-width: 1200px) {
-  #subscribeFormContainer h3 {
+  #subscribe-form-container h3 {
     font-size: 17px;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  #subscribeFormContainer h3 {
+  #subscribe-form-container h3 {
     font-size: 15px;
   }
 }
 
 @media only screen and (max-width: 400px) {
-  #subscribeFormContainer h3 {
+  #subscribe-form-container h3 {
     font-size: 14px;
   }
 }

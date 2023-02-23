@@ -10,23 +10,23 @@
         text-align: center;
     }
 
-    .hideSubscribeForm {
+    .subscribe-form-hide {
         display: none;
         transition: all 0.5s ease-in-out;
     }
 
-    .hideDonationsBox {
+    .hide-donations-box {
         display: none;
         transition: all 0.5s ease-in-out;
     }
 
-    .hideDonationsBox .d {
+    .hide-donations-box .d {
         /* width: 33.333%; */
         width: 50%;
     }
 
     @media only screen and (max-width: 600px) {
-        .hideDonationsBox .d
+        .hide-donations-box .d
         {
             display: block;
         }
@@ -34,7 +34,7 @@
 
 
     @media only screen and (max-width: 600px) {
-        .hideDonationsBox .d
+        .hide-donations-box .d
         {
             width: 90%;
         }

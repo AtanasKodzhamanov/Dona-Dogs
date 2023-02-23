@@ -2,16 +2,16 @@
 
 // Footer subscribe form
 document
-  .getElementById("footerSubscribeForm")
+  .getElementById("footer-subscribe-form")
   .addEventListener("submit", function (event) {
-    document.getElementById("footerSubscribeForm").style.display = "none";
+    document.getElementById("footer-subscribe-form").style.display = "none";
     document.getElementById("success-message").style.display = "block";
   });
 
 // Virtual adoption container
 const hideVA = document.querySelector(".hideVA");
-const hideSubscribeForm = document.querySelector(".hideSubscribeForm");
-const hideDonations = document.querySelector(".hideDonationsBox");
+const hideSubscribeForm = document.querySelector(".subscribe-form-hide");
+const hideDonations = document.querySelector(".hide-donations-box");
 
 hideVA.style.opacity = 0;
 hideSubscribeForm.style.opacity = 0;

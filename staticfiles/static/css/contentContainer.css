@@ -93,7 +93,7 @@
     object-fit: contain;
 }
 
-#noticeBoard{
+.notice-board{
     max-width: 1500px;  
     margin:auto;
 }
@@ -101,25 +101,11 @@
 
 /* Buttons */
 
-.buttonHover:hover {
+.button-hover:hover {
     background-color: rgb(200, 200, 200);
     cursor: pointer;
 }
 
-#AdoptionButton:hover {
-    background-color: rgb(200, 200, 200);
-    cursor: pointer;
-}
-
-#showAllDogs:hover {
-    background-color: rgb(200, 200, 200);
-    cursor: pointer;
-}
-
-#showAllAdoptions:hover {
-    background-color: rgb(200, 200, 200);
-    cursor: pointer;
-}
 @media only screen and (max-width: 600px) {
     #AdoptionButton {
         padding: 10px;
@@ -133,7 +119,6 @@
         padding: 10px;
     }
 }
-
 
 .year-heading:hover {
     background-color: rgb(200, 200, 200);

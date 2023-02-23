@@ -26,14 +26,14 @@
     {% trans "dogs in the shelter. Last year we helped " %}
     {{ count_adopted_last_year }}
     {% trans "dogs get adopted in several countries across Europe. You can see more information about this year's adoptions here: " %}
-    <a id="hyperlink" href="/adoptions/">{% trans "ADOPTIONS" %}</a>.
+    <a class="hyperlink" href="/adoptions/">{% trans "ADOPTIONS" %}</a>.
   </p>
   <br>
   <p class="compressedText">
     {% trans "Currently there are " %}
     {{ count_sick }}
     {% trans "sick dogs receiving intensive treatement at the clinic. Please help us help them so that we can continue to provide treatement for any dog that needs it: " %}
-    <a id="hyperlink" href="/clinic/">{% trans "CLINIC" %}</a>.
+    <a class="hyperlink" href="/clinic/">{% trans "CLINIC" %}</a>.
   </p>
 
   <div class="wrapper">
@@ -51,7 +51,7 @@
               {{ instance.fields.name_eng }}
             {% endif %}
           </h1>
-          <img id="sizingGallery"
+          <img class="gallery-size-img"
                decoding="async"
                lazy-sizes="auto"
                loading="lazy"
@@ -87,12 +87,12 @@
   <br>
   <div id="adoptedPuppyContainer">
     <div id="adoptedPuppy" style="display: flex">
-      <img id="sizingAdoptedPuppy"
+      <img class="home-adopted-puppy-size-img"
            decoding="async"
            lazy-sizes="auto"
            loading="lazy"
            src="{{ adopted_puppy.profile_pic }}"/>
-      <img id="sizingAdoptedPuppy"
+      <img class="home-adopted-puppy-size-img"
            decoding="async"
            lazy-sizes="auto"
            loading="lazy"
@@ -115,13 +115,13 @@
   {% for donation in donation_stories  %}
     <div id="slides-container">
       <div class="slides-donations fade" style="display: flex">
-        {% if donation.donation_pic_1 %}<img id="sizingDonationsSlide" src={{ donation.donation_pic_1 }}>{% endif %}
-        {% if donation.donation_pic_2 %}<img id="sizingDonationsSlide" src={{ donation.donation_pic_2 }}>{% endif %}
+        {% if donation.donation_pic_1 %}<img class="home-donations-size-img" src={{ donation.donation_pic_1 }}>{% endif %}
+        {% if donation.donation_pic_2 %}<img class="home-donations-size-img" src={{ donation.donation_pic_2 }}>{% endif %}
       </div>
     </div>
   {% endfor %}        
  <p class="compressedText">
-      {% trans "You can see more information about last month's donations " %} <a id="hyperlink" href="/donations/history/{{ date_pk }}/">{% trans "here" %}</a>.
+      {% trans "You can see more information about last month's donations " %} <a class="hyperlink" href="/donations/history/{{ date_pk }}/">{% trans "here" %}</a>.
   </p> 
   <br>
   <div id="dots-container" style="display: flex; justify-content: center;">
@@ -134,13 +134,13 @@
   {% include "subtemplates/mainContainer.html" %}
 {% endwith %}
 
-  <div class="parent" id="showAllDogs">
+  <div class="parent button-hover" id="showAllDogs">
     <div>
       <h2>{% trans "SEE ALL OF OUR DOGS HERE" %}</h2>
     </div>
   </div>
 
-  <div class="parent" id="showAllAdoptions">
+  <div class="parent button-hover" id="showAllAdoptions">
     <div>
       <h2>{% trans "SEE MORE ADOPTIONS HERE" %}</h2>
     </div>
