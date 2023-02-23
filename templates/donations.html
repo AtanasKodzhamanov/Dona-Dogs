@@ -10,13 +10,13 @@
     {% include "subtemplates/noticeboard.html" %}
   {% endwith %}
 
-  {% include "subtemplates/donationsNames.html" %}
-  {% include "subtemplates/donationsVaNames.html" %}
+  {% include "donations_sub/names.html" %}
+  {% include "donations_sub/va_names.html" %}
 
   <br>
 
   {% with location="Donations" %}
-        {% include "subtemplates/mainContainer.html" %}   
+        {% include "subtemplates/container.html" %}   
   {% endwith %}
 
   <div id="past-donations">

@@ -5,12 +5,12 @@
 
 <html lang="{{L}}">
   <head>
-    {% include "common_child/head.html" %}
+    {% include "common_sub/head.html" %}
   </head>
   <body>
     
-    {% include "common_child/languageChange.html" %}
-    {% include "common_child/navbar.html" %}
+    {% include "common_sub/languageChange.html" %}
+    {% include "common_sub/navbar.html" %}
 
 
   
@@ -19,8 +19,8 @@
       {% comment %} Templates get rendered here {% endcomment %}
     {% endblock %}
 
-    {% include "subtemplates/footerInfoBoxes.html" %}
-    {% include "subtemplates/footerImage.html" %}
+    {% include "common_sub/footerInfoBoxes.html" %}
+    {% include "common_sub/footerImage.html" %}
 
     </div>
       <script src="{% static 'js/active_nav.js' %}"></script>

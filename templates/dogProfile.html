@@ -20,17 +20,7 @@
                 {{ dog.story_eng }}
             {% endif %}
         </p>
-        {% if dog.va_name_eng %}
-            {% if L == "bg" %}
-                <p class="compressed-text">
-                    Благодарим на <b>{{ dog.va_name_bg }}</b>, че се грижи за {{ dog.name_bg }} като виртуален осиновител.
-                </p>
-            {% else %}
-                <p class="compressed-text">
-                    We thank <b>{{ dog.va_name_eng }}</b> for taking care of {{ dog.name_eng }} as a virtual adopter.
-                </p>
-            {% endif %}
-        {% endif %}
+        {% include "dogProfile_sub/thanks_message.html" %}
     </div>
     {% if dog.adoption_pic_after_1 %}
         <h2>{% trans "Before adoption" %}</h2>

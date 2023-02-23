@@ -15,7 +15,7 @@
         </h1>
         <br>
         {% if instance.text_position == "top" %}
-            {% include "subtemplates/mainContainerText.html" %} 
+            {% include "subtemplates/container_text.html" %} 
         {% endif %}
 
         {% for field_name in content_containter_pics %}
@@ -33,7 +33,7 @@
         {% endfor %}    
         
         {% if instance.text_position == "bottom" %}
-            {% include "subtemplates/mainContainerText.html" %} 
+            {% include "subtemplates/container_text.html" %} 
         {% endif %}
 
     </div>

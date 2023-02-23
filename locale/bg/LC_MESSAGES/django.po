@@ -75,19 +75,19 @@ msgstr "Последвайте ни във "
 msgid " for up to date information!"
 msgstr " за повече снимки и най-новата информация!"
 
-#: templates/common_child/navbar.html:17 templates/home.html:37
+#: templates/common_sub/navbar.html:17 templates/home.html:37
 msgid "CLINIC"
 msgstr "КЛИНИКА"
 
-#: templates/common_child/navbar.html:22
+#: templates/common_sub/navbar.html:22
 msgid "HELP"
 msgstr "ДАРИ"
 
-#: templates/common_child/navbar.html:27
+#: templates/common_sub/navbar.html:27
 msgid "ADOPT"
 msgstr "ОСИНОВИ"
 
-#: templates/common_child/navbar.html:32
+#: templates/common_sub/navbar.html:32
 msgid "ABOUT"
 msgstr "ЗА НАС"
 

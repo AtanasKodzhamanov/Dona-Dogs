@@ -13,25 +13,25 @@
   <br>
   <h2>{% trans "OUR DOGS" %}</h2>  
 
-  {% include "subtemplates/homeCount.html" %}
+  {% include "home_sub/count.html" %}
 
   <div class="wrapper" id="data_dogs">
     {% for instance in data_dogs %}
-      {% include "subtemplates/dogGalleryLoop.html" %}
+      {% include "subtemplates/gallery.html" %}
     {% endfor %}
   </div>
 
   <br>  
   <br>
-  {% include "subtemplates/homeRandomAdoption.html" %}
+  {% include "home_sub/random_adoption.html" %}
   <br>  
   <br>
-  {% include "subtemplates/homeDonationSlideshow.html" %}
+  {% include "home_sub/slideshow.html" %}
   <br>
   <br>
 
   {% with location="Home" %}
-    {% include "subtemplates/mainContainer.html" %}
+    {% include "subtemplates/container.html" %}
   {% endwith %}
 
   <div class="parent button-hover" id="show-all-dogs-btn">

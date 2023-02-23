@@ -8,25 +8,25 @@
 
   {% with location="Gallery" %}
     {% include "subtemplates/noticeboard.html" %}
-    {% include "subtemplates/mainContainer.html" %}
+    {% include "subtemplates/container.html" %}
   {% endwith %}
   
   <h2> {% trans "Latest Arrivals" %} </h2>
 
   <div class="wrapper" id="new_dogs">
     {% for instance in new_dogs %}
-      {% include "subtemplates/dogGalleryLoop.html" %}
+      {% include "subtemplates/gallery.html" %}
     {% endfor %}
   </div>
 
-  {% include "subtemplates/dogGalleryForms.html" %}
+  {% include "dogGallery_sub/forms.html" %}
   <br>
 
   <h2> {% trans "Our Dogs" %} </h2>
 
   <div class="wrapper" id="dog-list">
     {% for instance in active_dogs %}
-      {% include "subtemplates/dogGalleryLoop.html" %}
+      {% include "subtemplates/gallery.html" %}
     {% endfor %}
   </div>
 
