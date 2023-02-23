@@ -1,35 +1,38 @@
 {% load field_loop %}
+{% load get_attribute %}
 {% block page_content %}
 
 {% for instance in content_container %}
-    {% if instance.fields.location == location and instance.fields.visible %}
-    <div class="parent" {% if instance.fields.background_color %} style="background-color: {{ instance.fields.background_color }};" {% endif %}>
+    {% if instance.location == location and instance.visible %}
+    <div class="parent" {% if instance.background_color %} style="background-color: {{ instance.background_color }};" {% endif %}>
         
-        <h1 {% if instance.fields.title_color %} style="color: {{ instance.fields.title_color }};" {% endif %}>
+        <h1 {% if instance.title_color %} style="color: {{ instance.title_color }};" {% endif %}>
             {% if L == "bg" %}
-                {{ instance.fields.section_title_bg }}
+                {{ instance.section_title_bg }}
             {% else %}
-                {{ instance.fields.section_title_eng }}
+                {{ instance.section_title_eng }}
             {% endif %}
         </h1>
         <br>
-        {% if instance.fields.text_position == "top" %}
+        {% if instance.text_position == "top" %}
             {% include "subtemplates/mainContainerText.html" %} 
         {% endif %}
 
         {% for field_name in content_containter_pics %}
-            {% if instance.fields|field_loop:field_name %}
-            <div class="child">
-                <img class="main-container-img"
-                    decoding="async"
-                    lazy-sizes="auto"
-                    loading="lazy"
-                    src="{{ instance.fields|field_loop:field_name }}"/>
-            </div>
-            {% endif %}
-        {% endfor %}
+            {% with field=instance|getattribute:field_name %}
+                {% if field %}
+                <div class="child">
+                    <img class="main-container-img"
+                        decoding="async"
+                        lazy-sizes="auto"
+                        loading="lazy"
+                        src="{{ field }}"/>
+                </div>
+                {% endif %}
+            {% endwith %}
+        {% endfor %}    
         
-        {% if instance.fields.text_position == "bottom" %}
+        {% if instance.text_position == "bottom" %}
             {% include "subtemplates/mainContainerText.html" %} 
         {% endif %}
 

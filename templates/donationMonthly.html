@@ -2,6 +2,7 @@
 {% extends "common.html" %}
 {% load static %}
 {% load field_loop %}
+{% load get_attribute %}
 {% load i18n %}
 {% get_current_language as L %}
 {% block page_content %}
@@ -33,21 +34,23 @@
       <p class="compressed-text">{{ donation.donation_text_eng }}</p>
     {% endif %}
     <div class="image-container-dog-album">
+
       {% for field_name in donation_pic_fields %}
-        {% if donation|field_loop:field_name %}
-          <div>
-            <img class="image-dog-album"
-                decoding="async"
-                lazy-sizes="auto"
-                loading="lazy"
-                src="{{ donation|field_loop:field_name }}"
-                alt="{{ field_name }}">
-          </div>
-        {% endif %}
-      {% endfor %}
+      {% with field=donation|getattribute:field_name %}
+          {% if field %}
+              <img class="image-dog-album"
+                  decoding="async"
+                  lazy-sizes="auto"
+                  loading="lazy"
+                  src="{{ field }}"/>
+          {% endif %}
+      {% endwith %}
+  {% endfor %}    
+
     </div>
     <br>
     <br>
+
   {% endfor %}
 
   <div style="display: flex; justify-content: space-evenly;">

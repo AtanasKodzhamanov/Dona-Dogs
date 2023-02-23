@@ -3,31 +3,31 @@
 {% block page_content %}
 
   {% for notice in data_notice_board %}
-    {% if notice.fields.location == location and notice.fields.visible %}
+    {% if notice.location == location and notice.visible %}
       <article class="notice-board">
         <div>
-          {% if notice.fields.section_title_bg %}
+          {% if notice.section_title_bg %}
           <h2>
             {% if L == "bg" %}
-                {{ notice.fields.section_title_bg }}
+                {{ notice.section_title_bg }}
             {% else %}
-                {{ notice.fields.section_title_eng }}
+                {{ notice.section_title_eng }}
             {% endif %}
           </h2>
           {% endif %}
 
-          {% if notice.fields.note_pic_1 %}<img class="noticeboard-size-img-one" src={{ notice.fields.note_pic_1 }}>
+          {% if notice.note_pic_1 %}<img class="noticeboard-size-img-one" src={{ notice.note_pic_1 }}>
             <br>
             <br>
             <br>
           {% endif %}
 
-          {% if notice.fields.note_pic_2 %}<img class="noticeboard-size-img-two" src={{ notice.fields.note_pic_2 }}>{% endif %}
+          {% if notice.note_pic_2 %}<img class="noticeboard-size-img-two" src={{ notice.note_pic_2 }}>{% endif %}
           <p>
             {% if L == "bg" %}
-              {{ notice.fields.note_bg|safe }}
+              {{ notice.note_bg|safe }}
             {% else %}
-              {{ notice.fields.note_eng|safe }}
+              {{ notice.note_eng|safe }}
             {% endif %}
           </p>
         </div>

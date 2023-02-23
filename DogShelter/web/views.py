@@ -34,12 +34,10 @@ class BaseView(TemplateView):
         context = {}
 
         # get all notice board items from the database
-        context['data_notice_board'] = serializers.serialize(
-            'python', NoticeBoard.objects.all().order_by("order"))
+        context['data_notice_board'] = NoticeBoard.objects.all().order_by("order")
 
         # get all content container items from the database
-        context['content_container'] = serializers.serialize(
-            'python', LongPost.objects.all().order_by("order"))
+        context['content_container'] = LongPost.objects.all().order_by("order")
 
         context['content_containter_pics'] = [
             f'about_pic_{i}' for i in range(1, 11)]
@@ -128,12 +126,11 @@ class DonationStoryView(ListView):
         # create a list of the donation_pic_1, donation_pic_2, etc. image fields for the template to loop through
         # convert the Donation model data to a dictionary so that it can be passed to the template and looped through
         donation_pic_fields = [f'donation_pic_{i}' for i in range(1, 7)]
-        donations_data = [model_to_dict(donation) for donation in donations]
 
         # return context
         context['donation_pic_fields'] = donation_pic_fields
         context['donation_names'] = donation_names
-        context['donations'] = donations_data
+        context['donations'] = donations
         context["date"] = date
 
         # common context data
@@ -205,8 +202,7 @@ class ClinicView(BaseView):
         context = super().get_common_context_data()
 
         # add infirmary-specific data to the context
-        data_dogs = serializers.serialize(
-            'python', Dog.objects.filter(status="Sick").order_by("?"))
+        data_dogs = Dog.objects.filter(status="Sick").order_by("?")
 
         context.update({
             "data_dogs": data_dogs

@@ -59,6 +59,18 @@
     {% if dog.adoption_pic_after_1 %}
         <h2>{% trans "After adoption" %}</h2>
         <br>
+        <div class="image-container-dog-album">
+            {% for field_name in adoption_pic_fields %}
+               {% with field=dog|getattribute:field_name %}
+                   {% if field %}
+                       <img class="image-dog-album"
+                           src="{{ field }}"
+                           alt="dog pic">
+                   {% endif %}
+               {% endwith %}
+           {% endfor %} 
+       </div>      
+       <br>
     {% endif %}
 
     <div style="display: flex; justify-content: space-evenly;">
@@ -72,29 +84,16 @@
         </div>
       </div>
     <br>
+
     <p style="text-align: center;">
         {% trans "To inquire about adoptions you can contact us on DonaDogsFoundation@gmail.com or directly on our Facebook group." %}
     </p>
-      
-    <div class="image-container-dog-album">
-         {% for field_name in adoption_pic_fields %}
-            {% with field=dog|getattribute:field_name %}
-                {% if field %}
-                    <img class="image-dog-album"
-                        src="{{ field }}"
-                        alt="dog pic">
-                {% endif %}
-            {% endwith %}
-        {% endfor %} 
-    </div>      
+
     <br>
     <div class="parent button-hover" id="show-all-dogs-btn">
         <h2>{% trans "ALL DOGS" %}</h2>
     </div>
     <br>
-
-
-      
     <br>
 
     <script src="{% static 'js/gallery_redirect.js' %}"></script>
@@ -102,6 +101,7 @@
     <script>
         const activeDogIds = {{ active_dog_ids|safe }};
     </script>
+    
     <script src="{% static 'js/next_dog.js' %}"></script>
 
 {% endblock %}
