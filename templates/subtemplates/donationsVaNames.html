@@ -1,0 +1,21 @@
+{% load i18n %}
+{% block page_content %}
+
+<div class="parent" style="text-align: center;background-color: #fff">
+    <h2>{% trans "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS" %}</h2>
+    {% for instance in data_people %}
+      {% if instance.0 %}
+        <div style="display: inline-block">
+          <h4 style="padding:5px">
+            {% if L == "bg" %}
+              {{ instance.0 }}
+            {% else %}
+              {{ instance.1 }}
+            {% endif %}
+          </h4>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+{% endblock %}

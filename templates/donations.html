@@ -9,44 +9,10 @@
   {% with location="Donations" %}
     {% include "subtemplates/noticeboard.html" %}
   {% endwith %}
-    <div class="parent" style="text-align: center;  background-color: #fff">
-      <h2>{% trans "WE THANK YOU ALL FOR SUPPORTING US" %}</h2>
-      <br>
 
-      <h3>{% trans "LAST MONTH WE RECEIVED HELP FROM" %}</h3>
-      <br>
-      {% for instance in data_donations %}
-        <div style="display: inline-block">
-          <h4 style="padding:5px">
-            {% if L == "bg" %}
-              {{ instance.0 }}
-            {% else %}
-              {{ instance.1 }}
-            {% endif %}
-          </h4>
-        </div>
-      {% endfor %}
-      <br>
-      <br>
-      <img src="https://res.cloudinary.com/dxwb5ejff/image/upload/v1676926813/Static/327104738_3336867696578733_6908209498626857260_n_eswll5.jpg" alt="heart image" style="width: 200px; height: 200px;">
-    </div>
-    
-    <div class="parent" style="text-align: center;background-color: #fff">
-      <h2>{% trans "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS" %}</h2>
-      {% for instance in data_people %}
-        {% if instance.0 %}
-          <div style="display: inline-block">
-            <h4 style="padding:5px">
-              {% if L == "bg" %}
-                {{ instance.0 }}
-              {% else %}
-                {{ instance.1 }}
-              {% endif %}
-            </h4>
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
+  {% include "subtemplates/donationsNames.html" %}
+  {% include "subtemplates/donationsVaNames.html" %}
+
   <br>
 
   {% with location="Donations" %}

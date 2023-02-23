@@ -1,0 +1,22 @@
+{% load i18n %}
+
+{% block page_content %}
+
+<p class="compressed-text">
+    {% trans "We have " %}
+    {{ count_dogs }}
+    {% trans "dogs in the shelter. Last year we helped " %}
+    {{ count_adopted_last_year }}
+    {% trans "dogs get adopted in several countries across Europe. You can see more information about this year's adoptions here: " %}
+    <a class="hyperlink" href="/adoptions/">{% trans "ADOPTIONS" %}</a>.
+  </p>
+  <br>
+  <p class="compressed-text">
+    {% trans "Currently there are " %}
+    {{ count_sick }}
+    {% trans "sick dogs receiving intensive treatement at the clinic. Please help us help them so that we can continue to provide treatement for any dog that needs it: " %}
+    <a class="hyperlink" href="/clinic/">{% trans "CLINIC" %}</a>.
+  </p>
+
+
+{% endblock %}

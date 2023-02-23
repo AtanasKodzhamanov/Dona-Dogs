@@ -62,12 +62,9 @@ class HomeView(BaseView):
         context = super().get_common_context_data()
 
         # get all dogs from the database
-        data_dogs = serializers.serialize(
-            'python', Dog.objects.all().order_by("?"))
 
-        # filter for the active dogs only (alive, healthy and not adopted) and pick 6 random dogs to display on the home page
-        data_dogs = [dog for dog in data_dogs if dog['fields']
-                     ['status'] == 'Active']
+        data_dogs = Dog.objects.filter(
+            status__in=["Active", "Sick", "New"]).order_by("?")
         data_dogs = data_dogs[:6]
 
         today = datetime.date.today()
@@ -283,7 +280,7 @@ class DonationsView(BaseView):
             "data_people": data_people,
             "last_month": last_month,
             "month": last_month_cl,
-            "dataDonations": data_donations
+            "data_donations": data_donations
         })
 
         return context

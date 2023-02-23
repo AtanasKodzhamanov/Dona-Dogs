@@ -1,0 +1,44 @@
+{% load i18n %}
+
+{% block page_content %}
+
+<h2>
+    {% trans "Last year " %}
+    {% if L == "bg" %}
+      {{ adopted_puppy.name_bg }}
+    {% else %}
+      {{ adopted_puppy.name_eng }}
+    {% endif %}
+    {% trans " got adopted in " %}
+    {% if L == "bg" %}
+      {{ adopted_puppy.adoption_country_bg }}
+    {% else %}
+      {{ adopted_puppy.adoption_country_eng }}
+    {% endif %}
+  </h2>
+  <br>
+  <br>
+  <div>
+    <div style="display: flex">
+      <img class="home-adopted-puppy-size-img"
+           decoding="async"
+           lazy-sizes="auto"
+           loading="lazy"
+           src="{{ adopted_puppy.profile_pic }}"/>
+      <img class="home-adopted-puppy-size-img"
+           decoding="async"
+           lazy-sizes="auto"
+           loading="lazy"
+           src="{{ adopted_puppy.adoption_pic_after_1 }}"/>
+    </div>
+    <div>
+      <p class="compressed-text">
+        {% if L == "bg" %}
+          {{ adopted_puppy.story_bg|safe }}
+        {% else %}
+          {{ adopted_puppy.story_eng|safe }}
+        {% endif %}
+      </p>
+    </div>
+  </div>
+{% endblock %}

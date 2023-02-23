@@ -5,134 +5,34 @@
 {% load truncatetext %}
 {% get_current_language as L %}
 {% block page_content %}
-  {% comment %} <div id="slideshow">
- {% for donation in donation_stories %}
-  <div class="slide">
-    <div display="inline-block">
-    <p>{{ donation.donation_text_eng }}</p>
-    <img style="max-width:300px" src="{{ donation.donation_pic_1}}" alt="image 1">
-    </div>
-  </div>
-  {% endfor %}
-  </div> {% endcomment %}
+
   {% with location="Home" %}
     {% include "subtemplates/noticeboard.html" %}
   {% endwith %}
-  <h2>{% trans "OUR DOGS" %}</h2>
+  <hr>
   <br>
-  <p class="compressed-text">
-    {% trans "We have " %}
-    {{ count_dogs }}
-    {% trans "dogs in the shelter. Last year we helped " %}
-    {{ count_adopted_last_year }}
-    {% trans "dogs get adopted in several countries across Europe. You can see more information about this year's adoptions here: " %}
-    <a class="hyperlink" href="/adoptions/">{% trans "ADOPTIONS" %}</a>.
-  </p>
-  <br>
-  <p class="compressed-text">
-    {% trans "Currently there are " %}
-    {{ count_sick }}
-    {% trans "sick dogs receiving intensive treatement at the clinic. Please help us help them so that we can continue to provide treatement for any dog that needs it: " %}
-    <a class="hyperlink" href="/clinic/">{% trans "CLINIC" %}</a>.
-  </p>
+  <h2>{% trans "OUR DOGS" %}</h2>  
 
-  <div class="wrapper">
+  {% include "subtemplates/homeCount.html" %}
+
+  <div class="wrapper" id="data_dogs">
     {% for instance in data_dogs %}
-      {% if instance.fields.status == "Active" %}
-        <div id="Dog"
-             class="panel, thumbnail"
-             vaName="{{ instance.fields.va_name_eng }}"
-             gender="{{ instance.fields.gender }}"
-             pk="{{ instance.pk }}">
-          <h1 class="puppy-name">
-            {% if L == "bg" %}
-              {{ instance.fields.name_bg }}
-            {% else %}
-              {{ instance.fields.name_eng }}
-            {% endif %}
-          </h1>
-          <img class="gallery-size-img"
-               decoding="async"
-               lazy-sizes="auto"
-               loading="lazy"
-               src="{{ instance.fields.profile_pic }}"/>
-               <p>
-                {% if L == "bg" %}
-                  {{ instance.fields.story_bg|safe|truncatetext:130 }}
-                {% else %}
-                  {{ instance.fields.story_eng|safe|truncatetext:130 }}
-                {% endif %}
-              </p>  
-        </div>
-      {% endif %}
+      {% include "subtemplates/dogGalleryLoop.html" %}
     {% endfor %}
   </div>
-  <br>  
-  <br>
-  <h2 >
-    {% trans "Last year " %}
-    {% if L == "bg" %}
-      {{ adopted_puppy.name_bg }}
-    {% else %}
-      {{ adopted_puppy.name_eng }}
-    {% endif %}
-    {% trans " got adopted in " %}
-    {% if L == "bg" %}
-      {{ adopted_puppy.adoption_country_bg }}
-    {% else %}
-      {{ adopted_puppy.adoption_country_eng }}
-    {% endif %}
-  </h2>
-  <br>
-  <br>
-  <div>
-    <div style="display: flex">
-      <img class="home-adopted-puppy-size-img"
-           decoding="async"
-           lazy-sizes="auto"
-           loading="lazy"
-           src="{{ adopted_puppy.profile_pic }}"/>
-      <img class="home-adopted-puppy-size-img"
-           decoding="async"
-           lazy-sizes="auto"
-           loading="lazy"
-           src="{{ adopted_puppy.adoption_pic_after_1 }}"/>
-    </div>
-    <div>
-      <p class="compressed-text">
-        {% if L == "bg" %}
-          {{ adopted_puppy.story_bg|safe }}
-        {% else %}
-          {{ adopted_puppy.story_eng|safe }}
-        {% endif %}
-      </p>
-    </div>
-  </div>
-  <br>  
-  <br>
-  <h2>{% trans "Last month's donations" %}</h2>
-  <br>
-  {% for donation in donation_stories  %}
-    <div id="slides-container">
-      <div class="slides-donations fade" style="display: flex">
-        {% if donation.donation_pic_1 %}<img class="home-donations-size-img" src={{ donation.donation_pic_1 }}>{% endif %}
-        {% if donation.donation_pic_2 %}<img class="home-donations-size-img" src={{ donation.donation_pic_2 }}>{% endif %}
-      </div>
-    </div>
-  {% endfor %}        
- <p class="compressed-text">
-      {% trans "You can see more information about last month's donations " %} <a class="hyperlink" href="/donations/history/{{ date_pk }}/">{% trans "here" %}</a>.
-  </p> 
-  <br>
-  <div id="dots-container" style="display: flex; justify-content: center;">
-    {% comment %} JS will append dots here {% endcomment %}
-  </div>
-<br>
-<br>
 
-{% with location="Home" %}
-  {% include "subtemplates/mainContainer.html" %}
-{% endwith %}
+  <br>  
+  <br>
+  {% include "subtemplates/homeRandomAdoption.html" %}
+  <br>  
+  <br>
+  {% include "subtemplates/homeDonationSlideshow.html" %}
+  <br>
+  <br>
+
+  {% with location="Home" %}
+    {% include "subtemplates/mainContainer.html" %}
+  {% endwith %}
 
   <div class="parent button-hover" id="show-all-dogs-btn">
     <div>
@@ -145,7 +45,6 @@
       <h2>{% trans "SEE MORE ADOPTIONS HERE" %}</h2>
     </div>
   </div>
-
 
   <script src="{% static 'js/donations_slideshow.js' %}"></script>
   <script src="{% static 'js/dog_album_redirect.js' %}"></script>
