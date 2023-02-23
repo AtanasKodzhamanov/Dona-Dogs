@@ -17,9 +17,9 @@ button:hover {
 #forms-container {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-  padding: 5px;
-  margin-left: 25px;
-  margin-right: 25px;
+  padding: 0px;
+  margin-left: 40px;
+  margin-right: 40px;
   background-color: #f2f2f2;
   color: rgb(10, 10, 46);
   text-align: left;
