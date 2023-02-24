@@ -1,3 +1,5 @@
+//to clean up
+
 function goToMonth(delta) {
   const url = window.location.pathname;
   const urlParts = url.split("/");
