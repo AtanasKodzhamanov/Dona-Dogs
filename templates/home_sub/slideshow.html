@@ -6,8 +6,8 @@
 {% for donation in donation_stories  %}
   <div id="slides-container">
     <div class="slides-donations fade" style="display: flex">
-      {% if donation.donation_pic_1 %}<img class="home-donations-size-img" src={{ donation.donation_pic_1 }}>{% endif %}
-      {% if donation.donation_pic_2 %}<img class="home-donations-size-img" src={{ donation.donation_pic_2 }}>{% endif %}
+      {% if donation.donation_pic_1 %}<img alt="donation img" class="home-donations-size-img" src={{ donation.donation_pic_1 }}>{% endif %}
+      {% if donation.donation_pic_2 %}<img alt="donation img" class="home-donations-size-img" src={{ donation.donation_pic_2 }}>{% endif %}
     </div>
   </div>
 {% endfor %}        
