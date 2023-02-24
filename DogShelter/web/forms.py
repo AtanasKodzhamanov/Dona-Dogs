@@ -48,7 +48,7 @@ class vaStatusForm(forms.Form):
         label="",
         widget=Select(choices=(
             ("all", _("All dogs")),
-            ("va", _("Virtually Adopted")),
+            ("va", _("Virtual sponsor")),
             ("no", _("No Adoptors")),
         ))
     )
