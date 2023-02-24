@@ -16,13 +16,13 @@
           </h2>
           {% endif %}
 
-          {% if notice.note_pic_1 %}<img class="noticeboard-size-img-one" src={{ notice.note_pic_1 }}>
+          {% if notice.note_pic_1 %}<img alt="noticeboard picture" class="noticeboard-size-img-one" src={{ notice.note_pic_1 }}>
             <br>
             <br>
             <br>
           {% endif %}
 
-          {% if notice.note_pic_2 %}<img class="noticeboard-size-img-two" src={{ notice.note_pic_2 }}>{% endif %}
+          {% if notice.note_pic_2 %}<img alt="noticeboard picture" class="noticeboard-size-img-two" src={{ notice.note_pic_2 }}>{% endif %}
           <p>
             {% if L == "bg" %}
               {{ notice.note_bg|safe }}
