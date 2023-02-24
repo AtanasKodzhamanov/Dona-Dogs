@@ -1,2 +1,1 @@
-web: gunicorn DogShelter.wsgi
-
+web: python manage.py collectstatic && gunicorn DogShelter.wsgi
