@@ -12,6 +12,10 @@ from django.shortcuts import render, redirect
 # ----- Utility functions -----
 
 
+def handler404(request, exception):
+    return render(request, '404.html', status=404)
+
+
 def renderCommon(request):
     subscribeForm = SubscribeForm(request.POST or None)
     return subscribeForm
