@@ -25,11 +25,13 @@
             <div class="virtual-adopter-block">
               {% trans "Virtual sponsor" %}
               <br>
-              {% if L == "bg" %}
-                {{ instance.va_name_bg }}
-              {% else %}
-                {{ instance.va_name_eng }}
-              {% endif %}
+              
+                {% if L == "bg" %}
+                  {{ instance.va_name_bg }}
+                {% else %}
+                  {{ instance.va_name_eng }}
+                {% endif %}
+              
             </div>
           {% endif %}
           <p>
