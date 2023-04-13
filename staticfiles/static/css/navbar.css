@@ -93,16 +93,27 @@ nav li a h1 {
 }
 
 nav li:hover:not(.active) {
-    border-bottom: 5px solid #000000;
+    border-bottom: 5px solid rgb(255, 138, 20);
+
 }
 
 /* to prevent the bottom bar from displacing space when hovering over */
 nav li {
-    border-bottom: 5px solid #00000000;
+    border-bottom: 5px solid rgba(255, 137, 20, 0);
+
+}
+
+nav li:hover h1{
+    color: rgb(255, 138, 20);
 }
 
 nav li.active {
-    border-bottom: 5px solid #000000;
+    border-bottom: 5px solid rgb(255, 138, 20);
+}
+
+nav li.active h1 {
+    border-bottom: 5px solid rgb(255, 138, 20);
+    color:rgb(255, 138, 20);
 }
 
 a:-webkit-any-link {

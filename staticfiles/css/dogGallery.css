@@ -60,7 +60,26 @@
 }
 
 .dog:hover{
-    background-color: rgb(200, 200, 200);
-    cursor: pointer;
-  }
+  background-color: rgb(255, 138, 20);
+  cursor: pointer;
   
+  }
+
+.dog:hover h1{
+  color: rgb(255, 255, 255);
+  font-weight:bold;
+}
+
+.dog:hover p{
+  color: rgb(255, 255, 255);
+  font-weight:bold;
+}
+
+.dog .virtual-adopter-block {
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.dog:hover .virtual-adopter-block {
+  opacity: 0;
+}
