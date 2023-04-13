@@ -112,7 +112,6 @@ nav li.active {
 }
 
 nav li.active h1 {
-    border-bottom: 5px solid rgb(255, 138, 20);
     color:rgb(255, 138, 20);
 }
 
