@@ -189,6 +189,16 @@
     cursor: pointer;
 }
 
+@media only screen and (max-width: 600px) {
+    .year-heading{
+        background-color: var(--main-theme);
+    }
+    .year-heading h2{
+        color:white;
+    }
+    
+}
+
 .button-hover:hover h2{
     color:white;
 }
@@ -203,11 +213,26 @@
     padding: 10px;
 }
 
+.month-container:hover{
+    background-color: var(--main-theme);
+    cursor: pointer;
+}
+
+.month-container:hover h3{
+    color:white;
+}
 
 @media only screen and (max-width: 600px) {
     .month-container{
-        margin: 0 auto
+        margin: 0 auto;
+        margin-bottom:3px;
+        min-width:150px;
+        background-color: var(--main-theme);
     } 
+    .month-container h3{
+        color:white;
+    }
+
 }
 
 .grid-container {
@@ -222,10 +247,7 @@
     }
 }
 
-.month-container:hover {
-    background-color: var(--main-theme);
-    cursor: pointer;
-}
+
 
 .button-box:hover h2{
     color:white;

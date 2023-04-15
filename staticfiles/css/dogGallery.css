@@ -119,6 +119,11 @@
     font-weight:bold;
   }
 
+  .dog:nth-of-type(even):hover p{
+    color: var(--para-color);
+    font-weight:bold;
+  }
+
   .dog:nth-of-type(even) {
     background-color: var(--grey);
     cursor: pointer;
@@ -142,6 +147,7 @@
   }
   
   .dog:hover .virtual-adopter-block {
+    display:block;
     opacity: 1;
   }
 }
