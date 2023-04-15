@@ -129,7 +129,7 @@
 
 .notice-board .notice-board-textarea p{
     font-weight:800; 
-    color:white
+    color:white;
 }
 @media only screen and (max-width: 900px) {
     .notice-board {
