@@ -114,6 +114,8 @@
 @media only screen and (max-width: 600px) {
     .button-hover {
         background-color: var(--main-theme);
+    }
+    .button-hover h2{
         color:white;
     }
 }
