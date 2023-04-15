@@ -99,41 +99,41 @@
     font-size: 20px;
   }
 
-  .dog:nth-of-type(even) {
-    background-color: var(--main-theme);
-    cursor: pointer;
-  }
-
-  .dog:nth-of-type(even):hover {
-    background-color: var(--main-theme);
-    cursor: pointer;
-  }
-  
-  .dog:nth-of-type(even) h1{
-    color: white;
-    font-weight:bold;
-  }
-  
-  .dog:nth-of-type(even) p{
-    color: white;
-    font-weight:bold;
-  }
-
   .dog:nth-of-type(odd) {
-    background-color: var(--grey);
+    background-color: var(--main-theme);
     cursor: pointer;
   }
 
   .dog:nth-of-type(odd):hover {
-    background-color: var(--grey);
+    background-color: var(--main-theme);
     cursor: pointer;
   }
-
+  
   .dog:nth-of-type(odd) h1{
+    color: white;
     font-weight:bold;
   }
   
   .dog:nth-of-type(odd) p{
+    color: white;
+    font-weight:bold;
+  }
+
+  .dog:nth-of-type(even) {
+    background-color: var(--grey);
+    cursor: pointer;
+  }
+
+  .dog:nth-of-type(even):hover {
+    background-color: var(--grey);
+    cursor: pointer;
+  }
+
+  .dog:nth-of-type(even) h1{
+    font-weight:bold;
+  }
+  
+  .dog:nth-of-type(even) p{
     font-weight:bold;
   }
 
