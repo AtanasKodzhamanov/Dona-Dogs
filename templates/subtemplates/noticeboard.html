@@ -6,7 +6,7 @@
   {% for notice in data_notice_board %}
     {% if notice.location == location and notice.visible %}
   
-      <div class="notice-board" style="flex-direction: {{ notice.flex_direction }};">
+      <div class="notice-board">
         {% if notice.note_pic_1 %}
         <div class="notice-board-image">  
           <img alt="noticeboard picture" src={{ notice.note_pic_1 }}>
