@@ -2,8 +2,10 @@
 
 {% block page_content %}
 
-<div>
-<p style="font-weight:800; " class="compressed-text">
+<div class="notice-board">
+<div class="notice-board-textarea" style="background-color: #b99100">
+  <h2>{% trans "OUR DOGS" %}</h2>  
+<p style="font-weight:800; " >
     {% trans "We have " %}
     {{ count_dogs }}
     {% trans "dogs in the shelter. Last year we helped " %}
@@ -12,12 +14,17 @@
     <a class="hyperlink" href="/adoptions/">{% trans "ADOPTIONS" %}</a>.
   </p>
   <br>
-  <p style="font-weight:800; " class="compressed-text">
+  <p style="font-weight:800; " >
     {% trans "Currently there are " %}
     {{ count_sick }}
     {% trans "sick dogs receiving intensive treatement at the clinic. Please help us help them so that we can continue to provide treatement for any dog that needs it: " %}
     <a class="hyperlink" href="/clinic/">{% trans "CLINIC" %}</a>.
   </p>
 </div>
+<div class="notice-board-image" style="flex:1">  
+  <iframe width="100%" height="100%" style="object-fit: cover;" src="https://www.youtube.com/embed/MhFaciR8k-U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+</div>
+<br>
 
 {% endblock %}
