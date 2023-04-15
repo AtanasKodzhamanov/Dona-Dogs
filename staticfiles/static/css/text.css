@@ -57,6 +57,12 @@ h3 {
     }
 }
 
+@media only screen and (max-width: 600px) {
+    .dog h1 {
+        font-size: 20px;
+    }
+}
+
 .puppy-name {
     font-size: 25px;
 }
