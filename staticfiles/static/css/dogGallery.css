@@ -59,6 +59,12 @@
   font-weight: bold;
 }
 
+@media only screen and (max-width: 600px) {
+  .virtual-adopter-block{
+    background-color: #72727296;
+  }
+}
+
 .dog:hover{
   background-color: var(--main-theme);
   cursor: pointer;
@@ -114,22 +120,20 @@
   }
 
   .dog:nth-of-type(odd) {
-    background-color: var(--main-theme-2);
+    background-color: var(--grey);
     cursor: pointer;
   }
 
   .dog:nth-of-type(odd):hover {
-    background-color: var(--main-theme-2);
+    background-color: var(--grey);
     cursor: pointer;
   }
 
   .dog:nth-of-type(odd) h1{
-    color: white;
     font-weight:bold;
   }
   
   .dog:nth-of-type(odd) p{
-    color: white;
     font-weight:bold;
   }
 
