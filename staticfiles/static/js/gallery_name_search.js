@@ -5,7 +5,7 @@ function findName() {
   var dogName = document.getElementById("dogName").value;
   dogName = dogName.toLowerCase();
   // Loop through all the dog elements and hide the ones that don't match the submitted dog name
-  var dogs = document.querySelectorAll("#dog-list .dog h1");
+  var dogs = document.querySelectorAll("#dog-list .dog h2");
 
   for (var i = 0; i < dogs.length; i++) {
     var dog = dogs[i];

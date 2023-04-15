@@ -130,6 +130,25 @@
     font-weight:800; 
     color:white;
 }
+
+.notice-board .random-adoption-text {
+    box-sizing: border-box; 
+    flex:1;  
+    background-color: var(--main-theme); 
+    padding:20px;
+}
+
+.notice-board .random-adoption-text h2{
+    text-align:left; 
+    color:#4f4f4f;  
+    text-transform: uppercase;
+}
+
+.notice-board .random-adoption-text p{
+    font-weight:800; 
+    color:white;
+}
+
 @media only screen and (max-width: 900px) {
     .notice-board {
         flex-direction:column;

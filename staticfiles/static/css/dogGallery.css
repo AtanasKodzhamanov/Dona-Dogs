@@ -71,7 +71,7 @@
   
   }
 
-.dog:hover h1{
+.dog:hover h2{
   color: white;
   font-weight:bold;
 }
@@ -120,6 +120,11 @@
   }
 
   .dog:nth-of-type(even):hover p{
+    color: var(--para-color);
+    font-weight:bold;
+  }
+
+  .dog:nth-of-type(even):hover h2{
     color: var(--para-color);
     font-weight:bold;
   }
