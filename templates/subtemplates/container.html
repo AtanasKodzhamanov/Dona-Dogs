@@ -6,13 +6,13 @@
     {% if instance.location == location and instance.visible %}
     <div class="parent" {% if instance.background_color %} style="background-color: {{ instance.background_color }};" {% endif %}>
         
-        <h1 {% if instance.title_color %} style="color: {{ instance.title_color }};" {% endif %}>
+        <h2 {% if instance.title_color %} style="color: {{ instance.title_color }};" {% endif %}>
             {% if L == "bg" %}
                 {{ instance.section_title_bg }}
             {% else %}
                 {{ instance.section_title_eng }}
             {% endif %}
-        </h1>
+        </h2>
         <br>
         {% if instance.text_position == "top" %}
             {% include "subtemplates/container_text.html" %} 

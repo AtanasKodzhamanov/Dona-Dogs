@@ -95,10 +95,50 @@
 }
 
 .notice-board{
-    max-width: 1500px;  
+    margin:auto;
+    display:flex; 
+    overflow:hidden; 
+    width: 100%; 
+    justify-content: center; 
     margin:auto;
 }
 
+.notice-board-image{
+    flex:1;
+}
+
+.notice-board .notice-board-image img{
+    width:100%; 
+    height:100%; 
+    object-fit: cover;
+}
+
+.notice-board .notice-board-textarea{
+    box-sizing: border-box; 
+    flex:1;  
+    background-color: #ffb061; 
+    padding:60px;
+}
+
+.notice-board .notice-board-textarea h2{
+    text-align:left; 
+    color:#4f4f4f;  
+    text-transform: uppercase;
+}
+
+.notice-board .notice-board-textarea p{
+    font-weight:1000; 
+    color:white
+}
+@media only screen and (max-width: 900px) {
+    .notice-board {
+        flex-direction:column;
+    }
+    .notice-board-textarea{
+        padding:30px;
+    }
+
+}
 
 /* Buttons */
 
