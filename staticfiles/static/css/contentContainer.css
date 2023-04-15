@@ -151,14 +151,20 @@
     cursor: pointer;
 }
 
-.button-hover:hover h2{
+.button-hover:hover h3{
     color:white;
 }
+
+
 
 @media only screen and (max-width: 600px) {
     .button-hover {
         background-color: var(--main-theme);
     }
+    .button-hover h3{
+        color:white;
+    }
+
     .button-hover h2{
         color:white;
     }
@@ -221,16 +227,23 @@
     cursor: pointer;
 }
 
-@media only screen and (max-width: 600px) {
-    .button-box {
-        padding:10px;
-    }
-}
-
 .button-box:hover h2{
     color:white;
 }
 
-.month-container:hover h3{
+@media only screen and (max-width: 600px) {
+    .button-box {
+        background-color: var(--main-theme);
+        padding:10px;
+    }
+
+    .button-box h2{
+        color:white;
+    }
+}
+
+
+
+.month-container:hover a h3{
     color:white;
 }
