@@ -8,7 +8,7 @@ h6 {
     margin: 5px;
     text-align: center;
     font-family: 'Sofia Sans', sans-serif;
-    color: #414141;
+    color: var(--titles);
 }
 
 h1 {
@@ -45,11 +45,11 @@ h3 {
     }
 
     h2 {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     h3 {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     p {
@@ -72,7 +72,7 @@ p {
     padding: 10px 30px;
     line-height: 200%;
     font-size: 16px;
-    color: #414141;
+    color: var(--para-color);
     text-align: center;
     margin: auto;
     max-width: 1500px;
@@ -105,7 +105,7 @@ p.container-text {
 }
 
 a.hyperlink {
-    color: rgb(255, 128, 0) !important;
+    color: var(--main-theme) !important;
     text-decoration: none;
     text-decoration: bold;
 }

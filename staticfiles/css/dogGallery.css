@@ -60,18 +60,18 @@
 }
 
 .dog:hover{
-  background-color: rgb(255, 138, 20);
+  background-color: var(--main-theme);
   cursor: pointer;
   
   }
 
 .dog:hover h1{
-  color: rgb(255, 255, 255);
+  color: white;
   font-weight:bold;
 }
 
 .dog:hover p{
-  color: rgb(255, 255, 255);
+  color: white;
   font-weight:bold;
 }
 
@@ -82,4 +82,60 @@
 
 .dog:hover .virtual-adopter-block {
   opacity: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .dog{
+    margin-top:10px;
+  }
+  .dog:nth-of-type(even) {
+    background-color: var(--main-theme);
+    cursor: pointer;
+  }
+  
+  .dog:nth-of-type(even) h1{
+    color: white;
+    font-weight:bold;
+  }
+  
+  .dog:nth-of-type(even) p{
+    color: white;
+    font-weight:bold;
+  }
+
+  .dog:nth-of-type(odd) {
+    background-color: var(--main-theme-2);
+    cursor: pointer;
+  }
+
+  .dog:nth-of-type(odd) h1{
+    color: white;
+    font-weight:bold;
+  }
+  
+  .dog:nth-of-type(odd) p{
+    color: white;
+    font-weight:bold;
+  }
+
+  
+  .dog:hover{
+    background-color: var(--grey);
+    }
+
+  .dog:hover h1{
+    color: var(--titles);
+  }
+
+  .dog:hover p{
+    color: var(--para-color);
+  }
+  
+  .dog .virtual-adopter-block {
+    opacity: 1;
+  }
+  
+  .dog:hover .virtual-adopter-block {
+    opacity: 1;
+  }
 }

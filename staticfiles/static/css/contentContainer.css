@@ -1,7 +1,7 @@
 
 /* content containers in About, Donations, Adoptions */
 .parent {
-    background-color: rgb(245, 245, 245);
+    background-color: var(--grey);
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -61,7 +61,7 @@
 /* content containers in Dog Album */
 
 .story-container-dog-album {
-    background-color: rgb(245, 245, 245);
+    background-color: var(--grey);
     margin: auto;
     padding: 20px;
     text-align: center;
@@ -103,8 +103,19 @@
 /* Buttons */
 
 .button-hover:hover {
-    background-color: rgb(200, 200, 200);
+    background-color: var(--main-theme);
     cursor: pointer;
+}
+
+.button-hover:hover h2{
+    color:white;
+}
+
+@media only screen and (max-width: 600px) {
+    .button-hover {
+        background-color: var(--main-theme);
+        color:white;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -122,8 +133,16 @@
 }
 
 .year-heading:hover {
-    background-color: rgb(200, 200, 200);
+    background-color: var(--main-theme);
     cursor: pointer;
+}
+
+.button-hover:hover h2{
+    color:white;
+}
+
+.button-hover:hover h3{
+    color:white;
 }
 
 .month-container{
@@ -131,6 +150,7 @@
     text-align: center;
     padding: 10px;
 }
+
 
 @media only screen and (max-width: 600px) {
     .month-container{
@@ -151,7 +171,7 @@
 }
 
 .month-container:hover {
-    background-color: rgb(200, 200, 200);
+    background-color: var(--main-theme);
     cursor: pointer;
 }
 
@@ -159,4 +179,12 @@
     .button-box {
         padding:10px;
     }
+}
+
+.button-box:hover h2{
+    color:white;
+}
+
+.month-container:hover h3{
+    color:white;
 }

@@ -93,7 +93,7 @@ nav li a h1 {
 }
 
 nav li:hover:not(.active) {
-    border-bottom: 5px solid rgb(255, 138, 20);
+    border-bottom: 5px solid var(--main-theme);
 
 }
 
@@ -104,15 +104,15 @@ nav li {
 }
 
 nav li:hover h1{
-    color: rgb(255, 138, 20);
+    color: var(--main-theme);
 }
 
 nav li.active {
-    border-bottom: 5px solid rgb(255, 138, 20);
+    border-bottom: 5px solid var(--main-theme);
 }
 
 nav li.active h1 {
-    color:rgb(255, 138, 20);
+    color:var(--main-theme);
 }
 
 a:-webkit-any-link {

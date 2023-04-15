@@ -61,7 +61,7 @@
 
 .activeslide,
 .dot:hover {
-  background-color: #717171;
+  background-color: var(--main-theme);
 }
 
 /* Fading animation */
