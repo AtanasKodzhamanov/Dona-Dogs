@@ -256,7 +256,12 @@ class NoticeBoard(models.Model):
 
     LOCATION_CHOICES = [(x, x) for x in ("Gallery", "About", "Infirmary",
                                          "Adoptions", "Donations", "Home")]
-
+    FLEX_DIRECTION_CHOICES = [
+        ('row', 'Row'),
+        ('row-reverse', 'Row Reverse'),
+        ('column', 'Column'),
+        ('column-reverse', 'Column Reverse'),
+    ]
     LOCATION_LENGTH = 25
     DEFAULT_LOCATION = "About"
     MAX_TITLE_LENGTH = 100
@@ -289,6 +294,21 @@ class NoticeBoard(models.Model):
         default="",
         help_text="Снимка 2 в съобщението (не задължителни).",
         validators=[validate_url]
+    )
+    
+    note_video = models.URLField(
+        max_length=MAX_URL_LENGTH,
+        blank=True,
+        default="",
+        help_text="Видео линк",
+        validators=[validate_url]
+    )
+
+    flex_direction = models.CharField(
+        max_length=15,
+        choices=FLEX_DIRECTION_CHOICES,
+        default='row',
+        help_text='Flexbox direction options',
     )
 
     order = models.IntegerField(
