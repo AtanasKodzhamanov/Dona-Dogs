@@ -161,6 +161,10 @@
         height:65vh;
     }
 
+    .notice-board .notice-board-video iframe{
+        height:50vh;
+    }
+
 }
 
 /* Buttons */
