@@ -1,6 +1,6 @@
 
 body {
-    
+    zoom:0.8;
     max-width: 1280px;
     margin: auto;
     margin-bottom: 50px;
@@ -14,6 +14,7 @@ body {
     body {
       border: none;
       width: 80%;
+      zoom:0.9;
     }
   }
   
@@ -21,7 +22,7 @@ body {
     body {
       border: none;
       width: 90%;
-  
+      zoom:1;
     }
   }
   
