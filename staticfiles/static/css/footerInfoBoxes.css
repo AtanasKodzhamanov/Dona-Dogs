@@ -4,9 +4,8 @@
     }
 
     .box1,
-    .box2,
     .box3 {
-        width: 33.333%;
+        width: 50%;
         text-align: center;
     }
 
