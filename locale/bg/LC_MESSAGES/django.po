@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-05 06:17+0000\n"
+"POT-Creation-Date: 2023-06-12 00:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,19 +74,15 @@ msgstr "ВИЖТЕ ВСИЧКИ КУЧЕТА, СВОБОДНИ ЗА ОСИНОВ
 msgid "PAST ADOPTIONS"
 msgstr "ОСИНОВЕНИ КУЧЕТА"
 
-#: templates/common_sub/footer_info_boxes.html:10
-msgid "SUBSCRIBE TO OUR MONTHLY NEWSLETTER"
-msgstr "АБОНИРАЙТЕ СЕ ЗА НАШИЯ МЕСЕЧЕН БЮЛЕТИН"
-
-#: templates/common_sub/footer_info_boxes.html:13
+#: templates/common_sub/footer_info_boxes.html:16
 msgid "DONATION METHODS"
 msgstr "МЕТОДИ ЗА ДАРЕНИЕ"
 
-#: templates/common_sub/footer_info_boxes.html:22
+#: templates/common_sub/footer_info_boxes.html:25
 msgid "Subscribe"
 msgstr "Абонирай се"
 
-#: templates/common_sub/footer_info_boxes.html:27
+#: templates/common_sub/footer_info_boxes.html:30
 msgid ""
 "If you liked one of our dogs, but you don't have the opportunity to adopt, "
 "you can become their virtual adopter until they find a real one. To become a "
@@ -104,7 +100,7 @@ msgstr ""
 "кучета във всеки един момент, някои от които с хронични заболявания, които "
 "изискват скъпо лечение."
 
-#: templates/common_sub/footer_info_boxes.html:30
+#: templates/common_sub/footer_info_boxes.html:33
 msgid ""
 "It's hard for us to do it all alone. We are putting our time and our "
 "resources to make a positive change in the lives of these dogs and equally "
@@ -116,7 +112,7 @@ msgstr ""
 "до общността, че малтретирането на кучета е грешно, варварско и няма място в "
 "България в 21 век."
 
-#: templates/common_sub/footer_info_boxes.html:33
+#: templates/common_sub/footer_info_boxes.html:36
 msgid ""
 "To become a virtual adopter, you can set up a recurring payment equivalent "
 "to 20 EUR using PayPal or bank transfer. Make sure to specify the name of "
@@ -126,7 +122,7 @@ msgstr ""
 "равностойно на 20 евро. Не забравяйте да посочите името на кучето, което "
 "искате да осиновите виртуално!"
 
-#: templates/common_sub/footer_info_boxes.html:36
+#: templates/common_sub/footer_info_boxes.html:39
 msgid ""
 "Check out our albums, write to us on donadogsfoundation@email.com. Together "
 "we can do more!"
@@ -134,7 +130,7 @@ msgstr ""
 "Разгледайте нашите албуми, пишете ни на donadogsfoundation@email.com. Заедно "
 "можем повече!"
 
-#: templates/common_sub/footer_info_boxes.html:42
+#: templates/common_sub/footer_info_boxes.html:45
 msgid ""
 "We welcome direct <b> food or shelter</b> deliveries to Bulgaria, "
 "Stambolyski, 4210, Vasil Levski 40."
@@ -142,7 +138,7 @@ msgstr ""
 "Приветстваме директни доставки на храна или подслон за Стамболийски, 4210, "
 "Васил Левски 40."
 
-#: templates/common_sub/navbar.html:17 templates/home_sub/count.html:21
+#: templates/common_sub/navbar.html:17 templates/home_sub/count.html:19
 msgid "CLINIC"
 msgstr "КЛИНИКА"
 
@@ -231,16 +227,12 @@ msgid "ADOPTIONS"
 msgstr "ОСИНОВЕНИ КУЧЕТА"
 
 #: templates/home_sub/count.html:18
-msgid "Currently there are "
-msgstr "В момента има "
-
-#: templates/home_sub/count.html:20
 msgid ""
-"sick dogs receiving intensive treatement at the clinic. Please help us help "
-"them so that we can continue to provide treatement for any dog that needs "
-"it: "
+"We regularly rescue dogs that require intensive treatement. Please help us "
+"help them so that we can continue to provide treatement for any dog that "
+"needs it: "
 msgstr ""
-"болни кучета на интензивно лечение в клиниката. Моля, помогнете ни да им "
+"Ние редовно приемаме болни кучета на интензивно лечение в клиниката. Моля, помогнете ни да им "
 "помогнем, за да можем да продължим да предоставяме лечение за всяко куче, "
 "което се нуждае от него: "
 
@@ -267,6 +259,12 @@ msgstr "тук"
 #: templates/ourstory.html:17
 msgid "You can find more information about the organisation's legal status"
 msgstr "Можете да видете повече информация за легалният статус на фондацията"
+
+#~ msgid "SUBSCRIBE TO OUR MONTHLY NEWSLETTER"
+#~ msgstr "АБОНИРАЙТЕ СЕ ЗА НАШИЯ МЕСЕЧЕН БЮЛЕТИН"
+
+#~ msgid "Currently there are "
+#~ msgstr "В момента има "
 
 #, fuzzy
 #~| msgid "Virtual Adoption Status"

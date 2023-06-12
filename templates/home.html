@@ -14,29 +14,43 @@
   <br>
 
   {% include "home_sub/count.html" %}
-
+  <br>
+  <br>
+  <br>
+  <br>
   <div class="wrapper" id="data_dogs">
     {% for instance in data_dogs %}
       {% include "subtemplates/gallery.html" %}
     {% endfor %}
   </div>
+  <br>
+  <br>
   <div class="parent button-hover" id="show-all-dogs-btn">
     <h3>{% trans "SEE ALL OF OUR DOGS HERE" %}</h3>
   </div>
-
- 
-  <br>  
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <br>
   {% include "home_sub/random_adoption.html" %}
-  <br>  
+  <br>
+  <br>
    <div class="parent button-hover" id="show-all-adoptions-btn">
       <h3>{% trans "SEE MORE ADOPTIONS HERE" %}</h3>
   </div>
   <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   {% include "home_sub/slideshow.html" %}
   <br>
   <br>
-
+  <br>
+  <br>
   {% with location="Home" %}
     {% include "subtemplates/container.html" %}
   {% endwith %}

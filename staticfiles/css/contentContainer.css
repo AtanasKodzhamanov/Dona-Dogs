@@ -179,6 +179,26 @@
 }
 
 
+#show-all-dogs-btn, 
+#show-all-adoptions-btn{
+    max-width: 500px;
+    padding: 30px;
+    background-color: var(--main-theme);
+    margin:auto;  /* center the button */
+    border-radius: 25px;
+    
+}
+
+#show-all-dogs-btn h3, 
+#show-all-adoptions-btn h3{
+    color: white;
+}
+
+#show-all-dogs-btn h3:hover,
+#show-all-adoptions-btn h3:hover {
+    cursor: pointer;
+    color:var(--titles);
+}
 
 @media only screen and (max-width: 600px) {
     .button-hover {
@@ -193,17 +213,19 @@
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
     .adoption-expand-button {
         padding: 10px;
     }
     
     #show-all-dogs-btn {
         padding: 10px;
+        margin: 0 25px;
     }
     
     #show-all-adoptions-btn{
         padding: 10px;
+        margin: 0 25px;
     }
 }
 
