@@ -7,20 +7,20 @@
   <head>
     {% include "common_sub/head.html" %}
   </head>
-  <body>
-    
+  <body>    
     {% include "common_sub/language_change.html" %}
+
     {% include "common_sub/navbar.html" %}
 
-
-  
     <div class="innerbody">
     {% block page_content %}
       {% comment %} Templates get rendered here {% endcomment %}
     {% endblock %}
 
-    {% include "common_sub/footer_info_boxes.html" %}
+    <section >
+    {% comment %} {% include "common_sub/footer_info_boxes.html" %}{% endcomment %}
     {% include "common_sub/footer_image.html" %}
+    </section>
 
     </div>
       <script src="{% static 'js/active_nav.js' %}"></script>

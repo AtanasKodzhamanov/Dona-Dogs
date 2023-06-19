@@ -44,12 +44,12 @@ function createContainer() {
     const monthsContainer = document.createElement("div");
     yearContainer.classList.add("parent");
     yearContainer.classList.add("year-heading");
-    yearContainer.classList.add("button-box");
+    yearContainer.classList.add("button");
     const firstChild = container.firstChild;
     container.insertBefore(yearContainer, firstChild);
     container.insertBefore(monthsContainer, firstChild);
 
-    const yearHeading = document.createElement("h2");
+    const yearHeading = document.createElement("h3");
     yearHeading.innerText = year;
     yearContainer.appendChild(yearHeading);
 

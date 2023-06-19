@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% extends "common.html" %}
+{% extends "body.html" %}
 {% load static %}
 {% load i18n %}
 {% load field_loop %}
@@ -7,13 +7,14 @@
 {% get_current_language as L %}
 {% block page_content %}
 
-    {% if L == "bg" %}
-        <h2>{{ dog.name_bg }}</h2>
-    {% else %}
-        <h2>{{ dog.name_eng }}</h2>
-    {% endif %}
-    <div class="story-container-dog-album">
-        <p class="compressed-text">
+    <div class="flex">
+        <div class="flex-box-3">
+            {% if L == "bg" %}
+            <h2>{{ dog.name_bg }}</h2>
+        {% else %}
+            <h2>{{ dog.name_eng }}</h2>
+        {% endif %}
+        <p>
             {% if L == "bg" %}
                 {{ dog.story_bg }}
             {% else %}
@@ -21,28 +22,38 @@
             {% endif %}
         </p>
         {% include "dogProfile_sub/thanks_message.html" %}
-    </div>
+        </div>
+    
     {% if dog.adoption_pic_after_1 %}
         <h2>{% trans "Before adoption" %}</h2>
     {% endif %}
     <br>
-    <div class="image-container-dog-album">
+    <div class="flex-box-2">
         {% if dog.profile_pic %}
             <img class="image-dog-album"
                  src="{{ dog.profile_pic }}"
                  alt="dog profile pic">
         {% endif %}
-          
+    </div>
+
         {% for field_name in dog_pic_fields %}
             {% with field=dog|getattribute:field_name %}
                 {% if field %}
+                <div class="flex-box-2">
+
                     <img class="image-dog-album"
                         src="{{ field }}"
                         alt="dog pic">
+                </div>
                 {% endif %}
             {% endwith %}
         {% endfor %}
-    
+        <div class="flex-box-1">
+            <p style="text-align: center;">
+                {% trans "To inquire about adoptions you can contact us on DonaDogsFoundation@gmail.com or directly on our Facebook group." %}
+            </p>
+           </div>
+    </div>
     </div>
     <br>
     <br>
@@ -74,15 +85,10 @@
         </div>
       </div>
     <br>
-
-    <p style="text-align: center;">
-        {% trans "To inquire about adoptions you can contact us on DonaDogsFoundation@gmail.com or directly on our Facebook group." %}
-    </p>
-
     <br>
-    <div class="parent button-hover" id="show-all-dogs-btn">
-        <h2>{% trans "ALL DOGS" %}</h2>
-    </div>
+    <button onclick="location.href='{% url 'all_dogs' %}'" class="button" id="show-all-dogs-btn">
+        <h3> &#8594; {% trans "SEE ALL OF OUR DOGS HERE" %}</h3>
+      </button>
     <br>
     <br>
 

@@ -3,9 +3,9 @@
 {% block page_content %}
 
 {% for instance in content_container %}
-    {% if instance.location == location and instance.visible %}
-    <div class="parent" {% if instance.background_color %} style="background-color: {{ instance.background_color }};" {% endif %}>
-        
+    {% if instance.location == location and instance.visible and not instance.text_position == "top" %}
+    <div class="flex" {% if instance.background_color %} style="background-color: {{ instance.background_color }};" {% endif %}>
+        <div class="flex-box-1">
         <h2 {% if instance.title_color %} style="color: {{ instance.title_color }};" {% endif %}>
             {% if L == "bg" %}
                 {{ instance.section_title_bg }}
@@ -14,14 +14,12 @@
             {% endif %}
         </h2>
         <br>
-        {% if instance.text_position == "top" %}
-            {% include "subtemplates/container_text.html" %} 
-        {% endif %}
-
+        {% include "subtemplates/container_text.html" %} 
+        </div>
         {% for field_name in content_containter_pics %}
             {% with field=instance|getattribute:field_name %}
                 {% if field %}
-                <div class="child">
+                <div class="flex-box-2">
                     <img class="main-container-img"
                         decoding="async"
                         lazy-sizes="auto"
@@ -32,11 +30,35 @@
                 {% endif %}
             {% endwith %}
         {% endfor %}    
-        
-        {% if instance.text_position == "bottom" %}
-            {% include "subtemplates/container_text.html" %} 
-        {% endif %}
-
+    </div>
+    <hr>
+    {% endif %}
+    {% if instance.location == location and instance.visible and instance.text_position == "top" %}
+    <div class="flex">
+        <div class="flex-box-3">
+        <h2>
+            {% if L == "bg" %}
+                {{ instance.section_title_bg }}
+            {% else %}
+                {{ instance.section_title_eng }}
+            {% endif %}
+        </h2>
+        {% include "subtemplates/container_text.html" %} 
+        </div>
+        {% for field_name in content_containter_pics %}
+            {% with field=instance|getattribute:field_name %}
+                {% if field %}
+                <div class="flex-box-2">
+                    <img 
+                        decoding="async"
+                        lazy-sizes="auto"
+                        loading="lazy"
+                        alt="section image"
+                        src="{{ field }}"/>
+                </div>
+                {% endif %}
+            {% endwith %}
+        {% endfor %}    
     </div>
     <hr>
     {% endif %}

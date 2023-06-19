@@ -1,18 +1,17 @@
 
 /* content containers in About, Donations, Adoptions */
-.parent {
-    background-color: var(--grey);
+
+.generic-container{
+    background-color: var(--generic);
     margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 20px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
     text-align: center;
-    border-radius: 20px;
-    max-width: 1500px;
-  }
-  
+}
+
 @media only screen and (max-width: 1111px) {
-    .parent {
+    .generic-container {
     border-radius: 0px;
     margin-left: 0px;
     margin-right: 0px;
@@ -20,8 +19,7 @@
     }
 }
 
-
-.child {
+.container-item {
     display: inline-block;
     margin-left: 1rem;
     margin-right: 1rem;
@@ -30,12 +28,78 @@
 }
 
 @media only screen and (max-width: 1111px) {
-    .child {
+    .container-item {
         margin-left: 0px;
         margin-right: 0px;
         padding: 0px;
     }
 }
+
+/* Affects notice-board posts, donations lists, random adoption container */
+.flex{
+    display:flex;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    align-items: stretch;
+    min-height: 400px;
+}
+@media only screen and (max-width: 800px) {
+    .flex {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    }
+}
+
+.flex-box-1{
+    flex-basis:50%;
+    background-color: var(--main-theme-2);
+    padding:2rem;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 800px) {
+    .flex-box-1 {
+    padding:1rem;
+    }
+}
+
+/* img box */
+.flex-box-2{
+    flex-basis:50%;
+}
+
+.flex-box-3{
+    flex-basis:100%;
+    background-color: var(--main-theme-3);
+    padding:2rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .flex-box-3 {
+    padding:1rem;
+    }
+}
+
+.flex h4{
+    color: white;
+}
+
+.flex p{
+    color: white;
+}
+
+.flex h2{
+    margin-left: 0px;
+    text-align: left;
+}
+.nopadding{
+    padding:0px;
+}
+/* END */
+
 
 .simplechild {
     display: inline-block;
@@ -94,190 +158,11 @@
     object-fit: contain;
 }
 
-.notice-board{
-    margin:auto;
-    display:flex; 
-    overflow:hidden; 
-    width: 100%; 
-    justify-content: center; 
-    margin:auto;
-}
-
-.notice-board-image{
-    flex:1;
-}
-
-.notice-board .notice-board-image img{
-    width:100%; 
-    height:100%; 
-    object-fit: cover;
-}
-
-.notice-board .notice-board-textarea{
-    box-sizing: border-box; 
-    flex:1;  
-    background-color: var(--main-theme); 
-    padding:60px;
-}
-
-.notice-board .notice-board-textarea h2{
-    text-align:left; 
-    color:#4f4f4f;  
-    text-transform: uppercase;
-}
-
-.notice-board .notice-board-textarea p{
-    font-weight:800; 
-    color:white;
-}
-
-.notice-board .random-adoption-text {
-    box-sizing: border-box; 
-    flex:1;  
-    background-color: var(--main-theme); 
-    padding:20px;
-}
-
-.notice-board .random-adoption-text h2{
-    text-align:left; 
-    color:#4f4f4f;  
-    text-transform: uppercase;
-}
-
-.notice-board .random-adoption-text p{
-    font-weight:800; 
-    color:white;
-}
 
 @media only screen and (max-width: 900px) {
-    .notice-board {
-        flex-direction:column;
-    }
-    .notice-board .notice-board-textarea{
-        padding:20px;
-    }
-
-    .notice-board .notice-board-image img{
-        height:65vh;
-    }
-
-    .notice-board .notice-board-video iframe{
+    .flex .flex-box-2 iframe{
         height:50vh;
     }
-
-}
-
-/* Buttons */
-
-.button-hover:hover {
-    background-color: var(--main-theme);
-    cursor: pointer;
-}
-
-.button-hover:hover h3{
-    color:white;
-}
-
-
-#show-all-dogs-btn, 
-#show-all-adoptions-btn{
-    max-width: 500px;
-    padding: 30px;
-    background-color: var(--main-theme);
-    margin:auto;  /* center the button */
-    border-radius: 25px;
-    
-}
-
-#show-all-dogs-btn h3, 
-#show-all-adoptions-btn h3{
-    color: white;
-}
-
-#show-all-dogs-btn h3:hover,
-#show-all-adoptions-btn h3:hover {
-    cursor: pointer;
-    color:var(--titles);
-}
-
-@media only screen and (max-width: 600px) {
-    .button-hover {
-        background-color: var(--main-theme);
-    }
-    .button-hover h3{
-        color:white;
-    }
-
-    .button-hover h2{
-        color:white;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    .adoption-expand-button {
-        padding: 10px;
-    }
-    
-    #show-all-dogs-btn {
-        padding: 10px;
-        margin: 0 25px;
-    }
-    
-    #show-all-adoptions-btn{
-        padding: 10px;
-        margin: 0 25px;
-    }
-}
-
-.year-heading:hover {
-    background-color: var(--main-theme);
-    cursor: pointer;
-}
-
-@media only screen and (max-width: 600px) {
-    .year-heading{
-        background-color: var(--main-theme);
-    }
-    .year-heading h2{
-        color:white;
-    }
-    
-}
-
-.button-hover:hover h2{
-    color:white;
-}
-
-.button-hover:hover h3{
-    color:white;
-}
-
-.month-container{
-    margin:25px;
-    text-align: center;
-    padding: 10px;
-}
-
-.month-container:hover{
-    background-color: var(--main-theme);
-    cursor: pointer;
-}
-
-.month-container:hover h3{
-    color:white;
-}
-
-@media only screen and (max-width: 600px) {
-    .month-container{
-        margin: 0 auto;
-        margin-bottom:3px;
-        min-width:150px;
-        background-color: var(--main-theme);
-    } 
-    .month-container h3{
-        color:white;
-    }
-
 }
 
 .grid-container {
@@ -294,23 +179,5 @@
 
 
 
-.button-box:hover h2{
-    color:white;
-}
-
-@media only screen and (max-width: 600px) {
-    .button-box {
-        background-color: var(--main-theme);
-        padding:10px;
-    }
-
-    .button-box h2{
-        color:white;
-    }
-}
 
 
-
-.month-container:hover a h3{
-    color:white;
-}

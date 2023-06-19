@@ -1,6 +1,7 @@
 
     #footer-container {
         display: flex;
+        background-color: var(--generic);
     }
 
     .box1,

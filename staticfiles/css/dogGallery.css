@@ -1,35 +1,27 @@
 
 /* Dog Gallery */
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
 
 /*responsible for the size of the entire wrapper*/
 /* controls margins between boxes*/
 .wrapper {
-  padding: 25px;
   display: grid;
   grid-gap: 50px;
-  margin: 20 40;
-  margin-top: 0px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-auto-rows: minmax(auto, auto);
 }
 
 
 @media only screen and (max-width: 600px) {
   .wrapper {
-    padding: 0px;
     grid-gap:0px;
+    padding:5%;
   }
 }
 
 
 /*controls the dog card. Add a dog outline as a background image to make loading look better and in case links are broken have a substitute in place as a check in the template.*/
-.wrapper>* {
-  background-color: #fff;
+.dog {
+  background-color: var(--container);
   color: rgb(10, 10, 46);
   padding-top: 10px;
   padding-bottom: 10px;
@@ -37,7 +29,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .wrapper>* {
+  .dog {
     padding: 0px;
     padding-top: 5px;
   }
@@ -53,7 +45,7 @@
   width: auto;
   font-size: 18px;
   margin-bottom: -47px;
-  border: solid black 3px;
+  border: solid black 2px;
   border-left: none;
   border-right: none;
   font-weight: bold;
@@ -64,11 +56,12 @@
     background-color: #72727296;
   }
 }
-
+.dog p{
+  line-height: 150%;
+}
 .dog:hover{
-  background-color: var(--main-theme);
+  background-color: var(--main-theme-2);
   cursor: pointer;
-  
   }
 
 .dog:hover h2{
@@ -109,7 +102,7 @@
     cursor: pointer;
   }
   
-  .dog:nth-of-type(odd) h1{
+  .dog:nth-of-type(odd) h2{
     color: white;
     font-weight:bold;
   }
@@ -139,7 +132,7 @@
     cursor: pointer;
   }
 
-  .dog:nth-of-type(even) h1{
+  .dog:nth-of-type(even) h2{
     font-weight:bold;
   }
   

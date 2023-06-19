@@ -1,4 +1,5 @@
 /* Footer */
+
 #footer {
     text-align: center;
     position: sticky;
@@ -9,7 +10,6 @@
     height: 60px;
     padding: 0px;
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.821);
     z-index: 999;
 }
 
@@ -57,4 +57,12 @@
 
 #subscribe-form-container button:hover {
     background-color: rgb(49, 49, 49);
+}
+
+.footer-box{
+    min-width: none;
+    background-color: var(--generic) !important;
+} 
+.footer-box p{
+    color: var(--para-color) !important;
 }

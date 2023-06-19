@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-{% extends 'common.html' %}
+{% extends 'body.html' %}
 {% load static %}
 {% load i18n %}
 {% load field_loop %}
 {% get_current_language as L %}
 {% block page_content %}
 
+<section class="page">
   {% with location="Donations" %}
     {% include "subtemplates/noticeboard.html" %}
   {% endwith %}
-
+</section>
+<section class="page">
   {% include "donations_sub/names.html" %}
-  {% include "donations_sub/va_names.html" %}
-
-  <br>
-
+</section>
+<section class="page">
   {% with location="Donations" %}
         {% include "subtemplates/container.html" %}   
   {% endwith %}
+</section>
 
   <div id="past-donations">
   </div>

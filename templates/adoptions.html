@@ -1,34 +1,36 @@
 <!DOCTYPE html>
-{% extends 'common.html' %}
+{% extends 'body.html' %}
 {% block page_content %}
   {% load static %}
   {% load i18n %}
   {% load shuffle %}
   {% load field_loop %}
   {% get_current_language as L %}
+
   {% with location="Adoptions" %}
-    {% include "subtemplates/noticeboard.html" %}
-    {% include "subtemplates/container.html" %}
+    <section class="page">
+      {% include "subtemplates/noticeboard.html" %}
+    </section>
+    <section class="page">
+      {% include "subtemplates/container.html" %}
+      <button onclick="location.href='{% url 'all_dogs' %}'" class="button" id="show-all-dogs-btn">
+        <h3> &#8594; {% trans "SEE ALL DOGS AVAILABLE FOR ADOPTION HERE" %}</h3>
+      </button>
+    </section>
   {% endwith %}  
-  <div class="parent button-hover" id="show-all-dogs-btn">
-    <div>
-      <h2>{% trans "SEE ALL DOGS AVAILABLE FOR ADOPTION HERE" %}</h2>
-    </div>
-  </div>
-  <br>
-  <br>
-  <h2>{% trans "PAST ADOPTIONS" %}</h2>
-  <hr>
+  
+  <section class="page">
+    <h2>{% trans "PAST ADOPTIONS" %}</h2>
   {% for year in years %}
     <div>
-      <div class="parent button-hover adoption-expand-button">
+      <div class="button adoption-expand-button">
         <div>
-          <h2>{{ year }}</h2>
+          <h3>{{ year }}</h3>
         </div>
       </div>
       {% for dog in data_dogs %}
         {% if dog.fields.status == "Adopted" and dog.fields.adoption_year == year %}
-          <div class="parent adoption-card" style="display: none">
+          <div class="generic-container adoption-card" style="display: none">
             {% if L == "bg" %}
               <h2>{{ dog.fields.name_bg }}</h2>
             {% else %}
@@ -63,7 +65,7 @@
               </div>
             {% endif %}
 
-            <div class="child">
+            <div class="container-item">
               <img class="main-container-img"
                    decoding="async"
                    lazy-sizes="auto"
@@ -74,7 +76,7 @@
 
             {% for field_name in field_names %}
               {% if dog.fields|field_loop:field_name %}
-                <div class="child">
+                <div class="container-item">
                   <img class="main-container-img"
                       decoding="async"
                       lazy-sizes="auto"
@@ -90,7 +92,7 @@
       {% endfor %}
     </div>
   {% endfor %}
-  <br>
+</section>
   <script src="{% static 'js/adoptions_expand.js' %}"></script>
   <script src="{% static 'js/gallery_redirect.js' %}"></script>
 

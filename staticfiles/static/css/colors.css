@@ -1,7 +1,9 @@
 :root {
     --main-theme: #fc642b;
     --main-theme-2: #b99100;
-    --grey: rgb(245, 245, 245);
-    --titles: #414141;
-    --para-color: #414141;
+    --main-theme-3: #f73333;
+    --container: ghostwhite;
+    --titles: #4f4f4f;
+    --para-color: #4f4f4f;
+    --generic: ghostwhite;
 }

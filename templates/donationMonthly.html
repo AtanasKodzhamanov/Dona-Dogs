@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% extends "common.html" %}
+{% extends "body.html" %}
 {% load static %}
 {% load field_loop %}
 {% load get_attribute %}
@@ -7,7 +7,7 @@
 {% get_current_language as L %}
 {% block page_content %}
 
-  <div class="parent" style="text-align: center;">
+  <div class="generic-container" style="text-align: center;">
 
     <h2>{% trans "WE THANK YOU ALL FOR SUPPORTING US" %}</h2>
     <h4>{{ date|date:"F, Y" }}</h4>
@@ -54,13 +54,11 @@
   {% endfor %}
 
   <div style="display: flex; justify-content: space-evenly;">
-    <div class="parent button-hover" id="prev-month-button">
+    <div class="button" id="prev-month-button">
       <img style="width:50px; height:auto" src="https://res.cloudinary.com/dxwb5ejff/image/upload/v1677024146/Static/arrow_yny4jc.png" alt="Left Arrow" />
     </div>
-    <div class="parent button-hover" id="next-month-button">
-      <div>
+    <div class="button" id="next-month-button">
         <img style="width:50px; height:auto; transform: scale(-1, -1);" src="https://res.cloudinary.com/dxwb5ejff/image/upload/v1677024146/Static/arrow_yny4jc.png" alt="Left Arrow" />
-      </div>
     </div>
   </div>
   

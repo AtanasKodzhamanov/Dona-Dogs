@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% extends 'common.html' %}
+{% extends 'body.html' %}
 {% load i18n %}
 {% load field_loop %}
 {% get_current_language as L %}
@@ -7,13 +7,19 @@
 {% load static %}
 
 {% with location="Infirmary" %}
+  <section class="page">
   {% include "subtemplates/noticeboard.html" %}
+  </section>
+  <section class="page">
   {% include "subtemplates/container.html" %}   
+  </section>
 {% endwith %}
 
+<section class="page">
 {% for instance in data_dogs %}
 {% if instance.story_eng %}
-  <div class="parent">
+  <div class="flex">
+    <div class="flex-box-3">
     <h2>
       {% if L == "bg" %}
         {{ instance.name_bg }}
@@ -28,17 +34,17 @@
         {{ instance.story_eng }}
       {% endif %}
     </p>
-    <hr style="max-width:800px;">
-    <div class="child">
-      <img class="main-container-img"
+    </div>
+    <div class="flex-box-2">
+      <img 
            decoding="async"
            lazy-sizes="auto"
            loading="lazy"
            src="{{ instance.profile_pic }}"/>
     </div>
     {% if instance.pic_2 %}
-      <div class="child">
-        <img class="main-container-img"
+      <div class="flex-box-2">
+        <img 
              decoding="async"
              lazy-sizes="auto"
              loading="lazy"
@@ -46,8 +52,8 @@
       </div>
     {% endif %}
     {% if instance.pic_3 %}
-      <div class="child">
-        <img class="main-container-img"
+      <div class="flex-box-2">
+        <img 
              decoding="async"
              lazy-sizes="auto"
              loading="lazy"
@@ -57,5 +63,6 @@
   </div>
 {% endif %}
 {% endfor %}
+</section>
 
 {% endblock %}

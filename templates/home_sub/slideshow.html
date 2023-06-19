@@ -1,7 +1,7 @@
 {% load i18n %}
 
 {% block page_content %}
-<h2>{% trans "Last month's donations" %}</h2>
+
 <br>
 {% for donation in donation_stories  %}
   <div id="slides-container">
@@ -10,12 +10,13 @@
       {% if donation.donation_pic_2 %}<img alt="donation img" class="home-donations-size-img" src={{ donation.donation_pic_2 }}>{% endif %}
     </div>
   </div>
-{% endfor %}        
-<p class="compressed-text">
-    {% trans "You can see more information about last month's donations " %} <a class="hyperlink" href="/donations/history/{{ date_pk }}/">{% trans "here" %}</a>.
-</p> 
-<br>
-<div id="dots-container" style="display: flex; justify-content: center;">
+{% endfor %}  
+
+<div id="dots-container" style="display: flex; justify-content: center; padding:30px;">
   {% comment %} JS will append slideshow dots here {% endcomment %}
 </div>
+
+<button onclick="location.href='/donations/history/{{ date_pk }}/'" class="button" id="show-all-donations-btn">
+  <h3> &#8594; {% trans "LAST MONTH'S DONATIONS" %}</h3>
+</button>
 {% endblock %}

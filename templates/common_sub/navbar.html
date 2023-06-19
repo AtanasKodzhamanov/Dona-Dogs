@@ -4,12 +4,12 @@
 {% load static %}
 {% block page_content %}
   <!-- Navigation Bar -->
-  <div id="navbarPadding"></div>
+  <div id="nav-container">
   <!-- when you fix mobile style="margin:10px; margin-left:25px; margin-right:25px;"-->
   <nav>
     <li>
       <a href="{% url 'home' %}">
-        <img alt="logo and home page link" src="https://res.cloudinary.com/dxwb5ejff/image/upload/v1671778627/Static/donalogo_jxjo3l.webp"/>
+        <img id="nav-logo" alt="logo and home page link" src="https://res.cloudinary.com/dxwb5ejff/image/upload/v1671778627/Static/donalogo_jxjo3l.webp"/>
       </a>
     </li>
     <li >
@@ -33,4 +33,5 @@
       </a>
     </li>
   </nav>
+  </div>
 {% endblock %}

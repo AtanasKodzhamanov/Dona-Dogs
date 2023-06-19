@@ -2,6 +2,7 @@
 
 {% block page_content %}
 
+{% comment %}
 <h3>
     {% trans "Last year " %}
     {% if L == "bg" %}
@@ -16,12 +17,11 @@
       {{ adopted_puppy.adoption_country_eng }}
     {% endif %}
   </h3>
-  <br>
-  <br>
+{% endcomment %}
   <div>
     
-    <div class="notice-board">
-      <div class="random-adoption-text">
+    <div class="flex">
+      <div class="flex-box-3">
         <h2>
           {% if L == "bg" %}
             {{ adopted_puppy.name_bg }}
@@ -37,7 +37,7 @@
           {% endif %}
         </p>
       </div>
-      <div class="notice-board-image random-adoption">
+      <div class="flex-box-2">
         <img 
             decoding="async"
             lazy-sizes="auto"
@@ -45,7 +45,7 @@
             alt="adopted puppy image"
             src="{{ adopted_puppy.profile_pic }}"/>
       </div>
-      <div class="notice-board-image random-adoption">
+      <div class="flex-box-1 nopadding">
         <img 
             decoding="async"
             lazy-sizes="auto"

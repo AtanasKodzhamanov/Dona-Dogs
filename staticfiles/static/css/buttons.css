@@ -1,0 +1,118 @@
+/* Buttons */
+
+.button{  
+    display: block;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    max-width: 500px;
+    padding: 2rem;
+    background-color: var(--main-theme);
+    border-radius: 50px;
+    margin:auto;
+    margin-bottom:2rem;
+    margin-top:2rem;
+
+}
+
+.button h3{
+    color:white;
+}
+
+.button:hover h3{
+    color: var(--titles);
+}
+
+
+
+#show-all-donations-btn{
+    background-color: var(--main-theme);
+}
+
+#show-all-dogs-btn{
+    background-color: var(--main-theme-2);
+}
+
+#show-all-adoptions-btn{
+    background-color: var(--main-theme-3);
+}
+
+.dot{
+    height: 25px;
+    width: 25px;
+    margin-right:10px;
+    margin-left:10px;
+}
+
+
+.year-heading:hover {
+    background-color: var(--main-theme);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .year-heading{
+        background-color: var(--main-theme);
+    }
+    .year-heading h2{
+        color:white;
+    }
+    
+}
+
+.button-hover:hover h2{
+    color:white;
+}
+
+.button-hover:hover h3{
+    color:white;
+}
+
+.month-container{
+    margin:25px;
+    text-align: center;
+    padding: 10px;
+}
+
+.month-container:hover{
+    background-color: var(--main-theme);
+    cursor: pointer;
+}
+
+.month-container:hover h3{
+    color:white;
+}
+
+@media only screen and (max-width: 600px) {
+    .month-container{
+        margin: 0 auto;
+        margin-bottom:3px;
+        min-width:150px;
+        background-color: var(--main-theme);
+    } 
+    .month-container h3{
+        color:white;
+    }
+
+}
+
+.button-box:hover h2{
+    color:white;
+}
+
+@media only screen and (max-width: 600px) {
+    .button-box {
+        background-color: var(--main-theme);
+        padding:10px;
+    }
+
+    .button-box h2{
+        color:white;
+    }
+}
+
+
+
+.month-container:hover a h3{
+    color:white;
+}

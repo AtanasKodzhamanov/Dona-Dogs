@@ -1,61 +1,49 @@
 <!DOCTYPE html>
-{% extends "common.html" %}
+{% extends "body.html" %}
 {% load static %}
 {% load i18n %}
 {% load truncatetext %}
 {% get_current_language as L %}
 {% block page_content %}
 
+  <section class="page">
   {% with location="Home" %}
     {% include "subtemplates/noticeboard.html" %}
   {% endwith %}
-  <hr>
-  <br>
-  <br>
+  </section>
 
+  <section class="page">
   {% include "home_sub/count.html" %}
-  <br>
-  <br>
-  <br>
-  <br>
-  <div class="wrapper" id="data_dogs">
+
+  <div class="wrapper will-animate" id="data_dogs">
     {% for instance in data_dogs %}
       {% include "subtemplates/gallery.html" %}
     {% endfor %}
   </div>
-  <br>
-  <br>
-  <div class="parent button-hover" id="show-all-dogs-btn">
-    <h3>{% trans "SEE ALL OF OUR DOGS HERE" %}</h3>
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+
+  <button onclick="location.href='{% url 'all_dogs' %}'" class="button" id="show-all-dogs-btn">
+    <h3> &#8594; {% trans "SEE ALL OF OUR DOGS HERE" %}</h3>
+  </button>
+
+  </section>
+
+  <section class="page will-animate">
   {% include "home_sub/random_adoption.html" %}
-  <br>
-  <br>
-   <div class="parent button-hover" id="show-all-adoptions-btn">
-      <h3>{% trans "SEE MORE ADOPTIONS HERE" %}</h3>
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+
+  <button onclick="location.href='{% url 'adoptions' %}'" class="button" id="show-all-adoptions-btn">
+    <h3> &#8594; {% trans "SEE MORE ADOPTIONS HERE" %}</h3>
+  </button>
+
+
+  </section>
+
+  <section class="page will-animate">
   {% include "home_sub/slideshow.html" %}
-  <br>
-  <br>
-  <br>
-  <br>
+  </section>
+  
   {% with location="Home" %}
     {% include "subtemplates/container.html" %}
   {% endwith %}
-
-
 
   <script src="{% static 'js/donations_slideshow.js' %}"></script>
   <script src="{% static 'js/dog_album_redirect.js' %}"></script>

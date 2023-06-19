@@ -6,14 +6,14 @@
   {% for notice in data_notice_board %}
     {% if notice.location == location and notice.visible %}
   
-      <div class="notice-board">
+      <div class="flex">
         {% if notice.note_pic_1 %}
-        <div class="notice-board-image">  
+        <div class="flex-box-2">  
           <img alt="noticeboard picture" src={{ notice.note_pic_1 }}>
         </div>
         {% endif %}
 
-        <div class="notice-board-textarea" >
+        <div class="flex-box-1" >
           {% if notice.section_title_eng %}
           <h2>
             
@@ -34,7 +34,7 @@
         </div>
 
         {% if notice.note_video %}
-        <div class="notice-board-video" style="flex:2">  
+        <div class="flex-box-2">  
           <iframe width="100%" height="100%" style="object-fit: cover;" alt="noticeboard video" src={{ notice.note_video }} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         {% endif %}
