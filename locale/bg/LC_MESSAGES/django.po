@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-12 00:51+0000\n"
+"POT-Creation-Date: 2023-06-19 01:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgid "Virtual sponsor"
 msgstr "Виртуален осиновител"
 
 #: DogShelter/web/forms.py:52
-msgid "No Adoptors"
+msgid "No sponsors"
 msgstr "Без осиновители"
 
 #: DogShelter/web/forms.py:65
@@ -66,11 +66,15 @@ msgstr "ВИРТУАЛНО ОСИНОВЯВАНЕ"
 msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!"
 msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
 
-#: templates/adoptions.html:15
+#: templates/0_deprecated/va_names.html:5
+msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS"
+msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
+
+#: templates/adoptions.html:17
 msgid "SEE ALL DOGS AVAILABLE FOR ADOPTION HERE"
 msgstr "ВИЖТЕ ВСИЧКИ КУЧЕТА, СВОБОДНИ ЗА ОСИНОВЯВАНЕ ТУК"
 
-#: templates/adoptions.html:20
+#: templates/adoptions.html:23
 msgid "PAST ADOPTIONS"
 msgstr "ОСИНОВЕНИ КУЧЕТА"
 
@@ -162,15 +166,11 @@ msgstr "Новопристигнали"
 msgid "Our Dogs"
 msgstr "Нашите кучета"
 
-#: templates/dogProfile.html:26
+#: templates/dogProfile.html:28
 msgid "Before adoption"
 msgstr "Преди осиновяване"
 
-#: templates/dogProfile.html:50
-msgid "After adoption"
-msgstr "След осиновяване"
-
-#: templates/dogProfile.html:79
+#: templates/dogProfile.html:53
 msgid ""
 "To inquire about adoptions you can contact us on DonaDogsFoundation@gmail."
 "com or directly on our Facebook group."
@@ -178,27 +178,27 @@ msgstr ""
 "За запитване относно осиновявания можете да се свържете с нас на "
 "DonaDogsFoundation@gmail.com или директно в нашата Facebook група."
 
-#: templates/dogProfile.html:84
-msgid "ALL DOGS"
-msgstr "ВСИЧКИ КУЧЕТА"
+#: templates/dogProfile.html:61
+msgid "After adoption"
+msgstr "След осиновяване"
 
-#: templates/donationMonthly.html:12 templates/donations_sub/names.html:5
-msgid "WE THANK YOU ALL FOR SUPPORTING US"
-msgstr "БЛАГОДАРИМ ЗА ВАШАТА ПОДКРЕПА"
-
-#: templates/donations_sub/names.html:7
-msgid "LAST MONTH WE RECEIVED HELP FROM"
-msgstr "МИНАЛИЯ МЕСЕЦ ПОЛУЧИХМЕ ПОМОЩ ОТ"
-
-#: templates/donations_sub/va_names.html:5
-msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS"
-msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
-
-#: templates/home.html:24
+#: templates/dogProfile.html:90 templates/home.html:23
 msgid "SEE ALL OF OUR DOGS HERE"
 msgstr "ВИЖТЕ ВСИЧКИ КУЧЕТА"
 
-#: templates/home.html:33
+#: templates/donationMonthly.html:12 templates/donations_sub/names.html:4
+msgid "WE THANK YOU ALL FOR SUPPORTING US"
+msgstr "БЛАГОДАРИМ ЗА ВАШАТА ПОДКРЕПА"
+
+#: templates/donations_sub/names.html:8
+msgid "LAST MONTH OUR DOGS RECEIVED GIFTS FROM"
+msgstr "МИНАЛИЯ МЕСЕЦ НАШИТЕ КУЧЕТА ПОЛУЧИХА ПОДАРЪЦИ ОТ"
+
+#: templates/donations_sub/names.html:27
+msgid "AND GOT SPECIAL LOVE BY THEIR VIRTUAL SPONSORS"
+msgstr "И ПОЛУЧИХА СПЕЦИАЛНА ЛЮБОВ ОТ ТЕХНИТЕ ВИРТУАЛНИ СПОНСОРИ"
+
+#: templates/home.html:30
 msgid "SEE MORE ADOPTIONS HERE"
 msgstr "ВИЖТЕ ОЩЕ ОСИНОВЕНИ КУЧЕТА"
 
@@ -232,33 +232,40 @@ msgid ""
 "help them so that we can continue to provide treatement for any dog that "
 "needs it: "
 msgstr ""
-"Ние редовно приемаме болни кучета на интензивно лечение в клиниката. Моля, помогнете ни да им "
-"помогнем, за да можем да продължим да предоставяме лечение за всяко куче, "
-"което се нуждае от него: "
+"Ние редовно приемаме болни кучета на интензивно лечение в клиниката. Моля, "
+"помогнете ни да им помогнем, за да можем да продължим да предоставяме "
+"лечение за всяко куче, което се нуждае от него: "
 
-#: templates/home_sub/random_adoption.html:6
-msgid "Last year "
-msgstr "Миналата година "
+#: templates/home_sub/slideshow.html:6
+msgid "LAST MONTH'S DONATIONS"
+msgstr "МИНАЛИ ДАРЕНИЯ"
 
-#: templates/home_sub/random_adoption.html:12
-msgid " got adopted in "
-msgstr " намери дом в "
-
-#: templates/home_sub/slideshow.html:4
-msgid "Last month's donations"
-msgstr "ДАРЕНИЯ ОТ МИНАЛИЯ МЕСЕЦ"
-
-#: templates/home_sub/slideshow.html:15
-msgid "You can see more information about last month's donations "
-msgstr "Можете да видите повече информация за даренията от миналия месец "
-
-#: templates/home_sub/slideshow.html:15 templates/ourstory.html:19
-msgid "here"
-msgstr "тук"
+#: templates/home_sub/slideshow.html:22
+msgid "SEE MORE"
+msgstr "ВИЖТЕ ПОВЕЧЕ"
 
 #: templates/ourstory.html:17
 msgid "You can find more information about the organisation's legal status"
 msgstr "Можете да видете повече информация за легалният статус на фондацията"
+
+#: templates/ourstory.html:19
+msgid "here"
+msgstr "тук"
+
+#~ msgid "ALL DOGS"
+#~ msgstr "ВСИЧКИ КУЧЕТА"
+
+#~ msgid "Last year "
+#~ msgstr "Миналата година "
+
+#~ msgid " got adopted in "
+#~ msgstr " намери дом в "
+
+#~ msgid "Last month's donations"
+#~ msgstr "ДАРЕНИЯ ОТ МИНАЛИЯ МЕСЕЦ"
+
+#~ msgid "You can see more information about last month's donations "
+#~ msgstr "Можете да видите повече информация за даренията от миналия месец "
 
 #~ msgid "SUBSCRIBE TO OUR MONTHLY NEWSLETTER"
 #~ msgstr "АБОНИРАЙТЕ СЕ ЗА НАШИЯ МЕСЕЧЕН БЮЛЕТИН"
@@ -286,9 +293,6 @@ msgstr "Можете да видете повече информация за л
 
 #~ msgid "HELP DONADOGS"
 #~ msgstr "ПОМОГНЕТЕ НА ДОНАДОГС"
-
-#~ msgid "PAST DONATIONS"
-#~ msgstr "МИНАЛИ ДАРЕНИЯ"
 
 #~ msgid "ABOUT US"
 #~ msgstr "ЗА НАС"

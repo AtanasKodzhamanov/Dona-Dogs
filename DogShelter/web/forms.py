@@ -49,7 +49,7 @@ class vaStatusForm(forms.Form):
         widget=Select(choices=(
             ("all", _("All dogs")),
             ("va", _("Virtual sponsor")),
-            ("no", _("No Adoptors")),
+            ("no", _("No sponsor")),
         ))
     )
     adoption_status.widget.attrs.update({

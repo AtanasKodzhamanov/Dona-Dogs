@@ -7,38 +7,32 @@
 {% block page_content %}
 
   <section class="page">
-  {% with location="Home" %}
-    {% include "subtemplates/noticeboard.html" %}
-  {% endwith %}
+    {% with location="Home" %}
+      {% include "subtemplates/noticeboard.html" %}
+    {% endwith %}
   </section>
 
   <section class="page">
-  {% include "home_sub/count.html" %}
-
-  <div class="wrapper will-animate" id="data_dogs">
-    {% for instance in data_dogs %}
-      {% include "subtemplates/gallery.html" %}
-    {% endfor %}
-  </div>
-
-  <button onclick="location.href='{% url 'all_dogs' %}'" class="button" id="show-all-dogs-btn">
-    <h3> &#8594; {% trans "SEE ALL OF OUR DOGS HERE" %}</h3>
-  </button>
-
+    {% include "home_sub/count.html" %}
+    <div class="wrapper will-animate" id="data_dogs">
+      {% for instance in data_dogs %}
+        {% include "subtemplates/gallery.html" %}
+      {% endfor %}
+    </div>
+    <button onclick="location.href='{% url 'all_dogs' %}'" class="button" id="show-all-dogs-btn">
+      <h3> &#8594; {% trans "SEE ALL OF OUR DOGS HERE" %}</h3>
+    </button>
   </section>
 
   <section class="page will-animate">
-  {% include "home_sub/random_adoption.html" %}
-
-  <button onclick="location.href='{% url 'adoptions' %}'" class="button" id="show-all-adoptions-btn">
-    <h3> &#8594; {% trans "SEE MORE ADOPTIONS HERE" %}</h3>
-  </button>
-
-
+    {% include "home_sub/random_adoption.html" %}
+    <button onclick="location.href='{% url 'adoptions' %}'" class="button" id="show-all-adoptions-btn">
+      <h3> &#8594; {% trans "SEE MORE ADOPTIONS HERE" %}</h3>
+    </button>
   </section>
 
   <section class="page will-animate">
-  {% include "home_sub/slideshow.html" %}
+    {% include "home_sub/slideshow.html" %}
   </section>
   
   {% with location="Home" %}

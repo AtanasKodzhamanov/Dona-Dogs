@@ -3,6 +3,7 @@
 {% block page_content %}
 
 <br>
+<h2> {% trans "LAST MONTH'S DONATIONS" %} </h2>
 {% for donation in donation_stories  %}
   <div id="slides-container">
     <div class="slides-donations fade" style="display: flex">
@@ -17,6 +18,6 @@
 </div>
 
 <button onclick="location.href='/donations/history/{{ date_pk }}/'" class="button" id="show-all-donations-btn">
-  <h3> &#8594; {% trans "LAST MONTH'S DONATIONS" %}</h3>
+  <h3> &#8594; {% trans "SEE MORE" %}</h3>
 </button>
 {% endblock %}
