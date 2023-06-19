@@ -3,12 +3,24 @@ from django.forms import CharField, Select
 from django.utils.translation import gettext_lazy as _
 from DogShelter.web.models import NewsletterSubscriber, AdoptionForm, ContactForm
 
+NAME_MAX_LENGTH = 60
+EMAIL_MAX_LENGTH = 60
+SUBJECT_MAX_LENGTH = 60
+MESSAGE_MAX_LENGTH = 1000
 
 # Contact form
+
+
 class ContactForm(forms.ModelForm):
     class Meta:
         model = ContactForm
-        fields = "__all__"
+        fields = ['email', 'name', 'subject', 'message']
+        widgets = {
+            'email': forms.EmailInput(attrs={'maxlength': EMAIL_MAX_LENGTH}),
+            'name': forms.TextInput(attrs={'maxlength': NAME_MAX_LENGTH}),
+            'subject': forms.Textarea(attrs={'maxlength': SUBJECT_MAX_LENGTH}),
+            'message': forms.Textarea(attrs={'maxlength': MESSAGE_MAX_LENGTH}),
+        }
 
 # Adopt form
 

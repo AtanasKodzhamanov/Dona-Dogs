@@ -369,6 +369,9 @@ def contact_form_view(request):
             messages.success(
                 request, _("Thank you for your message!"))
             return redirect('contact')
+        else:
+            messages.error(
+                request, _("Error, please try again or message us on our email..."))
     else:
         form = ContactForm()
 
