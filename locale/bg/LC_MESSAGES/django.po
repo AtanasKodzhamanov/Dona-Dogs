@@ -34,8 +34,6 @@ msgid "Virtual sponsor"
 msgstr "Виртуален осиновител"
 
 #: DogShelter/web/forms.py:62
-#, fuzzy
-#| msgid "No sponsors"
 msgid "No sponsor"
 msgstr "Без осиновители"
 
