@@ -590,6 +590,9 @@ class NewsletterSubscriber(models.Model):
 
 
 class ContactForm(models.Model):
+    class Meta:
+        verbose_name_plural = "User messages"
+
     email = models.EmailField(
         max_length=EMAIL_MAX_LENGTH
     )
