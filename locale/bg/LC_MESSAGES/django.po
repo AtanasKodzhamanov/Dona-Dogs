@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-19 18:46+0000\n"
+"POT-Creation-Date: 2023-06-19 19:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,6 +58,10 @@ msgstr "Е-майл адрес"
 #: DogShelter/web/forms.py:89
 msgid "Name"
 msgstr "Име"
+
+#: DogShelter/web/views.py:370
+msgid "Thank you for your message!"
+msgstr "Благодарим ви за вашето съобщение!"
 
 #: templates/0_deprecated/giftadoption.html:8
 #: templates/common_sub/footer_info_boxes.html:7

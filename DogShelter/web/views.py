@@ -7,6 +7,10 @@ from django.views.generic import DetailView, ListView, TemplateView
 from DogShelter.web.forms import SubscribeForm, DogFilterForm, vaStatusForm, genderFilterForm, ContactForm
 from DogShelter.web.models import Dog, DonationStory, NoticeBoard, LongPost, Donation
 from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.utils.translation import gettext as _
+
+
 # responsible for the subscribe form in the footnote of every page
 
 # ----- Utility functions -----
@@ -362,7 +366,9 @@ def contact_form_view(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            form = ContactForm()
+            messages.success(
+                request, _("Thank you for your message!"))
+            return redirect('contact')
     else:
         form = ContactForm()
 
