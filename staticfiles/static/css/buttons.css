@@ -6,9 +6,11 @@
     border: none;
     cursor: pointer;
     max-width: 500px;
-    padding: 2rem;
+    padding: 1.5rem;
+    padding-left:2rem;
+    padding-right:2rem;
     background-color: var(--main-theme);
-    border-radius: 50px;
+    border-radius: 25px;
     margin:auto;
     margin-bottom:2rem;
     margin-top:2rem;

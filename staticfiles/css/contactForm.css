@@ -7,6 +7,13 @@
     box-sizing: border-box;
 }
 
+@media screen and (max-width: 900px) {
+    .contact-form{
+        flex-direction: column;
+        padding:0;
+    }
+}
+    
 .contact-form .info-box{
     padding:3rem;
     flex:1;
@@ -19,6 +26,18 @@
     flex:2;
     background-color: var(--generic);
 }
+
+@media screen and (max-width: 900px) {
+    .contact-form .info-box{
+        padding:1rem;
+        flex-basis: 100%;
+    }
+    .contact-form .input-box{
+        padding:1rem;
+        flex-basis: 100%;
+    }
+}
+    
 
 .contact-form .name-email{
     display: flex;

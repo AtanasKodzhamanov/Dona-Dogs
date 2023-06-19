@@ -12,35 +12,35 @@
 
 <div class="contact-form">
   <div class="info-box">
-      <h2>Get in touch</h2>
+      <h2>{% trans "Get in touch" %}</h2>
       <ul>
-          <li> <h3>EMAIL</h3>
+          <li> <h3>{% trans "EMAIL" %}</h3>
           <li> <p>DonaDogsFoundation@gmail.com </p></li>
-          <li> <h3>ADDRESS</h3>
-          <li> <p>Stambolyski, 4210, Vasil Levski 40 </p></li>
+          <li> <h3>{% trans "ADDRESS" %}</h3>
+          <li> <p>{% trans "Stambolyski, 4210, Vasil Levski 40" %} </p></li>
       </ul>
   </div>
   <div class="input-box">
-      <h1>Message us now</h1>
+      <h1>{% trans "Message us now" %}</h1>
       <form method="post">
         {% csrf_token %}
         <div class="form-input-content">
           <div class="form-input-fields">
             <div>
-              <input type="text" name="name" id="id_name" placeholder="NAME">
+              <input type="text" name="name" id="id_name" placeholder={% trans "NAME" %}>
             </div>
             <div>
-              <input type="email" name="email" id="id_email" placeholder="EMAIL">
+              <input type="email" name="email" id="id_email" placeholder={% trans "EMAIL" %}>
             </div>
             <div>
-                <input type="text" name="subject" id="id_subject" placeholder="SUBJECT">
+                <input type="text" name="subject" id="id_subject" placeholder={% trans "SUBJECT"%}>
             </div>
             <div>
-                <textarea name="message" id="id_message" placeholder="MESSAGE"></textarea>
+                <textarea name="message" id="id_message" placeholder={% trans "MESSAGE" %}></textarea>
             </div>
           </div>
           <div>
-          <button class="button" type="submit"><h3>Submit</h3></button>
+          <button class="button" type="submit"><h3>{% trans "SEND" %}</h3></button>
           </div>
         </div>
       </form>

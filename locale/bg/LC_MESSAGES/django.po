@@ -6,12 +6,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-#: DogShelter/web/forms.py:83 DogShelter/web/forms.py:88
+#: DogShelter/web/forms.py:81 DogShelter/web/forms.py:86
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-19 01:46+0000\n"
+"POT-Creation-Date: 2023-06-19 18:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,39 +21,41 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: DogShelter/web/forms.py:39
+#: DogShelter/web/forms.py:37
 msgid "Type name"
 msgstr "Въведете име"
 
-#: DogShelter/web/forms.py:50
+#: DogShelter/web/forms.py:48
 msgid "All dogs"
 msgstr "Всички кучета"
 
-#: DogShelter/web/forms.py:51 templates/subtemplates/gallery.html:26
+#: DogShelter/web/forms.py:49 templates/subtemplates/gallery.html:26
 msgid "Virtual sponsor"
 msgstr "Виртуален осиновител"
 
-#: DogShelter/web/forms.py:52
-msgid "No sponsors"
+#: DogShelter/web/forms.py:50
+#, fuzzy
+#| msgid "No sponsors"
+msgid "No sponsor"
 msgstr "Без осиновители"
 
-#: DogShelter/web/forms.py:65
+#: DogShelter/web/forms.py:63
 msgid "Gender"
 msgstr "Пол"
 
-#: DogShelter/web/forms.py:66
+#: DogShelter/web/forms.py:64
 msgid "M"
 msgstr "Мъжки"
 
-#: DogShelter/web/forms.py:67
+#: DogShelter/web/forms.py:65
 msgid "F"
 msgstr "Женски"
 
-#: DogShelter/web/forms.py:86
+#: DogShelter/web/forms.py:84
 msgid "Email"
 msgstr "Е-майл адрес"
 
-#: DogShelter/web/forms.py:91
+#: DogShelter/web/forms.py:89
 msgid "Name"
 msgstr "Име"
 
@@ -157,6 +159,50 @@ msgstr "ОСИНОВИ"
 #: templates/common_sub/navbar.html:32
 msgid "ABOUT"
 msgstr "ЗА НАС"
+
+#: templates/common_sub/navbar.html:37
+msgid "GALLERY"
+msgstr "ГАЛЕРИЯ"
+
+#: templates/common_sub/navbar.html:42
+msgid "CONTACTS"
+msgstr "КОНТАКТИ"
+
+#: templates/contact.html:15
+msgid "Get in touch"
+msgstr "СВЪРЖЕТЕ СЕ С НАС"
+
+#: templates/contact.html:17 templates/contact.html:33
+msgid "EMAIL"
+msgstr "Е-МЕЙЛ"
+
+#: templates/contact.html:19
+msgid "ADDRESS"
+msgstr "АДРЕС"
+
+#: templates/contact.html:20
+msgid "Stambolyski, 4210, Vasil Levski 40"
+msgstr "Стамболийски, 4210, Васил Левски 40"
+
+#: templates/contact.html:24
+msgid "Message us now"
+msgstr "Пишете ни!"
+
+#: templates/contact.html:30
+msgid "NAME"
+msgstr "ИМЕ"
+
+#: templates/contact.html:36
+msgid "SUBJECT"
+msgstr "ЗАГЛАВИЕ"
+
+#: templates/contact.html:39
+msgid "MESSAGE"
+msgstr "СЪОБЩЕНИЕ"
+
+#: templates/contact.html:43
+msgid "SEND"
+msgstr "ИЗПРАТИ"
 
 #: templates/dogGallery.html:14
 msgid "Latest Arrivals"
