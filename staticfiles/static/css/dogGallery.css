@@ -122,12 +122,12 @@
   }
 
   .dog:nth-of-type(even) {
-    background-color: var(--grey);
+    background-color: var(--generic);
     cursor: pointer;
   }
 
   .dog:nth-of-type(even):hover {
-    background-color: var(--grey);
+    background-color: var(--generic);
     cursor: pointer;
   }
 

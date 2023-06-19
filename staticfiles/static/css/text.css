@@ -13,16 +13,18 @@ h6 {
 
 h1 {
     font-size: 25px;
+    text-transform: uppercase;
+
 }
 
 h2 {
     font-size: 45px;
     font-weight: 1000;
+    text-transform: uppercase;
 }
 
 h3 {
     font-size: 30px;
-    
 }
 
 @media only screen and (max-width: 600px) {
@@ -68,13 +70,9 @@ p {
     font-weight: 600;
 }
 
-
-
-
-
 @media only screen and (max-width: 1200px) {
     p {
-        line-height:125%;
+        line-height: 125%;
         margin: 5px;
         padding: 20px;
     }
@@ -95,12 +93,10 @@ a.hyperlink {
 }
 
 a.hyperlink:hover {
-    color: rgb(77, 77, 77) !important;;
+    color: rgb(77, 77, 77) !important;
     font-weight: bold;
 }
 
-
-
-a{
+a {
     text-decoration: none !important;
-  }
+}
