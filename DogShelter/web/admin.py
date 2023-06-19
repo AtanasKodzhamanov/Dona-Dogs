@@ -48,5 +48,5 @@ class NewsletterSubscriberAdmin(admin.ModelAdmin):
 
 
 @admin.register(ContactForm)
-class ContactForm(admin.ModelAdmin):
+class ContactFormAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'subject', 'message')
