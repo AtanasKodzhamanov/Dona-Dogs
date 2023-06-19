@@ -1,16 +1,14 @@
 from django import forms
 from django.forms import CharField, Select
 from django.utils.translation import gettext_lazy as _
-from DogShelter.web.models import NewsletterSubscriber, AdoptionForm
+from DogShelter.web.models import NewsletterSubscriber, AdoptionForm, ContactForm
 
 
 # Contact form
-class ContactForm(forms.Form):
-    name = forms.CharField(required=True, label='Name')
-    email = forms.EmailField(required=True, label='Email')
-    subject = forms.CharField(required=True, label='Subject')
-    message = forms.CharField(widget=forms.Textarea,
-                              required=True, label='Message')
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = ContactForm
+        fields = "__all__"
 
 # Adopt form
 

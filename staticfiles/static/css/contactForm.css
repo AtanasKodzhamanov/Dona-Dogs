@@ -1,0 +1,46 @@
+.contact-form{
+    display: flex;
+    flex-direction: row;
+    padding:3rem;
+    width: 90%;
+    margin: auto;
+}
+
+.contact-form .info-box{
+    padding:3rem;
+    flex:1;
+    color: white;
+    background-color: var(--main-theme);  
+}
+
+.contact-form .input-box{
+    padding:3rem;
+    flex:2;
+    background-color: var(--generic);
+}
+
+.contact-form .name-email{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.contact-form ul{
+    margin:0;
+    padding:0;
+    margin-top:2rem;
+}
+.contact-form li{
+    list-style-type: none;
+    font-weight: bold;
+    padding:1rem;
+    padding-bottom:0.5rem;
+}
+
+.contact-form p{
+    color: white;
+    text-align: left;
+}
+
+.contact-form h3{
+    text-align: left;
+}

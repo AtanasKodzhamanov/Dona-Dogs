@@ -17,4 +17,5 @@ urlpatterns = (
     path('donations/history/<str:date_pk>/',
          views.DonationStoryView.as_view(), name='donation_monthly'),
     path("dogGallery/", views.GalleryView.as_view(), name="all_dogs"),
+    path("contact/", views.contact_form_view, name="contact"),
 )

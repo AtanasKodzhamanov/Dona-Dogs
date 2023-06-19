@@ -4,7 +4,7 @@ from django import template
 from django.core import serializers
 from django.http import HttpResponse
 from django.views.generic import DetailView, ListView, TemplateView
-from DogShelter.web.forms import SubscribeForm, DogFilterForm, vaStatusForm, genderFilterForm
+from DogShelter.web.forms import SubscribeForm, DogFilterForm, vaStatusForm, genderFilterForm, ContactForm
 from DogShelter.web.models import Dog, DonationStory, NoticeBoard, LongPost, Donation
 from django.shortcuts import render, redirect
 # responsible for the subscribe form in the footnote of every page
@@ -355,3 +355,16 @@ class DonationsView(BaseView):
             template_name='donations.html',
             context=self.get_common_context_data()
         )
+
+
+def contact_form_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = ContactForm()
+    else:
+        form = ContactForm()
+
+    # Render the contact form (you need to create this template)
+    return render(request, 'contact.html', {'form': form})

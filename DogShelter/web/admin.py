@@ -1,5 +1,5 @@
 from django.contrib import admin
-from DogShelter.web.models import Dog, NoticeBoard, LongPost, Donation, NewsletterSubscriber, DonationStory
+from DogShelter.web.models import Dog, NoticeBoard, LongPost, Donation, NewsletterSubscriber, DonationStory, ContactForm
 # Register your models here.
 
 
@@ -45,3 +45,8 @@ class DonationStoryAdmin(admin.ModelAdmin):
 class NewsletterSubscriberAdmin(admin.ModelAdmin):
     list_display = ["id", "email", "name"]
     list_display_links = ["id"]
+
+
+@admin.register(ContactForm)
+class ContactForm(admin.ModelAdmin):
+    list_display = ('name', 'email', 'subject', 'message')

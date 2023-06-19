@@ -11,6 +11,8 @@ MAX_URL_LENGTH = 300
 NAME_MAX_LENGTH = 60
 ORDER = 99
 EMAIL_MAX_LENGTH = 60
+SUBJECT_MAX_LENGTH = 60
+MESSAGE_MAX_LENGTH = 1000
 
 # Help text is provided for the Bulgarian speaking admin staff.
 
@@ -295,7 +297,7 @@ class NoticeBoard(models.Model):
         help_text="Снимка 2 в съобщението (не задължителни).",
         validators=[validate_url]
     )
-    
+
     note_video = models.URLField(
         max_length=MAX_URL_LENGTH,
         blank=True,
@@ -584,6 +586,21 @@ class NewsletterSubscriber(models.Model):
     )
     name = models.CharField(
         max_length=NAME_MAX_LENGTH
+    )
+
+
+class ContactForm(models.Model):
+    email = models.EmailField(
+        max_length=EMAIL_MAX_LENGTH
+    )
+    name = models.CharField(
+        max_length=NAME_MAX_LENGTH
+    )
+    subject = models.TextField(
+        max_length=SUBJECT_MAX_LENGTH
+    )
+    message = models.TextField(
+        max_length=MESSAGE_MAX_LENGTH
     )
 
 

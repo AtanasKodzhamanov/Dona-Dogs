@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% extends 'body.html' %}
+{% block page_content %}
+  {% load i18n %}
+  {% load field_loop %}
+  {% get_current_language as L %}
+  <!-- -->
+
+  {% with location="Contacts" %}
+    {% include "subtemplates/noticeboard.html" %}
+  {% endwith %}
+
+
+  <div class="contact-form">
+    <div class="info-box">
+        <h2>Get in touch</h1>
+        <ul>
+            <li> <h3>EMAIL</h3>
+            <li> <p>DonaDogsFoundation@gmail.com </li>
+            <li> <h3>ADDRESS</h3>
+            <li> <p>Stambolyski, 4210, Vasil Levski 40 </p></li>
+        </ul>
+    </div>
+    <div class="input-box">
+        <h1>Message us now</h1>
+        <div class="name-email">
+            <div>
+                <h3>Name</h3>
+                <input type="text" name="" required="required" />
+            </div>
+            <div>
+                <h3>Email</h3>
+                <input type="text" name="" required="required" />
+            </div>
+        </div>
+        <h3>Subject</h3>
+        <input type="text" name="" required="required" />
+        <h3>Message</h3>
+        <input type="text" name="" required="required" />
+
+        <button>Send</button>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Submit</button> 
+      </form>
+    </div>
+</div>
+
+{% endblock %}
