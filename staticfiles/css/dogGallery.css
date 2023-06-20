@@ -92,7 +92,7 @@
   }
 
   .dog:nth-of-type(odd) {
-    background-color: var(--main-theme);
+    background-color: var(--main-theme-2);
     cursor: pointer;
   }
 
