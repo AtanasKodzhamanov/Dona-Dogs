@@ -124,8 +124,6 @@ class HomeView(BaseView):
 
 
 # responsible for showing the monthly donation summary pages
-
-
 class DonationStoryView(TemplateView):
     model = DonationStory
     template_name = "donationMonthly.html"

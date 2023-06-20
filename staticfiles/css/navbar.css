@@ -1,86 +1,42 @@
-/* navbar */
 #nav-container{
     position:sticky;
     position: -webkit-sticky;
     top:0;
-    height: 80px; /* Adjust the height of the container as needed */
+    height: 80px;
     z-index: 1;
+    background-color: white;
+    padding-bottom: 1rem;
 }
 nav {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     list-style-type: none;
-    border: 0px solid #e7e7e7;
-    background-color: #ffffff;
     height: 100%;
     width: 100%;
     padding-top:1rem;
+    justify-content: space-around;
 }
 
-@media only screen and (max-width: 1111px) {
-    nav {
-        display: flex;
-        height: auto;
-    }
+nav h1,
+#sidebar h1 {
+    padding: 0px;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
-nav li {
-    width: 25%;
-    height:100%;
-}
-
-@media only screen and (max-width: 1111px) {
-    nav li {
-        padding: 1px
-    }
-}
-
-nav li a {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    border-bottom: 5px solid #00000000;
-}
-
-@media only screen and (max-width: 1111px) {
-    nav li a {
-        padding-top: 5px;
-        padding-bottom: 0px;
-        padding-left: 0;
-        padding-right: 0;
-        margin: 2px;
-    }
-}
-
-nav li a h1 {
-    padding: 20px 0px 20px 0px;
-
-}
-
-
-@media only screen and (max-width: 1111px) {
-    nav li a h1 {
-        padding: 5px 0px 5px 0px;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    nav li a h1 {
-        padding: 1px 0px 1px 0px;
-        margin: 1px;
-        margin-top: 13px;
+@media screen and (max-width: 1000px) {
+    nav h1 {
+        letter-spacing: 0;
     }
 }
 
 nav li:hover:not(.active) {
     border-bottom: 5px solid var(--main-theme);
-
 }
 
 /* to prevent the bottom bar from displacing space when hovering over */
 nav li {
     border-bottom: 5px solid rgba(255, 137, 20, 0);
-
 }
 
 nav li:hover h1{
@@ -95,13 +51,98 @@ nav li.active h1 {
     color:var(--main-theme);
 }
 
-a:-webkit-any-link {
-    color: -webkit-link;
+#nav-logo{
+    max-width: 100%;
+    max-height: min(10vh, 70px);
+    object-fit: contain;
+}
+
+/* Hamburger menu */
+.menu-toggle {
+    display: inline-block;
     cursor: pointer;
 }
 
-#nav-logo{
+#reduced-form-nav{
+    display:none;
+    padding-top:1rem;
+    padding-left:1rem;
+    padding-right:1rem;
+}
+
+@media screen and (max-width: 900px) {
+    #nav-container{
+        display:none;
+    }
+    #reduced-form-nav{
+        display:flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        position:sticky;
+        position: -webkit-sticky;
+        top:0;
+        z-index: 2;
+        background-color: white;
+    }
+}
+
+/* this is the hamburger svg */
+#menu-toggle img{
     max-width: 100%;
-    max-height: 50px;
-    object-fit: contain;
+    max-height: 30px;
+    cursor: pointer;
+}
+
+/* hamburger modal */
+#sidebar{
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 60px;
+    list-style-type: none;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+#sidebar.active{
+    opacity: 1;
+    display:flex;
+    flex-direction: column;
+    transform: translateX(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+#logo-menu{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin-left:5%;
+    margin-right:5%;
+}
+
+#sidebar-links{
+    margin-top:10%;
+    display:flex;
+    flex-direction: column;
+    padding:10%; 
+    align-items: flex-start;
+}
+
+#sidebar-links h1{
+    font-size: 24px;
+    padding:8px;
+    padding-left:0px;
+    border-bottom: 1px solid var(--main-theme);
+}
+
+#sidebar-links li:hover h1{
+    color: var(--main-theme);
 }

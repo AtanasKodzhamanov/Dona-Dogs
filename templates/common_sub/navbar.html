@@ -5,21 +5,59 @@
 {% block page_content %}
   <!-- Navigation Bar -->
   <div id="nav-container">
-  <!-- when you fix mobile style="margin:10px; margin-left:25px; margin-right:25px;"-->
-  <nav>
-    <li>
-      <a href="{% url 'home' %}">
-        <img id="nav-logo" alt="logo and home page link" src="https://res.cloudinary.com/dxwb5ejff/image/upload/v1671778627/Static/donalogo_jxjo3l.webp"/>
-      </a>
-    </li>
+    <nav class="navigation-header">
+      <li>
+        <a href="{% url 'home' %}">
+          <img id="nav-logo" alt="logo and home page link" src="https://res.cloudinary.com/dxwb5ejff/image/upload/v1671778627/Static/donalogo_jxjo3l.webp"/>
+        </a>
+      </li>
+      <li >
+        <a href="{% url 'all_dogs' %}">
+          <h1>{% trans "GALLERY" %}</h1>
+        </a>
+      </li>
+      <li >
+        <a href="{% url 'adoptions' %}">
+          <h1>{% trans "ADOPT" %}</h1>
+        </a>
+      </li>
+      <li >
+        <a href="{% url 'donations' %}">
+          <h1>{% trans "HELP" %}</h1>
+        </a>
+      </li>
+      <li >
+        <a href="{% url 'infirmary' %}">
+          <h1>{% trans "CLINIC" %}</h1>
+        </a>
+      </li>
+      <li >
+        <a href="{% url 'about' %}">
+          <h1>{% trans "ABOUT" %}</h1>
+        </a>
+      </li>
+      <li >
+        <a href="{% url 'contact' %}">
+          <h1>{% trans "CONTACTS" %}</h1>
+        </a>
+      </li>
+    </nav>
+  </div>
+
+  <div id="reduced-form-nav">
+    <a href="{% url 'home' %}">
+      <img id="nav-logo" alt="logo and home page link" src="https://res.cloudinary.com/dxwb5ejff/image/upload/v1671778627/Static/donalogo_jxjo3l.webp"/>
+    </a>
+    <div id="menu-toggle">
+      <img src="{% static "\images\menu-icon.svg" %}" alt="Menu Icon">
+    </div>
+  </div>
+
+  <div id="sidebar">
+    <div id="sidebar-links">
     <li >
-      <a href="{% url 'infirmary' %}">
-        <h1>{% trans "CLINIC" %}</h1>
-      </a>
-    </li>
-    <li >
-      <a href="{% url 'donations' %}">
-        <h1>{% trans "HELP" %}</h1>
+      <a href="{% url 'all_dogs' %}">
+        <h1>{% trans "GALLERY" %}</h1>
       </a>
     </li>
     <li >
@@ -28,11 +66,27 @@
       </a>
     </li>
     <li >
+      <a href="{% url 'donations' %}">
+        <h1>{% trans "HELP" %}</h1>
+      </a>
+    </li>
+    <li >
+      <a href="{% url 'infirmary' %}">
+        <h1>{% trans "CLINIC" %}</h1>
+      </a>
+    </li>
+    <li >
       <a href="{% url 'about' %}">
         <h1>{% trans "ABOUT" %}</h1>
       </a>
     </li>
-
-  </nav>
+    <li >
+      <a href="{% url 'contact' %}">
+        <h1>{% trans "CONTACTS" %}</h1>
+      </a>
+    </li>
   </div>
+  </div>
+  <script src="{% static 'js/hamburger.js' %}"></script>
+
 {% endblock %}
