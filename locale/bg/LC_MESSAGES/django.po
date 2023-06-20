@@ -6,12 +6,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-#: DogShelter/web/forms.py:93 DogShelter/web/forms.py:98
+#: DogShelter/web/forms.py:96 DogShelter/web/forms.py:101
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-19 19:40+0000\n"
+"POT-Creation-Date: 2023-06-20 08:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,49 +21,50 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: DogShelter/web/forms.py:49
+#: DogShelter/web/forms.py:52
 msgid "Type name"
 msgstr "Въведете име"
 
-#: DogShelter/web/forms.py:60
+#: DogShelter/web/forms.py:63
 msgid "All dogs"
 msgstr "Всички кучета"
 
-#: DogShelter/web/forms.py:61 templates/subtemplates/gallery.html:26
+#: DogShelter/web/forms.py:64 templates/subtemplates/gallery.html:26
 msgid "Virtual sponsor"
 msgstr "Виртуален осиновител"
 
-#: DogShelter/web/forms.py:62
+#: DogShelter/web/forms.py:65
 msgid "No sponsor"
 msgstr "Без осиновители"
 
-#: DogShelter/web/forms.py:75
+#: DogShelter/web/forms.py:78
 msgid "Gender"
 msgstr "Пол"
 
-#: DogShelter/web/forms.py:76
+#: DogShelter/web/forms.py:79
 msgid "M"
 msgstr "Мъжки"
 
-#: DogShelter/web/forms.py:77
+#: DogShelter/web/forms.py:80
 msgid "F"
 msgstr "Женски"
 
-#: DogShelter/web/forms.py:96
+#: DogShelter/web/forms.py:99
 msgid "Email"
 msgstr "Е-майл адрес"
 
-#: DogShelter/web/forms.py:101
+#: DogShelter/web/forms.py:104
 msgid "Name"
 msgstr "Име"
 
-#: DogShelter/web/views.py:370
+#: DogShelter/web/views.py:368
 msgid "Thank you for your message!"
 msgstr "Благодарим ви за вашето съобщение!"
 
-#: DogShelter/web/views.py:374
+#: DogShelter/web/views.py:372
 msgid "Error, please try again or message us on our email..."
-msgstr "Грешка, моля, опитайте отново или ни изпратете съобщение на нашия имейл..."
+msgstr ""
+"Грешка, моля, опитайте отново или ни изпратете съобщение на нашия имейл..."
 
 #: templates/0_deprecated/giftadoption.html:8
 #: templates/common_sub/footer_info_boxes.html:7
@@ -150,28 +151,29 @@ msgstr ""
 "Приветстваме директни доставки на храна или подслон за Стамболийски, 4210, "
 "Васил Левски 40."
 
-#: templates/common_sub/navbar.html:17 templates/home_sub/count.html:19
-msgid "CLINIC"
-msgstr "КЛИНИКА"
-
-#: templates/common_sub/navbar.html:22
-msgid "HELP"
-msgstr "ДАРИ"
-
-#: templates/common_sub/navbar.html:27
-msgid "ADOPT"
-msgstr "ОСИНОВИ"
-
-#: templates/common_sub/navbar.html:32
-msgid "ABOUT"
-msgstr "ЗА НАС"
-
-#: templates/common_sub/navbar.html:37
+#: templates/common_sub/navbar.html:16 templates/common_sub/navbar.html:60
 msgid "GALLERY"
 msgstr "ГАЛЕРИЯ"
 
-#: templates/common_sub/navbar.html:42
-msgid "CONTACTS"
+#: templates/common_sub/navbar.html:21 templates/common_sub/navbar.html:65
+msgid "ADOPT"
+msgstr "ОСИНОВИ"
+
+#: templates/common_sub/navbar.html:26 templates/common_sub/navbar.html:70
+msgid "HELP"
+msgstr "ДАРИ"
+
+#: templates/common_sub/navbar.html:31 templates/common_sub/navbar.html:75
+#: templates/home_sub/count.html:19
+msgid "CLINIC"
+msgstr "КЛИНИКА"
+
+#: templates/common_sub/navbar.html:36 templates/common_sub/navbar.html:80
+msgid "ABOUT"
+msgstr "ЗА НАС"
+
+#: templates/common_sub/navbar.html:41 templates/common_sub/navbar.html:85
+msgid "CONTACT"
 msgstr "КОНТАКТИ"
 
 #: templates/contact.html:15
