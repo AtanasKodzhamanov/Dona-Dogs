@@ -105,3 +105,9 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.captcha-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

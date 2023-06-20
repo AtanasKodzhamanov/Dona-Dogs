@@ -39,9 +39,9 @@
                 <textarea name="message" id="id_message" placeholder={% trans "MESSAGE" %}></textarea>
             </div>
           </div>
-          <div>
-            {{ form.captcha }}
+          <div class="captcha-button">
             <button class="button" type="submit"><h3>{% trans "SEND" %}</h3></button>
+            {{ form.captcha }}
           </div>
         </div>
       </form>
