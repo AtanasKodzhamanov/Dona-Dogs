@@ -220,7 +220,7 @@ class GalleryView(BaseView):
         context['new_dogs'] = Dog.objects.filter(
             status__in=["New"])
         context['active_dogs'] = Dog.objects.filter(
-            status__in=["Active", "Sick"]).order_by("arrival_year")
+            status__in=["Active", "Sick"]).order_by("-arrival_year")
         context['data_people'] = set(Dog.objects.values_list(
             "va_name_bg", "va_name_eng").exclude(va_name_eng=""))
         context['subscribe_form'] = SubscribeForm(self.request.POST or None)
