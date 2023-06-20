@@ -589,7 +589,7 @@ class NewsletterSubscriber(models.Model):
     )
 
 
-class ContactForm(models.Model):
+class ContactFormModel(models.Model):
     class Meta:
         verbose_name_plural = "User messages"
 

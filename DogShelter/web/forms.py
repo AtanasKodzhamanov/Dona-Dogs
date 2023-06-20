@@ -1,7 +1,8 @@
 from django import forms
 from django.forms import CharField, Select
 from django.utils.translation import gettext_lazy as _
-from DogShelter.web.models import NewsletterSubscriber, AdoptionForm, ContactForm
+from DogShelter.web.models import NewsletterSubscriber, AdoptionForm, ContactFormModel
+from captcha.fields import ReCaptchaField
 
 NAME_MAX_LENGTH = 60
 EMAIL_MAX_LENGTH = 60
@@ -12,8 +13,10 @@ MESSAGE_MAX_LENGTH = 1000
 
 
 class ContactForm(forms.ModelForm):
+    captcha = ReCaptchaField()
+
     class Meta:
-        model = ContactForm
+        model = ContactFormModel
         fields = ['email', 'name', 'subject', 'message']
         widgets = {
             'email': forms.EmailInput(attrs={'maxlength': EMAIL_MAX_LENGTH}),

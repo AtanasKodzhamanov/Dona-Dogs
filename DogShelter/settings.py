@@ -26,6 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 SECRET_KEY = os.environ["SECRET_KEY"]
+RECAPTCHA_PUBLIC_KEY = os.environ["SECRET_KEY_CAPTCHA"]
+RECAPTCHA_PRIVATE_KEY = os.environ["SITE_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -43,9 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
 
+    'captcha',
+
     "DogShelter.web",
-
-
 ]
 
 MIDDLEWARE = [
