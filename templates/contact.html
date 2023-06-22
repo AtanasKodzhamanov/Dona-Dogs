@@ -25,6 +25,7 @@
       <form method="post">
         {% csrf_token %}
         <div class="form-input-content">
+
           <div class="form-input-fields">
             <div>
               <input type="text" name="name" id="id_name" placeholder={% trans "NAME" %}>
@@ -39,19 +40,19 @@
                 <textarea name="message" id="id_message" placeholder={% trans "MESSAGE" %}></textarea>
             </div>
           </div>
+          {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><h3>{{ message|upper }}</h3></li>
+              {% endfor %}
+          </ul>
+          {% endif %}
           <div class="captcha-button">
             <button class="button" type="submit"><h3>{% trans "SEND" %}</h3></button>
             {{ form.captcha }}
           </div>
         </div>
       </form>
-              {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><h3>{{ message|upper }}</h3></li>
-            {% endfor %}
-        </ul>
-        {% endif %}
   </div>
 </div>
 

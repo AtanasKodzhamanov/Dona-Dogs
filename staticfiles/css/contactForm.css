@@ -1,7 +1,7 @@
 .contact-form{
     display: flex;
     flex-direction: row;
-    padding:2rem;
+    padding:32px;
     width: 100%;
     margin: auto;
     box-sizing: border-box;
@@ -15,25 +15,25 @@
 }
     
 .contact-form .info-box{
-    padding:3rem;
+    padding:48px;
     flex:1;
     color: white;
     background-color: var(--main-theme);  
 }
 
 .contact-form .input-box{
-    padding:3rem;
+    padding:48px;
     flex:2;
     background-color: var(--generic);
 }
 
 @media screen and (max-width: 900px) {
     .contact-form .info-box{
-        padding:1rem;
+        padding:16px;
         flex-basis: 100%;
     }
     .contact-form .input-box{
-        padding:1rem;
+        padding:32px;
         flex-basis: 100%;
     }
 }
@@ -47,13 +47,13 @@
 .contact-form ul{
     margin:0;
     padding:0;
-    margin-top:2rem;
+    margin-top:32px;
 }
 .contact-form li{
     list-style-type: none;
     font-weight: bold;
-    padding:1rem;
-    padding-bottom:0.5rem;
+    padding:16px;
+    padding-bottom:8px;
 }
 
 .contact-form p{
@@ -63,6 +63,10 @@
 
 .contact-form h3{
     text-align: left;
+}
+
+.contact-form .button h3{
+    text-align:center;
 }
 
 .contact-form .form-input-content{
@@ -80,8 +84,8 @@
 .form-input-fields input{
     background-color: var(--generic);
     width: 50%;
-    padding: 0.5rem;
-    margin-bottom:1rem;
+    padding: 8px;
+    margin-bottom:16px;
     border: none;
     border-bottom: 1px solid var(--main-theme);
     font: inherit;
@@ -93,8 +97,8 @@
     background-color: var(--generic);
     width: 100%;
     min-height:100px;
-    padding: 0.5rem;
-    margin-bottom:1rem;
+    padding: 8px;
+    margin-bottom:16px;
     border: none;
     border-bottom: 1px solid var(--main-theme);
 
@@ -106,8 +110,12 @@
     justify-content: space-between;
 }
 
+.messages h3{
+    text-align: center !important;
+}
+
 .captcha-button{
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
 }
