@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-20 08:19+0000\n"
+"POT-Creation-Date: 2023-08-15 07:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,36 +66,20 @@ msgid "Error, please try again or message us on our email..."
 msgstr ""
 "Грешка, моля, опитайте отново или ни изпратете съобщение на нашия имейл..."
 
+#: templates/0_deprecated/footer_info_boxes.html:7
 #: templates/0_deprecated/giftadoption.html:8
-#: templates/common_sub/footer_info_boxes.html:7
 msgid "VIRTUAL ADOPTION"
 msgstr "ВИРТУАЛНО ОСИНОВЯВАНЕ"
 
-#: templates/0_deprecated/giftadoption.html:28
-msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!"
-msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
-
-#: templates/0_deprecated/va_names.html:5
-msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS"
-msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
-
-#: templates/adoptions.html:17
-msgid "SEE ALL DOGS AVAILABLE FOR ADOPTION HERE"
-msgstr "ВИЖТЕ ВСИЧКИ КУЧЕТА, СВОБОДНИ ЗА ОСИНОВЯВАНЕ ТУК"
-
-#: templates/adoptions.html:23
-msgid "PAST ADOPTIONS"
-msgstr "ОСИНОВЕНИ КУЧЕТА"
-
-#: templates/common_sub/footer_info_boxes.html:16
+#: templates/0_deprecated/footer_info_boxes.html:16
 msgid "DONATION METHODS"
 msgstr "МЕТОДИ ЗА ДАРЕНИЕ"
 
-#: templates/common_sub/footer_info_boxes.html:25
+#: templates/0_deprecated/footer_info_boxes.html:25
 msgid "Subscribe"
 msgstr "Абонирай се"
 
-#: templates/common_sub/footer_info_boxes.html:30
+#: templates/0_deprecated/footer_info_boxes.html:30
 msgid ""
 "If you liked one of our dogs, but you don't have the opportunity to adopt, "
 "you can become their virtual adopter until they find a real one. To become a "
@@ -113,7 +97,7 @@ msgstr ""
 "кучета във всеки един момент, някои от които с хронични заболявания, които "
 "изискват скъпо лечение."
 
-#: templates/common_sub/footer_info_boxes.html:33
+#: templates/0_deprecated/footer_info_boxes.html:33
 msgid ""
 "It's hard for us to do it all alone. We are putting our time and our "
 "resources to make a positive change in the lives of these dogs and equally "
@@ -125,7 +109,7 @@ msgstr ""
 "до общността, че малтретирането на кучета е грешно, варварско и няма място в "
 "България в 21 век."
 
-#: templates/common_sub/footer_info_boxes.html:36
+#: templates/0_deprecated/footer_info_boxes.html:36
 msgid ""
 "To become a virtual adopter, you can set up a recurring payment equivalent "
 "to 20 EUR using PayPal or bank transfer. Make sure to specify the name of "
@@ -135,7 +119,7 @@ msgstr ""
 "равностойно на 20 евро. Не забравяйте да посочите името на кучето, което "
 "искате да осиновите виртуално!"
 
-#: templates/common_sub/footer_info_boxes.html:39
+#: templates/0_deprecated/footer_info_boxes.html:39
 msgid ""
 "Check out our albums, write to us on donadogsfoundation@email.com. Together "
 "we can do more!"
@@ -143,13 +127,29 @@ msgstr ""
 "Разгледайте нашите албуми, пишете ни на donadogsfoundation@email.com. Заедно "
 "можем повече!"
 
-#: templates/common_sub/footer_info_boxes.html:45
+#: templates/0_deprecated/footer_info_boxes.html:45
 msgid ""
 "We welcome direct <b> food or shelter</b> deliveries to Bulgaria, "
 "Stambolyski, 4210, Vasil Levski 40."
 msgstr ""
 "Приветстваме директни доставки на храна или подслон за Стамболийски, 4210, "
 "Васил Левски 40."
+
+#: templates/0_deprecated/giftadoption.html:28
+msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS!"
+msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
+
+#: templates/0_deprecated/va_names.html:5
+msgid "SPECIAL THANKS TO OUR VIRTUAL ADOPTERS"
+msgstr "СПЕЦИАЛНИ БЛАГОДАРНОСТИ НА НАШИТЕ ВИРТУАЛНИ ОСИНОВИТЕЛИ!"
+
+#: templates/adoptions.html:17
+msgid "SEE ALL DOGS AVAILABLE FOR ADOPTION HERE"
+msgstr "ВИЖТЕ ВСИЧКИ КУЧЕТА, СВОБОДНИ ЗА ОСИНОВЯВАНЕ ТУК"
+
+#: templates/adoptions.html:23
+msgid "PAST ADOPTIONS"
+msgstr "ОСИНОВЕНИ КУЧЕТА"
 
 #: templates/common_sub/navbar.html:16 templates/common_sub/navbar.html:60
 msgid "GALLERY"
@@ -180,7 +180,7 @@ msgstr "КОНТАКТИ"
 msgid "Get in touch"
 msgstr "СВЪРЖЕТЕ СЕ С НАС"
 
-#: templates/contact.html:17 templates/contact.html:33
+#: templates/contact.html:17 templates/contact.html:34
 msgid "EMAIL"
 msgstr "Е-МЕЙЛ"
 
@@ -189,26 +189,26 @@ msgid "ADDRESS"
 msgstr "АДРЕС"
 
 #: templates/contact.html:20
-msgid "Stambolyski, 4210, Vasil Levski 40"
-msgstr "Стамболийски, 4210, Васил Левски 40"
+msgid "Stambolyski, Bulgaria"
+msgstr "Стамболийски, България"
 
 #: templates/contact.html:24
 msgid "Message us now"
 msgstr "Пишете ни!"
 
-#: templates/contact.html:30
+#: templates/contact.html:31
 msgid "NAME"
 msgstr "ИМЕ"
 
-#: templates/contact.html:36
+#: templates/contact.html:37
 msgid "SUBJECT"
 msgstr "ЗАГЛАВИЕ"
 
-#: templates/contact.html:39
+#: templates/contact.html:40
 msgid "MESSAGE"
 msgstr "СЪОБЩЕНИЕ"
 
-#: templates/contact.html:43
+#: templates/contact.html:51
 msgid "SEND"
 msgstr "ИЗПРАТИ"
 
@@ -236,7 +236,7 @@ msgstr ""
 msgid "After adoption"
 msgstr "След осиновяване"
 
-#: templates/dogProfile.html:90 templates/home.html:23
+#: templates/dogProfile.html:88 templates/home.html:23
 msgid "SEE ALL OF OUR DOGS HERE"
 msgstr "ВИЖТЕ ВСИЧКИ КУЧЕТА"
 
