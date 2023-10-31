@@ -4,15 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0094_longpost_title_color'),
+        ("web", "0094_longpost_title_color"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='longpost',
-            name='text_align',
-            field=models.CharField(choices=[('left', 'Left'), ('center', 'Center'), ('right', 'Right')], default='left', help_text='Изберете подравняването на текста за известието. Ляво, дясно или централно.', max_length=6),
+            model_name="longpost",
+            name="text_align",
+            field=models.CharField(
+                choices=[("left", "Left"), ("center", "Center"), ("right", "Right")],
+                default="left",
+                help_text="Изберете подравняването на текста за известието. Ляво, дясно или централно.",
+                max_length=6,
+            ),
         ),
     ]

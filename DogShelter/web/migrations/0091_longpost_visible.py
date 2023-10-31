@@ -4,15 +4,17 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0090_alter_noticeboard_visible'),
+        ("web", "0090_alter_noticeboard_visible"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='longpost',
-            name='visible',
-            field=models.BooleanField(default=True, help_text='Скриване или показване на публикацията. Показва се по подразбиране.'),
+            model_name="longpost",
+            name="visible",
+            field=models.BooleanField(
+                default=True,
+                help_text="Скриване или показване на публикацията. Показва се по подразбиране.",
+            ),
         ),
     ]

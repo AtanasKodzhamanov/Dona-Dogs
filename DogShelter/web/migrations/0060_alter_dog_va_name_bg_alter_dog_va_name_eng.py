@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0059_dog_va_name_bg_dog_va_name_eng'),
+        ("web", "0059_dog_va_name_bg_dog_va_name_eng"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='dog',
-            name='va_name_bg',
-            field=models.CharField(blank=True, default='', max_length=60),
+            model_name="dog",
+            name="va_name_bg",
+            field=models.CharField(blank=True, default="", max_length=60),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='va_name_eng',
-            field=models.CharField(blank=True, default='', max_length=60),
+            model_name="dog",
+            name="va_name_eng",
+            field=models.CharField(blank=True, default="", max_length=60),
         ),
     ]

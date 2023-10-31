@@ -5,15 +5,18 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0021_rename_namebg_dog_name_bg_and_more'),
+        ("web", "0021_rename_namebg_dog_name_bg_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='noticeboard',
-            name='person',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.DO_NOTHING, to='web.people'),
+            model_name="noticeboard",
+            name="person",
+            field=models.ForeignKey(
+                default=1,
+                on_delete=django.db.models.deletion.DO_NOTHING,
+                to="web.people",
+            ),
         ),
     ]

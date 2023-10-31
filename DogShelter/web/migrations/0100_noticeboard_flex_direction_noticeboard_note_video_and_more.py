@@ -6,30 +6,53 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0099_alter_dog_status'),
+        ("web", "0099_alter_dog_status"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='noticeboard',
-            name='flex_direction',
-            field=models.CharField(choices=[('row', 'Row'), ('row-reverse', 'Row Reverse'), ('column', 'Column'), ('column-reverse', 'Column Reverse')], default='row', help_text='Flexbox direction options', max_length=15),
+            model_name="noticeboard",
+            name="flex_direction",
+            field=models.CharField(
+                choices=[
+                    ("row", "Row"),
+                    ("row-reverse", "Row Reverse"),
+                    ("column", "Column"),
+                    ("column-reverse", "Column Reverse"),
+                ],
+                default="row",
+                help_text="Flexbox direction options",
+                max_length=15,
+            ),
         ),
         migrations.AddField(
-            model_name='noticeboard',
-            name='note_video',
-            field=models.URLField(blank=True, default='', help_text='Видео линк', max_length=300, validators=[DogShelter.web.validators.validate_url]),
+            model_name="noticeboard",
+            name="note_video",
+            field=models.URLField(
+                blank=True,
+                default="",
+                help_text="Видео линк",
+                max_length=300,
+                validators=[DogShelter.web.validators.validate_url],
+            ),
         ),
         migrations.AlterField(
-            model_name='donation',
-            name='date',
-            field=models.DateField(blank=True, default=datetime.date(2023, 3, 31), help_text='Дата на дарението. По подразбиране е последният ден на предходния месец. Например ако дарението е направено на 1.01.2020, то по подразбиране ще се показва на 31.12.2019. Това е за да се показват даренията в последния месец.'),
+            model_name="donation",
+            name="date",
+            field=models.DateField(
+                blank=True,
+                default=datetime.date(2023, 3, 31),
+                help_text="Дата на дарението. По подразбиране е последният ден на предходния месец. Например ако дарението е направено на 1.01.2020, то по подразбиране ще се показва на 31.12.2019. Това е за да се показват даренията в последния месец.",
+            ),
         ),
         migrations.AlterField(
-            model_name='donationstory',
-            name='date',
-            field=models.DateField(blank=True, default=datetime.date(2023, 3, 31), help_text='Дата на дарението. По подразбиране е последният ден на предходния месец. Например ако дарението е направено на 1.01.2020, то по подразбиране ще се показва на 31.12.2019. Това е за да се показват даренията в последния месец.'),
+            model_name="donationstory",
+            name="date",
+            field=models.DateField(
+                blank=True,
+                default=datetime.date(2023, 3, 31),
+                help_text="Дата на дарението. По подразбиране е последният ден на предходния месец. Например ако дарението е направено на 1.01.2020, то по подразбиране ще се показва на 31.12.2019. Това е за да се показват даренията в последния месец.",
+            ),
         ),
     ]

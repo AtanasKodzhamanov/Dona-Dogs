@@ -4,26 +4,36 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0011_alter_dog_active'),
+        ("web", "0011_alter_dog_active"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='People',
+            name="People",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('person_name_eng', models.CharField(max_length=60, null=True, unique=True)),
-                ('person_name_bg', models.CharField(default='', max_length=60)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "person_name_eng",
+                    models.CharField(max_length=60, null=True, unique=True),
+                ),
+                ("person_name_bg", models.CharField(default="", max_length=60)),
             ],
             options={
-                'verbose_name_plural': 'People',
+                "verbose_name_plural": "People",
             },
         ),
         migrations.AlterField(
-            model_name='adoptions',
-            name='DogNameENG',
+            model_name="adoptions",
+            name="DogNameENG",
             field=models.CharField(max_length=60, null=True, unique=True),
         ),
     ]

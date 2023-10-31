@@ -4,15 +4,23 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0029_remove_donations_full_name_bg_and_more'),
+        ("web", "0029_remove_donations_full_name_bg_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='dog',
-            name='active',
-            field=models.CharField(blank=True, choices=[('Active', 'Active'), ('Dead', 'Dead'), ('Adopted', 'Adopted')], default='Active', max_length=10),
+            model_name="dog",
+            name="active",
+            field=models.CharField(
+                blank=True,
+                choices=[
+                    ("Active", "Active"),
+                    ("Dead", "Dead"),
+                    ("Adopted", "Adopted"),
+                ],
+                default="Active",
+                max_length=10,
+            ),
         ),
     ]

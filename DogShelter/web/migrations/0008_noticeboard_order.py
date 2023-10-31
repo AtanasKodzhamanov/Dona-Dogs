@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0007_alter_dog_pic2_alter_dog_pic3_alter_dog_pic4_and_more'),
+        ("web", "0007_alter_dog_pic2_alter_dog_pic3_alter_dog_pic4_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='noticeboard',
-            name='order',
+            model_name="noticeboard",
+            name="order",
             field=models.IntegerField(default=99),
         ),
     ]

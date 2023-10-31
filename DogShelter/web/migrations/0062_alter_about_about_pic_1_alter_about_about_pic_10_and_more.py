@@ -5,210 +5,356 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0061_alter_dog_diseases_alter_dog_gender_and_more'),
+        ("web", "0061_alter_dog_diseases_alter_dog_gender_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='about',
-            name='about_pic_1',
-            field=models.URLField(blank=True, default='', help_text='Снимка 1 в секцията.', max_length=300),
+            model_name="about",
+            name="about_pic_1",
+            field=models.URLField(
+                blank=True, default="", help_text="Снимка 1 в секцията.", max_length=300
+            ),
         ),
         migrations.AlterField(
-            model_name='about',
-            name='about_pic_10',
-            field=models.URLField(blank=True, default='', help_text='Снимка 10 в секцията.', max_length=300),
+            model_name="about",
+            name="about_pic_10",
+            field=models.URLField(
+                blank=True,
+                default="",
+                help_text="Снимка 10 в секцията.",
+                max_length=300,
+            ),
         ),
         migrations.AlterField(
-            model_name='about',
-            name='about_pic_2',
-            field=models.URLField(blank=True, default='', help_text='Снимка 2 в секцията.', max_length=300),
+            model_name="about",
+            name="about_pic_2",
+            field=models.URLField(
+                blank=True, default="", help_text="Снимка 2 в секцията.", max_length=300
+            ),
         ),
         migrations.AlterField(
-            model_name='about',
-            name='about_pic_3',
-            field=models.URLField(blank=True, default='', help_text='Снимка 3 в секцията.', max_length=300),
+            model_name="about",
+            name="about_pic_3",
+            field=models.URLField(
+                blank=True, default="", help_text="Снимка 3 в секцията.", max_length=300
+            ),
         ),
         migrations.AlterField(
-            model_name='about',
-            name='about_pic_4',
-            field=models.URLField(blank=True, default='', help_text='Снимка 4 в секцията.', max_length=300),
+            model_name="about",
+            name="about_pic_4",
+            field=models.URLField(
+                blank=True, default="", help_text="Снимка 4 в секцията.", max_length=300
+            ),
         ),
         migrations.AlterField(
-            model_name='about',
-            name='about_pic_5',
-            field=models.URLField(blank=True, default='', help_text='Снимка 5 в секцията.', max_length=300),
+            model_name="about",
+            name="about_pic_5",
+            field=models.URLField(
+                blank=True, default="", help_text="Снимка 5 в секцията.", max_length=300
+            ),
         ),
         migrations.AlterField(
-            model_name='about',
-            name='about_pic_6',
-            field=models.URLField(blank=True, default='', help_text='Снимка 6 в секцията.', max_length=300),
+            model_name="about",
+            name="about_pic_6",
+            field=models.URLField(
+                blank=True, default="", help_text="Снимка 6 в секцията.", max_length=300
+            ),
         ),
         migrations.AlterField(
-            model_name='about',
-            name='about_pic_7',
-            field=models.URLField(blank=True, default='', help_text='Снимка 7 в секцията.', max_length=300),
+            model_name="about",
+            name="about_pic_7",
+            field=models.URLField(
+                blank=True, default="", help_text="Снимка 7 в секцията.", max_length=300
+            ),
         ),
         migrations.AlterField(
-            model_name='about',
-            name='about_pic_8',
-            field=models.URLField(blank=True, default='', help_text='Снимка 8 в секцията.', max_length=300),
+            model_name="about",
+            name="about_pic_8",
+            field=models.URLField(
+                blank=True, default="", help_text="Снимка 8 в секцията.", max_length=300
+            ),
         ),
         migrations.AlterField(
-            model_name='about',
-            name='about_pic_9',
-            field=models.URLField(blank=True, default='', help_text='Снимка 9 в секцията.', max_length=300),
+            model_name="about",
+            name="about_pic_9",
+            field=models.URLField(
+                blank=True, default="", help_text="Снимка 9 в секцията.", max_length=300
+            ),
         ),
         migrations.AlterField(
-            model_name='about',
-            name='location',
-            field=models.CharField(blank=True, choices=[('Gallery', 'Gallery'), ('About', 'About'), ('Infirmary', 'Infirmary'), ('Adoptions', 'Adoptions'), ('Virtual', 'Virtual'), ('Donations', 'Donations')], default='Donations', help_text='Място на секцията - всяка страница разполага със способност за секции.', max_length=25),
+            model_name="about",
+            name="location",
+            field=models.CharField(
+                blank=True,
+                choices=[
+                    ("Gallery", "Gallery"),
+                    ("About", "About"),
+                    ("Infirmary", "Infirmary"),
+                    ("Adoptions", "Adoptions"),
+                    ("Virtual", "Virtual"),
+                    ("Donations", "Donations"),
+                ],
+                default="Donations",
+                help_text="Място на секцията - всяка страница разполага със способност за секции.",
+                max_length=25,
+            ),
         ),
         migrations.AlterField(
-            model_name='about',
-            name='order',
-            field=models.IntegerField(default=99, help_text='Подредба на секцията в страницата. 1 е първата, 2 е втората и т.н'),
+            model_name="about",
+            name="order",
+            field=models.IntegerField(
+                default=99,
+                help_text="Подредба на секцията в страницата. 1 е първата, 2 е втората и т.н",
+            ),
         ),
         migrations.AlterField(
-            model_name='about',
-            name='section_desc_bg',
-            field=models.TextField(blank=True, default='', help_text='Описание на секцията на Български.'),
+            model_name="about",
+            name="section_desc_bg",
+            field=models.TextField(
+                blank=True, default="", help_text="Описание на секцията на Български."
+            ),
         ),
         migrations.AlterField(
-            model_name='about',
-            name='section_desc_eng',
-            field=models.TextField(blank=True, default='Info coming soon...', help_text='Описание на секцията на Английски.'),
+            model_name="about",
+            name="section_desc_eng",
+            field=models.TextField(
+                blank=True,
+                default="Info coming soon...",
+                help_text="Описание на секцията на Английски.",
+            ),
         ),
         migrations.AlterField(
-            model_name='about',
-            name='section_title_bg',
-            field=models.TextField(blank=True, default='', help_text='Заглавие на секцията на Български.', max_length=100),
+            model_name="about",
+            name="section_title_bg",
+            field=models.TextField(
+                blank=True,
+                default="",
+                help_text="Заглавие на секцията на Български.",
+                max_length=100,
+            ),
         ),
         migrations.AlterField(
-            model_name='about',
-            name='section_title_eng',
-            field=models.TextField(blank=True, default='', help_text='Заглавие на секцията на Английски.', max_length=100),
+            model_name="about",
+            name="section_title_eng",
+            field=models.TextField(
+                blank=True,
+                default="",
+                help_text="Заглавие на секцията на Английски.",
+                max_length=100,
+            ),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='adoption_country_bg',
-            field=models.CharField(blank=True, default='', help_text='Държава на осиновяване на Български.', max_length=60),
+            model_name="dog",
+            name="adoption_country_bg",
+            field=models.CharField(
+                blank=True,
+                default="",
+                help_text="Държава на осиновяване на Български.",
+                max_length=60,
+            ),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='adoption_country_eng',
-            field=models.CharField(blank=True, default='', help_text='Държава на осиновяване на Английски.', max_length=60),
+            model_name="dog",
+            name="adoption_country_eng",
+            field=models.CharField(
+                blank=True,
+                default="",
+                help_text="Държава на осиновяване на Английски.",
+                max_length=60,
+            ),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='adoption_pic_after_1',
-            field=models.URLField(blank=True, default='', help_text='Снимка на кучето след осиновяване.', max_length=300),
+            model_name="dog",
+            name="adoption_pic_after_1",
+            field=models.URLField(
+                blank=True,
+                default="",
+                help_text="Снимка на кучето след осиновяване.",
+                max_length=300,
+            ),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='adoption_pic_after_2',
-            field=models.URLField(blank=True, default='', help_text='Снимка на кучето след осиновяване.', max_length=300),
+            model_name="dog",
+            name="adoption_pic_after_2",
+            field=models.URLField(
+                blank=True,
+                default="",
+                help_text="Снимка на кучето след осиновяване.",
+                max_length=300,
+            ),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='adoption_pic_after_3',
-            field=models.URLField(blank=True, default='', help_text='Снимка на кучето след осиновяване.', max_length=300),
+            model_name="dog",
+            name="adoption_pic_after_3",
+            field=models.URLField(
+                blank=True,
+                default="",
+                help_text="Снимка на кучето след осиновяване.",
+                max_length=300,
+            ),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='adoption_year',
-            field=models.IntegerField(blank=True, default=0, help_text='Година на осиновяване.'),
+            model_name="dog",
+            name="adoption_year",
+            field=models.IntegerField(
+                blank=True, default=0, help_text="Година на осиновяване."
+            ),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='arrival_year',
-            field=models.IntegerField(blank=True, default=0, help_text='Година на пристигане на кучето.'),
+            model_name="dog",
+            name="arrival_year",
+            field=models.IntegerField(
+                blank=True, default=0, help_text="Година на пристигане на кучето."
+            ),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='pic_2',
-            field=models.URLField(blank=True, default='', help_text='Албумна снимка.', max_length=300),
+            model_name="dog",
+            name="pic_2",
+            field=models.URLField(
+                blank=True, default="", help_text="Албумна снимка.", max_length=300
+            ),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='pic_3',
-            field=models.URLField(blank=True, default='', help_text='Албумна снимка.', max_length=300),
+            model_name="dog",
+            name="pic_3",
+            field=models.URLField(
+                blank=True, default="", help_text="Албумна снимка.", max_length=300
+            ),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='pic_4',
-            field=models.URLField(blank=True, default='', help_text='Албумна снимка.', max_length=300),
+            model_name="dog",
+            name="pic_4",
+            field=models.URLField(
+                blank=True, default="", help_text="Албумна снимка.", max_length=300
+            ),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='pic_5',
-            field=models.URLField(blank=True, default='', help_text='Албумна снимка.', max_length=300),
+            model_name="dog",
+            name="pic_5",
+            field=models.URLField(
+                blank=True, default="", help_text="Албумна снимка.", max_length=300
+            ),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='profile_pic',
-            field=models.URLField(help_text='Профилна снимка.', max_length=300, null=True),
+            model_name="dog",
+            name="profile_pic",
+            field=models.URLField(
+                help_text="Профилна снимка.", max_length=300, null=True
+            ),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='status',
-            field=models.CharField(blank=True, choices=[('Active', 'Active'), ('Dead', 'Dead'), ('Adopted', 'Adopted'), ('Sick', 'Sick')], default='Active', help_text='Статус на кучето: Активно, Починало, Осиновено, Болно. Активните кучета ще се показват в началната стрица. Болните в страницата на клиниката. Осиновените в страницата за осиновяване. Починалите не се показват никъде.', max_length=10),
+            model_name="dog",
+            name="status",
+            field=models.CharField(
+                blank=True,
+                choices=[
+                    ("Active", "Active"),
+                    ("Dead", "Dead"),
+                    ("Adopted", "Adopted"),
+                    ("Sick", "Sick"),
+                ],
+                default="Active",
+                help_text="Статус на кучето: Активно, Починало, Осиновено, Болно. Активните кучета ще се показват в началната стрица. Болните в страницата на клиниката. Осиновените в страницата за осиновяване. Починалите не се показват никъде.",
+                max_length=10,
+            ),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='story_bg',
-            field=models.TextField(blank=True, default='', help_text='История на кучето на Български.'),
+            model_name="dog",
+            name="story_bg",
+            field=models.TextField(
+                blank=True, default="", help_text="История на кучето на Български."
+            ),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='story_eng',
-            field=models.TextField(blank=True, default='', help_text='История на кучето на Английски.'),
+            model_name="dog",
+            name="story_eng",
+            field=models.TextField(
+                blank=True, default="", help_text="История на кучето на Английски."
+            ),
         ),
         migrations.AlterField(
-            model_name='donation',
-            name='date',
-            field=models.DateField(blank=True, default=datetime.date(2022, 11, 30), help_text='Дата на дарението. По подразбиране е последният ден на предходния месец. Например ако дарението е направено на 1.01.2020, то по подразбиране ще се показва на 31.12.2019. Това е за да се показват даренията в последния месец.'),
+            model_name="donation",
+            name="date",
+            field=models.DateField(
+                blank=True,
+                default=datetime.date(2022, 11, 30),
+                help_text="Дата на дарението. По подразбиране е последният ден на предходния месец. Например ако дарението е направено на 1.01.2020, то по подразбиране ще се показва на 31.12.2019. Това е за да се показват даренията в последния месец.",
+            ),
         ),
         migrations.AlterField(
-            model_name='donation',
-            name='person_name_bg',
-            field=models.CharField(default='', help_text='Име на дарителя на Български.', max_length=60),
+            model_name="donation",
+            name="person_name_bg",
+            field=models.CharField(
+                default="", help_text="Име на дарителя на Български.", max_length=60
+            ),
         ),
         migrations.AlterField(
-            model_name='donation',
-            name='person_name_eng',
-            field=models.CharField(default='', help_text='Име на дарителя на Английски.', max_length=60),
+            model_name="donation",
+            name="person_name_eng",
+            field=models.CharField(
+                default="", help_text="Име на дарителя на Английски.", max_length=60
+            ),
         ),
         migrations.AlterField(
-            model_name='noticeboard',
-            name='location',
-            field=models.CharField(blank=True, choices=[('Gallery', 'Gallery'), ('About', 'About'), ('Infirmery', 'Infirmery'), ('Adoptions', 'Adoptions'), ('Virtual', 'Virtual'), ('Donations', 'Donations')], default='Gallery', help_text='Място на съобщението - всяка страница разполага със способност за съобщения.', max_length=25),
+            model_name="noticeboard",
+            name="location",
+            field=models.CharField(
+                blank=True,
+                choices=[
+                    ("Gallery", "Gallery"),
+                    ("About", "About"),
+                    ("Infirmery", "Infirmery"),
+                    ("Adoptions", "Adoptions"),
+                    ("Virtual", "Virtual"),
+                    ("Donations", "Donations"),
+                ],
+                default="Gallery",
+                help_text="Място на съобщението - всяка страница разполага със способност за съобщения.",
+                max_length=25,
+            ),
         ),
         migrations.AlterField(
-            model_name='noticeboard',
-            name='note_bg',
-            field=models.TextField(blank=True, default='', help_text='Съобщение на Български.'),
+            model_name="noticeboard",
+            name="note_bg",
+            field=models.TextField(
+                blank=True, default="", help_text="Съобщение на Български."
+            ),
         ),
         migrations.AlterField(
-            model_name='noticeboard',
-            name='note_eng',
-            field=models.TextField(blank=True, default='', help_text='Съобщение на Английски.'),
+            model_name="noticeboard",
+            name="note_eng",
+            field=models.TextField(
+                blank=True, default="", help_text="Съобщение на Английски."
+            ),
         ),
         migrations.AlterField(
-            model_name='noticeboard',
-            name='note_pic_1',
-            field=models.URLField(blank=True, default='', help_text='Снимка 1 в съобщението (не задължителни).', max_length=300),
+            model_name="noticeboard",
+            name="note_pic_1",
+            field=models.URLField(
+                blank=True,
+                default="",
+                help_text="Снимка 1 в съобщението (не задължителни).",
+                max_length=300,
+            ),
         ),
         migrations.AlterField(
-            model_name='noticeboard',
-            name='note_pic_2',
-            field=models.URLField(blank=True, default='', help_text='Снимка 2 в съобщението (не задължителни).', max_length=300),
+            model_name="noticeboard",
+            name="note_pic_2",
+            field=models.URLField(
+                blank=True,
+                default="",
+                help_text="Снимка 2 в съобщението (не задължителни).",
+                max_length=300,
+            ),
         ),
         migrations.AlterField(
-            model_name='noticeboard',
-            name='order',
-            field=models.IntegerField(default=99, help_text='Подредба на съобщението. По подразбиране е 99. Стойност по-малка от 99 ще покаже съобщението по-нагоре.'),
+            model_name="noticeboard",
+            name="order",
+            field=models.IntegerField(
+                default=99,
+                help_text="Подредба на съобщението. По подразбиране е 99. Стойност по-малка от 99 ще покаже съобщението по-нагоре.",
+            ),
         ),
     ]

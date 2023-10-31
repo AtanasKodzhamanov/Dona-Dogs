@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0012_people_alter_adoptions_dognameeng'),
+        ("web", "0012_people_alter_adoptions_dognameeng"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='people',
-            name='email_address',
-            field=models.EmailField(blank=True, default='', max_length=254),
+            model_name="people",
+            name="email_address",
+            field=models.EmailField(blank=True, default="", max_length=254),
         ),
     ]

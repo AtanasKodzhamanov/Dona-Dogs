@@ -5,20 +5,29 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0072_dog_pic_6'),
+        ("web", "0072_dog_pic_6"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='dog',
-            name='adoption_story_bg',
-            field=models.TextField(blank=True, default='', help_text='История на осиновяване на кучето на Български.', validators=[DogShelter.web.validators.validate_bulgarian]),
+            model_name="dog",
+            name="adoption_story_bg",
+            field=models.TextField(
+                blank=True,
+                default="",
+                help_text="История на осиновяване на кучето на Български.",
+                validators=[DogShelter.web.validators.validate_bulgarian],
+            ),
         ),
         migrations.AddField(
-            model_name='dog',
-            name='adoption_story_eng',
-            field=models.TextField(blank=True, default='', help_text='История на осиновяване на кучето на Английски.', validators=[DogShelter.web.validators.validate_english]),
+            model_name="dog",
+            name="adoption_story_eng",
+            field=models.TextField(
+                blank=True,
+                default="",
+                help_text="История на осиновяване на кучето на Английски.",
+                validators=[DogShelter.web.validators.validate_english],
+            ),
         ),
     ]

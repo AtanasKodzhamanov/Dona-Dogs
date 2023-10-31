@@ -4,42 +4,41 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0005_alter_adoptions_adoption_pic_after1_and_more'),
+        ("web", "0005_alter_adoptions_adoption_pic_after1_and_more"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='adoptions',
-            options={'verbose_name_plural': 'Adoptions'},
+            name="adoptions",
+            options={"verbose_name_plural": "Adoptions"},
         ),
         migrations.AlterModelOptions(
-            name='donations',
-            options={'verbose_name_plural': 'Donations'},
+            name="donations",
+            options={"verbose_name_plural": "Donations"},
         ),
         migrations.AlterModelOptions(
-            name='noticeboard',
-            options={'verbose_name_plural': 'Posts'},
+            name="noticeboard",
+            options={"verbose_name_plural": "Posts"},
         ),
         migrations.AddField(
-            model_name='dog',
-            name='pic2',
+            model_name="dog",
+            name="pic2",
             field=models.URLField(max_length=300, null=True),
         ),
         migrations.AddField(
-            model_name='dog',
-            name='pic3',
+            model_name="dog",
+            name="pic3",
             field=models.URLField(max_length=300, null=True),
         ),
         migrations.AddField(
-            model_name='dog',
-            name='pic4',
+            model_name="dog",
+            name="pic4",
             field=models.URLField(max_length=300, null=True),
         ),
         migrations.AddField(
-            model_name='dog',
-            name='pic5',
+            model_name="dog",
+            name="pic5",
             field=models.URLField(max_length=300, null=True),
         ),
     ]

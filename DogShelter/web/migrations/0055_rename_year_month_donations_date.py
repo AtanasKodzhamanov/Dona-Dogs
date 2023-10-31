@@ -4,15 +4,14 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0054_alter_donations_options_alter_donations_year_month'),
+        ("web", "0054_alter_donations_options_alter_donations_year_month"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='donations',
-            old_name='year_month',
-            new_name='date',
+            model_name="donations",
+            old_name="year_month",
+            new_name="date",
         ),
     ]

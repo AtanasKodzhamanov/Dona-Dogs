@@ -4,30 +4,29 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0014_adoptions_person'),
+        ("web", "0014_adoptions_person"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='adoptions',
-            old_name='adoption_descriptionBG',
-            new_name='adoption_description_bg',
+            model_name="adoptions",
+            old_name="adoption_descriptionBG",
+            new_name="adoption_description_bg",
         ),
         migrations.RenameField(
-            model_name='adoptions',
-            old_name='adoption_descriptionENG',
-            new_name='adoption_description_eng',
+            model_name="adoptions",
+            old_name="adoption_descriptionENG",
+            new_name="adoption_description_eng",
         ),
         migrations.RenameField(
-            model_name='adoptions',
-            old_name='adoption_pic_after1',
-            new_name='adoption_pic_after_1',
+            model_name="adoptions",
+            old_name="adoption_pic_after1",
+            new_name="adoption_pic_after_1",
         ),
         migrations.RenameField(
-            model_name='adoptions',
-            old_name='adoption_pic_after2',
-            new_name='adoption_pic_after_2',
+            model_name="adoptions",
+            old_name="adoption_pic_after2",
+            new_name="adoption_pic_after_2",
         ),
     ]

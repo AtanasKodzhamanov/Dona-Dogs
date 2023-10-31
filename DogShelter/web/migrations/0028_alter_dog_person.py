@@ -5,15 +5,19 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0027_remove_dog_virtual_adopter'),
+        ("web", "0027_remove_dog_virtual_adopter"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='dog',
-            name='person',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.DO_NOTHING, to='web.people', verbose_name='Virtual Adopter'),
+            model_name="dog",
+            name="person",
+            field=models.ForeignKey(
+                default=1,
+                on_delete=django.db.models.deletion.DO_NOTHING,
+                to="web.people",
+                verbose_name="Virtual Adopter",
+            ),
         ),
     ]

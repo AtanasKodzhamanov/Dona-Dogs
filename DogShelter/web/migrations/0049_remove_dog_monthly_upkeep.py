@@ -4,14 +4,13 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0048_people_virtual_adopter'),
+        ("web", "0048_people_virtual_adopter"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='dog',
-            name='monthly_upkeep',
+            model_name="dog",
+            name="monthly_upkeep",
         ),
     ]

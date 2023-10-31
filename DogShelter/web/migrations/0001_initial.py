@@ -4,26 +4,44 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Dog',
+            name="Dog",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nameENG', models.CharField(max_length=60, null=True)),
-                ('nameBG', models.CharField(default='', max_length=60)),
-                ('monthly_upkeep', models.IntegerField(default=0)),
-                ('diseases', models.CharField(choices=[('Y', 'Y'), ('N', 'N'), ('Unknown', 'Unknown')], default='', max_length=7)),
-                ('gender', models.CharField(choices=[('F', 'F'), ('M', 'M')], default='', max_length=7)),
-                ('profile_pic', models.URLField(max_length=300, null=True)),
-                ('virtual_adopter', models.CharField(default='', max_length=60)),
-                ('story_ENG', models.TextField(blank=True, default='')),
-                ('story_BG', models.TextField(blank=True, default='')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("nameENG", models.CharField(max_length=60, null=True)),
+                ("nameBG", models.CharField(default="", max_length=60)),
+                ("monthly_upkeep", models.IntegerField(default=0)),
+                (
+                    "diseases",
+                    models.CharField(
+                        choices=[("Y", "Y"), ("N", "N"), ("Unknown", "Unknown")],
+                        default="",
+                        max_length=7,
+                    ),
+                ),
+                (
+                    "gender",
+                    models.CharField(
+                        choices=[("F", "F"), ("M", "M")], default="", max_length=7
+                    ),
+                ),
+                ("profile_pic", models.URLField(max_length=300, null=True)),
+                ("virtual_adopter", models.CharField(default="", max_length=60)),
+                ("story_ENG", models.TextField(blank=True, default="")),
+                ("story_BG", models.TextField(blank=True, default="")),
             ],
         ),
     ]

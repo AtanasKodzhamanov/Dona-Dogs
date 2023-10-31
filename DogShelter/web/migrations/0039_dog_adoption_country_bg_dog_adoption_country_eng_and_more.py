@@ -4,28 +4,27 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0038_rename_note_pic_1_about_about_pic_1_and_more'),
+        ("web", "0038_rename_note_pic_1_about_about_pic_1_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='dog',
-            name='adoption_country_bg',
-            field=models.CharField(default='', max_length=60, null=True),
+            model_name="dog",
+            name="adoption_country_bg",
+            field=models.CharField(default="", max_length=60, null=True),
         ),
         migrations.AddField(
-            model_name='dog',
-            name='adoption_country_eng',
-            field=models.CharField(default='', max_length=60, null=True),
+            model_name="dog",
+            name="adoption_country_eng",
+            field=models.CharField(default="", max_length=60, null=True),
         ),
         migrations.AddField(
-            model_name='dog',
-            name='adoption_year',
+            model_name="dog",
+            name="adoption_year",
             field=models.IntegerField(blank=True, default=0),
         ),
         migrations.DeleteModel(
-            name='Adoptions',
+            name="Adoptions",
         ),
     ]

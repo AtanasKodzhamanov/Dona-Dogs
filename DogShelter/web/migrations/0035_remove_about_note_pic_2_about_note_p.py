@@ -4,19 +4,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0034_rename_section_title_about_section_title_eng'),
+        ("web", "0034_rename_section_title_about_section_title_eng"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='about',
-            name='note_pic_2',
+            model_name="about",
+            name="note_pic_2",
         ),
         migrations.AddField(
-            model_name='about',
-            name='note_p',
-            field=models.URLField(blank=True, default='', max_length=300),
+            model_name="about",
+            name="note_p",
+            field=models.URLField(blank=True, default="", max_length=300),
         ),
     ]

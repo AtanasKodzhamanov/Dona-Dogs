@@ -4,20 +4,45 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0097_alter_longpost_text_position'),
+        ("web", "0097_alter_longpost_text_position"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='longpost',
-            name='location',
-            field=models.CharField(blank=True, choices=[('Gallery', 'Gallery'), ('About', 'About'), ('Infirmary', 'Infirmary'), ('Adoptions', 'Adoptions'), ('Donations', 'Donations'), ('Home', 'Home')], default='Donations', help_text='Място на секцията - всяка страница разполага със способност за секции.', max_length=25),
+            model_name="longpost",
+            name="location",
+            field=models.CharField(
+                blank=True,
+                choices=[
+                    ("Gallery", "Gallery"),
+                    ("About", "About"),
+                    ("Infirmary", "Infirmary"),
+                    ("Adoptions", "Adoptions"),
+                    ("Donations", "Donations"),
+                    ("Home", "Home"),
+                ],
+                default="Donations",
+                help_text="Място на секцията - всяка страница разполага със способност за секции.",
+                max_length=25,
+            ),
         ),
         migrations.AlterField(
-            model_name='noticeboard',
-            name='location',
-            field=models.CharField(blank=True, choices=[('Gallery', 'Gallery'), ('About', 'About'), ('Infirmary', 'Infirmary'), ('Adoptions', 'Adoptions'), ('Donations', 'Donations'), ('Home', 'Home')], default='About', help_text='Място на съобщението - всяка страница разполага със способност за съобщения.', max_length=25),
+            model_name="noticeboard",
+            name="location",
+            field=models.CharField(
+                blank=True,
+                choices=[
+                    ("Gallery", "Gallery"),
+                    ("About", "About"),
+                    ("Infirmary", "Infirmary"),
+                    ("Adoptions", "Adoptions"),
+                    ("Donations", "Donations"),
+                    ("Home", "Home"),
+                ],
+                default="About",
+                help_text="Място на съобщението - всяка страница разполага със способност за съобщения.",
+                max_length=25,
+            ),
         ),
     ]

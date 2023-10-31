@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0030_alter_dog_active'),
+        ("web", "0030_alter_dog_active"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='adoptions',
-            name='adoption_year',
+            model_name="adoptions",
+            name="adoption_year",
             field=models.IntegerField(blank=True, default=0),
         ),
     ]

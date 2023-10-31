@@ -4,29 +4,30 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0009_adoptions_adoptioncountrybgn_and_more'),
+        ("web", "0009_adoptions_adoptioncountrybgn_and_more"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='dog',
-            options={'ordering': ('pk',)},
+            name="dog",
+            options={"ordering": ("pk",)},
         ),
         migrations.AddField(
-            model_name='dog',
-            name='active',
-            field=models.CharField(choices=[('Yes', 'Yes'), ('No', 'No')], default='Yes', max_length=3),
+            model_name="dog",
+            name="active",
+            field=models.CharField(
+                choices=[("Yes", "Yes"), ("No", "No")], default="Yes", max_length=3
+            ),
         ),
         migrations.AddField(
-            model_name='dog',
-            name='arrival_year',
+            model_name="dog",
+            name="arrival_year",
             field=models.IntegerField(blank=True, default=0),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='nameENG',
+            model_name="dog",
+            name="nameENG",
             field=models.CharField(max_length=60, null=True, unique=True),
         ),
     ]

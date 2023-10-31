@@ -5,21 +5,28 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0060_alter_dog_va_name_bg_alter_dog_va_name_eng'),
+        ("web", "0060_alter_dog_va_name_bg_alter_dog_va_name_eng"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='NewsletterSubscriber',
+            name="NewsletterSubscriber",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
             ],
         ),
         migrations.AlterField(
-            model_name='donation',
-            name='date',
+            model_name="donation",
+            name="date",
             field=models.DateField(blank=True, default=datetime.date(2022, 11, 30)),
         ),
     ]

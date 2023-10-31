@@ -4,15 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0096_longpost_text_position'),
+        ("web", "0096_longpost_text_position"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='longpost',
-            name='text_position',
-            field=models.CharField(choices=[('top', 'Top'), ('bottom', 'Bottom')], default='top', help_text='Изберете позицията на текста в контейнера. Горе или долу.', max_length=6),
+            model_name="longpost",
+            name="text_position",
+            field=models.CharField(
+                choices=[("top", "Top"), ("bottom", "Bottom")],
+                default="top",
+                help_text="Изберете позицията на текста в контейнера. Горе или долу.",
+                max_length=6,
+            ),
         ),
     ]

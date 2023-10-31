@@ -1,5 +1,14 @@
 from django.contrib import admin
-from DogShelter.web.models import Dog, NoticeBoard, LongPost, Donation, NewsletterSubscriber, DonationStory, ContactFormModel
+from DogShelter.web.models import (
+    Dog,
+    NoticeBoard,
+    LongPost,
+    Donation,
+    NewsletterSubscriber,
+    DonationStory,
+    ContactFormModel,
+)
+
 # Register your models here.
 
 
@@ -9,10 +18,25 @@ class PetInlineAdmin(admin.StackedInline):
 
 @admin.register(Dog)
 class DogAdmin(admin.ModelAdmin):
-    list_display = ["id", "name_eng", "status", "va_name_eng", "profile_pic", "pic_2", "pic_3",
-                    "pic_4", "pic_5", "adoption_pic_after_1", "adoption_pic_after_2", "adoption_pic_after_3"]
-    list_filter = ["status", ("story_bg", admin.EmptyFieldListFilter),
-                   ("story_eng", admin.EmptyFieldListFilter)]
+    list_display = [
+        "id",
+        "name_eng",
+        "status",
+        "va_name_eng",
+        "profile_pic",
+        "pic_2",
+        "pic_3",
+        "pic_4",
+        "pic_5",
+        "adoption_pic_after_1",
+        "adoption_pic_after_2",
+        "adoption_pic_after_3",
+    ]
+    list_filter = [
+        "status",
+        ("story_bg", admin.EmptyFieldListFilter),
+        ("story_eng", admin.EmptyFieldListFilter),
+    ]
     list_display_links = ["id"]
 
 
@@ -49,4 +73,4 @@ class NewsletterSubscriberAdmin(admin.ModelAdmin):
 
 @admin.register(ContactFormModel)
 class ContactFormAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'subject', 'message')
+    list_display = ("name", "email", "subject", "message")

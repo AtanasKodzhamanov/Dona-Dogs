@@ -4,15 +4,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0092_longpost_background_color_longpost_text_color'),
+        ("web", "0092_longpost_background_color_longpost_text_color"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='longpost',
-            name='background_color',
-            field=models.CharField(blank=True, help_text='Въведете шестнадесетичен код на цвета, за да промените цвета на контейнера (#F5F5F5).', max_length=7),
+            model_name="longpost",
+            name="background_color",
+            field=models.CharField(
+                blank=True,
+                help_text="Въведете шестнадесетичен код на цвета, за да промените цвета на контейнера (#F5F5F5).",
+                max_length=7,
+            ),
         ),
     ]

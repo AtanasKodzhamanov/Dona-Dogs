@@ -4,20 +4,19 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0020_rename_pic2_dog_pic_2_rename_pic3_dog_pic_3_and_more'),
+        ("web", "0020_rename_pic2_dog_pic_2_rename_pic3_dog_pic_3_and_more"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='dog',
-            old_name='nameBG',
-            new_name='name_bg',
+            model_name="dog",
+            old_name="nameBG",
+            new_name="name_bg",
         ),
         migrations.RenameField(
-            model_name='dog',
-            old_name='nameENG',
-            new_name='name_eng',
+            model_name="dog",
+            old_name="nameENG",
+            new_name="name_eng",
         ),
     ]

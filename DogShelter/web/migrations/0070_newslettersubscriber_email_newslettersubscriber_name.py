@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0069_alter_donation_date'),
+        ("web", "0069_alter_donation_date"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='newslettersubscriber',
-            name='email',
-            field=models.EmailField(blank=True, default='', max_length=255),
+            model_name="newslettersubscriber",
+            name="email",
+            field=models.EmailField(blank=True, default="", max_length=255),
         ),
         migrations.AddField(
-            model_name='newslettersubscriber',
-            name='name',
-            field=models.CharField(blank=True, default='', max_length=255),
+            model_name="newslettersubscriber",
+            name="name",
+            field=models.CharField(blank=True, default="", max_length=255),
         ),
     ]

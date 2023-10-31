@@ -4,30 +4,29 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0017_rename_dognameeng_adoptions_dog_name_eng'),
+        ("web", "0017_rename_dognameeng_adoptions_dog_name_eng"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='noticeboard',
-            old_name='noticeBG',
-            new_name='note_bg',
+            model_name="noticeboard",
+            old_name="noticeBG",
+            new_name="note_bg",
         ),
         migrations.RenameField(
-            model_name='noticeboard',
-            old_name='noticeENG',
-            new_name='note_eng',
+            model_name="noticeboard",
+            old_name="noticeENG",
+            new_name="note_eng",
         ),
         migrations.RenameField(
-            model_name='noticeboard',
-            old_name='notice_pic1',
-            new_name='note_pic_1',
+            model_name="noticeboard",
+            old_name="notice_pic1",
+            new_name="note_pic_1",
         ),
         migrations.RenameField(
-            model_name='noticeboard',
-            old_name='notice_pic2',
-            new_name='note_pic_2',
+            model_name="noticeboard",
+            old_name="notice_pic2",
+            new_name="note_pic_2",
         ),
     ]

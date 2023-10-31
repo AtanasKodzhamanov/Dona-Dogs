@@ -5,15 +5,20 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0071_alter_newslettersubscriber_email_and_more'),
+        ("web", "0071_alter_newslettersubscriber_email_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='dog',
-            name='pic_6',
-            field=models.URLField(blank=True, default='', help_text='Албумна снимка.', max_length=300, validators=[DogShelter.web.validators.validate_url]),
+            model_name="dog",
+            name="pic_6",
+            field=models.URLField(
+                blank=True,
+                default="",
+                help_text="Албумна снимка.",
+                max_length=300,
+                validators=[DogShelter.web.validators.validate_url],
+            ),
         ),
     ]

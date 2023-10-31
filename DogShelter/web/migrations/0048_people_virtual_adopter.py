@@ -4,15 +4,16 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0047_alter_donations_year_month'),
+        ("web", "0047_alter_donations_year_month"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='people',
-            name='virtual_adopter',
-            field=models.CharField(blank=True, choices=[('Y', 'Y'), ('N', 'N')], default='No', max_length=2),
+            model_name="people",
+            name="virtual_adopter",
+            field=models.CharField(
+                blank=True, choices=[("Y", "Y"), ("N", "N")], default="No", max_length=2
+            ),
         ),
     ]

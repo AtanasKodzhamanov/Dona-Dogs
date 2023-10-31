@@ -4,14 +4,13 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0102_alter_contactform_options'),
+        ("web", "0102_alter_contactform_options"),
     ]
 
     operations = [
         migrations.RenameModel(
-            old_name='ContactForm',
-            new_name='ContactFormModel',
+            old_name="ContactForm",
+            new_name="ContactFormModel",
         ),
     ]

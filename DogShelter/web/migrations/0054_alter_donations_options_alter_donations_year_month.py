@@ -5,19 +5,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0053_remove_donations_amount_remove_donations_currency_and_more'),
+        ("web", "0053_remove_donations_amount_remove_donations_currency_and_more"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='donations',
-            options={'verbose_name_plural': 'Donations'},
+            name="donations",
+            options={"verbose_name_plural": "Donations"},
         ),
         migrations.AlterField(
-            model_name='donations',
-            name='year_month',
+            model_name="donations",
+            name="year_month",
             field=models.DateField(blank=True, default=datetime.date(2022, 10, 31)),
         ),
     ]

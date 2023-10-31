@@ -4,14 +4,13 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0083_alter_noticeboard_location'),
+        ("web", "0083_alter_noticeboard_location"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='about',
-            name='photos',
+            model_name="about",
+            name="photos",
         ),
     ]

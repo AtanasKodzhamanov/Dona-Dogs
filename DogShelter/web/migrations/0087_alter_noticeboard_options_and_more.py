@@ -6,39 +6,70 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0086_alter_about_section_title_bg_and_more'),
+        ("web", "0086_alter_about_section_title_bg_and_more"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='noticeboard',
-            options={'verbose_name_plural': 'Notice Board Posts'},
+            name="noticeboard",
+            options={"verbose_name_plural": "Notice Board Posts"},
         ),
         migrations.AddField(
-            model_name='noticeboard',
-            name='section_title_bg',
-            field=models.TextField(blank=True, help_text='Заглавие на секцията на Български. Не е задължително.', max_length=100, validators=[DogShelter.web.validators.validate_bulgarian]),
+            model_name="noticeboard",
+            name="section_title_bg",
+            field=models.TextField(
+                blank=True,
+                help_text="Заглавие на секцията на Български. Не е задължително.",
+                max_length=100,
+                validators=[DogShelter.web.validators.validate_bulgarian],
+            ),
         ),
         migrations.AddField(
-            model_name='noticeboard',
-            name='section_title_eng',
-            field=models.TextField(blank=True, help_text='Заглавие на секцията на Английски. Не е задължително.', max_length=100, validators=[DogShelter.web.validators.validate_english]),
+            model_name="noticeboard",
+            name="section_title_eng",
+            field=models.TextField(
+                blank=True,
+                help_text="Заглавие на секцията на Английски. Не е задължително.",
+                max_length=100,
+                validators=[DogShelter.web.validators.validate_english],
+            ),
         ),
         migrations.AlterField(
-            model_name='donation',
-            name='date',
-            field=models.DateField(blank=True, default=datetime.date(2023, 1, 31), help_text='Дата на дарението. По подразбиране е последният ден на предходния месец. Например ако дарението е направено на 1.01.2020, то по подразбиране ще се показва на 31.12.2019. Това е за да се показват даренията в последния месец.'),
+            model_name="donation",
+            name="date",
+            field=models.DateField(
+                blank=True,
+                default=datetime.date(2023, 1, 31),
+                help_text="Дата на дарението. По подразбиране е последният ден на предходния месец. Например ако дарението е направено на 1.01.2020, то по подразбиране ще се показва на 31.12.2019. Това е за да се показват даренията в последния месец.",
+            ),
         ),
         migrations.AlterField(
-            model_name='donationstory',
-            name='date',
-            field=models.DateField(blank=True, default=datetime.date(2023, 1, 31), help_text='Дата на дарението. По подразбиране е последният ден на предходния месец. Например ако дарението е направено на 1.01.2020, то по подразбиране ще се показва на 31.12.2019. Това е за да се показват даренията в последния месец.'),
+            model_name="donationstory",
+            name="date",
+            field=models.DateField(
+                blank=True,
+                default=datetime.date(2023, 1, 31),
+                help_text="Дата на дарението. По подразбиране е последният ден на предходния месец. Например ако дарението е направено на 1.01.2020, то по подразбиране ще се показва на 31.12.2019. Това е за да се показват даренията в последния месец.",
+            ),
         ),
         migrations.AlterField(
-            model_name='noticeboard',
-            name='location',
-            field=models.CharField(blank=True, choices=[('Gallery', 'Gallery'), ('About', 'About'), ('Infirmery', 'Infirmery'), ('Adoptions', 'Adoptions'), ('Virtual', 'Virtual'), ('Donations', 'Donations'), ('AllDogs', 'AllDogs')], default='About', help_text='Място на съобщението - всяка страница разполага със способност за съобщения.', max_length=25),
+            model_name="noticeboard",
+            name="location",
+            field=models.CharField(
+                blank=True,
+                choices=[
+                    ("Gallery", "Gallery"),
+                    ("About", "About"),
+                    ("Infirmery", "Infirmery"),
+                    ("Adoptions", "Adoptions"),
+                    ("Virtual", "Virtual"),
+                    ("Donations", "Donations"),
+                    ("AllDogs", "AllDogs"),
+                ],
+                default="About",
+                help_text="Място на съобщението - всяка страница разполага със способност за съобщения.",
+                max_length=25,
+            ),
         ),
     ]

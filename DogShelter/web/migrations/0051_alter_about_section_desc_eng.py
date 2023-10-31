@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0050_alter_about_location'),
+        ("web", "0050_alter_about_location"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='about',
-            name='section_desc_eng',
-            field=models.TextField(blank=True, default='Info coming soon...'),
+            model_name="about",
+            name="section_desc_eng",
+            field=models.TextField(blank=True, default="Info coming soon..."),
         ),
     ]

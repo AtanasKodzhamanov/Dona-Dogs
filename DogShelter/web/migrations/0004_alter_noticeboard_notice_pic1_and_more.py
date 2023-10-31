@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0003_adoptions_noticeboard'),
+        ("web", "0003_adoptions_noticeboard"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='noticeboard',
-            name='notice_pic1',
-            field=models.URLField(blank=True, default='', max_length=300),
+            model_name="noticeboard",
+            name="notice_pic1",
+            field=models.URLField(blank=True, default="", max_length=300),
         ),
         migrations.AlterField(
-            model_name='noticeboard',
-            name='notice_pic2',
-            field=models.URLField(blank=True, default='', max_length=300),
+            model_name="noticeboard",
+            name="notice_pic2",
+            field=models.URLField(blank=True, default="", max_length=300),
         ),
     ]

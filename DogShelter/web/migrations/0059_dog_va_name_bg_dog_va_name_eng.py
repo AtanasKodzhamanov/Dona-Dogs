@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0058_remove_dog_person_delete_people'),
+        ("web", "0058_remove_dog_person_delete_people"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='dog',
-            name='va_name_bg',
-            field=models.CharField(default='', max_length=60),
+            model_name="dog",
+            name="va_name_bg",
+            field=models.CharField(default="", max_length=60),
         ),
         migrations.AddField(
-            model_name='dog',
-            name='va_name_eng',
-            field=models.CharField(default='', max_length=60),
+            model_name="dog",
+            name="va_name_eng",
+            field=models.CharField(default="", max_length=60),
         ),
     ]

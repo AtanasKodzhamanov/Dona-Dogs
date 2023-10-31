@@ -5,23 +5,27 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0052_alter_dog_options'),
+        ("web", "0052_alter_dog_options"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='donations',
-            name='amount',
+            model_name="donations",
+            name="amount",
         ),
         migrations.RemoveField(
-            model_name='donations',
-            name='currency',
+            model_name="donations",
+            name="currency",
         ),
         migrations.AlterField(
-            model_name='donations',
-            name='person',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.DO_NOTHING, to='web.people', verbose_name='Donator'),
+            model_name="donations",
+            name="person",
+            field=models.ForeignKey(
+                default=1,
+                on_delete=django.db.models.deletion.DO_NOTHING,
+                to="web.people",
+                verbose_name="Donator",
+            ),
         ),
     ]

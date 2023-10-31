@@ -13,7 +13,7 @@ def truncatetext(value, arg):
     if len(value) > length:
         truncated = value[:length]
         if not truncated.endswith(" "):
-            truncated = truncated[:truncated.rindex(" ")]
+            truncated = truncated[: truncated.rindex(" ")]
         truncated = truncated.rstrip()
         truncated = truncated.rstrip(".")
         truncated = truncated.rstrip(",")

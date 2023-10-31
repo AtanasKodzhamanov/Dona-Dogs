@@ -4,22 +4,29 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0065_alter_donationstory_options'),
+        ("web", "0065_alter_donationstory_options"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='AboutPhoto',
+            name="AboutPhoto",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('url', models.URLField(max_length=300)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("url", models.URLField(max_length=300)),
             ],
         ),
         migrations.AddField(
-            model_name='about',
-            name='photos',
-            field=models.ManyToManyField(to='web.aboutphoto'),
+            model_name="about",
+            name="photos",
+            field=models.ManyToManyField(to="web.aboutphoto"),
         ),
     ]

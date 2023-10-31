@@ -4,35 +4,64 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0062_alter_about_about_pic_1_alter_about_about_pic_10_and_more'),
+        ("web", "0062_alter_about_about_pic_1_alter_about_about_pic_10_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='dog',
-            name='adoption_pic_after_1',
-            field=models.URLField(blank=True, default='', help_text='Снимка 1 на кучето след осиновяване.', max_length=300),
+            model_name="dog",
+            name="adoption_pic_after_1",
+            field=models.URLField(
+                blank=True,
+                default="",
+                help_text="Снимка 1 на кучето след осиновяване.",
+                max_length=300,
+            ),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='adoption_pic_after_2',
-            field=models.URLField(blank=True, default='', help_text='Снимка 2 на кучето след осиновяване.', max_length=300),
+            model_name="dog",
+            name="adoption_pic_after_2",
+            field=models.URLField(
+                blank=True,
+                default="",
+                help_text="Снимка 2 на кучето след осиновяване.",
+                max_length=300,
+            ),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='adoption_pic_after_3',
-            field=models.URLField(blank=True, default='', help_text='Снимка 3 на кучето след осиновяване.', max_length=300),
+            model_name="dog",
+            name="adoption_pic_after_3",
+            field=models.URLField(
+                blank=True,
+                default="",
+                help_text="Снимка 3 на кучето след осиновяване.",
+                max_length=300,
+            ),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='adoption_year',
-            field=models.IntegerField(blank=True, default=0, help_text='Година на осиновяване (ако е осиновено).'),
+            model_name="dog",
+            name="adoption_year",
+            field=models.IntegerField(
+                blank=True,
+                default=0,
+                help_text="Година на осиновяване (ако е осиновено).",
+            ),
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='status',
-            field=models.CharField(blank=True, choices=[('Active', 'Active'), ('Dead', 'Dead'), ('Adopted', 'Adopted'), ('Sick', 'Sick')], default='Active', help_text='Статус на кучето: Активно, Починало, Осиновено, Болно. Активните кучета ще се показват в началната страница. Болните в страницата на клиниката. Осиновените в страницата за осиновяване. Починалите не се показват никъде. ДА СЕ ПОПЪЛВА НА ВРЕМЕ СЪГЛАСУВАНО СЪС СТАТУСА ВЪВ ФЕЙСБУК!', max_length=10),
+            model_name="dog",
+            name="status",
+            field=models.CharField(
+                blank=True,
+                choices=[
+                    ("Active", "Active"),
+                    ("Dead", "Dead"),
+                    ("Adopted", "Adopted"),
+                    ("Sick", "Sick"),
+                ],
+                default="Active",
+                help_text="Статус на кучето: Активно, Починало, Осиновено, Болно. Активните кучета ще се показват в началната страница. Болните в страницата на клиниката. Осиновените в страницата за осиновяване. Починалите не се показват никъде. ДА СЕ ПОПЪЛВА НА ВРЕМЕ СЪГЛАСУВАНО СЪС СТАТУСА ВЪВ ФЕЙСБУК!",
+                max_length=10,
+            ),
         ),
     ]

@@ -4,15 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0010_alter_dog_options_dog_active_dog_arrival_year_and_more'),
+        ("web", "0010_alter_dog_options_dog_active_dog_arrival_year_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='dog',
-            name='active',
-            field=models.CharField(blank=True, choices=[('Yes', 'Yes'), ('No', 'No')], default='Yes', max_length=3),
+            model_name="dog",
+            name="active",
+            field=models.CharField(
+                blank=True,
+                choices=[("Yes", "Yes"), ("No", "No")],
+                default="Yes",
+                max_length=3,
+            ),
         ),
     ]

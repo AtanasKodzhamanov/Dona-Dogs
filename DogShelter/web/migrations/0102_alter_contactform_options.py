@@ -4,14 +4,13 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0101_contactform_alter_donation_date_and_more'),
+        ("web", "0101_contactform_alter_donation_date_and_more"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='contactform',
-            options={'verbose_name_plural': 'User messages'},
+            name="contactform",
+            options={"verbose_name_plural": "User messages"},
         ),
     ]

@@ -4,29 +4,36 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0001_initial'),
+        ("web", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Donations',
+            name="Donations",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('fullNameENG', models.CharField(max_length=60, null=True)),
-                ('fullNameBG', models.CharField(default='', max_length=60)),
-                ('donation_pic', models.URLField(max_length=300, null=True)),
-                ('donation_amount', models.IntegerField(default=0)),
-                ('donation_currency', models.CharField(default='', max_length=3)),
-                ('donation_descriptionENG', models.TextField(blank=True, default='')),
-                ('donation_descriptionBG', models.TextField(blank=True, default='')),
-                ('donation_date', models.DateField()),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("fullNameENG", models.CharField(max_length=60, null=True)),
+                ("fullNameBG", models.CharField(default="", max_length=60)),
+                ("donation_pic", models.URLField(max_length=300, null=True)),
+                ("donation_amount", models.IntegerField(default=0)),
+                ("donation_currency", models.CharField(default="", max_length=3)),
+                ("donation_descriptionENG", models.TextField(blank=True, default="")),
+                ("donation_descriptionBG", models.TextField(blank=True, default="")),
+                ("donation_date", models.DateField()),
             ],
         ),
         migrations.AlterField(
-            model_name='dog',
-            name='virtual_adopter',
-            field=models.CharField(blank=True, default='', max_length=60),
+            model_name="dog",
+            name="virtual_adopter",
+            field=models.CharField(blank=True, default="", max_length=60),
         ),
     ]

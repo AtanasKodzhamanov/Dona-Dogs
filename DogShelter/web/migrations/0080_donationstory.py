@@ -6,30 +6,122 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0079_delete_donationstory'),
+        ("web", "0079_delete_donationstory"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='DonationStory',
+            name="DonationStory",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('donation_text_eng', models.TextField(blank=True, default='', help_text='Текст на дарението на Английски (за секцията със снимки на дарания).', validators=[DogShelter.web.validators.validate_english])),
-                ('donation_text_bg', models.TextField(blank=True, default='', help_text='Текст на дарението на Български (за секцията със снимки на дарания).', validators=[DogShelter.web.validators.validate_bulgarian])),
-                ('date', models.DateField(blank=True, default=datetime.date(2022, 11, 30), help_text='Дата на дарението. По подразбиране е последният ден на предходния месец. Например ако дарението е направено на 1.01.2020, то по подразбиране ще се показва на 31.12.2019. Това е за да се показват даренията в последния месец.')),
-                ('date_pk', models.CharField(blank=True, max_length=8)),
-                ('donation_pic_1', models.URLField(blank=True, default='', help_text='Снимка 1 в секцията.', max_length=300, validators=[DogShelter.web.validators.validate_url])),
-                ('donation_pic_2', models.URLField(blank=True, default='', help_text='Снимка 2 в секцията.', max_length=300, validators=[DogShelter.web.validators.validate_url])),
-                ('donation_pic_3', models.URLField(blank=True, default='', help_text='Снимка 3 в секцията.', max_length=300, validators=[DogShelter.web.validators.validate_url])),
-                ('donation_pic_4', models.URLField(blank=True, default='', help_text='Снимка 4 в секцията.', max_length=300, validators=[DogShelter.web.validators.validate_url])),
-                ('donation_pic_5', models.URLField(blank=True, default='', help_text='Снимка 4 в секцията.', max_length=300, validators=[DogShelter.web.validators.validate_url])),
-                ('donation_pic_6', models.URLField(blank=True, default='', help_text='Снимка 4 в секцията.', max_length=300, validators=[DogShelter.web.validators.validate_url])),
-                ('priority', models.CharField(choices=[('low', 'Low'), ('high', 'High')], default='low', help_text='Приоритетът ще определя сортирането на донациите и дизайнът на това как се показват. low е нисък, high е висок.', max_length=6)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "donation_text_eng",
+                    models.TextField(
+                        blank=True,
+                        default="",
+                        help_text="Текст на дарението на Английски (за секцията със снимки на дарания).",
+                        validators=[DogShelter.web.validators.validate_english],
+                    ),
+                ),
+                (
+                    "donation_text_bg",
+                    models.TextField(
+                        blank=True,
+                        default="",
+                        help_text="Текст на дарението на Български (за секцията със снимки на дарания).",
+                        validators=[DogShelter.web.validators.validate_bulgarian],
+                    ),
+                ),
+                (
+                    "date",
+                    models.DateField(
+                        blank=True,
+                        default=datetime.date(2022, 11, 30),
+                        help_text="Дата на дарението. По подразбиране е последният ден на предходния месец. Например ако дарението е направено на 1.01.2020, то по подразбиране ще се показва на 31.12.2019. Това е за да се показват даренията в последния месец.",
+                    ),
+                ),
+                ("date_pk", models.CharField(blank=True, max_length=8)),
+                (
+                    "donation_pic_1",
+                    models.URLField(
+                        blank=True,
+                        default="",
+                        help_text="Снимка 1 в секцията.",
+                        max_length=300,
+                        validators=[DogShelter.web.validators.validate_url],
+                    ),
+                ),
+                (
+                    "donation_pic_2",
+                    models.URLField(
+                        blank=True,
+                        default="",
+                        help_text="Снимка 2 в секцията.",
+                        max_length=300,
+                        validators=[DogShelter.web.validators.validate_url],
+                    ),
+                ),
+                (
+                    "donation_pic_3",
+                    models.URLField(
+                        blank=True,
+                        default="",
+                        help_text="Снимка 3 в секцията.",
+                        max_length=300,
+                        validators=[DogShelter.web.validators.validate_url],
+                    ),
+                ),
+                (
+                    "donation_pic_4",
+                    models.URLField(
+                        blank=True,
+                        default="",
+                        help_text="Снимка 4 в секцията.",
+                        max_length=300,
+                        validators=[DogShelter.web.validators.validate_url],
+                    ),
+                ),
+                (
+                    "donation_pic_5",
+                    models.URLField(
+                        blank=True,
+                        default="",
+                        help_text="Снимка 4 в секцията.",
+                        max_length=300,
+                        validators=[DogShelter.web.validators.validate_url],
+                    ),
+                ),
+                (
+                    "donation_pic_6",
+                    models.URLField(
+                        blank=True,
+                        default="",
+                        help_text="Снимка 4 в секцията.",
+                        max_length=300,
+                        validators=[DogShelter.web.validators.validate_url],
+                    ),
+                ),
+                (
+                    "priority",
+                    models.CharField(
+                        choices=[("low", "Low"), ("high", "High")],
+                        default="low",
+                        help_text="Приоритетът ще определя сортирането на донациите и дизайнът на това как се показват. low е нисък, high е висок.",
+                        max_length=6,
+                    ),
+                ),
             ],
             options={
-                'verbose_name_plural': 'DonationStories',
+                "verbose_name_plural": "DonationStories",
             },
         ),
     ]

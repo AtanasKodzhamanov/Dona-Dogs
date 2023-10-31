@@ -4,18 +4,17 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0087_alter_noticeboard_options_and_more'),
+        ("web", "0087_alter_noticeboard_options_and_more"),
     ]
 
     operations = [
         migrations.RenameModel(
-            old_name='About',
-            new_name='LongPost',
+            old_name="About",
+            new_name="LongPost",
         ),
         migrations.AlterModelOptions(
-            name='longpost',
-            options={'verbose_name_plural': 'Long Posts'},
+            name="longpost",
+            options={"verbose_name_plural": "Long Posts"},
         ),
     ]

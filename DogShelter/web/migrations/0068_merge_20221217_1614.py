@@ -4,11 +4,9 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0062_adoptionform'),
-        ('web', '0067_alter_about_about_pic_1_alter_about_about_pic_10_and_more'),
+        ("web", "0062_adoptionform"),
+        ("web", "0067_alter_about_about_pic_1_alter_about_about_pic_10_and_more"),
     ]
 
-    operations = [
-    ]
+    operations = []

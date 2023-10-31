@@ -4,30 +4,29 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0004_alter_noticeboard_notice_pic1_and_more'),
+        ("web", "0004_alter_noticeboard_notice_pic1_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='adoptions',
-            name='adoption_pic_after1',
-            field=models.URLField(blank=True, default='', max_length=300),
+            model_name="adoptions",
+            name="adoption_pic_after1",
+            field=models.URLField(blank=True, default="", max_length=300),
         ),
         migrations.AlterField(
-            model_name='adoptions',
-            name='adoption_pic_after2',
-            field=models.URLField(blank=True, default='', max_length=300),
+            model_name="adoptions",
+            name="adoption_pic_after2",
+            field=models.URLField(blank=True, default="", max_length=300),
         ),
         migrations.AlterField(
-            model_name='adoptions',
-            name='adoption_pic_before',
-            field=models.URLField(blank=True, default='', max_length=300),
+            model_name="adoptions",
+            name="adoption_pic_before",
+            field=models.URLField(blank=True, default="", max_length=300),
         ),
         migrations.AlterField(
-            model_name='adoptions',
-            name='adoption_video',
-            field=models.URLField(blank=True, default='', max_length=300),
+            model_name="adoptions",
+            name="adoption_video",
+            field=models.URLField(blank=True, default="", max_length=300),
         ),
     ]

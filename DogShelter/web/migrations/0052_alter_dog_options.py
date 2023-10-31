@@ -4,14 +4,13 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('web', '0051_alter_about_section_desc_eng'),
+        ("web", "0051_alter_about_section_desc_eng"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='dog',
-            options={'ordering': ('-pk',)},
+            name="dog",
+            options={"ordering": ("-pk",)},
         ),
     ]
