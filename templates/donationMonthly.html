@@ -14,13 +14,13 @@
     <br>
     {% for donation in donation_names %}
       <div style="display: inline-block">
-        <h5 style="padding:5px">
+        <h4 style="padding:5px">
           {% if L == "bg" %}
             {{ donation.person_name_bg }}
           {% else %}
             {{ donation.person_name_eng }}
           {% endif %}
-        </h5>
+        </h4>
       </div>
     {% endfor %}
     <br>
