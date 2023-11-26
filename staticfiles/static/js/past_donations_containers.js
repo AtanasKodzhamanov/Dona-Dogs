@@ -9,6 +9,7 @@ function createContainer() {
   const currentMonth = currentDate.getMonth();
   const currentYear = currentDate.getFullYear();
 
+  // this is to get the translated month names
   const monthNames = [
     gettext("January"),
     gettext("February"),
@@ -23,6 +24,7 @@ function createContainer() {
     gettext("November"),
     gettext("December"),
   ];
+
   const monthNamez = [
     "January",
     "February",
@@ -37,6 +39,22 @@ function createContainer() {
     "November",
     "December",
   ];
+
+  // long to short month names
+  const monthDict = {
+    January: "Jan",
+    February: "Feb",
+    March: "Mar",
+    April: "Apr",
+    May: "May",
+    June: "Jun",
+    July: "Jul",
+    August: "Aug",
+    September: "Sep",
+    October: "Oct",
+    November: "Nov",
+    December: "Dec",
+  };
 
   while (year < currentYear || (year == currentYear && month < currentMonth)) {
     // create new div container for each year
@@ -63,14 +81,9 @@ function createContainer() {
       (year == currentYear && month < currentMonth) ||
       year < currentYear
     ) {
-      const monthName = new Date(year, month, 1).toLocaleString("default", {
-        month: "short",
-      });
-      var monthNameFull = new Date(year, month, 1).toLocaleString("default", {
-        month: "long",
-      });
-      const monthIndex = monthNamez.indexOf(monthNameFull);
-      monthNameFull = monthNames[monthIndex];
+
+      let monthName = monthDict[monthNamez[month]];
+      let monthNameFull = monthNames[month];
       const item = document.createElement("div");
       item.classList.add("grid-item");
       item.classList.add("month-container");
