@@ -1,3 +1,4 @@
 templates/index2.html
 requirements.in
 req.txt
+*.sql
