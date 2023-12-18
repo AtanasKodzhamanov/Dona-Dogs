@@ -1,5 +1,13 @@
-# www.DonaDogs.com
+# DonaDogs
 
-DonaDogs is a website developed for a Bulgarian dog shelter using the Django web framework. The website allows for dynamic customisation via Django's admin panel. It empowers the shelter to manage the site's structure by adding new sections on any page and adjusting the layout's color and positioning.
+## Introduction
+DonaDogs is a website for the needs of a Bulgarian dog shelter, developed using Django and vanilla JS.
 
-The website supports both Bulgarian and English languages. Static translations are handled by Django, while dog descriptions and section content are pulled dynamically from the underlying models. 
+This project enhances the shelter's online presence and aids in its mission to care for and rehome dogs.
+
+## Features
+- **Dynamic Customization**: Modify the site structure, add new sections, and adjust layout colors and positioning through Django's admin panel.
+- **Multilingual Support**: Offers content in both Bulgarian and English. Static translations are managed by Django, while dynamic content like dog descriptions is pulled from the underlying models.
+
+## Usage
+The shelter staff can effortlessly manage the website, ensuring up-to-date information and a user-friendly experience for both Bulgarian and English speakers.
