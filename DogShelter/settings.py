@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from pathlib import Path
 
+import dj_database_url
+
 CSRF_TRUSTED_ORIGINS = [
     "https://*.donadogs.up.railway.app",
     "https://*.donadogs.com",
@@ -105,6 +107,7 @@ WSGI_APPLICATION = "DogShelter.wsgi.application"
 
 # Windows "Edit the system environment variables"
 
+'''
 POSTGRES_ENGINE = os.environ["POSTGRES_ENGINE"]
 POSTGRES_USERNAME = os.environ["POSTGRES_USERNAME"]
 POSTGRES_PASSWORD = os.environ["POSTGRES_PASSWORD"]
@@ -123,7 +126,13 @@ DATABASES = {
         "PORT": POSTGRES_PORT,
     }
 }
+'''
 
+DATABASE_URL = os.environ['DATABASE_URL_DONADOGS']
+
+DATABASES = {
+    'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=600)
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
